@@ -2,318 +2,334 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu,
-  X,
-  GraduationCap,
-  ChevronDown,
-  Phone,
-  Mail,
-  Sun,
-  Moon,
+  Menu, X, GraduationCap, ChevronDown,
+  Phone, Mail, Sun, Moon,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   {
     label: "About",
-    href: "#about",
+    href: "/about/our-story",
     children: [
-      { label: "Our Story", href: "#about" },
-      { label: "Our Team", href: "#team" },
-      { label: "Why Choose Us", href: "#why-us" },
+      { label: "Our Story",      href: "/about/our-story"     },
+      { label: "Our Team",       href: "/about/our-team"      },
+      { label: "Why Choose Us",  href: "/about/why-choose-us" },
     ],
   },
   {
     label: "Services",
-    href: "#services",
+    href: "/services/higher-education",
     children: [
-      { label: "Higher Education", href: "#services" },
-      { label: "School Placement", href: "#services" },
-      { label: "Academic Consulting", href: "#services" },
-      { label: "Special Education", href: "#services" },
-      { label: "Curriculum Development", href: "#services" },
-      { label: "Educational Technology", href: "#services" },
-      { label: "Strategic Planning", href: "#services" },
+      { label: "Higher Education",     href: "/services/higher-education"      },
+      { label: "School Placement",     href: "/services/school-placement"      },
+      { label: "Academic Consulting",  href: "/services/academic-consulting"   },
+      { label: "Special Education",    href: "/services/special-education"     },
+      { label: "Curriculum Dev.",      href: "/services/curriculum-development"},
+      { label: "Ed. Technology",       href: "/services/educational-technology"},
+      { label: "Strategic Planning",   href: "/services/strategic-planning"    },
     ],
   },
-  { label: "Clients", href: "#clients" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Clients", href: "/clients"  },
+  { label: "Blog",    href: "/blog"     },
+  { label: "Contact", href: "/contact"  },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled]             = useState(false);
+  const [mobileOpen, setMobileOpen]         = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme }         = useTheme();
+  const [mounted, setMounted]               = useState(false);
+  const router   = useRouter();
+  const pathname = usePathname();
+  const isHome   = pathname === "/";
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 20);
+    setScrolled(window.scrollY > 40);
   }, []);
 
   useEffect(() => {
+    if (!isHome) { setScrolled(true); return; }
+    setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, [isHome, handleScroll]);
 
-  const scrollToSection = (href: string) => {
+  // Close mobile menu on route change
+  useEffect(() => {
     setMobileOpen(false);
     setActiveDropdown(null);
-    if (href.startsWith("#")) {
-      const el = document.querySelector(href);
-      if (el) {
-        const offset = 80;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }
+  }, [pathname]);
+
+  const navigate = (href: string) => {
+    setMobileOpen(false);
+    setActiveDropdown(null);
+    router.push(href);
   };
 
+  // Dark style when scrolled OR on any inner page
+  const dark = scrolled || !isHome;
+
   return (
-    <>
-      {/* Top bar */}
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col"
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+    >
+      {/* ── Top info strip (desktop, hides on scroll / inner pages) ── */}
       <div
-        className="hidden lg:flex items-center justify-between px-8 py-2 text-xs text-white/80"
-        style={{ background: "#080f2a" }}
+        className="hidden lg:flex items-center justify-between px-6 xl:px-10 text-xs text-white/70 overflow-hidden transition-all duration-300"
+        style={{
+          background:    "#060e24",
+          maxHeight:     dark ? "0px" : "34px",
+          paddingTop:    dark ? "0" : "6px",
+          paddingBottom: dark ? "0" : "6px",
+          opacity:       dark ? 0 : 1,
+          borderBottom:  dark ? "none" : "1px solid rgba(255,255,255,0.06)",
+        }}
+        aria-hidden={dark}
       >
-        <div className="flex items-center gap-6">
-          <a
-            href="mailto:info@edconsult.com"
-            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors"
-          >
-            <Mail className="w-3.5 h-3.5" />
-            info@edconsult.com
+        <div className="flex items-center gap-5">
+          <a href="mailto:info@edconsultpro.com"
+            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+            <Mail className="w-3 h-3" />
+            info@edconsultpro.com
           </a>
-          <a
-            href="tel:+1234567890"
-            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            +1 (234) 567-8900
+          <a href="tel:+26771234567"
+            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+            <Phone className="w-3 h-3" />
+            +267 71 234 567
           </a>
         </div>
-        <div className="flex items-center gap-4">
-          <span>Transforming Education, One Student at a Time</span>
-        </div>
+        <span className="font-medium tracking-wide">
+          Botswana&apos;s Premier Educational Consulting Firm
+        </span>
       </div>
 
-      {/* Main Navbar */}
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "shadow-2xl py-3"
-            : "py-4"
-        }`}
+      {/* ── Main nav bar ── */}
+      <nav
+        className={`transition-all duration-300 ${dark ? "py-2" : "py-3"}`}
         style={{
-          background: scrolled
-            ? "rgba(8, 15, 42, 0.97)"
-            : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom: scrolled
-            ? "1px solid rgba(255, 255, 255, 0.08)"
-            : "none",
+          background:     dark ? "rgba(7,17,44,0.97)" : "transparent",
+          backdropFilter: dark ? "blur(18px)" : "none",
+          boxShadow:      dark ? "0 1px 24px rgba(0,0,0,0.3)" : "none",
+          borderBottom:   dark ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link
-              href="#home"
-              onClick={() => scrollToSection("#home")}
-              className="flex items-center gap-3 group"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
+
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md
+                         group-hover:scale-105 transition-transform duration-300"
+              style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)" }}
             >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-                style={{
-                  background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-                }}
-              >
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-lg leading-tight tracking-tight">
-                  EduConsult
-                  <span className="text-yellow-400">Pro</span>
-                </div>
-                <div className="text-xs text-white/50 font-medium tracking-wider uppercase">
-                  Educational Consulting
-                </div>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <button
-                    onClick={() => scrollToSection(item.href)}
-                    className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg transition-all duration-200 hover:bg-white/5"
-                  >
-                    {item.label}
-                    {item.children && (
-                      <ChevronDown
-                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          activeDropdown === item.label ? "rotate-180" : ""
-                        }`}
-                      />
-                    )}
-                  </button>
-
-                  {/* Dropdown */}
-                  <AnimatePresence>
-                    {item.children && activeDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-52 rounded-xl overflow-hidden shadow-2xl"
-                        style={{
-                          background: "rgba(8, 15, 42, 0.98)",
-                          border: "1px solid rgba(255, 255, 255, 0.1)",
-                          backdropFilter: "blur(20px)",
-                        }}
-                      >
-                        {item.children.map((child) => (
-                          <button
-                            key={child.label}
-                            onClick={() => scrollToSection(child.href)}
-                            className="w-full text-left px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200 flex items-center gap-2 group"
-                          >
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 group-hover:bg-yellow-400 transition-colors" />
-                            {child.label}
-                          </button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
+              <GraduationCap className="w-5 h-5 text-white" />
             </div>
+            <div>
+              <div className="text-white font-bold text-base leading-tight tracking-tight">
+                EduConsult<span className="text-yellow-400">Pro</span>
+              </div>
+              <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
+                Gaborone, Botswana
+              </div>
+            </div>
+          </Link>
 
-            {/* Right Actions */}
-            <div className="flex items-center gap-3">
-              {/* Theme Toggle */}
-              {mounted && (
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {navItems.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
                 <button
-                  onClick={() =>
-                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                  }
-                  className="w-9 h-9 rounded-lg flex items-center justify-center text-white/70 hover:text-white hover:bg-white/5 transition-all duration-200"
-                  aria-label="Toggle theme"
+                  onClick={() => navigate(item.href)}
+                  className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium
+                             text-white/75 hover:text-white rounded-lg
+                             transition-colors duration-200 hover:bg-white/[0.07] whitespace-nowrap"
                 >
-                  {resolvedTheme === "dark" ? (
-                    <Sun className="w-4.5 h-4.5" />
-                  ) : (
-                    <Moon className="w-4.5 h-4.5" />
+                  {item.label}
+                  {item.children && (
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200
+                        ${activeDropdown === item.label ? "rotate-180" : ""}`}
+                    />
                   )}
                 </button>
-              )}
 
-              {/* CTA Button */}
-              <button
-                onClick={() => scrollToSection("#consultation")}
-                className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                style={{
-                  background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-                  boxShadow: "0 4px 15px rgba(37, 99, 235, 0.3)",
-                }}
-              >
-                Book Consultation
-              </button>
-
-              {/* Mobile Menu Toggle */}
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-white hover:bg-white/5 transition-colors"
-                aria-label="Toggle menu"
-              >
-                {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
+                {/* Dropdown */}
+                <AnimatePresence>
+                  {item.children && activeDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                      animate={{ opacity: 1, y: 0,  scale: 1    }}
+                      exit={{    opacity: 0, y: 8,  scale: 0.97 }}
+                      transition={{ duration: 0.18 }}
+                      className="absolute top-full left-0 mt-1.5 w-52 rounded-xl overflow-hidden shadow-2xl"
+                      style={{
+                        background:     "rgba(7,17,44,0.98)",
+                        border:         "1px solid rgba(255,255,255,0.09)",
+                        backdropFilter: "blur(20px)",
+                      }}
+                    >
+                      {item.children.map((child) => (
+                        <button
+                          key={child.label}
+                          onClick={() => navigate(child.href)}
+                          className="w-full text-left px-4 py-2.5 text-sm text-white/65
+                                     hover:text-white hover:bg-white/[0.06]
+                                     transition-all duration-150 flex items-center gap-2.5 group"
+                        >
+                          <span className="w-1 h-1 rounded-full bg-blue-500
+                                           group-hover:bg-yellow-400 transition-colors flex-shrink-0" />
+                          {child.label}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Mobile Navigation Drawer */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden overflow-hidden"
+          {/* Right actions */}
+          <div className="flex items-center gap-2">
+            {/* Theme toggle */}
+            {mounted && (
+              <button
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+                className="w-8 h-8 rounded-lg flex items-center justify-center
+                           text-white/60 hover:text-white hover:bg-white/[0.07]
+                           transition-all duration-200"
+                aria-label="Toggle colour theme"
+              >
+                {resolvedTheme === "dark"
+                  ? <Sun  className="w-4 h-4" />
+                  : <Moon className="w-4 h-4" />
+                }
+              </button>
+            )}
+
+            {/* CTA — desktop */}
+            <button
+              onClick={() => navigate("/contact")}
+              className="hidden md:flex items-center gap-1.5 px-5 py-2 rounded-full
+                         text-sm font-semibold text-white transition-all duration-250
+                         hover:shadow-lg hover:-translate-y-0.5"
               style={{
-                background: "rgba(8, 15, 42, 0.99)",
-                borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+                background: "linear-gradient(135deg,#2563eb,#1e40af)",
+                boxShadow:  "0 3px 12px rgba(37,99,235,0.35)",
               }}
             >
-              <div className="px-4 py-6 space-y-1">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    <button
-                      onClick={() => scrollToSection(item.href)}
-                      className="w-full text-left px-4 py-3 rounded-lg text-white/80 hover:text-white hover:bg-white/5 font-medium transition-all duration-200"
-                    >
-                      {item.label}
-                    </button>
-                    {item.children && (
-                      <div className="ml-4 mt-1 space-y-1">
-                        {item.children.map((child) => (
-                          <button
-                            key={child.label}
-                            onClick={() => scrollToSection(child.href)}
-                            className="w-full text-left px-4 py-2 rounded-lg text-sm text-white/60 hover:text-white hover:bg-white/5 transition-all duration-200"
-                          >
-                            {child.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
+              Book Consultation
+            </button>
+
+            {/* Hamburger — mobile */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center
+                         text-white hover:bg-white/[0.07] transition-colors"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen
+                ? <X    className="w-5 h-5" />
+                : <Menu className="w-5 h-5" />
+              }
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Mobile drawer ── */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{    opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            className="lg:hidden overflow-hidden"
+            style={{
+              background:   "rgba(6,14,35,0.99)",
+              borderBottom: "1px solid rgba(255,255,255,0.07)",
+            }}
+          >
+            <div className="px-4 py-5 space-y-0.5">
+              {navItems.map((item, i) => (
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="pt-4"
+                  key={item.label}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
                 >
                   <button
-                    onClick={() => scrollToSection("#consultation")}
-                    className="w-full py-3 rounded-full text-white font-semibold"
-                    style={{
-                      background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-                    }}
+                    onClick={() => navigate(item.href)}
+                    className="w-full text-left px-4 py-2.5 rounded-xl text-white/80
+                               hover:text-white hover:bg-white/[0.06] font-medium
+                               transition-all duration-200 text-sm"
                   >
-                    Book Free Consultation
+                    {item.label}
                   </button>
+                  {item.children && (
+                    <div className="ml-4 mt-0.5 mb-1 space-y-0.5">
+                      {item.children.map((child) => (
+                        <button
+                          key={child.label}
+                          onClick={() => navigate(child.href)}
+                          className="w-full text-left px-4 py-2 rounded-lg text-sm
+                                     text-white/55 hover:text-white/90 hover:bg-white/[0.05]
+                                     transition-all duration-150"
+                        >
+                          {child.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
-    </>
+              ))}
+
+              {/* Mobile CTA */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.28 }}
+                className="pt-3 border-t border-white/[0.07]"
+              >
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="w-full py-3 rounded-xl text-white font-semibold text-sm"
+                  style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)" }}
+                >
+                  Book Free Consultation
+                </button>
+                <div className="flex flex-col gap-2 mt-3 px-1">
+                  <a href="mailto:info@edconsultpro.com"
+                    className="text-xs text-white/45 flex items-center gap-2">
+                    <Mail className="w-3 h-3" /> info@edconsultpro.com
+                  </a>
+                  <a href="tel:+26771234567"
+                    className="text-xs text-white/45 flex items-center gap-2">
+                    <Phone className="w-3 h-3" /> +267 71 234 567
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

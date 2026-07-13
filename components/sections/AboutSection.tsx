@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -55,7 +57,7 @@ const values = [
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
 const staggerChildren = {
@@ -64,6 +66,7 @@ const staggerChildren = {
 };
 
 export default function AboutSection() {
+  const router = useRouter();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -83,7 +86,7 @@ export default function AboutSection() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerChildren}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
             style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}>
@@ -91,7 +94,7 @@ export default function AboutSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl font-bold mb-4"
+            className="section-title mb-4"
             style={{ color: "var(--foreground)" }}
           >
             Transforming Education Through{" "}
@@ -122,7 +125,7 @@ export default function AboutSection() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerChildren}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
         >
           {trustStats.map((stat, i) => {
             const Icon = stat.icon;
@@ -130,7 +133,7 @@ export default function AboutSection() {
               <motion.div
                 key={i}
                 variants={fadeInUp}
-                className="p-6 rounded-2xl text-center border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="p-5 rounded-2xl text-center border transition-all duration-300 hover:shadow-md hover:-translate-y-1"
                 style={{
                   background: "var(--card-bg)",
                   borderColor: "var(--card-border)",
@@ -154,7 +157,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Mission / Vision / Why Us */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-start mb-16">
           {/* Left: Mission & Vision */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -164,7 +167,7 @@ export default function AboutSection() {
           >
             {/* Mission */}
             <div
-              className="p-8 rounded-2xl border"
+              className="p-6 rounded-2xl border"
               style={{
                 background: "var(--card-bg)",
                 borderColor: "var(--card-border)",
@@ -188,7 +191,7 @@ export default function AboutSection() {
 
             {/* Vision */}
             <div
-              className="p-8 rounded-2xl border"
+              className="p-6 rounded-2xl border"
               style={{
                 background: "var(--card-bg)",
                 borderColor: "var(--card-border)",
@@ -234,7 +237,7 @@ export default function AboutSection() {
                   transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0 text-green-500" />
+                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-green-500" />
                   <span style={{ color: "var(--foreground)" }}>{item}</span>
                 </motion.div>
               ))}
@@ -244,9 +247,7 @@ export default function AboutSection() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 1 }}
-              onClick={() => {
-                document.querySelector("#consultation")?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
+              onClick={() => router.push("/contact")}
               className="mt-10 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               style={{
                 background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
@@ -255,6 +256,31 @@ export default function AboutSection() {
             >
               Start Your Journey
             </motion.button>
+
+            {/* Feature image */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="mt-8 relative rounded-2xl overflow-hidden"
+              style={{ height: "220px" }}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1632215861513-130b66fe97f4?w=800&h=400&q=80&auto=format&fit=crop"
+                alt="African teacher guiding students in a Nigerian classroom — representing our commitment to African education"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div
+                className="absolute inset-0 flex items-end p-5"
+                style={{ background: "linear-gradient(to top, rgba(8,15,42,0.8) 0%, transparent 50%)" }}
+              >
+                <p className="text-white text-sm font-medium">
+                  Empowering African students from Botswana to the world
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -271,7 +297,7 @@ export default function AboutSection() {
           >
             Our Core Values
           </motion.h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             {values.map((v, i) => {
               const Icon = v.icon;
               return (

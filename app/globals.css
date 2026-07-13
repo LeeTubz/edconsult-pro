@@ -42,94 +42,65 @@
   /* Custom Fonts */
   --font-display: var(--font-playfair), Georgia, serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
-
-  /* Custom Animations */
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
-  --animate-shimmer: shimmer 2s linear infinite;
-  --animate-fade-up: fade-up 0.6s ease-out forwards;
-  --animate-fade-in: fade-in 0.5s ease-out forwards;
-
-  /* Custom Shadows */
-  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.15);
-  --shadow-gold: 0 0 30px rgba(251, 191, 36, 0.2);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* ─── Keyframes ────────────────────────────────────────────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+  50%       { transform: translateY(-14px); }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes counter {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; }
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%, 100% { background-position: 0%   50%; }
+  50%       { background-position: 100% 50%; }
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.08);
-  --muted: #6b7280;
-  --muted-bg: #f8fafc;
-  --hero-bg: #080f2a;
-  --section-alt: #f8fafc;
+  --background:        #ffffff;
+  --foreground:        #0f172a;
+  --card-bg:           #ffffff;
+  --card-border:       #dde4f2;
+  --card-shadow:       0 1px 3px rgba(15,23,42,0.06), 0 4px 16px rgba(15,23,42,0.05);
+  --card-shadow-hover: 0 8px 24px rgba(15,23,42,0.10), 0 2px 6px rgba(15,23,42,0.06);
+  --muted:             #64748b;
+  --muted-bg:          #f1f5f9;
+  --hero-bg:           #080f2a;
+  --section-alt:       #eef3ff;
 }
 
 .dark {
-  --background: #080f2a;
-  --foreground: #f1f5f9;
-  --card-bg: #112044;
-  --card-border: rgba(255, 255, 255, 0.08);
-  --muted: #94a3b8;
-  --muted-bg: #0d1840;
-  --hero-bg: #040a1a;
-  --section-alt: #0a1632;
+  --background:        #080f2a;
+  --foreground:        #f1f5f9;
+  --card-bg:           #0f1e40;
+  --card-border:       rgba(255,255,255,0.09);
+  --card-shadow:       0 2px 8px rgba(0,0,0,0.4);
+  --card-shadow-hover: 0 8px 28px rgba(0,0,0,0.5);
+  --muted:             #94a3b8;
+  --muted-bg:          #0d1840;
+  --hero-bg:           #040a1a;
+  --section-alt:       #0a1632;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ─── Reset ─────────────────────────────────────────────────────────────── */
+/* Tailwind v4 Preflight already resets margin/padding/box-sizing in @layer base.
+   Adding an unlayered * reset here overrides @layer utilities (including mx-auto, px-*, etc.).
+   Only set properties that Tailwind Preflight does NOT cover. */
 
 html {
   scroll-behavior: smooth;
@@ -141,236 +112,135 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #2563eb, #1e40af);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #3b82f6, #2563eb);
 }
 
-/* Selection */
-::selection {
-  background: rgba(37, 99, 235, 0.2);
-  color: #1e40af;
-}
+::selection { background: rgba(37,99,235,0.15); color: #1e40af; }
 
-/* Gradient Text Utility */
+/* ─── Typography utilities ──────────────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 60%, #fbbf24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-text-gold {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-navy {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1e40af 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Premium Card Styles */
+/* ─── Card system ───────────────────────────────────────────────────────── */
 .premium-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
-
 .premium-card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-3px);
 }
 
-/* Glassmorphism */
+/* Auto-shadow for bordered rounded cards in light mode */
+html:not(.dark) .rounded-2xl.border,
+html:not(.dark) .rounded-3xl.border {
+  box-shadow: var(--card-shadow);
+}
+html:not(.dark) .rounded-2xl.border:hover,
+html:not(.dark) .rounded-3xl.border:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* ─── Glassmorphism ─────────────────────────────────────────────────────── */
 .glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.13);
 }
 
-.glass-dark {
-  background: rgba(8, 15, 42, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* ─── Section spacing ───────────────────────────────────────────────────── */
+/* Mobile-first: py-20 (80px) base, py-24 (96px) on lg+ */
+.section-padding { padding: 5rem 0; }
+
+@media (min-width: 1024px) { .section-padding { padding: 6rem 0; } }
+
+/* ─── Fluid section typography ──────────────────────────────────────────── */
+/* Scales smoothly from 1.875rem (30px) on mobile to 2.75rem (44px) on desktop */
+.section-title {
+  font-size: clamp(1.875rem, 2.5vw + 1rem, 2.75rem);
+  line-height: 1.2;
+  font-weight: 700;
 }
 
-/* Section Patterns */
-.hero-bg {
-  background: var(--hero-bg);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-/* Grid Pattern Background */
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-/* Dot Pattern */
-.dot-pattern {
-  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Animated Gradient Button */
+/* ─── Buttons ───────────────────────────────────────────────────────────── */
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: white;
-  padding: 14px 32px;
+  padding: 12px 28px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.9375rem;
-  letter-spacing: 0.02em;
   border: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  transition: left 0.4s ease;
-}
-
-.btn-primary:hover::before {
-  left: 0;
-}
-
 .btn-primary:hover {
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
   transform: translateY(-2px);
 }
 
-.btn-outline {
-  background: transparent;
-  color: white;
-  padding: 13px 31px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  letter-spacing: 0.02em;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
+/* ─── Form inputs ───────────────────────────────────────────────────────── */
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #f8fafc;
+  border-color: #dde4f2;
+  color: #0f172a;
+}
+html:not(.dark) input:focus,
+html:not(.dark) textarea:focus,
+html:not(.dark) select:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
 }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-}
-
-/* Section padding */
-.section-padding {
-  padding: 100px 0;
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 70px 0;
-  }
-}
-
-/* Reveal animation classes */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Float animation */
-.float-1 { animation: float 6s ease-in-out infinite; }
-.float-2 { animation: float 7s ease-in-out infinite 1s; }
-.float-3 { animation: float 8s ease-in-out infinite 2s; }
-
-/* Shimmer effect */
-.shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s linear infinite;
-}
-
-/* Gold border gradient */
-.gold-border {
-  position: relative;
-}
-
-.gold-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b, #fbbf24);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* Focus styles */
 input:focus, textarea:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
-/* Smooth transitions for theme changes */
-*, *::before, *::after {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+/* ─── Float animation ───────────────────────────────────────────────────── */
+.float-1 { animation: float 6s ease-in-out infinite; }
+.float-2 { animation: float 7s ease-in-out infinite 1.2s; }
+.float-3 { animation: float 8s ease-in-out infinite 2.4s; }
+
+/* ─── Dot / grid patterns ───────────────────────────────────────────────── */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(37,99,235,0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ─── Accessible focus ring ─────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
 }
