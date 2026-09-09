@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
-  GraduationCap,
   Mail,
   Phone,
   MapPin,
@@ -13,11 +12,12 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import { LogoMark } from "@/components/ui/Logo";
 
 const quickLinks = [
   { label: "About Us",       href: "/about/our-story"     },
-  { label: "Our Services",   href: "/services/higher-education" },
-  { label: "Our Process",    href: "/services/higher-education" },
+  { label: "Our Services",   href: "/services/career-guidance" },
+  { label: "Our Process",    href: "/services/career-guidance" },
   { label: "Who We Serve",   href: "/clients"             },
   { label: "Why Choose Us",  href: "/about/why-choose-us" },
   { label: "Our Team",       href: "/about/our-team"      },
@@ -26,13 +26,11 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Higher Education Consulting", href: "/services/higher-education"      },
-  { label: "School Placement",            href: "/services/school-placement"      },
-  { label: "Academic Consulting",         href: "/services/academic-consulting"   },
-  { label: "Special Education",           href: "/services/special-education"     },
-  { label: "Curriculum Development",      href: "/services/curriculum-development"},
-  { label: "Educational Technology",      href: "/services/educational-technology"},
-  { label: "Strategic Planning",          href: "/services/strategic-planning"    },
+  { label: "Career Guidance",        href: "/services/career-guidance"       },
+  { label: "Student Counselling",    href: "/services/student-counselling"   },
+  { label: "Coaching",               href: "/services/coaching"              },
+  { label: "Navigating Internship",  href: "/services/navigating-internship" },
+  { label: "Educational Technology", href: "/services/educational-technology"},
 ];
 
 const socials = [
@@ -60,11 +58,11 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: "#040c1f" }}>
+    <footer style={{ background: "#10150c" }}>
       {/* Newsletter Banner */}
       <div
         className="py-10"
-        style={{ background: "linear-gradient(135deg, #0d1840 0%, #1a2f6b 50%, #0d1840 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1c2417 0%, #2f4326 50%, #1c2417 100%)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -90,12 +88,12 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-blue-400 flex-1 md:w-64"
+                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-[#8FAE7A] flex-1 md:w-64"
                   />
                   <button
                     type="submit"
                     className="px-6 py-3 rounded-full text-white font-semibold text-sm flex items-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
-                    style={{ background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
                   >
                     Subscribe <ArrowRight className="w-4 h-4" />
                   </button>
@@ -120,39 +118,39 @@ export default function Footer() {
               <div className="flex items-center gap-3 mb-5">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #2563eb, #1e40af)" }}
+                  style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
                 >
-                  <GraduationCap className="w-6 h-6 text-white" />
+                  <LogoMark className="w-6 h-6" />
                 </div>
                 <div>
                   <div className="text-white font-bold text-lg leading-tight">
-                    EduConsult<span className="text-yellow-400">Pro</span>
+                    Olive<span className="text-[#A8C4A2]">Shoots</span>
                   </div>
                   <div className="text-xs text-white/40 font-medium tracking-wider uppercase">
-                    Educational Consulting
+                    Students Support Consultancy
                   </div>
                 </div>
               </div>
 
               <p className="text-sm text-white/55 leading-relaxed mb-6">
-                Empowering students, schools, and organizations through strategic
-                educational consulting. Your trusted partner for academic excellence.
+                Guiding students through career clarity, counselling, coaching, and
+                the pathways beyond the classroom. Your trusted partner for growth.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <a href="mailto:info@edconsultpro.com"
+                <a href="mailto:info@oliveshoots.com"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
-                  <Mail className="w-4 h-4 text-blue-400 shrink-0" />
-                  info@edconsultpro.com
+                  <Mail className="w-4 h-4 text-[#8FAE7A] shrink-0" />
+                  info@oliveshoots.com
                 </a>
                 <a href="tel:+26771234567"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
-                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                  <Phone className="w-4 h-4 text-[#8FAE7A] shrink-0" />
                   +267 71 234 567
                 </a>
                 <div className="flex items-start gap-2 text-sm text-white/55">
-                  <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#8FAE7A] shrink-0 mt-0.5" />
                   Plot 1234, Luthuli Road<br />Gaborone, Botswana
                 </div>
               </div>
@@ -185,7 +183,7 @@ export default function Footer() {
                       onClick={() => router.push(link.href)}
                       className="text-sm text-white/55 hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-1 group"
                     >
-                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-blue-400">›</span>
+                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#8FAE7A]">›</span>
                       {link.label}
                     </button>
                   </li>
@@ -205,7 +203,7 @@ export default function Footer() {
                       onClick={() => router.push(s.href)}
                       className="text-sm text-white/55 hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-1 group"
                     >
-                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-blue-400">›</span>
+                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#8FAE7A]">›</span>
                       {s.label}
                     </button>
                   </li>
@@ -238,7 +236,7 @@ export default function Footer() {
               <button
                 onClick={() => router.push("/contact")}
                 className="mt-6 w-full py-3 rounded-xl text-white text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: "linear-gradient(135deg, #2563eb, #1e40af)" }}
+                style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
               >
                 Book Free Consultation
               </button>
@@ -252,7 +250,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/35">
             <p>
-              © {new Date().getFullYear()} EduConsult Pro. All rights reserved.
+              © {new Date().getFullYear()} Olive Shoots. All rights reserved.
             </p>
             <div className="flex gap-6">
               <button className="hover:text-white/70 transition-colors">Privacy Policy</button>

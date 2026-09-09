@@ -13,10 +13,10 @@ const testimonials = [
     role: "Parent",
     organization: "Gaborone, Botswana",
     content:
-      "EduConsult Pro transformed how we approached my son's university applications. Their deep knowledge of both local and international admissions helped him secure a place at the University of Cape Town. The personalised attention and expert insights were unlike anything we had experienced before.",
+      "Olive Shoots gave my son real clarity on his subject choices and mapped a pathway that actually fit him — not just 'go to university'. Their career guidance and admissions support helped him secure a place at the University of Cape Town. The personalised attention was unlike anything we had experienced before.",
     rating: 5,
     initials: "LM",
-    color: "#2563eb",
+    color: "#5A6B4F",
     photo: "https://images.unsplash.com/photo-1527201987695-67c06571957e?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
@@ -25,10 +25,10 @@ const testimonials = [
     role: "Principal",
     organization: "Francistown Senior Secondary School",
     content:
-      "The strategic planning consultation completely revolutionised our school's approach to curriculum development. EduConsult Pro's frameworks helped us improve our national examination pass rates by 28% in a single academic year — an investment that paid off immediately.",
+      "The student counselling framework Olive Shoots helped us put in place completely changed how we support learners through the social and academic sides of student life. Their approach helped us improve our national examination pass rates by 28% in a single academic year — students who feel supported perform better.",
     rating: 5,
     initials: "OS",
-    color: "#7c3aed",
+    color: "#6B8FA3",
     photo: "https://images.unsplash.com/photo-1642257834579-eee89ff3e9fd?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
@@ -37,10 +37,10 @@ const testimonials = [
     role: "University Student",
     organization: "University of Botswana, Gaborone",
     content:
-      "As a first-generation university student from Maun, I was completely overwhelmed by the application process. EduConsult Pro gave me clarity, confidence, and a clear plan. I am now studying Business Administration at UB — a dream I once thought was out of reach.",
+      "As a first-generation university student from Maun, I was completely overwhelmed by academic writing at university level. Olive Shoots' coaching gave me the structure and confidence to actually enjoy my assignments and research work. I am now excelling in Business Administration at UB — a version of myself I once thought was out of reach.",
     rating: 5,
     initials: "ND",
-    color: "#059669",
+    color: "#8FAE7A",
     photo: "https://images.unsplash.com/photo-1593351799227-75df2026356b?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
@@ -49,10 +49,10 @@ const testimonials = [
     role: "Chief Executive Officer",
     organization: "BotswanaLearn EdTech",
     content:
-      "EduConsult Pro's educational technology integration services transformed how we deliver professional training to our 3,000+ employees across southern Africa. Their blended learning design and LMS implementation delivered measurable ROI within the first quarter.",
+      "Olive Shoots' educational technology training transformed how we deliver professional development to our 3,000+ employees across southern Africa. Their webinar-based staff capacity building and ODL/e-learning consultancy delivered measurable results within the first quarter.",
     rating: 5,
     initials: "TS",
-    color: "#d97706",
+    color: "#A8C4A2",
     photo: "https://images.unsplash.com/photo-1645736593932-2c877741fd6c?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
@@ -61,10 +61,10 @@ const testimonials = [
     role: "Deputy Principal",
     organization: "Mochudi Community Junior Secondary",
     content:
-      "When we faced our regional accreditation review, EduConsult Pro was our anchor. Their systematic approach and detailed knowledge of accreditation standards helped us not only pass but receive commendations from the review panel. Truly outstanding service.",
+      "When our senior students needed better preparation before their first workplace placements, Olive Shoots' internship guidance was our anchor. Their systematic approach helped every one of our final-year students walk in ready — and several employers specifically asked for more of our graduates.",
     rating: 5,
     initials: "KM",
-    color: "#0891b2",
+    color: "#6F8C5B",
     photo: "https://images.unsplash.com/photo-1636144896336-b056be4a8dfe?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
@@ -73,10 +73,10 @@ const testimonials = [
     role: "Parents",
     organization: "Lobatse, Botswana",
     content:
-      "Our son has dyslexia and finding the right school felt impossible. EduConsult Pro's special education consultant found the perfect supportive learning environment for him and guided us through every step of the process. He is thriving today and we are forever grateful.",
+      "Our son was completely lost on which subjects to take and what came after school. Olive Shoots' career guidance consultant helped him find real clarity — not just 'get into university', but a path that actually fit him. He is thriving today and we are forever grateful.",
     rating: 5,
     initials: "MK",
-    color: "#dc2626",
+    color: "#5A6B4F",
     photo: "https://images.unsplash.com/photo-1744973149087-179e3ed54eae?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
   },
 ];
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
       <div
         className="absolute top-0 left-0 w-[500px] h-[500px] pointer-events-none rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(90, 107, 79, 0.04) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -134,15 +134,15 @@ export default function TestimonialsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Client Stories</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Client Stories</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Voices from{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -167,7 +167,7 @@ export default function TestimonialsSection() {
           {/* Quote icon */}
           <div
             className="absolute -top-6 -left-4 w-16 h-16 rounded-2xl flex items-center justify-center z-10"
-            style={{ background: "linear-gradient(135deg, #2563eb, #1e40af)" }}
+            style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
           >
             <Quote className="w-7 h-7 text-white" />
           </div>
@@ -247,7 +247,7 @@ export default function TestimonialsSection() {
                     style={{
                       width: i === current ? "28px" : "8px",
                       height: "8px",
-                      background: i === current ? "#2563eb" : "var(--card-border)",
+                      background: i === current ? "#5A6B4F" : "var(--card-border)",
                     }}
                     aria-label={`Go to testimonial ${i + 1}`}
                   />
@@ -256,7 +256,7 @@ export default function TestimonialsSection() {
               <div className="flex gap-2">
                 <button
                   onClick={prev}
-                  className="w-10 h-10 rounded-full flex items-center justify-center border transition-all hover:border-blue-500 hover:text-blue-600"
+                  className="w-10 h-10 rounded-full flex items-center justify-center border transition-all hover:border-[#8FAE7A] hover:text-[#5A6B4F]"
                   style={{ borderColor: "var(--card-border)", color: "var(--muted)" }}
                   aria-label="Previous testimonial"
                 >
@@ -265,7 +265,7 @@ export default function TestimonialsSection() {
                 <button
                   onClick={next}
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white transition-all"
-                  style={{ background: "linear-gradient(135deg, #2563eb, #1e40af)" }}
+                  style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
                   aria-label="Next testimonial"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -288,8 +288,8 @@ export default function TestimonialsSection() {
               onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
               className="p-3 rounded-xl border text-center transition-all duration-200 hover:shadow-md group"
               style={{
-                background: i === current ? "rgba(37, 99, 235, 0.08)" : "var(--card-bg)",
-                borderColor: i === current ? "rgba(37, 99, 235, 0.35)" : "var(--card-border)",
+                background: i === current ? "rgba(90, 107, 79, 0.08)" : "var(--card-bg)",
+                borderColor: i === current ? "rgba(90, 107, 79, 0.35)" : "var(--card-border)",
               }}
               aria-label={`Select testimonial from ${item.name}`}
             >
@@ -313,7 +313,7 @@ export default function TestimonialsSection() {
               </div>
               <div
                 className="text-xs font-medium leading-tight"
-                style={{ color: i === current ? "#2563eb" : "var(--foreground)" }}
+                style={{ color: i === current ? "#5A6B4F" : "var(--foreground)" }}
               >
                 {item.name.split(" ")[0]}
               </div>

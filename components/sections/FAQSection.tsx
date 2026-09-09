@@ -8,49 +8,44 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What types of educational consulting services do you offer?",
+    question: "What types of student support services do you offer?",
     answer:
-      "We offer a comprehensive range of educational consulting services including higher education consulting, school placement, academic consulting, special education support, curriculum development, educational technology integration, and institutional effectiveness & strategic planning. We serve individuals, families, K-12 schools, higher education institutions, and organizations.",
+      "We offer five core services: career guidance (subject choice, pathway mapping, and university admissions support), student counselling (social and academic life support), coaching (academic writing at college and university level), navigating internship (work-life guidance for students), and educational technology (staff training, webinars, and ODL/e-learning consultancy).",
   },
   {
     question: "How does the consultation process work?",
     answer:
-      "Our process begins with a free 45-minute discovery call to understand your unique needs and goals. From there, we conduct a thorough assessment, develop a customized strategy, and support you through implementation. We maintain ongoing communication and provide transparent progress reporting throughout our engagement.",
+      "Our process begins with a free discovery call to understand your unique needs and goals. From there, we agree on the right service, develop a tailored plan, and support you through implementation. We maintain ongoing communication and check in regularly throughout our engagement.",
   },
   {
-    question: "How much does educational consulting cost?",
+    question: "How much do your services cost?",
     answer:
-      "Our fees vary based on the scope and complexity of the engagement. We offer flexible pricing models including hourly consulting, project-based packages, and comprehensive retainer engagements. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal tailored to your specific needs and budget before any commitment.",
+      "Our fees vary based on the scope of the service and the length of engagement. We offer flexible pricing including per-session coaching or counselling, package rates for admissions support, and training-day rates for institutional webinars. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal before any commitment.",
   },
   {
-    question: "How long does the consulting process typically take?",
+    question: "How long does support typically take?",
     answer:
-      "Timelines vary significantly by service. College admissions consulting typically runs 6-18 months. School placement support may take 1-3 months. Institutional strategic planning engagements generally run 6-12 months. We work within your timeline constraints and always communicate expected milestones upfront.",
+      "Timelines vary by service. Career guidance and university admissions support typically runs across a school term. Academic writing coaching is often booked per assignment, research project, or dissertation. Student counselling and internship guidance are ongoing and open-ended, for as long as the student needs support. We always agree on expected milestones upfront.",
   },
   {
-    question: "Do you work with international students and institutions?",
+    question: "Do you compete with school counsellors and advisors?",
     answer:
-      "Absolutely. We have extensive experience supporting international students with US and global university admissions, as well as working with educational institutions across multiple countries. Our consultants are familiar with global education systems, international accreditation standards, and cross-cultural academic environments.",
+      "No — we work alongside them, not in place of them. Our career guidance pushes for the 'best fit' for each student rather than university admission only, and we're glad to coordinate directly with a student's existing school counsellors and advisors toward the same goal.",
   },
   {
-    question: "What makes EduConsult Pro different from other educational consultants?",
+    question: "What makes Olive Shoots different from other consultancies?",
     answer:
-      "We differentiate ourselves through three key pillars: expertise (our team holds advanced degrees and specialized certifications across all areas of education), personalization (every strategy is custom-built — no templates or one-size-fits-all solutions), and results (we have a documented 98% success rate and a track record of transformative outcomes across 500+ clients globally).",
+      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across career guidance, counselling, coaching, and educational technology), personalization (every plan is built around the individual student — no templates or one-size-fits-all solutions), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students).",
   },
   {
-    question: "Do you offer support for students with learning differences?",
+    question: "Do you work with individual students, or with schools too?",
     answer:
-      "Yes. Our special education consultants specialize in supporting students with learning disabilities, ADHD, autism spectrum disorder, and other learning differences. We provide IEP advocacy, school placement for specialized learning environments, 504 plan support, and connect families with appropriate therapeutic and educational resources.",
+      "Both. Students and families can book career guidance, counselling, coaching, or internship guidance directly. Schools and institutions can also book our educational technology service for staff capacity building, training webinars, and ODL/e-learning consultancy.",
   },
   {
-    question: "Can you help schools with accreditation preparation?",
+    question: "How do I get started with Olive Shoots?",
     answer:
-      "Yes, accreditation support is one of our core institutional services. We guide schools and higher education institutions through regional and national accreditation processes — from initial self-study and gap analysis to documentation support, mock reviews, and ongoing compliance. We have a strong track record of successful first-attempt accreditations.",
-  },
-  {
-    question: "How do I get started with EduConsult Pro?",
-    answer:
-      "Getting started is easy. Simply complete the consultation booking form on our website, and one of our consultants will contact you within 24 hours to schedule your free discovery call. You can also reach us directly via phone, email, or WhatsApp. There's no obligation — our goal is simply to understand your needs and see how we can help.",
+      "Getting started is easy. Simply complete the consultation booking form on our website, and one of our team will contact you within 24 hours to schedule your free discovery call. You can also reach us directly via phone, email, or WhatsApp. There's no obligation — our goal is simply to understand your needs and see how we can help.",
   },
 ];
 
@@ -78,15 +73,15 @@ export default function FAQSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">FAQ</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">FAQ</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Frequently Asked{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -96,7 +91,7 @@ export default function FAQSection() {
             </span>
           </h2>
           <p className="text-lg" style={{ color: "var(--muted)" }}>
-            Everything you need to know about working with EduConsult Pro.
+            Everything you need to know about working with Olive Shoots.
           </p>
         </motion.div>
 
@@ -116,8 +111,8 @@ export default function FAQSection() {
               className="rounded-2xl border overflow-hidden transition-all duration-300"
               style={{
                 background: openIndex === i ? "var(--card-bg)" : "var(--card-bg)",
-                borderColor: openIndex === i ? "rgba(37, 99, 235, 0.3)" : "var(--card-border)",
-                boxShadow: openIndex === i ? "0 4px 20px rgba(37, 99, 235, 0.08)" : "none",
+                borderColor: openIndex === i ? "rgba(90, 107, 79, 0.3)" : "var(--card-border)",
+                boxShadow: openIndex === i ? "0 4px 20px rgba(90, 107, 79, 0.08)" : "none",
               }}
             >
               <button
@@ -135,7 +130,7 @@ export default function FAQSection() {
                   className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
                   style={{
                     background: openIndex === i
-                      ? "linear-gradient(135deg, #2563eb, #1e40af)"
+                      ? "linear-gradient(135deg, #8FAE7A, #5A6B4F)"
                       : "var(--muted-bg)",
                   }}
                 >
@@ -176,8 +171,8 @@ export default function FAQSection() {
           transition={{ delay: 0.5 }}
           className="text-center mt-12 p-8 rounded-2xl"
           style={{
-            background: "rgba(37, 99, 235, 0.06)",
-            border: "1px solid rgba(37, 99, 235, 0.15)",
+            background: "rgba(90, 107, 79, 0.06)",
+            border: "1px solid rgba(90, 107, 79, 0.15)",
           }}
         >
           <p className="text-base mb-4" style={{ color: "var(--foreground)" }}>
@@ -186,7 +181,7 @@ export default function FAQSection() {
           <button
             onClick={() => router.push("/contact")}
             className="px-8 py-3 rounded-full text-white font-semibold text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
-            style={{ background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)" }}
+            style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
           >
             Get in Touch
           </button>

@@ -22,7 +22,7 @@ export default function ScrollProgress() {
       className="fixed top-0 left-0 z-[100] h-[3px] transition-all duration-100"
       style={{
         width: `${progress}%`,
-        background: "linear-gradient(90deg, #2563eb 0%, #1e40af 50%, #fbbf24 100%)",
+        background: "linear-gradient(90deg, #8FAE7A 0%, #5A6B4F 50%, #6B8FA3 100%)",
       }}
       role="progressbar"
       aria-valuenow={Math.round(progress)}

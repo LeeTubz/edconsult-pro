@@ -4,9 +4,9 @@ import BlogSection from "@/components/sections/BlogSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: "Blog — Educational Insights & Articles",
+  title: "Blog — Student Support Insights & Articles",
   description:
-    "Expert insights on higher education, school placement, curriculum development, EdTech, and more from the EduConsult Pro team.",
+    "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Olive Shoots team.",
 };
 
 export default function BlogPage() {
@@ -16,17 +16,17 @@ export default function BlogPage() {
         badge="Insights & Articles"
         title={
           <>
-            Educational{" "}
-            <span style={{ background: "linear-gradient(135deg,#60a5fa,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            Student Support{" "}
+            <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Insights
             </span>
           </>
         }
-        subtitle="Expert perspectives on education, strategy, and the future of learning in Botswana and across Africa — from the EduConsult Pro team."
+        subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa — from the Olive Shoots team."
         breadcrumbs={[{ label: "Blog" }]}
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Our Services", href: "/services/higher-education" }}
-        accentColor="#2563eb"
+        secondaryCta={{ label: "Our Services", href: "/services/career-guidance" }}
+        accentColor="#5A6B4F"
       />
       <BlogSection />
       <HomeCTA />

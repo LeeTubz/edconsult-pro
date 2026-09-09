@@ -4,86 +4,64 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  GraduationCap,
-  School,
-  BookOpen,
-  Brain,
-  Layers,
+  Compass,
+  Users,
+  PenLine,
+  Briefcase,
   Cpu,
-  BarChart3,
   ArrowRight,
 } from "lucide-react";
 
 const consultants = [
   {
-    icon: GraduationCap,
-    title: "Higher Education Consultant",
-    tagline: "University & College Admissions",
+    icon: Compass,
+    title: "Career Guidance Consultant",
+    tagline: "Career Clarity & Pathways",
     description:
-      "Expert guidance for undergraduate and graduate admissions, scholarship applications, and navigating the complex landscape of higher education pathways worldwide.",
-    specialties: ["University Admissions", "Graduate Programs", "Scholarship Guidance", "Study Abroad"],
-    color: "#2563eb",
-    gradient: "from-blue-600 to-blue-800",
+      "Helping students choose the right subjects and map an academic pathway — from O-Level to post-university — with a focus on 'best fit', not university admission only.",
+    specialties: ["Subject Choice Advice", "Alternative Pathways", "University Admissions", "Interview Prep"],
+    color: "#5A6B4F",
+    gradient: "from-[#5A6B4F] to-[#3a4534]",
   },
   {
-    icon: School,
-    title: "School Placement Consultant",
-    tagline: "K-12 School Selection",
+    icon: Users,
+    title: "Student Counsellor",
+    tagline: "Social & Academic Life Support",
     description:
-      "Strategic support for finding the perfect K-12 school environment — from public to private, boarding to international — aligned with each student's learning style and goals.",
-    specialties: ["Private Schools", "Boarding Schools", "International Schools", "School Transitions"],
-    color: "#7c3aed",
-    gradient: "from-violet-600 to-violet-800",
+      "Supporting students through the social and academic sides of student life — navigating challenges, striking a balance, and studying for success.",
+    specialties: ["Social Life Support", "Academic Life Coaching", "Balance & Wellbeing", "Study Habits"],
+    color: "#6B8FA3",
+    gradient: "from-[#6B8FA3] to-[#3d5763]",
   },
   {
-    icon: BookOpen,
-    title: "Academic Consultant",
-    tagline: "Academic Planning & Support",
+    icon: PenLine,
+    title: "Academic Writing Coach",
+    tagline: "College & University Writing",
     description:
-      "Comprehensive academic coaching and planning that optimizes student performance, develops study strategies, and builds the academic profile needed for top-tier opportunities.",
-    specialties: ["Academic Planning", "Study Skills", "Test Prep", "College Essays"],
-    color: "#059669",
-    gradient: "from-emerald-600 to-emerald-800",
+      "Coaching students in mastering academic writing at college and university level — assignments, research projects, and dissertations.",
+    specialties: ["Assignment Writing", "Research Projects", "Dissertations", "Academic Style"],
+    color: "#8FAE7A",
+    gradient: "from-[#8FAE7A] to-[#5a6b4f]",
   },
   {
-    icon: Brain,
-    title: "Special Education Consultant",
-    tagline: "Inclusive Learning Support",
+    icon: Briefcase,
+    title: "Internship Guidance Advisor",
+    tagline: "Navigating Internship",
     description:
-      "Specialized advocacy and guidance for students with learning differences — developing individualized education plans and connecting families with the right resources.",
-    specialties: ["IEP Development", "Learning Disabilities", "504 Plans", "Parent Advocacy"],
-    color: "#dc2626",
-    gradient: "from-red-600 to-red-800",
-  },
-  {
-    icon: Layers,
-    title: "Curriculum Development",
-    tagline: "Curriculum Design & Innovation",
-    description:
-      "Designing rigorous, engaging, and standards-aligned curricula that inspire student achievement and meet institutional goals — from course design to full program development.",
-    specialties: ["Curriculum Design", "Standards Alignment", "Assessment Design", "Program Evaluation"],
-    color: "#d97706",
-    gradient: "from-amber-600 to-amber-800",
+      "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
+    specialties: ["Internship Readiness", "Workplace Transition", "Professional Conduct", "Work-Life Balance"],
+    color: "#6F8C5B",
+    gradient: "from-[#6F8C5B] to-[#4a5842]",
   },
   {
     icon: Cpu,
-    title: "Educational Technology",
-    tagline: "EdTech Integration & Innovation",
+    title: "Educational Technology Trainer",
+    tagline: "Staff Capacity Building",
     description:
-      "Bridging the gap between cutting-edge technology and classroom learning — from LMS implementation to AI integration and digital transformation strategies.",
-    specialties: ["LMS Implementation", "Digital Learning", "AI in Education", "EdTech Strategy"],
-    color: "#0891b2",
-    gradient: "from-cyan-600 to-cyan-800",
-  },
-  {
-    icon: BarChart3,
-    title: "Institutional Effectiveness",
-    tagline: "Strategic Planning & Accreditation",
-    description:
-      "Supporting educational institutions in achieving operational excellence, accreditation readiness, data-driven decision making, and sustainable strategic growth.",
-    specialties: ["Strategic Planning", "Accreditation", "Data Analytics", "Change Management"],
-    color: "#0f766e",
-    gradient: "from-teal-700 to-teal-900",
+      "Training staff and educators via webinars, and consulting on ODL, e-learning, and video/audio content creation for classrooms.",
+    specialties: ["Staff Webinars", "ODL & E-Learning", "Content Creation", "Digital Classrooms"],
+    color: "#A8C4A2",
+    gradient: "from-[#A8C4A2] to-[#8FAE7A]",
   },
 ];
 
@@ -104,7 +82,7 @@ export default function TeamSection() {
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(90, 107, 79, 0.05) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -119,15 +97,15 @@ export default function TeamSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Our Expertise</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Our Expertise</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
-            Specialized Consulting{" "}
+            Specialized Support{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -137,25 +115,23 @@ export default function TeamSection() {
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            Our team of specialized consultants brings deep expertise across every
-            dimension of education, ready to guide you toward excellence.
+            Our team brings focused expertise across every dimension of student
+            support, ready to guide you toward growth.
           </p>
         </motion.div>
 
-        {/* All 7 cards in one unified grid — last card centred via col-start-2 */}
+        {/* 5 cards in a unified grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {consultants.map((c, i) => {
             const Icon = c.icon;
-            const isLast = i === consultants.length - 1;
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 28 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.07, duration: 0.55 }}
-                className={`group relative overflow-hidden rounded-2xl border p-6 cursor-pointer
-                            transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5
-                            ${isLast ? "md:col-start-1 lg:col-start-2" : ""}`}
+                className="group relative overflow-hidden rounded-2xl border p-6 cursor-pointer
+                            transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
                 style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
               >
                 {/* Hover tint */}
@@ -208,21 +184,21 @@ export default function TeamSection() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="rounded-2xl p-8 text-center"
           style={{
-            background: "linear-gradient(135deg, #0a1628 0%, #112044 100%)",
+            background: "linear-gradient(135deg, #1c2417 0%, #2b3327 100%)",
           }}
         >
           <h3 className="text-2xl font-bold text-white mb-3">
             Not sure which service is right for you?
           </h3>
           <p className="text-white/60 mb-6">
-            Book a free discovery call and our experts will identify the perfect consulting pathway for your needs.
+            Book a free discovery call and our team will identify the perfect support pathway for your needs.
           </p>
           <button
             onClick={scrollToConsultation}
             className="px-8 py-4 rounded-full text-white font-semibold transition-all hover:shadow-lg hover:-translate-y-1"
             style={{
-              background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-              boxShadow: "0 4px 20px rgba(37, 99, 235, 0.4)",
+              background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
+              boxShadow: "0 4px 20px rgba(90, 107, 79, 0.4)",
             }}
           >
             Book Free Discovery Call

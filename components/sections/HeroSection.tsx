@@ -5,15 +5,15 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  GraduationCap, Target, Cpu, Award,
+  Compass, Users, Cpu, PenLine,
   ArrowRight, ChevronDown, Star,
 } from "lucide-react";
 
 const floatingCards = [
-  { icon: GraduationCap, label: "Higher Education",    color: "#3b82f6", side: "left",  top: "calc(50% - 120px)" },
-  { icon: Target,        label: "Strategic Planning",  color: "#6366f1", side: "right", top: "calc(50% - 120px)" },
-  { icon: Cpu,           label: "Ed Technology",       color: "#8b5cf6", side: "left",  top: "calc(50% + 60px)"  },
-  { icon: Award,         label: "Academic Excellence", color: "#f59e0b", side: "right", top: "calc(50% + 60px)"  },
+  { icon: Compass, label: "Career Guidance",     color: "#5A6B4F", side: "left",  top: "calc(50% - 120px)" },
+  { icon: Users,   label: "Student Counselling", color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
+  { icon: PenLine, label: "Academic Coaching",   color: "#8FAE7A", side: "left",  top: "calc(50% + 60px)"  },
+  { icon: Cpu,     label: "Ed Technology",       color: "#A8C4A2", side: "right", top: "calc(50% + 60px)"  },
 ];
 
 export default function HeroSection() {
@@ -33,7 +33,7 @@ export default function HeroSection() {
       x: Math.random() * canvas.width,  y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,  vy: (Math.random() - 0.5) * 0.3,
       r: Math.random() * 1.5 + 0.4,     a: Math.random() * 0.3 + 0.07,
-      col: ["rgba(37,99,235,","rgba(99,102,241,"][Math.floor(Math.random() * 2)],
+      col: ["rgba(143,174,122,","rgba(107,143,163,"][Math.floor(Math.random() * 2)],
     }));
 
     let raf: number;
@@ -49,7 +49,7 @@ export default function HeroSection() {
           const d = Math.hypot(p.x - q.x, p.y - q.y);
           if (d < 100) {
             ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(37,99,235,${0.06*(1-d/100)})`; ctx.lineWidth=0.5; ctx.stroke();
+            ctx.strokeStyle = `rgba(143,174,122,${0.06*(1-d/100)})`; ctx.lineWidth=0.5; ctx.stroke();
           }
         });
       });
@@ -70,7 +70,7 @@ export default function HeroSection() {
       className="relative overflow-hidden"
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(160deg,#040c1f 0%,#071233 60%,#0a1628 100%)",
+        background: "linear-gradient(160deg,#10150c 0%,#1c2417 60%,#141a10 100%)",
       }}
     >
       {/* ── Background image + deep overlay ── */}
@@ -82,7 +82,7 @@ export default function HeroSection() {
           onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
         />
         <div className="absolute inset-0"
-          style={{ background: "linear-gradient(160deg,rgba(4,12,31,0.94),rgba(7,18,51,0.90),rgba(10,22,40,0.94))" }} />
+          style={{ background: "linear-gradient(160deg,rgba(16,21,12,0.94),rgba(28,36,23,0.90),rgba(20,26,16,0.94))" }} />
       </div>
 
       {/* ── Particle canvas ── */}
@@ -91,11 +91,11 @@ export default function HeroSection() {
         style={{ zIndex: 1, opacity: 0.4 }} />
 
       {/* ── Ambient orbs ── */}
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(37,99,235,0.1),transparent 70%)", filter: "blur(48px)" }} />
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(30,64,175,0.08),transparent 70%)", filter: "blur(40px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(143,174,122,0.1),transparent 70%)", filter: "blur(48px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(90,107,79,0.08),transparent 70%)", filter: "blur(40px)" }} />
 
       {/* ── Subtle grid overlay ── */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(37,99,235,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(143,174,122,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(143,174,122,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
 
       {/* ── Floating service badges — xl+ only, pinned to sides safely ── */}
       {floatingCards.map((card, i) => {
@@ -143,12 +143,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
-              style={{ background: "rgba(37,99,235,0.14)", border: "1px solid rgba(37,99,235,0.3)" }}
+              style={{ background: "rgba(143,174,122,0.14)", border: "1px solid rgba(143,174,122,0.3)" }}
             >
               {[0,1,2,3,4].map(i => (
                 <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
               ))}
-              <span className="text-xs font-semibold text-blue-300 ml-1">
+              <span className="text-xs font-semibold text-[#A8C4A2] ml-1">
                 Trusted by 500+ Students &amp; 200+ Institutions
               </span>
             </motion.div>
@@ -161,18 +161,18 @@ export default function HeroSection() {
               className="font-bold text-white tracking-tight leading-tight mb-5"
               style={{ fontSize: "clamp(1.875rem, 3vw + 1rem, 3rem)" }}
             >
-              Empowering{" "}
+              Growing{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg,#60a5fa 0%,#3b82f6 40%,#fbbf24 100%)",
+                  background: "linear-gradient(135deg,#A8C4A2 0%,#8FAE7A 40%,#6B8FA3 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
                 }}
               >
-                Educational
+                Students
               </span>{" "}
-              Excellence
+              Into Their Best Futures
             </motion.h1>
 
             {/* Subheadline */}
@@ -182,8 +182,9 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-8 leading-relaxed"
             >
-              Helping students, schools, and organisations across Botswana and
-              southern Africa achieve academic excellence through expert consulting.
+              A students support consultancy helping learners across Botswana and
+              southern Africa with career guidance, counselling, academic-writing
+              coaching, internship guidance, and educational technology.
             </motion.p>
 
             {/* CTA buttons */}
@@ -198,13 +199,13 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
                            text-white font-semibold text-sm transition-all duration-250
                            hover:-translate-y-0.5 w-full sm:w-auto"
-                style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)", boxShadow: "0 6px 22px rgba(37,99,235,0.4)" }}
+                style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 6px 22px rgba(90,107,79,0.4)" }}
               >
                 Book Free Consultation
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
               <button
-                onClick={() => router.push("/services/higher-education")}
+                onClick={() => router.push("/services/career-guidance")}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
                            font-semibold text-sm text-white transition-all duration-250
                            hover:bg-white/10 w-full sm:w-auto"

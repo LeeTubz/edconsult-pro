@@ -19,38 +19,36 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://edconsultpro.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "EduConsult Pro — Premier Educational Consulting in Botswana & Africa",
-    template: "%s | EduConsult Pro",
+    default: "Olive Shoots — Students Support Consultancy in Botswana & Africa",
+    template: "%s | Olive Shoots",
   },
   description:
-    "EduConsult Pro is Botswana's leading educational consulting firm offering expert guidance in higher education, school placement, academic planning, special education, curriculum development, and institutional strategy. Serving students, schools, and organisations across Botswana and southern Africa.",
+    "Olive Shoots is a students support consultancy offering career guidance, student counselling, academic-writing coaching, internship guidance, and educational technology training. Serving students and institutions across Botswana and southern Africa.",
   keywords: [
-    "educational consulting Botswana",
-    "Botswana education consultant",
-    "college admissions consulting Africa",
-    "school placement Botswana",
-    "higher education advisor Gaborone",
-    "academic consulting southern Africa",
-    "special education consultant Botswana",
-    "curriculum development Botswana",
+    "students support consultancy Botswana",
+    "career guidance Botswana",
+    "student counselling Botswana",
+    "academic writing coaching Africa",
+    "internship guidance Botswana",
     "educational technology Africa",
-    "strategic planning education Botswana",
     "university admissions Botswana",
     "UB admission help",
     "UNISA guidance",
     "UCT admissions Africa",
-    "K-12 school consultant Botswana",
-    "accreditation consulting Africa",
-    "education strategy Gaborone",
+    "subject choice advice Botswana",
+    "personal statement coaching Africa",
+    "school counsellor support Gaborone",
+    "career clarity Botswana",
+    "ODL and e-learning Botswana",
   ],
-  authors: [{ name: "EduConsult Pro" }],
-  creator: "EduConsult Pro",
-  publisher: "EduConsult Pro",
+  authors: [{ name: "Olive Shoots" }],
+  creator: "Olive Shoots",
+  publisher: "Olive Shoots",
   robots: {
     index: true,
     follow: true,
@@ -66,39 +64,30 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "EduConsult Pro",
-    title: "EduConsult Pro — Premier Educational Consulting Services",
+    siteName: "Olive Shoots",
+    title: "Olive Shoots — Students Support Consultancy",
     description:
-      "Empowering students, schools, and organizations through expert educational consulting. 500+ students guided, 200+ schools served, 98% success rate.",
+      "Guiding students through career clarity, counselling, coaching, and the pathways beyond the classroom. 500+ students guided, 200+ schools served, 98% success rate.",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "EduConsult Pro — Educational Consulting",
+        alt: "Olive Shoots — Students Support Consultancy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EduConsult Pro — Premier Educational Consulting",
+    title: "Olive Shoots — Students Support Consultancy",
     description:
-      "Expert educational consulting for students, schools, and organizations. Book your free consultation today.",
+      "Career guidance, counselling, coaching, and educational technology support for students. Book your free consultation today.",
     images: [`${siteUrl}/og-image.png`],
-    creator: "@edconsultpro",
+    creator: "@oliveshoots",
   },
   alternates: {
     canonical: siteUrl,
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180" },
-    ],
-  },
-  manifest: "/site.webmanifest",
   category: "education",
 };
 
@@ -107,8 +96,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#080f2a" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f4f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#141a10" },
   ],
 };
 
@@ -116,11 +105,11 @@ export const viewport: Viewport = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "EduConsult Pro",
+  name: "Olive Shoots",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description:
-    "Premier educational consulting firm offering expert guidance in higher education, school placement, academic planning, special education, curriculum development, and institutional strategy.",
+    "Students support consultancy offering career guidance, student counselling, academic-writing coaching, internship guidance, and educational technology training.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Plot 1234, Luthuli Road",
@@ -132,14 +121,14 @@ const structuredData = {
     "@type": "ContactPoint",
     telephone: "+267-71-234-567",
     contactType: "customer service",
-    email: "info@edconsultpro.com",
+    email: "info@oliveshoots.com",
     areaServed: ["BW", "ZA", "ZW", "NA", "ZM", "MW"],
     availableLanguage: ["English", "Setswana"],
   },
   sameAs: [
-    "https://www.linkedin.com/company/edconsultpro",
-    "https://twitter.com/edconsultpro",
-    "https://www.facebook.com/edconsultpro",
+    "https://www.linkedin.com/company/oliveshoots",
+    "https://twitter.com/oliveshoots",
+    "https://www.facebook.com/oliveshoots",
   ],
   foundingDate: "2009",
   numberOfEmployees: "25",

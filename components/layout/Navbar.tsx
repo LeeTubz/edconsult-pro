@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu, X, GraduationCap, ChevronDown,
+  Menu, X, ChevronDown,
   Phone, Mail, Sun, Moon,
 } from "lucide-react";
 import { useTheme } from "next-themes";
+import { LogoMark } from "@/components/ui/Logo";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -23,15 +24,13 @@ const navItems = [
   },
   {
     label: "Services",
-    href: "/services/higher-education",
+    href: "/services/career-guidance",
     children: [
-      { label: "Higher Education",     href: "/services/higher-education"      },
-      { label: "School Placement",     href: "/services/school-placement"      },
-      { label: "Academic Consulting",  href: "/services/academic-consulting"   },
-      { label: "Special Education",    href: "/services/special-education"     },
-      { label: "Curriculum Dev.",      href: "/services/curriculum-development"},
-      { label: "Ed. Technology",       href: "/services/educational-technology"},
-      { label: "Strategic Planning",   href: "/services/strategic-planning"    },
+      { label: "Career Guidance",       href: "/services/career-guidance"       },
+      { label: "Student Counselling",   href: "/services/student-counselling"   },
+      { label: "Coaching",              href: "/services/coaching"              },
+      { label: "Navigating Internship", href: "/services/navigating-internship" },
+      { label: "Educational Technology",href: "/services/educational-technology"},
     ],
   },
   { label: "Clients", href: "/clients"  },
@@ -88,7 +87,7 @@ export default function Navbar() {
       <div
         className="hidden lg:flex items-center justify-between px-6 xl:px-10 text-xs text-white/70 overflow-hidden transition-all duration-300"
         style={{
-          background:    "#060e24",
+          background:    "#10150c",
           maxHeight:     dark ? "0px" : "34px",
           paddingTop:    dark ? "0" : "6px",
           paddingBottom: dark ? "0" : "6px",
@@ -98,19 +97,19 @@ export default function Navbar() {
         aria-hidden={dark}
       >
         <div className="flex items-center gap-5">
-          <a href="mailto:info@edconsultpro.com"
-            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="mailto:info@oliveshoots.com"
+            className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
             <Mail className="w-3 h-3" />
-            info@edconsultpro.com
+            info@oliveshoots.com
           </a>
           <a href="tel:+26771234567"
-            className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+            className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
             <Phone className="w-3 h-3" />
             +267 71 234 567
           </a>
         </div>
         <span className="font-medium tracking-wide">
-          Botswana&apos;s Premier Educational Consulting Firm
+          Guiding Students, Growing Futures
         </span>
       </div>
 
@@ -118,7 +117,7 @@ export default function Navbar() {
       <nav
         className={`transition-all duration-300 ${dark ? "py-2" : "py-3"}`}
         style={{
-          background:     dark ? "rgba(7,17,44,0.97)" : "transparent",
+          background:     dark ? "rgba(16,21,12,0.97)" : "transparent",
           backdropFilter: dark ? "blur(18px)" : "none",
           boxShadow:      dark ? "0 1px 24px rgba(0,0,0,0.3)" : "none",
           borderBottom:   dark ? "1px solid rgba(255,255,255,0.07)" : "none",
@@ -131,16 +130,16 @@ export default function Navbar() {
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md
                          group-hover:scale-105 transition-transform duration-300"
-              style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)" }}
+              style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)" }}
             >
-              <GraduationCap className="w-5 h-5 text-white" />
+              <LogoMark className="w-5 h-5" />
             </div>
             <div>
               <div className="text-white font-bold text-base leading-tight tracking-tight">
-                EduConsult<span className="text-yellow-400">Pro</span>
+                Olive<span className="text-[#A8C4A2]">Shoots</span>
               </div>
               <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
-                Gaborone, Botswana
+                Students Support Consultancy
               </div>
             </div>
           </Link>
@@ -179,7 +178,7 @@ export default function Navbar() {
                       transition={{ duration: 0.18 }}
                       className="absolute top-full left-0 mt-1.5 w-52 rounded-xl overflow-hidden shadow-2xl"
                       style={{
-                        background:     "rgba(7,17,44,0.98)",
+                        background:     "rgba(16,21,12,0.98)",
                         border:         "1px solid rgba(255,255,255,0.09)",
                         backdropFilter: "blur(20px)",
                       }}
@@ -192,8 +191,8 @@ export default function Navbar() {
                                      hover:text-white hover:bg-white/[0.06]
                                      transition-all duration-150 flex items-center gap-2.5 group"
                         >
-                          <span className="w-1 h-1 rounded-full bg-blue-500
-                                           group-hover:bg-yellow-400 transition-colors flex-shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-[#8FAE7A]
+                                           group-hover:bg-[#A8C4A2] transition-colors flex-shrink-0" />
                           {child.label}
                         </button>
                       ))}
@@ -229,8 +228,8 @@ export default function Navbar() {
                          text-sm font-semibold text-white transition-all duration-250
                          hover:shadow-lg hover:-translate-y-0.5"
               style={{
-                background: "linear-gradient(135deg,#2563eb,#1e40af)",
-                boxShadow:  "0 3px 12px rgba(37,99,235,0.35)",
+                background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)",
+                boxShadow:  "0 3px 12px rgba(90,107,79,0.35)",
               }}
             >
               Book Consultation
@@ -263,7 +262,7 @@ export default function Navbar() {
             transition={{ duration: 0.28, ease: "easeInOut" }}
             className="lg:hidden overflow-hidden"
             style={{
-              background:   "rgba(6,14,35,0.99)",
+              background:   "rgba(15,20,11,0.99)",
               borderBottom: "1px solid rgba(255,255,255,0.07)",
             }}
           >
@@ -311,14 +310,14 @@ export default function Navbar() {
                 <button
                   onClick={() => navigate("/contact")}
                   className="w-full py-3 rounded-xl text-white font-semibold text-sm"
-                  style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)" }}
+                  style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)" }}
                 >
                   Book Free Consultation
                 </button>
                 <div className="flex flex-col gap-2 mt-3 px-1">
-                  <a href="mailto:info@edconsultpro.com"
+                  <a href="mailto:info@oliveshoots.com"
                     className="text-xs text-white/45 flex items-center gap-2">
-                    <Mail className="w-3 h-3" /> info@edconsultpro.com
+                    <Mail className="w-3 h-3" /> info@oliveshoots.com
                   </a>
                   <a href="tel:+26771234567"
                     className="text-xs text-white/45 flex items-center gap-2">

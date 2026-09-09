@@ -26,12 +26,12 @@ export default function PageHero({
   breadcrumbs,
   primaryCta,
   secondaryCta,
-  accentColor = "#2563eb",
+  accentColor = "#5A6B4F",
 }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
-      style={{ background: "linear-gradient(135deg, #040c1f 0%, #070e24 50%, #0a1640 100%)" }}
+      style={{ background: "linear-gradient(135deg, #10150c 0%, #1c2417 50%, #141a10 100%)" }}
     >
       {/* Ambient glow */}
       <div
@@ -44,7 +44,7 @@ export default function PageHero({
       <div
         className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(107,143,163,0.06) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -53,7 +53,7 @@ export default function PageHero({
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
-          backgroundImage: `linear-gradient(rgba(37,99,235,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.05) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(143,174,122,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(143,174,122,0.05) 1px, transparent 1px)`,
           backgroundSize: "56px 56px",
         }}
       />
@@ -133,7 +133,7 @@ export default function PageHero({
               <Link
                 href={primaryCta.href}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: `linear-gradient(135deg, ${accentColor}, #1e40af)`, boxShadow: `0 4px 20px ${accentColor}40` }}
+                style={{ background: `linear-gradient(135deg, ${accentColor}, #5A6B4F)`, boxShadow: `0 4px 20px ${accentColor}40` }}
               >
                 {primaryCta.label}
               </Link>

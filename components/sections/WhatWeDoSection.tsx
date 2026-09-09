@@ -8,74 +8,53 @@ import {
   Lightbulb,
   Cog,
   BarChart2,
-  Cpu,
-  ShieldCheck,
-  ArrowRight,
 } from "lucide-react";
 
 const processes = [
   {
     step: "01",
     icon: ClipboardList,
-    title: "Assessment & Needs Analysis",
+    title: "Discovery Call",
     description:
-      "We begin with a comprehensive evaluation of your unique educational landscape — analyzing strengths, gaps, goals, and constraints to build a complete picture of what success looks like for you.",
-    color: "#2563eb",
-    features: ["Diagnostic evaluation", "Stakeholder interviews", "Gap analysis", "Goal mapping"],
+      "We start with a free discovery call to understand your goals, challenges, and what the right kind of support looks like for you.",
+    color: "#5A6B4F",
+    features: ["Free consultation", "Goal setting", "Needs assessment", "No obligation"],
   },
   {
     step: "02",
     icon: Map,
-    title: "Strategic Planning",
+    title: "Personalised Plan",
     description:
-      "From insights gathered, we develop a tailored, actionable educational growth plan with clear milestones, timelines, and measurable outcomes aligned to your aspirations.",
-    color: "#7c3aed",
-    features: ["Custom roadmap", "KPI definition", "Resource planning", "Risk assessment"],
+      "We build a tailored support plan — whether that's career guidance, counselling, coaching, or internship guidance — matched to your specific needs.",
+    color: "#6B8FA3",
+    features: ["Tailored plan", "Right-fit service", "Clear milestones", "Flexible scheduling"],
   },
   {
     step: "03",
     icon: Lightbulb,
-    title: "Solution Development",
+    title: "One-on-One Support",
     description:
-      "We create innovative, evidence-based educational solutions designed specifically for your context — whether it's curriculum redesign, technology adoption, or academic program development.",
-    color: "#d97706",
-    features: ["Custom solutions", "Best practices", "Innovation frameworks", "Prototype testing"],
+      "You work directly with a dedicated consultant through regular sessions — not a call centre, and not a one-size-fits-all template.",
+    color: "#8FAE7A",
+    features: ["Dedicated consultant", "Regular sessions", "Confidential", "Personal attention"],
   },
   {
     step: "04",
     icon: Cog,
-    title: "Implementation & Training",
+    title: "Practical Tools & Resources",
     description:
-      "Our hands-on implementation support ensures seamless execution — including comprehensive staff training, process integration, and change management to maximize adoption.",
-    color: "#059669",
-    features: ["Hands-on support", "Staff training", "Change management", "Process integration"],
+      "We equip you with practical techniques, coaching tools, and resources you can keep using long after our sessions end.",
+    color: "#6F8C5B",
+    features: ["Practical techniques", "Take-home resources", "Real-world skills", "Ongoing access"],
   },
   {
     step: "05",
     icon: BarChart2,
-    title: "Evaluation & Reporting",
+    title: "Ongoing Check-ins",
     description:
-      "We rigorously measure outcomes against defined objectives, delivering transparent reports with actionable insights that inform continuous improvement and demonstrate impact.",
-    color: "#0891b2",
-    features: ["Impact measurement", "Data reporting", "Outcome analysis", "Continuous improvement"],
-  },
-  {
-    step: "06",
-    icon: Cpu,
-    title: "Educational Technology",
-    description:
-      "We keep your institution ahead of the curve by integrating the latest educational technologies, digital platforms, and AI-powered tools that enhance learning outcomes.",
-    color: "#dc2626",
-    features: ["LMS integration", "AI tools", "Digital platforms", "Tech training"],
-  },
-  {
-    step: "07",
-    icon: ShieldCheck,
-    title: "Quality Assurance",
-    description:
-      "We embed quality at every stage, ensuring educational programs meet the highest academic standards and regulatory requirements, and continue to evolve with excellence.",
-    color: "#0f766e",
-    features: ["Standards compliance", "Accreditation prep", "Quality audits", "Policy review"],
+      "We follow up regularly to track progress and adjust the plan as your needs evolve — support doesn't end after the first session.",
+    color: "#A8C4A2",
+    features: ["Progress tracking", "Regular follow-up", "Plan adjustments", "Long-term support"],
   },
 ];
 
@@ -93,7 +72,7 @@ export default function WhatWeDoSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(37, 99, 235, 0.04) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(90, 107, 79, 0.04) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
@@ -108,32 +87,32 @@ export default function WhatWeDoSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">How We Work</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">How We Work</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Our{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #fbbf24 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              Consulting Process
+              Support Process
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            A proven, structured methodology that delivers measurable educational
-            transformation at every stage of your journey.
+            A simple, structured approach that delivers real support at every
+            stage of your journey.
           </p>
         </motion.div>
 
         {/* Process Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {processes.slice(0, 6).map((p, i) => {
+          {processes.slice(0, 4).map((p, i) => {
             const Icon = p.icon;
             return (
               <motion.div
@@ -209,9 +188,9 @@ export default function WhatWeDoSection() {
           })}
         </div>
 
-        {/* 7th item centered */}
+        {/* 5th item centered */}
         <div className="flex justify-center">
-          {processes.slice(6).map((p, i) => {
+          {processes.slice(4).map((p, i) => {
             const Icon = p.icon;
             return (
               <motion.div

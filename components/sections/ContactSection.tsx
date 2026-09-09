@@ -22,29 +22,29 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Office Address",
-    value: "123 Education Drive, Suite 500\nNew York, NY 10001",
-    color: "#2563eb",
+    value: "Plot 1234, Luthuli Road\nGaborone, Botswana",
+    color: "#5A6B4F",
     action: "https://maps.google.com",
   },
   {
     icon: Phone,
     label: "Phone Number",
     value: "+267 71 234 567",
-    color: "#059669",
+    color: "#8FAE7A",
     action: "tel:+26771234567",
   },
   {
     icon: Mail,
     label: "Email Address",
-    value: "info@edconsultpro.com",
-    color: "#7c3aed",
-    action: "mailto:info@edconsultpro.com",
+    value: "info@oliveshoots.com",
+    color: "#6B8FA3",
+    action: "mailto:info@oliveshoots.com",
   },
   {
     icon: Clock,
     label: "Office Hours",
-    value: "Mon–Fri: 9AM – 6PM EST\nSat: 10AM – 2PM EST",
-    color: "#d97706",
+    value: "Mon–Fri: 9AM – 6PM CAT\nSat: 10AM – 2PM CAT",
+    color: "#6F8C5B",
     action: null,
   },
 ];
@@ -95,7 +95,7 @@ export default function ContactSection() {
     `w-full px-4 py-3.5 rounded-xl text-sm border outline-none transition-all duration-200 ${
       err
         ? "border-red-400 bg-red-50/30"
-        : "border-[var(--card-border)] bg-[var(--muted-bg)] focus:border-blue-500"
+        : "border-[var(--card-border)] bg-[var(--muted-bg)] focus:border-[#8FAE7A]"
     }`;
 
   return (
@@ -108,7 +108,7 @@ export default function ContactSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(90, 107, 79, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(90, 107, 79, 0.03) 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
@@ -123,15 +123,15 @@ export default function ContactSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Contact Us</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Contact Us</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Let's Start a{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -178,7 +178,7 @@ export default function ContactSection() {
                         href={info.action}
                         target={info.action.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="text-sm font-medium whitespace-pre-line hover:text-blue-600 transition-colors"
+                        className="text-sm font-medium whitespace-pre-line hover:text-[#5A6B4F] transition-colors"
                         style={{ color: "var(--foreground)" }}
                       >
                         {info.value}
@@ -258,7 +258,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="EduConsult Pro Office — Gaborone, Botswana"
+                title="Olive Shoots Office — Gaborone, Botswana"
               />
             </div>
           </motion.div>
@@ -365,13 +365,11 @@ export default function ContactSection() {
                       style={{ color: "var(--foreground)" }}
                     >
                       <option value="">Select a service</option>
-                      <option>Higher Education Consulting</option>
-                      <option>School Placement</option>
-                      <option>Academic Consulting</option>
-                      <option>Special Education</option>
-                      <option>Curriculum Development</option>
+                      <option>Career Guidance</option>
+                      <option>Student Counselling</option>
+                      <option>Coaching</option>
+                      <option>Navigating Internship</option>
                       <option>Educational Technology</option>
-                      <option>Strategic Planning</option>
                       <option>Other</option>
                     </select>
                     {errors.service && (
@@ -413,7 +411,7 @@ export default function ContactSection() {
                     type="submit"
                     disabled={submitState === "loading"}
                     className="w-full py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-2 transition-all hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-60"
-                    style={{ background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
                   >
                     {submitState === "loading" ? (
                       <><Loader2 className="w-5 h-5 animate-spin" /> Sending...</>

@@ -6,133 +6,91 @@ import { useInView } from "react-intersection-observer";
 import {
   User,
   School,
-  Building2,
   CheckCircle,
   GraduationCap,
-  Brain,
+  Compass,
   BookOpen,
   Users,
-  BarChart3,
   Cpu,
   Briefcase,
-  Globe,
 } from "lucide-react";
 
 const clientSegments = [
   {
     id: "individuals",
     icon: User,
-    label: "Individuals & Families",
-    tagline: "Personalized guidance for students at every level",
-    color: "#2563eb",
+    label: "Students & Families",
+    tagline: "Personalised guidance for students at every level",
+    color: "#5A6B4F",
     services: [
       {
+        icon: Compass,
+        title: "Career Clarity & Reality Checks",
+        desc: "Subject-choice advice and pathway guidance that pushes for the 'best fit' — not university admission only.",
+      },
+      {
         icon: GraduationCap,
-        title: "College Admissions Counseling",
-        desc: "Strategic support for undergraduate and graduate school applications to competitive universities worldwide.",
-      },
-      {
-        icon: BookOpen,
-        title: "Higher Education Advising",
-        desc: "Expert guidance on program selection, financial aid, scholarships, and long-term academic planning.",
-      },
-      {
-        icon: School,
-        title: "K-12 School Placement",
-        desc: "Finding the right school environment to match each student's learning style, interests, and aspirations.",
-      },
-      {
-        icon: Brain,
-        title: "Learning Disability Support",
-        desc: "Specialized advocacy and resources for students with learning differences to thrive academically.",
-      },
-      {
-        icon: BookOpen,
-        title: "Academic Planning",
-        desc: "Comprehensive academic roadmaps ensuring students build the profiles needed for their goals.",
+        title: "University Admissions Assistance",
+        desc: "Support with university admissions and queries, including personal statement coaching and interview prep.",
       },
       {
         icon: Users,
-        title: "Counselor Collaboration",
-        desc: "Working alongside school counselors to provide complementary, expert support for student success.",
+        title: "Student Counselling",
+        desc: "A confidential space to navigate the social and academic sides of student life and find real balance.",
+      },
+      {
+        icon: BookOpen,
+        title: "Academic Writing Coaching",
+        desc: "One-on-one coaching for assignments, research projects, and dissertations at college and university level.",
+      },
+      {
+        icon: Briefcase,
+        title: "Navigating Internship",
+        desc: "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
+      },
+      {
+        icon: School,
+        title: "Alongside School Counsellors",
+        desc: "We work together with school counsellors and advisors, not in competition with them, for the same goal.",
       },
     ],
   },
   {
     id: "schools",
     icon: School,
-    label: "Schools & Districts",
-    tagline: "Elevating institutional performance and outcomes",
-    color: "#7c3aed",
+    label: "Schools & Institutions",
+    tagline: "Practical training and student support programmes for schools",
+    color: "#6B8FA3",
     services: [
-      {
-        icon: BookOpen,
-        title: "Curriculum Development",
-        desc: "Design and review of rigorous, standards-aligned curricula that engage students and drive achievement.",
-      },
       {
         icon: Users,
-        title: "Teacher Professional Development",
-        desc: "Impactful training programs that build teacher capacity and improve classroom effectiveness.",
-      },
-      {
-        icon: BarChart3,
-        title: "Accreditation Support",
-        desc: "Comprehensive preparation and guidance through regional and national accreditation processes.",
-      },
-      {
-        icon: Globe,
-        title: "Strategic Planning",
-        desc: "Long-term institutional planning that aligns resources, stakeholders, and goals for sustainable growth.",
-      },
-      {
-        icon: Brain,
-        title: "Special Education Evaluation",
-        desc: "Expert assessment and program development for students requiring specialized educational support.",
-      },
-      {
-        icon: School,
-        title: "School Consulting",
-        desc: "Holistic school improvement consulting covering leadership, culture, operations, and academics.",
-      },
-    ],
-  },
-  {
-    id: "organizations",
-    icon: Building2,
-    label: "Organizations & Businesses",
-    tagline: "Corporate education solutions that drive results",
-    color: "#d97706",
-    services: [
-      {
-        icon: Briefcase,
-        title: "Employee Training Programs",
-        desc: "Custom learning and development programs that enhance workforce skills and organizational performance.",
+        title: "Staff Capacity Building",
+        desc: "Practical training that builds real, lasting confidence with classroom and administrative technology.",
       },
       {
         icon: Cpu,
-        title: "EdTech Integration",
-        desc: "Strategic integration of educational technology tools to modernize training and learning systems.",
+        title: "Training via Webinars",
+        desc: "Accessible webinar-based training for staff and teachers, wherever they are.",
       },
       {
-        icon: BarChart3,
-        title: "Educational Market Research",
-        desc: "In-depth research and analysis of educational markets, trends, and opportunities for strategic decision-making.",
+        icon: School,
+        title: "ODL & E-Learning Consultancy",
+        desc: "Guidance on setting up and running effective open and distance learning and e-learning programmes.",
       },
       {
-        icon: BookOpen,
-        title: "Corporate Training Design",
-        desc: "Instructional design services that create engaging, effective corporate learning experiences.",
+        icon: Cpu,
+        title: "Video & Audio Content Creation",
+        desc: "Support for planning and producing engaging video and audio lessons for e-learning.",
       },
       {
-        icon: Globe,
-        title: "Policy & Compliance Advisory",
-        desc: "Expert guidance on educational regulations, policies, and compliance requirements across jurisdictions.",
+        icon: Compass,
+        title: "Career Guidance Workshops",
+        desc: "On-site career clarity workshops helping your students choose subjects and map academic pathways.",
       },
       {
-        icon: BarChart3,
-        title: "Impact Assessment",
-        desc: "Measuring the ROI and educational impact of organizational learning and development investments.",
+        icon: Briefcase,
+        title: "Internship Readiness Workshops",
+        desc: "Practical workshops preparing final-year students for internships and early work experience.",
       },
     ],
   },
@@ -161,15 +119,15 @@ export default function ClientsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Who We Serve</span>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Who We Serve</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Solutions for Every{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -179,8 +137,9 @@ export default function ClientsSection() {
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            Whether you're an individual seeking personal guidance, a school looking to
-            improve, or an organization investing in education — we have the expertise.
+            Whether you're a student or family seeking personal guidance, or a school
+            looking to build staff capacity and support your students — we have the
+            right service for you.
           </p>
         </motion.div>
 

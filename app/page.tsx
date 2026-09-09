@@ -8,9 +8,9 @@ import BlogPreview from "@/components/sections/home/BlogPreview";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: "EduConsult Pro — Premier Educational Consulting in Botswana & Africa",
+  title: "Olive Shoots — Students Support Consultancy in Botswana & Africa",
   description:
-    "Botswana's leading educational consulting firm. Expert guidance in higher education, school placement, academic planning, special education, and institutional strategy.",
+    "Guiding students through career clarity, counselling, academic-writing coaching, internship guidance, and educational technology.",
 };
 
 export default function HomePage() {

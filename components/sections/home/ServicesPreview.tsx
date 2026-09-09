@@ -3,57 +3,43 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { GraduationCap, School, Brain, Layers, Cpu, BarChart3, BookOpen, ArrowRight } from "lucide-react";
+import { Compass, Users, PenLine, Briefcase, Cpu, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: GraduationCap,
-    title: "Higher Education",
-    description: "Expert guidance on university admissions, graduate programs, scholarships, and international study for students across Botswana and Africa.",
-    color: "#2563eb",
-    href: "/services/higher-education",
+    icon: Compass,
+    title: "Career Guidance",
+    description: "Subject-choice advice and reality checks that push for the 'best fit' — not university admission only — plus academic pathway mapping and university admissions support.",
+    color: "#5A6B4F",
+    href: "/services/career-guidance",
   },
   {
-    icon: School,
-    title: "School Placement",
-    description: "Find the right K-12 school for your child — from government and private schools to boarding and international institutions.",
-    color: "#7c3aed",
-    href: "/services/school-placement",
+    icon: Users,
+    title: "Student Counselling",
+    description: "Support for the social and academic sides of student life — navigating challenges and striking a balance while studying for success.",
+    color: "#6B8FA3",
+    href: "/services/student-counselling",
   },
   {
-    icon: BookOpen,
-    title: "Academic Consulting",
-    description: "Personalised academic planning, study skills coaching, test preparation, and college essay support to maximise student potential.",
-    color: "#059669",
-    href: "/services/academic-consulting",
+    icon: PenLine,
+    title: "Coaching",
+    description: "Mastering academic writing at college and university level — assignment writing, research projects, and dissertation support.",
+    color: "#8FAE7A",
+    href: "/services/coaching",
   },
   {
-    icon: Brain,
-    title: "Special Education",
-    description: "Dedicated support for students with diverse learning needs — IEP development, learning disability advocacy, and inclusive education planning.",
-    color: "#dc2626",
-    href: "/services/special-education",
-  },
-  {
-    icon: Layers,
-    title: "Curriculum Development",
-    description: "Evidence-based curriculum design, standards alignment, and programme evaluation for schools and educational institutions.",
-    color: "#d97706",
-    href: "/services/curriculum-development",
+    icon: Briefcase,
+    title: "Navigating Internship",
+    description: "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
+    color: "#6F8C5B",
+    href: "/services/navigating-internship",
   },
   {
     icon: Cpu,
     title: "Educational Technology",
-    description: "Strategic integration of LMS platforms, AI-powered learning tools, and digital transformation frameworks for modern institutions.",
-    color: "#0891b2",
+    description: "Staff capacity building and training via webinars, plus consultancy on ODL, e-learning, and video/audio content creation.",
+    color: "#A8C4A2",
     href: "/services/educational-technology",
-  },
-  {
-    icon: BarChart3,
-    title: "Strategic Planning",
-    description: "Institutional strategic planning, accreditation preparation, data analytics, and change management for sustained educational excellence.",
-    color: "#0f766e",
-    href: "/services/strategic-planning",
   },
 ];
 
@@ -67,7 +53,7 @@ export default function ServicesPreview() {
       ref={ref}
     >
       <div className="absolute inset-0 pointer-events-none"
-        style={{ backgroundImage: "radial-gradient(circle, rgba(37,99,235,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+        style={{ backgroundImage: "radial-gradient(circle, rgba(90,107,79,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -78,24 +64,24 @@ export default function ServicesPreview() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.2)" }}>
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">What We Offer</span>
+            style={{ background: "rgba(90,107,79,0.08)", border: "1px solid rgba(90,107,79,0.2)" }}>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">What We Offer</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
-            Consulting Services for{" "}
-            <span style={{ background: "linear-gradient(135deg,#2563eb,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Every Need
+            Support Services for{" "}
+            <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Every Student
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            From individual students to entire institutions — we offer a full suite of
-            educational consulting services tailored to your unique goals.
+            From career clarity to classroom technology — we offer a focused suite of
+            student support services tailored to your unique goals.
           </p>
         </motion.div>
 
         {/* Services grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {services.slice(0, 6).map((s, i) => {
+          {services.map((s, i) => {
             const Icon = s.icon;
             return (
               <motion.div
@@ -132,8 +118,8 @@ export default function ServicesPreview() {
           className="text-center"
         >
           <Link
-            href="/services/higher-education"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold transition-all duration-300 hover:-translate-y-1"
+            href="/services/career-guidance"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-[#5A6B4F] text-[#5A6B4F] hover:bg-[#5A6B4F] hover:text-white font-semibold transition-all duration-300 hover:-translate-y-1"
           >
             View All Services <ArrowRight className="w-4 h-4" />
           </Link>

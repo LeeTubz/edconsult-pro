@@ -62,40 +62,40 @@ export async function POST(request: NextRequest) {
         const resend = new Resend(resendApiKey);
 
         await resend.emails.send({
-          from: "EduConsult Pro <noreply@edconsultpro.com>",
-          to: [process.env.CONTACT_EMAIL || "info@edconsultpro.com"],
+          from: "Olive Shoots <noreply@oliveshoots.com>",
+          to: [process.env.CONTACT_EMAIL || "info@oliveshoots.com"],
           subject: `New Consultation Request from ${fullName}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <div style="background: linear-gradient(135deg, #0a1628, #1e3a8a); padding: 32px; border-radius: 12px 12px 0 0;">
+              <div style="background: linear-gradient(135deg, #1c2417, #5A6B4F); padding: 32px; border-radius: 12px 12px 0 0;">
                 <h1 style="color: white; margin: 0; font-size: 24px;">New Consultation Request</h1>
-                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">EduConsult Pro — Educational Consulting</p>
+                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">Olive Shoots — Students Support Consultancy</p>
               </div>
-              <div style="background: #f8fafc; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0;">
+              <div style="background: #F5F4F0; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #dde4d0;">
                 <table style="width: 100%; border-collapse: collapse;">
                   <tr>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b; width: 140px;">Name</td>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #475569;">${fullName}</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; font-weight: bold; color: #2b3327; width: 140px;">Name</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; color: #5f6b58;">${fullName}</td>
                   </tr>
                   <tr>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b;">Email</td>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #475569;">${email}</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; font-weight: bold; color: #2b3327;">Email</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; color: #5f6b58;">${email}</td>
                   </tr>
                   <tr>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b;">Phone</td>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #475569;">${phone}</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; font-weight: bold; color: #2b3327;">Phone</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; color: #5f6b58;">${phone}</td>
                   </tr>
                   <tr>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b;">Service</td>
-                    <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #475569;">${service}</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; font-weight: bold; color: #2b3327;">Service</td>
+                    <td style="padding: 12px 0; border-bottom: 1px solid #dde4d0; color: #5f6b58;">${service}</td>
                   </tr>
                   <tr>
-                    <td style="padding: 12px 0; font-weight: bold; color: #1e293b; vertical-align: top;">Message</td>
-                    <td style="padding: 12px 0; color: #475569; line-height: 1.6;">${message.replace(/\n/g, "<br>")}</td>
+                    <td style="padding: 12px 0; font-weight: bold; color: #2b3327; vertical-align: top;">Message</td>
+                    <td style="padding: 12px 0; color: #5f6b58; line-height: 1.6;">${message.replace(/\n/g, "<br>")}</td>
                   </tr>
                 </table>
-                <div style="margin-top: 24px; padding: 16px; background: #eff6ff; border-radius: 8px; border: 1px solid #bfdbfe;">
-                  <p style="margin: 0; color: #1d4ed8; font-size: 14px;">
+                <div style="margin-top: 24px; padding: 16px; background: #eef2e8; border-radius: 8px; border: 1px solid #cdd8c2;">
+                  <p style="margin: 0; color: #5A6B4F; font-size: 14px;">
                     Reply to this email to respond directly to ${fullName} at ${email}
                   </p>
                 </div>
@@ -107,33 +107,33 @@ export async function POST(request: NextRequest) {
 
         // Send confirmation to the client
         await resend.emails.send({
-          from: "EduConsult Pro <noreply@edconsultpro.com>",
+          from: "Olive Shoots <noreply@oliveshoots.com>",
           to: [email],
-          subject: "We received your consultation request — EduConsult Pro",
+          subject: "We received your consultation request — Olive Shoots",
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-              <div style="background: linear-gradient(135deg, #0a1628, #1e3a8a); padding: 40px; border-radius: 12px 12px 0 0; text-align: center;">
+              <div style="background: linear-gradient(135deg, #1c2417, #5A6B4F); padding: 40px; border-radius: 12px 12px 0 0; text-align: center;">
                 <h1 style="color: white; margin: 0 0 8px; font-size: 28px;">Thank You, ${fullName}!</h1>
                 <p style="color: rgba(255,255,255,0.7); margin: 0;">We've received your consultation request</p>
               </div>
-              <div style="background: #f8fafc; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0;">
-                <p style="color: #475569; line-height: 1.7;">
-                  Thank you for reaching out to EduConsult Pro. We're excited to learn more about your educational goals and how we can help you achieve them.
+              <div style="background: #F5F4F0; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #dde4d0;">
+                <p style="color: #5f6b58; line-height: 1.7;">
+                  Thank you for reaching out to Olive Shoots. We're excited to learn more about your goals and how we can help you get there.
                 </p>
-                <p style="color: #475569; line-height: 1.7;">
-                  One of our expert consultants will contact you within <strong style="color: #1e293b;">24 hours</strong> to schedule your free discovery call.
+                <p style="color: #5f6b58; line-height: 1.7;">
+                  One of our consultants will contact you within <strong style="color: #2b3327;">24 hours</strong> to schedule your free discovery call.
                 </p>
-                <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 0 8px 8px 0; margin: 24px 0;">
-                  <p style="margin: 0; color: #1d4ed8; font-weight: bold;">Your Request Summary</p>
-                  <p style="margin: 8px 0 0; color: #475569;">Service: ${service}</p>
+                <div style="background: #eef2e8; border-left: 4px solid #8FAE7A; padding: 16px; border-radius: 0 8px 8px 0; margin: 24px 0;">
+                  <p style="margin: 0; color: #5A6B4F; font-weight: bold;">Your Request Summary</p>
+                  <p style="margin: 8px 0 0; color: #5f6b58;">Service: ${service}</p>
                 </div>
-                <p style="color: #475569; margin-top: 24px;">
-                  In the meantime, feel free to explore our <a href="#" style="color: #2563eb;">blog</a> for educational insights.
+                <p style="color: #5f6b58; margin-top: 24px;">
+                  In the meantime, feel free to explore our <a href="#" style="color: #5A6B4F;">blog</a> for student support insights.
                 </p>
                 <p style="color: #94a3b8; font-size: 14px; margin-top: 32px;">
-                  EduConsult Pro | 123 Education Drive, Suite 500, New York, NY 10001<br>
-                  <a href="tel:+12345678900" style="color: #94a3b8;">+1 (234) 567-8900</a> |
-                  <a href="mailto:info@edconsultpro.com" style="color: #94a3b8;">info@edconsultpro.com</a>
+                  Olive Shoots | Plot 1234, Luthuli Road, Gaborone, Botswana<br>
+                  <a href="tel:+26771234567" style="color: #94a3b8;">+267 71 234 567</a> |
+                  <a href="mailto:info@oliveshoots.com" style="color: #94a3b8;">info@oliveshoots.com</a>
                 </p>
               </div>
             </div>

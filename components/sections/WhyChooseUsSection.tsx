@@ -17,8 +17,8 @@ const reasons = [
     icon: Users,
     title: "Expert Consultants",
     description:
-      "Our team comprises credentialed professionals with decades of experience across all levels of education — from K-12 to postgraduate and institutional leadership.",
-    color: "#2563eb",
+      "Our team comprises credentialed professionals with experience across career guidance, counselling, academic coaching, and educational technology.",
+    color: "#5A6B4F",
     stat: "25+",
     statLabel: "Expert Consultants",
   },
@@ -27,7 +27,7 @@ const reasons = [
     title: "Personalized Guidance",
     description:
       "Every engagement begins with deep listening. We tailor every strategy, recommendation, and solution to your specific context, goals, and challenges.",
-    color: "#7c3aed",
+    color: "#6B8FA3",
     stat: "100%",
     statLabel: "Customized Solutions",
   },
@@ -36,7 +36,7 @@ const reasons = [
     title: "Data-Driven Strategy",
     description:
       "Our recommendations are grounded in rigorous research, benchmarking, and educational data analytics — ensuring every decision is evidence-based.",
-    color: "#059669",
+    color: "#8FAE7A",
     stat: "98%",
     statLabel: "Success Rate",
   },
@@ -45,7 +45,7 @@ const reasons = [
     title: "Educational Innovation",
     description:
       "We stay at the frontier of educational research, technology, and policy — bringing cutting-edge approaches to every engagement.",
-    color: "#d97706",
+    color: "#6F8C5B",
     stat: "50+",
     statLabel: "Countries Reached",
   },
@@ -53,17 +53,17 @@ const reasons = [
     icon: TrendingUp,
     title: "Proven Results",
     description:
-      "With a track record of 500+ successful student placements and transformative school partnerships, our outcomes speak for themselves.",
-    color: "#dc2626",
+      "With a track record of 500+ students guided and transformative school partnerships, our outcomes speak for themselves.",
+    color: "#4A6B7A",
     stat: "500+",
-    statLabel: "Successful Placements",
+    statLabel: "Students Guided",
   },
   {
     icon: HeartHandshake,
     title: "Professional Support",
     description:
       "We are committed partners throughout your entire journey — providing responsive, professional support long after the initial engagement.",
-    color: "#0891b2",
+    color: "#A8C4A2",
     stat: "24/7",
     statLabel: "Support Available",
   },
@@ -82,19 +82,19 @@ export default function WhyChooseUsSection() {
       {/* Dark background section */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(135deg, #070e24 0%, #0d1840 50%, #071228 100%)" }}
+        style={{ background: "linear-gradient(135deg, #10150c 0%, #1c2417 50%, #10150c 100%)" }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(143, 174, 122, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 174, 122, 0.04) 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
       <div
         className="absolute top-0 right-0 w-150 h-150 pointer-events-none rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(143, 174, 122, 0.08) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -109,15 +109,15 @@ export default function WhyChooseUsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(251, 191, 36, 0.1)", border: "1px solid rgba(251, 191, 36, 0.25)" }}
+            style={{ background: "rgba(107, 143, 163, 0.1)", border: "1px solid rgba(107, 143, 163, 0.25)" }}
           >
-            <span className="text-sm font-semibold text-yellow-400">The EduConsult Difference</span>
+            <span className="text-sm font-semibold text-[#A8C4A2]">The Olive Shoots Difference</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
             Why Leading Clients{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #60a5fa 0%, #fbbf24 100%)",
+                background: "linear-gradient(135deg, #A8C4A2 0%, #6B8FA3 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

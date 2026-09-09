@@ -1,43 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors - Navy */
-  --color-navy-50: #eef2ff;
-  --color-navy-100: #e0e7ff;
-  --color-navy-200: #c7d2fe;
-  --color-navy-300: #a5b4fc;
-  --color-navy-400: #818cf8;
-  --color-navy-500: #4f62c0;
-  --color-navy-600: #3d4fa0;
-  --color-navy-700: #2d3d80;
-  --color-navy-800: #1e2d66;
-  --color-navy-900: #112044;
-  --color-navy-950: #080f2a;
+  /* Brand Colors - Olive */
+  --color-olive-50: #f4f6f2;
+  --color-olive-100: #e6ebe0;
+  --color-olive-200: #cdd8c2;
+  --color-olive-300: #aec29c;
+  --color-olive-400: #8fae7a;
+  --color-olive-500: #7a9a68;
+  --color-olive-600: #5a6b4f;
+  --color-olive-700: #4a5842;
+  --color-olive-800: #3a4534;
+  --color-olive-900: #2b3327;
+  --color-olive-950: #1c2417;
 
-  /* Brand Colors - Royal Blue */
-  --color-royal-50: #eff6ff;
-  --color-royal-100: #dbeafe;
-  --color-royal-200: #bfdbfe;
-  --color-royal-300: #93c5fd;
-  --color-royal-400: #60a5fa;
-  --color-royal-500: #3b82f6;
-  --color-royal-600: #2563eb;
-  --color-royal-700: #1d4ed8;
-  --color-royal-800: #1e40af;
-  --color-royal-900: #1e3a8a;
-  --color-royal-950: #172554;
+  /* Brand Colors - Dusty Teal */
+  --color-teal-50: #eef3f4;
+  --color-teal-100: #d9e4e8;
+  --color-teal-200: #b8cdd4;
+  --color-teal-300: #96b3bd;
+  --color-teal-400: #6b8fa3;
+  --color-teal-500: #587a8d;
+  --color-teal-600: #4a6b7a;
+  --color-teal-700: #3d5763;
+  --color-teal-800: #2f434c;
+  --color-teal-900: #222f36;
 
-  /* Brand Colors - Gold */
-  --color-gold-50: #fffbeb;
-  --color-gold-100: #fef3c7;
-  --color-gold-200: #fde68a;
-  --color-gold-300: #fcd34d;
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
-  --color-gold-600: #d97706;
-  --color-gold-700: #b45309;
-  --color-gold-800: #92400e;
-  --color-gold-900: #78350f;
+  /* Brand Colors - Cream */
+  --color-cream-50: #fdfcfa;
+  --color-cream-100: #f5f4f0;
+  --color-cream-200: #ece9e0;
+  --color-cream-300: #ded9cb;
 
   /* Custom Fonts */
   --font-display: var(--font-playfair), Georgia, serif;
@@ -72,29 +65,29 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --background:        #ffffff;
-  --foreground:        #0f172a;
+  --background:        #f5f4f0;
+  --foreground:         #2b3327;
   --card-bg:           #ffffff;
-  --card-border:       #dde4f2;
-  --card-shadow:       0 1px 3px rgba(15,23,42,0.06), 0 4px 16px rgba(15,23,42,0.05);
-  --card-shadow-hover: 0 8px 24px rgba(15,23,42,0.10), 0 2px 6px rgba(15,23,42,0.06);
-  --muted:             #64748b;
-  --muted-bg:          #f1f5f9;
-  --hero-bg:           #080f2a;
-  --section-alt:       #eef3ff;
+  --card-border:       #dde4d0;
+  --card-shadow:       0 1px 3px rgba(43,51,39,0.06), 0 4px 16px rgba(43,51,39,0.05);
+  --card-shadow-hover: 0 8px 24px rgba(43,51,39,0.10), 0 2px 6px rgba(43,51,39,0.06);
+  --muted:             #5f6b58;
+  --muted-bg:          #eef1ea;
+  --hero-bg:           #1c2417;
+  --section-alt:       #eef2e8;
 }
 
 .dark {
-  --background:        #080f2a;
-  --foreground:        #f1f5f9;
-  --card-bg:           #0f1e40;
+  --background:        #141a10;
+  --foreground:        #eef1ea;
+  --card-bg:           #1c2417;
   --card-border:       rgba(255,255,255,0.09);
   --card-shadow:       0 2px 8px rgba(0,0,0,0.4);
   --card-shadow-hover: 0 8px 28px rgba(0,0,0,0.5);
-  --muted:             #94a3b8;
-  --muted-bg:          #0d1840;
-  --hero-bg:           #040a1a;
-  --section-alt:       #0a1632;
+  --muted:             #a8b39e;
+  --muted-bg:          #182013;
+  --hero-bg:           #10150c;
+  --section-alt:       #182013;
 }
 
 /* ─── Reset ─────────────────────────────────────────────────────────────── */
@@ -120,18 +113,18 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #2563eb, #1e40af);
+  background: linear-gradient(to bottom, #8fae7a, #5a6b4f);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  background: linear-gradient(to bottom, #a8c4a2, #8fae7a);
 }
 
-::selection { background: rgba(37,99,235,0.15); color: #1e40af; }
+::selection { background: rgba(90,107,79,0.15); color: #5a6b4f; }
 
 /* ─── Typography utilities ──────────────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 60%, #fbbf24 100%);
+  background: linear-gradient(135deg, #8fae7a 0%, #5a6b4f 60%, #6b8fa3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -187,7 +180,7 @@ html:not(.dark) .rounded-3xl.border:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #8fae7a 0%, #5a6b4f 100%);
   color: white;
   padding: 12px 28px;
   border-radius: 50px;
@@ -198,7 +191,7 @@ html:not(.dark) .rounded-3xl.border:hover {
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+  box-shadow: 0 6px 20px rgba(90,107,79,0.4);
   transform: translateY(-2px);
 }
 
@@ -206,20 +199,20 @@ html:not(.dark) .rounded-3xl.border:hover {
 html:not(.dark) input,
 html:not(.dark) textarea,
 html:not(.dark) select {
-  background-color: #f8fafc;
-  border-color: #dde4f2;
-  color: #0f172a;
+  background-color: #fdfcfa;
+  border-color: #dde4d0;
+  color: #2b3327;
 }
 html:not(.dark) input:focus,
 html:not(.dark) textarea:focus,
 html:not(.dark) select:focus {
   background-color: #ffffff;
-  border-color: #2563eb;
+  border-color: #8fae7a;
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  box-shadow: 0 0 0 3px rgba(90,107,79,0.12);
 }
 
 /* ─── Float animation ───────────────────────────────────────────────────── */
@@ -229,18 +222,18 @@ input:focus, textarea:focus, select:focus {
 
 /* ─── Dot / grid patterns ───────────────────────────────────────────────── */
 .dot-pattern {
-  background-image: radial-gradient(circle, rgba(37,99,235,0.07) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(90,107,79,0.07) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(90,107,79,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,107,79,0.04) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 /* ─── Accessible focus ring ─────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #5a6b4f;
   outline-offset: 3px;
 }

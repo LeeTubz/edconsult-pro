@@ -28,19 +28,19 @@ export default function BlogPreview() {
         >
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-              style={{ background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.2)" }}>
-              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Insights & Articles</span>
+              style={{ background: "rgba(90,107,79,0.08)", border: "1px solid rgba(90,107,79,0.2)" }}>
+              <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Insights & Articles</span>
             </div>
             <h2 className="section-title" style={{ color: "var(--foreground)" }}>
               Latest{" "}
-              <span style={{ background: "linear-gradient(135deg,#2563eb,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Insights
               </span>
             </h2>
           </div>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors shrink-0"
+            className="flex items-center gap-2 text-sm font-semibold text-[#5A6B4F] hover:text-[#4a5842] transition-colors shrink-0"
           >
             View All Articles <ArrowRight className="w-4 h-4" />
           </Link>
@@ -89,7 +89,7 @@ export default function BlogPreview() {
                     <span>·</span>
                     {post.date}
                   </div>
-                  <h3 className="text-base font-bold mb-2 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2"
+                  <h3 className="text-base font-bold mb-2 leading-snug group-hover:text-[#5A6B4F] transition-colors line-clamp-2"
                     style={{ color: "var(--foreground)" }}>
                     {post.title}
                   </h3>

@@ -19,19 +19,19 @@ import {
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const whyChooseUs = [
-  "Expert consultants with 15+ years of experience",
-  "Personalized strategies tailored to each client",
-  "Data-driven approaches with proven results",
-  "Comprehensive support from assessment to achievement",
-  "Strong network of academic institutions worldwide",
-  "Commitment to educational innovation & excellence",
+  "Expert consultants with 15+ years of combined experience",
+  "Personalised support tailored to each student",
+  "A 'best fit' approach — not one-size-fits-all",
+  "Comprehensive support from guidance to growth",
+  "Strong relationships with schools across Botswana",
+  "Commitment to student wellbeing and innovation",
 ];
 
 const trustStats = [
-  { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#2563eb" },
-  { value: 200, suffix: "+", label: "Schools Served", icon: BookOpen, color: "#7c3aed" },
-  { value: 15, suffix: "+", label: "Years of Excellence", icon: Award, color: "#d97706" },
-  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe, color: "#059669" },
+  { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#5A6B4F" },
+  { value: 200, suffix: "+", label: "Schools Served", icon: BookOpen, color: "#6B8FA3" },
+  { value: 15, suffix: "+", label: "Years of Excellence", icon: Award, color: "#8FAE7A" },
+  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe, color: "#6F8C5B" },
 ];
 
 const values = [
@@ -39,19 +39,19 @@ const values = [
     icon: Heart,
     title: "Student-First",
     desc: "Every decision and recommendation centers on what's best for the student's unique journey.",
-    color: "#ef4444",
+    color: "#6F8C5B",
   },
   {
     icon: Shield,
     title: "Integrity",
     desc: "We operate with complete transparency and ethical standards in all our consulting practices.",
-    color: "#2563eb",
+    color: "#5A6B4F",
   },
   {
     icon: TrendingUp,
-    title: "Excellence",
-    desc: "We pursue the highest standards in educational consulting, continuously improving our methods.",
-    color: "#d97706",
+    title: "Impact",
+    desc: "We pursue the highest standards in student support, continuously improving how we guide and grow.",
+    color: "#6B8FA3",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function AboutSection() {
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(90, 107, 79, 0.04) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -89,24 +89,24 @@ export default function AboutSection() {
           className="text-center mb-14"
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(37, 99, 235, 0.08)", border: "1px solid rgba(37, 99, 235, 0.2)" }}>
-            <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">About Us</span>
+            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}>
+            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">About Us</span>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="section-title mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Transforming Education Through{" "}
+            Growing Students Through{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              Expert Guidance
+              Personal Guidance
             </span>
           </motion.h2>
           <motion.p
@@ -114,9 +114,9 @@ export default function AboutSection() {
             className="text-lg max-w-2xl mx-auto"
             style={{ color: "var(--muted)" }}
           >
-            We are a premier educational consulting firm dedicated to unlocking the full
-            potential of students, schools, and organizations through strategic guidance
-            and innovative solutions.
+            We are a students support consultancy dedicated to unlocking the full
+            potential of students through career guidance, counselling, coaching,
+            and educational technology support.
           </motion.p>
         </motion.div>
 
@@ -175,17 +175,17 @@ export default function AboutSection() {
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "rgba(37, 99, 235, 0.1)" }}
+                style={{ background: "rgba(90, 107, 79, 0.1)" }}
               >
-                <Target className="w-6 h-6 text-blue-600" />
+                <Target className="w-6 h-6 text-[#5A6B4F]" />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                 Our Mission
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: "1.7" }}>
-                To empower every student, institution, and organization with the strategic
-                insights and expert guidance needed to achieve transformative educational
-                outcomes — from admission success to institutional excellence.
+                To empower and guide every student with the career guidance, counselling,
+                coaching, and technology support needed to build a future that genuinely
+                fits them — not a one-size-fits-all path.
               </p>
             </div>
 
@@ -199,17 +199,17 @@ export default function AboutSection() {
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "rgba(217, 119, 6, 0.1)" }}
+                style={{ background: "rgba(107, 143, 163, 0.1)" }}
               >
-                <Eye className="w-6 h-6 text-amber-600" />
+                <Eye className="w-6 h-6 text-[#6B8FA3]" />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                 Our Vision
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: "1.7" }}>
-                To be the most trusted educational consulting partner globally — known for
-                transforming academic journeys, inspiring growth, and building a future
-                where quality education is accessible and achievable for all.
+                To be the most trusted student support partner in Botswana and beyond —
+                known for growing confident, capable students who go on to thrive,
+                whichever pathway they choose.
               </p>
             </div>
           </motion.div>
@@ -237,7 +237,7 @@ export default function AboutSection() {
                   transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-green-500" />
+                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-[#8FAE7A]" />
                   <span style={{ color: "var(--foreground)" }}>{item}</span>
                 </motion.div>
               ))}
@@ -250,8 +250,8 @@ export default function AboutSection() {
               onClick={() => router.push("/contact")}
               className="mt-10 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               style={{
-                background: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-                boxShadow: "0 4px 20px rgba(37, 99, 235, 0.3)",
+                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
+                boxShadow: "0 4px 20px rgba(90, 107, 79, 0.3)",
               }}
             >
               Start Your Journey
@@ -274,10 +274,10 @@ export default function AboutSection() {
               />
               <div
                 className="absolute inset-0 flex items-end p-5"
-                style={{ background: "linear-gradient(to top, rgba(8,15,42,0.8) 0%, transparent 50%)" }}
+                style={{ background: "linear-gradient(to top, rgba(16,21,12,0.8) 0%, transparent 50%)" }}
               >
                 <p className="text-white text-sm font-medium">
-                  Empowering African students from Botswana to the world
+                  Growing African students from Botswana to the world
                 </p>
               </div>
             </motion.div>

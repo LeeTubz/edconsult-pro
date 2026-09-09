@@ -7,7 +7,7 @@ import HomeCTA from "@/components/sections/home/HomeCTA";
 export const metadata: Metadata = {
   title: "Our Clients — Who We Serve",
   description:
-    "EduConsult Pro serves individuals, families, schools, and organisations across Botswana and Africa. Discover how we tailor our expertise to every client type.",
+    "Olive Shoots serves students, families, and schools across Botswana and Africa. Discover how we tailor our support to every client type.",
 };
 
 export default function ClientsPage() {
@@ -18,16 +18,16 @@ export default function ClientsPage() {
         title={
           <>
             Our{" "}
-            <span style={{ background: "linear-gradient(135deg,#60a5fa,#7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Clients
             </span>
           </>
         }
-        subtitle="From individual students and families to schools, universities, and corporate organisations — EduConsult Pro delivers tailored educational consulting for every client type."
+        subtitle="From individual students and families to schools and institutions — Olive Shoots delivers tailored student support for every client type."
         breadcrumbs={[{ label: "Clients" }]}
         primaryCta={{ label: "Book Free Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Our Services", href: "/services/higher-education" }}
-        accentColor="#7c3aed"
+        secondaryCta={{ label: "Our Services", href: "/services/career-guidance" }}
+        accentColor="#6B8FA3"
       />
       <ClientsSection />
       <TestimonialsSection />

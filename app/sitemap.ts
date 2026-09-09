@@ -1,25 +1,41 @@
 import { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-data";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://edconsultpro.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
+
+const serviceSlugs = [
+  "career-guidance",
+  "student-counselling",
+  "coaching",
+  "navigating-internship",
+  "educational-technology",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const sections = [
-    { id: "", priority: 1.0, changeFrequency: "weekly" as const },
-    { id: "#about", priority: 0.9, changeFrequency: "monthly" as const },
-    { id: "#services", priority: 0.9, changeFrequency: "monthly" as const },
-    { id: "#what-we-do", priority: 0.8, changeFrequency: "monthly" as const },
-    { id: "#clients", priority: 0.8, changeFrequency: "monthly" as const },
-    { id: "#why-us", priority: 0.8, changeFrequency: "monthly" as const },
-    { id: "#testimonials", priority: 0.7, changeFrequency: "monthly" as const },
-    { id: "#blog", priority: 0.8, changeFrequency: "weekly" as const },
-    { id: "#faq", priority: 0.7, changeFrequency: "monthly" as const },
-    { id: "#contact", priority: 0.9, changeFrequency: "monthly" as const },
+  const pages = [
+    { path: "", priority: 1.0, changeFrequency: "weekly" as const },
+    { path: "about/our-story", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "about/our-team", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "about/why-choose-us", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "clients", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "blog", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "contact", priority: 0.9, changeFrequency: "monthly" as const },
+    ...serviceSlugs.map((slug) => ({
+      path: `services/${slug}`,
+      priority: 0.9,
+      changeFrequency: "monthly" as const,
+    })),
+    ...blogPosts.map((post) => ({
+      path: `blog/${post.slug}`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    })),
   ];
 
-  return sections.map((section) => ({
-    url: `${baseUrl}/${section.id}`,
+  return pages.map((page) => ({
+    url: `${baseUrl}/${page.path}`,
     lastModified: new Date(),
-    changeFrequency: section.changeFrequency,
-    priority: section.priority,
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
   }));
 }

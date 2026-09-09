@@ -10,20 +10,20 @@ const pillars = [
   {
     icon: MapPin,
     title: "Built for Botswana & Africa",
-    desc: "Our strategies are grounded in local context — we understand the educational landscape here in a way no foreign consultancy can.",
-    color: "#2563eb",
+    desc: "Our approach is grounded in local context — we understand the educational landscape here in a way no foreign consultancy can.",
+    color: "#5A6B4F",
   },
   {
     icon: GraduationCap,
     title: "Specialist Consultants, Not Generalists",
-    desc: "Every client works with a dedicated specialist — not a call centre. Our consultants hold advanced degrees and lived experience in their fields.",
-    color: "#7c3aed",
+    desc: "Every student works with a dedicated specialist — not a call centre. Our consultants bring focused experience in their specific area of support.",
+    color: "#6B8FA3",
   },
   {
     icon: Lightbulb,
     title: "Outcomes You Can Measure",
     desc: "We set clear goals at the start of every engagement and report transparently on progress — because your results are our reputation.",
-    color: "#d97706",
+    color: "#8FAE7A",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function AboutPreview() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* gradient overlay */}
-              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(4,12,31,0.25),transparent 60%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(16,21,12,0.25),transparent 60%)" }} />
             </div>
 
             {/* Floating credential badge */}
@@ -68,8 +68,8 @@ export default function AboutPreview() {
               style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)", backdropFilter: "blur(12px)" }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: "rgba(37,99,235,0.12)" }}>
-                <CheckCircle className="w-5 h-5 text-blue-600" />
+                style={{ background: "rgba(90,107,79,0.12)" }}>
+                <CheckCircle className="w-5 h-5 text-[#5A6B4F]" />
               </div>
               <div>
                 <div className="text-sm font-bold" style={{ color: "var(--foreground)" }}>Trusted Since 2009</div>
@@ -86,21 +86,21 @@ export default function AboutPreview() {
               transition={{ duration: 0.75 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-                style={{ background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.2)" }}>
-                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">About EduConsult Pro</span>
+                style={{ background: "rgba(90,107,79,0.08)", border: "1px solid rgba(90,107,79,0.2)" }}>
+                <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">About Olive Shoots</span>
               </div>
 
               <h2 className="section-title mb-5" style={{ color: "var(--foreground)" }}>
                 Botswana&apos;s Most Trusted{" "}
-                <span style={{ background: "linear-gradient(135deg,#2563eb,#fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  Educational Partner
+                <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  Student Support Partner
                 </span>
               </h2>
 
               <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
-                For over 15 years, EduConsult Pro has worked alongside students, schools, and
-                organisations to achieve educational outcomes that matter. We bring deep local
-                knowledge, international standards, and genuine care to every engagement.
+                For over 15 years, Olive Shoots has worked alongside students, schools, and
+                organisations to achieve outcomes that matter. We bring deep local
+                knowledge, genuine care, and a focus on 'best fit' to every engagement.
               </p>
 
               {/* Pillars */}
@@ -136,7 +136,7 @@ export default function AboutPreview() {
                 <Link
                   href="/about/our-story"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg,#2563eb,#1e40af)", boxShadow: "0 4px 20px rgba(37,99,235,0.3)" }}
+                  style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 4px 20px rgba(90,107,79,0.3)" }}
                 >
                   Our Full Story <ArrowRight className="w-4 h-4" />
                 </Link>
