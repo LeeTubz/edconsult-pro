@@ -93,13 +93,13 @@ export default function AboutPreview() {
               <h2 className="section-title mb-5" style={{ color: "var(--foreground)" }}>
                 Botswana&apos;s Most Trusted{" "}
                 <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                  Student Support Partner
+                  Educational Partner
                 </span>
               </h2>
 
               <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
                 For over 15 years, Olive Shoots has worked alongside students, schools, and
-                organisations to achieve outcomes that matter. We bring deep local
+                institutions to achieve outcomes that matter. We bring deep local
                 knowledge, genuine care, and a focus on 'best fit' to every engagement.
               </p>
 
@@ -134,7 +134,7 @@ export default function AboutPreview() {
                 transition={{ delay: 0.6 }}
               >
                 <Link
-                  href="/about/our-story"
+                  href="/about"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                   style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 4px 20px rgba(90,107,79,0.3)" }}
                 >

@@ -6,25 +6,25 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   Target,
-  Eye,
-  Heart,
+  Compass,
+  Sparkles,
+  Shield,
+  TrendingUp,
   CheckCircle2,
   Users,
   Globe,
   Award,
   BookOpen,
-  TrendingUp,
-  Shield,
 } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const whyChooseUs = [
-  "Expert consultants with 15+ years of combined experience",
-  "Personalised support tailored to each student",
-  "A 'best fit' approach — not one-size-fits-all",
-  "Comprehensive support from guidance to growth",
-  "Strong relationships with schools across Botswana",
-  "Commitment to student wellbeing and innovation",
+  "A full-service educational consultancy — for students, institutions, and the future",
+  "Best Fit For Purpose — we do not do a one-size-fits-all approach",
+  "From tuition and academic writing to institutional quality assurance and audits",
+  "Career guidance, counselling, coaching, and mentorship for every student",
+  "Modern educational technology training for staff and teachers",
+  "Driven by integrity, innovation, and impact",
 ];
 
 const trustStats = [
@@ -36,22 +36,22 @@ const trustStats = [
 
 const values = [
   {
-    icon: Heart,
-    title: "Student-First",
-    desc: "Every decision and recommendation centers on what's best for the student's unique journey.",
-    color: "#6F8C5B",
-  },
-  {
     icon: Shield,
     title: "Integrity",
-    desc: "We operate with complete transparency and ethical standards in all our consulting practices.",
+    desc: "We operate with complete transparency and ethical standards in everything we do — for students and institutions alike.",
     color: "#5A6B4F",
+  },
+  {
+    icon: Sparkles,
+    title: "Innovation",
+    desc: "We stay at the frontier of educational practice and technology, bringing fresh, modern approaches to every engagement.",
+    color: "#6B8FA3",
   },
   {
     icon: TrendingUp,
     title: "Impact",
-    desc: "We pursue the highest standards in student support, continuously improving how we guide and grow.",
-    color: "#6B8FA3",
+    desc: "We pursue the highest standards in learning and institutional growth, continuously improving how we guide, strengthen, and build.",
+    color: "#8FAE7A",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function AboutSection() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={staggerChildren}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
             style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}>
@@ -97,7 +97,7 @@ export default function AboutSection() {
             className="section-title mb-4"
             style={{ color: "var(--foreground)" }}
           >
-            Growing Students Through{" "}
+            Guiding Minds, Strengthening{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
@@ -106,7 +106,7 @@ export default function AboutSection() {
                 backgroundClip: "text",
               }}
             >
-              Personal Guidance
+              Institutions
             </span>
           </motion.h2>
           <motion.p
@@ -114,10 +114,34 @@ export default function AboutSection() {
             className="text-lg max-w-2xl mx-auto"
             style={{ color: "var(--muted)" }}
           >
-            We are a students support consultancy dedicated to unlocking the full
-            potential of students through career guidance, counselling, coaching,
-            and educational technology support.
+            Building futures, best fit for purpose.
           </motion.p>
+        </motion.div>
+
+        {/* About Us copy */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="max-w-3xl mx-auto text-center mb-16 space-y-4"
+        >
+          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            We are a full-service, purpose-driven educational consultancy offering
+            educational solutions at every level — for students, for institutions,
+            and for the future. We don&apos;t just consult on education — we help
+            build better learners and stronger institutions.
+          </p>
+          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            We bridge the gap between students, educators, and institutions by
+            delivering tailored academic support, institutional consulting, and
+            modern educational technology training. From tuition, writing, and
+            proofreading to quality assurance, audits, and staff development, we
+            ensure every learner and institution thrives. We also walk with
+            students beyond the classroom through career guidance, counselling,
+            and pathways into skills and trade. Whether it&apos;s in the classroom,
+            the boardroom, or in life, we are here to guide, strengthen, and
+            unlock potential.
+          </p>
         </motion.div>
 
         {/* Stats Row */}
@@ -156,9 +180,9 @@ export default function AboutSection() {
           })}
         </motion.div>
 
-        {/* Mission / Vision / Why Us */}
+        {/* Mission / Approach / Why Us */}
         <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-start mb-16">
-          {/* Left: Mission & Vision */}
+          {/* Left: Mission & Approach */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -183,13 +207,11 @@ export default function AboutSection() {
                 Our Mission
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: "1.7" }}>
-                To empower and guide every student with the career guidance, counselling,
-                coaching, and technology support needed to build a future that genuinely
-                fits them — not a one-size-fits-all path.
+                To empower and guide minds, strengthen institutions, and shape futures.
               </p>
             </div>
 
-            {/* Vision */}
+            {/* Approach */}
             <div
               className="p-6 rounded-2xl border"
               style={{
@@ -201,15 +223,13 @@ export default function AboutSection() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                 style={{ background: "rgba(107, 143, 163, 0.1)" }}
               >
-                <Eye className="w-6 h-6 text-[#6B8FA3]" />
+                <Compass className="w-6 h-6 text-[#6B8FA3]" />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
-                Our Vision
+                Our Approach
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: "1.7" }}>
-                To be the most trusted student support partner in Botswana and beyond —
-                known for growing confident, capable students who go on to thrive,
-                whichever pathway they choose.
+                Best Fit For Purpose. We do not do a one size fits all — we do best fit.
               </p>
             </div>
           </motion.div>
@@ -277,7 +297,7 @@ export default function AboutSection() {
                 style={{ background: "linear-gradient(to top, rgba(16,21,12,0.8) 0%, transparent 50%)" }}
               >
                 <p className="text-white text-sm font-medium">
-                  Growing African students from Botswana to the world
+                  Growing African students and institutions from Botswana to the world
                 </p>
               </div>
             </motion.div>

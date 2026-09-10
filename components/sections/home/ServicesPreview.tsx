@@ -3,43 +3,50 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Compass, Users, PenLine, Briefcase, Cpu, ArrowRight } from "lucide-react";
+import { BookOpen, ShieldCheck, Cpu, ClipboardCheck, Compass, HeartHandshake, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: Compass,
-    title: "Career Guidance",
-    description: "Subject-choice advice and reality checks that push for the 'best fit' — not university admission only — plus academic pathway mapping and university admissions support.",
-    color: "#5A6B4F",
-    href: "/services/career-guidance",
-  },
-  {
-    icon: Users,
-    title: "Student Counselling",
-    description: "Support for the social and academic sides of student life — navigating challenges and striking a balance while studying for success.",
-    color: "#6B8FA3",
-    href: "/services/student-counselling",
-  },
-  {
-    icon: PenLine,
-    title: "Coaching",
-    description: "Mastering academic writing at college and university level — assignment writing, research projects, and dissertation support.",
+    icon: BookOpen,
+    title: "Academic Support",
+    description: "Tuition (IGCSE & IB), academic writing consultation, editing and proofreading, and research consultation — academic support with purpose.",
     color: "#8FAE7A",
-    href: "/services/coaching",
+    href: "/services/academic-support",
   },
   {
-    icon: Briefcase,
-    title: "Navigating Internship",
-    description: "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
-    color: "#6F8C5B",
-    href: "/services/navigating-internship",
+    icon: ShieldCheck,
+    title: "Quality Assurance",
+    description: "Quality assurance and external moderation — benchmarking, policy review, audits, observations, and staff appraisal for institutions.",
+    color: "#5A6B4F",
+    href: "/services/quality-assurance",
   },
   {
     icon: Cpu,
     title: "Educational Technology",
-    description: "Staff capacity building and training via webinars, plus consultancy on ODL, e-learning, and video/audio content creation.",
+    description: "Staff and teacher capacity building via webinars, navigating online classes, AI in education, and e-learning content creation.",
     color: "#A8C4A2",
     href: "/services/educational-technology",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Institutional Audits",
+    description: "Internal program and institutional audits — scope development, compliance review, staff engagement, and clear reporting.",
+    color: "#4A6B7A",
+    href: "/services/institutional-audits",
+  },
+  {
+    icon: Compass,
+    title: "Career Guidance",
+    description: "Subject-choice advice that pushes for the 'best fit' — plus academic pathway mapping, university admissions, and skills & trade guidance.",
+    color: "#6B8FA3",
+    href: "/services/career-guidance",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Counselling & Mentorship",
+    description: "Supporting academic, work, social, and spiritual life — because a thriving student is more than just their grades.",
+    color: "#6F8C5B",
+    href: "/services/student-counselling",
   },
 ];
 
@@ -68,14 +75,14 @@ export default function ServicesPreview() {
             <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">What We Offer</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
-            Support Services for{" "}
+            Solutions for Students{" "}
             <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Every Student
+              & Institutions
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            From career clarity to classroom technology — we offer a focused suite of
-            student support services tailored to your unique goals.
+            From tuition and academic writing to institutional quality assurance —
+            we offer a full suite of services, best fit for purpose, not one size fits all.
           </p>
         </motion.div>
 

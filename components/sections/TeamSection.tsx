@@ -4,64 +4,75 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  Compass,
-  Users,
-  PenLine,
-  Briefcase,
+  BookOpen,
+  ShieldCheck,
   Cpu,
+  ClipboardCheck,
+  Compass,
+  HeartHandshake,
   ArrowRight,
 } from "lucide-react";
 
 const consultants = [
   {
-    icon: Compass,
-    title: "Career Guidance Consultant",
-    tagline: "Career Clarity & Pathways",
+    icon: BookOpen,
+    title: "Academic Support Consultant",
+    tagline: "Tuition, Writing & Research",
     description:
-      "Helping students choose the right subjects and map an academic pathway — from O-Level to post-university — with a focus on 'best fit', not university admission only.",
-    specialties: ["Subject Choice Advice", "Alternative Pathways", "University Admissions", "Interview Prep"],
-    color: "#5A6B4F",
-    gradient: "from-[#5A6B4F] to-[#3a4534]",
-  },
-  {
-    icon: Users,
-    title: "Student Counsellor",
-    tagline: "Social & Academic Life Support",
-    description:
-      "Supporting students through the social and academic sides of student life — navigating challenges, striking a balance, and studying for success.",
-    specialties: ["Social Life Support", "Academic Life Coaching", "Balance & Wellbeing", "Study Habits"],
-    color: "#6B8FA3",
-    gradient: "from-[#6B8FA3] to-[#3d5763]",
-  },
-  {
-    icon: PenLine,
-    title: "Academic Writing Coach",
-    tagline: "College & University Writing",
-    description:
-      "Coaching students in mastering academic writing at college and university level — assignments, research projects, and dissertations.",
-    specialties: ["Assignment Writing", "Research Projects", "Dissertations", "Academic Style"],
+      "Delivering tuition (IGCSE & IB), academic writing consultation, editing and proofreading, and research consultation for learners at every level.",
+    specialties: ["Tuition", "Academic Writing", "Editing & Proofreading", "Research Consultation"],
     color: "#8FAE7A",
     gradient: "from-[#8FAE7A] to-[#5a6b4f]",
   },
   {
-    icon: Briefcase,
-    title: "Internship Guidance Advisor",
-    tagline: "Navigating Internship",
+    icon: ShieldCheck,
+    title: "Quality Assurance Consultant",
+    tagline: "QA & External Moderation",
     description:
-      "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
-    specialties: ["Internship Readiness", "Workplace Transition", "Professional Conduct", "Work-Life Balance"],
-    color: "#6F8C5B",
-    gradient: "from-[#6F8C5B] to-[#4a5842]",
+      "Promoting quality standards through benchmarking, policy review, audits and observations, and external moderation and staff appraisals.",
+    specialties: ["Benchmarking", "Policy Review", "Audits & Observations", "External Moderation"],
+    color: "#5A6B4F",
+    gradient: "from-[#5A6B4F] to-[#3a4534]",
   },
   {
     icon: Cpu,
     title: "Educational Technology Trainer",
     tagline: "Staff Capacity Building",
     description:
-      "Training staff and educators via webinars, and consulting on ODL, e-learning, and video/audio content creation for classrooms.",
-    specialties: ["Staff Webinars", "ODL & E-Learning", "Content Creation", "Digital Classrooms"],
+      "Training staff and educators via webinars, and consulting on navigating online classes, AI in education, and e-learning content creation.",
+    specialties: ["Staff Webinars", "AI in Education", "Online Classes", "Content Creation"],
     color: "#A8C4A2",
     gradient: "from-[#A8C4A2] to-[#8FAE7A]",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Institutional Audit Consultant",
+    tagline: "Program & Institutional Audits",
+    description:
+      "Developing audit scopes, engaging with staff throughout the process, and compiling clear findings, recommendations, and timelines.",
+    specialties: ["Audit Scoping", "Compliance Review", "Reporting", "5-Year Review Cycle"],
+    color: "#4A6B7A",
+    gradient: "from-[#4A6B7A] to-[#2f434c]",
+  },
+  {
+    icon: Compass,
+    title: "Career Guidance Consultant",
+    tagline: "Career Clarity & Pathways",
+    description:
+      "Helping students choose the right subjects and map an academic pathway — from O-Level to post-university — with a focus on 'best fit', not university admission only.",
+    specialties: ["Subject Choice Advice", "Alternative Pathways", "University Admissions", "Skills & Trade"],
+    color: "#6B8FA3",
+    gradient: "from-[#6B8FA3] to-[#3d5763]",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Counselling & Mentorship Consultant",
+    tagline: "Academic, Work, Social & Spiritual Life",
+    description:
+      "Supporting students through academic life, work life and internships, social challenges, and — for those who want it — a balanced Christian student life.",
+    specialties: ["Academic Life", "Work Life", "Social Life", "Spiritual Life"],
+    color: "#6F8C5B",
+    gradient: "from-[#6F8C5B] to-[#4a5842]",
   },
 ];
 

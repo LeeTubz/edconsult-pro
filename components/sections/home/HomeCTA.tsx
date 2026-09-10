@@ -50,10 +50,10 @@ export default function HomeCTA() {
               Book Free Consultation <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+26771234567"
+              href="tel:+26774332739"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white/80 font-semibold border border-white/20 hover:border-white/40 hover:text-white transition-all duration-300 hover:-translate-y-1"
             >
-              <Phone className="w-4 h-4" /> +267 71 234 567
+              <Phone className="w-4 h-4" /> +267 74332739
             </a>
           </div>
         </motion.div>

@@ -23,8 +23,8 @@ export default function ContactPage() {
         }
         subtitle="Ready to take the next step? Reach out today — your first consultation is completely free, with no obligation."
         breadcrumbs={[{ label: "Contact" }]}
-        primaryCta={{ label: "Call Us Now", href: "tel:+26771234567" }}
-        secondaryCta={{ label: "Email Us", href: "mailto:info@oliveshoots.com" }}
+        primaryCta={{ label: "Call Us Now", href: "tel:+26774332739" }}
+        secondaryCta={{ label: "Email Us", href: "mailto:knowledgelab.bw@gmail.com" }}
         accentColor="#5A6B4F"
       />
       <ContactSection />

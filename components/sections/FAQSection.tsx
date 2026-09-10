@@ -8,9 +8,9 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What types of student support services do you offer?",
+    question: "What services do you offer?",
     answer:
-      "We offer five core services: career guidance (subject choice, pathway mapping, and university admissions support), student counselling (social and academic life support), coaching (academic writing at college and university level), navigating internship (work-life guidance for students), and educational technology (staff training, webinars, and ODL/e-learning consultancy).",
+      "We offer six core services: academic support (tuition, academic writing, editing & proofreading, and research consultation), quality assurance & external moderation, educational technology (staff training, webinars, and ODL/e-learning consultancy), internal program & institutional audits, career guidance (subject choice, pathway mapping, and university admissions), and student counselling, coaching & mentorship (academic, work, social, and spiritual life).",
   },
   {
     question: "How does the consultation process work?",
@@ -20,12 +20,12 @@ const faqs = [
   {
     question: "How much do your services cost?",
     answer:
-      "Our fees vary based on the scope of the service and the length of engagement. We offer flexible pricing including per-session coaching or counselling, package rates for admissions support, and training-day rates for institutional webinars. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal before any commitment.",
+      "Our fees vary based on the scope of the service and the length of engagement. We offer flexible pricing including per-session tuition or coaching, package rates for admissions or research support, and training-day rates for institutional webinars and audits. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal before any commitment.",
   },
   {
     question: "How long does support typically take?",
     answer:
-      "Timelines vary by service. Career guidance and university admissions support typically runs across a school term. Academic writing coaching is often booked per assignment, research project, or dissertation. Student counselling and internship guidance are ongoing and open-ended, for as long as the student needs support. We always agree on expected milestones upfront.",
+      "Timelines vary by service. Career guidance and university admissions support typically runs across a school term. Academic writing and research consultation are often booked per assignment, proposal, or dissertation. Institutional audits follow a five-year review cycle. Student counselling and mentorship are ongoing and open-ended, for as long as the student needs support. We always agree on expected milestones upfront.",
   },
   {
     question: "Do you compete with school counsellors and advisors?",
@@ -35,12 +35,12 @@ const faqs = [
   {
     question: "What makes Olive Shoots different from other consultancies?",
     answer:
-      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across career guidance, counselling, coaching, and educational technology), personalization (every plan is built around the individual student — no templates or one-size-fits-all solutions), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students).",
+      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution — 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 200+ schools).",
   },
   {
-    question: "Do you work with individual students, or with schools too?",
+    question: "Do you work with individual students, or with schools and institutions too?",
     answer:
-      "Both. Students and families can book career guidance, counselling, coaching, or internship guidance directly. Schools and institutions can also book our educational technology service for staff capacity building, training webinars, and ODL/e-learning consultancy.",
+      "Both. Students and families can book tuition, academic writing support, career guidance, or counselling and mentorship directly. Schools and institutions can also book quality assurance and external moderation, internal audits, and educational technology training for their staff.",
   },
   {
     question: "How do I get started with Olive Shoots?",

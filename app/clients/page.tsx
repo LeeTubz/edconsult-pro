@@ -26,7 +26,7 @@ export default function ClientsPage() {
         subtitle="From individual students and families to schools and institutions — Olive Shoots delivers tailored student support for every client type."
         breadcrumbs={[{ label: "Clients" }]}
         primaryCta={{ label: "Book Free Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Our Services", href: "/services/career-guidance" }}
+        secondaryCta={{ label: "Our Services", href: "/services/academic-support" }}
         accentColor="#6B8FA3"
       />
       <ClientsSection />

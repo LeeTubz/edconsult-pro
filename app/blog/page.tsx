@@ -25,7 +25,7 @@ export default function BlogPage() {
         subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa — from the Olive Shoots team."
         breadcrumbs={[{ label: "Blog" }]}
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
-        secondaryCta={{ label: "Our Services", href: "/services/career-guidance" }}
+        secondaryCta={{ label: "Our Services", href: "/services/academic-support" }}
         accentColor="#5A6B4F"
       />
       <BlogSection />

@@ -12,7 +12,8 @@ import {
   BookOpen,
   Users,
   Cpu,
-  Briefcase,
+  ShieldCheck,
+  ClipboardCheck,
 } from "lucide-react";
 
 const clientSegments = [
@@ -20,9 +21,19 @@ const clientSegments = [
     id: "individuals",
     icon: User,
     label: "Students & Families",
-    tagline: "Personalised guidance for students at every level",
+    tagline: "Personalised guidance and academic support for students at every level",
     color: "#5A6B4F",
     services: [
+      {
+        icon: BookOpen,
+        title: "Tuition (IGCSE & IB)",
+        desc: "One-on-one and group tuition for O-Level, AS & A-Level, and all IB programmes.",
+      },
+      {
+        icon: BookOpen,
+        title: "Academic Writing & Research",
+        desc: "Support for assignments, research proposals, dissertations, and academic editing and proofreading.",
+      },
       {
         icon: Compass,
         title: "Career Clarity & Reality Checks",
@@ -35,18 +46,8 @@ const clientSegments = [
       },
       {
         icon: Users,
-        title: "Student Counselling",
-        desc: "A confidential space to navigate the social and academic sides of student life and find real balance.",
-      },
-      {
-        icon: BookOpen,
-        title: "Academic Writing Coaching",
-        desc: "One-on-one coaching for assignments, research projects, and dissertations at college and university level.",
-      },
-      {
-        icon: Briefcase,
-        title: "Navigating Internship",
-        desc: "Practical guidance for students transitioning into and succeeding in internships and early work experience.",
+        title: "Counselling, Coaching & Mentorship",
+        desc: "Confidential support across academic, work, social, and spiritual life, including internship guidance.",
       },
       {
         icon: School,
@@ -59,38 +60,38 @@ const clientSegments = [
     id: "schools",
     icon: School,
     label: "Schools & Institutions",
-    tagline: "Practical training and student support programmes for schools",
+    tagline: "Quality assurance, audits, and technology training for institutions",
     color: "#6B8FA3",
     services: [
       {
+        icon: ShieldCheck,
+        title: "Quality Assurance & External Moderation",
+        desc: "Benchmarking, policy and procedure review, audits and observations, and external moderation exercises.",
+      },
+      {
+        icon: ClipboardCheck,
+        title: "Internal Program & Institutional Audits",
+        desc: "Audit scope development, compliance review, and clear reporting on a five-year review cycle.",
+      },
+      {
         icon: Users,
-        title: "Staff Capacity Building",
+        title: "Staff & Teacher Capacity Building",
         desc: "Practical training that builds real, lasting confidence with classroom and administrative technology.",
       },
       {
         icon: Cpu,
-        title: "Training via Webinars",
-        desc: "Accessible webinar-based training for staff and teachers, wherever they are.",
-      },
-      {
-        icon: School,
-        title: "ODL & E-Learning Consultancy",
-        desc: "Guidance on setting up and running effective open and distance learning and e-learning programmes.",
+        title: "Navigating AI in Education & Administration",
+        desc: "Guidance on using AI thoughtfully and effectively in teaching and institutional administration.",
       },
       {
         icon: Cpu,
-        title: "Video & Audio Content Creation",
+        title: "Content Creation for E-Learning",
         desc: "Support for planning and producing engaging video and audio lessons for e-learning.",
       },
       {
         icon: Compass,
-        title: "Career Guidance Workshops",
-        desc: "On-site career clarity workshops helping your students choose subjects and map academic pathways.",
-      },
-      {
-        icon: Briefcase,
-        title: "Internship Readiness Workshops",
-        desc: "Practical workshops preparing final-year students for internships and early work experience.",
+        title: "Career Guidance & Counselling Programmes",
+        desc: "On-site career clarity and student wellbeing programmes delivered directly to your students.",
       },
     ],
   },

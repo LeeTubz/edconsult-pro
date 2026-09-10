@@ -5,15 +5,15 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Compass, Users, Cpu, PenLine,
+  Compass, ShieldCheck, Cpu, BookOpen,
   ArrowRight, ChevronDown, Star,
 } from "lucide-react";
 
 const floatingCards = [
-  { icon: Compass, label: "Career Guidance",     color: "#5A6B4F", side: "left",  top: "calc(50% - 120px)" },
-  { icon: Users,   label: "Student Counselling", color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
-  { icon: PenLine, label: "Academic Coaching",   color: "#8FAE7A", side: "left",  top: "calc(50% + 60px)"  },
-  { icon: Cpu,     label: "Ed Technology",       color: "#A8C4A2", side: "right", top: "calc(50% + 60px)"  },
+  { icon: BookOpen,    label: "Academic Support",    color: "#8FAE7A", side: "left",  top: "calc(50% - 120px)" },
+  { icon: Compass,     label: "Career Guidance",      color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
+  { icon: ShieldCheck, label: "Quality Assurance",    color: "#5A6B4F", side: "left",  top: "calc(50% + 60px)"  },
+  { icon: Cpu,         label: "Ed Technology",        color: "#A8C4A2", side: "right", top: "calc(50% + 60px)"  },
 ];
 
 export default function HeroSection() {
@@ -161,7 +161,7 @@ export default function HeroSection() {
               className="font-bold text-white tracking-tight leading-tight mb-5"
               style={{ fontSize: "clamp(1.875rem, 3vw + 1rem, 3rem)" }}
             >
-              Growing{" "}
+              Guiding{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg,#A8C4A2 0%,#8FAE7A 40%,#6B8FA3 100%)",
@@ -170,9 +170,9 @@ export default function HeroSection() {
                   backgroundClip: "text",
                 }}
               >
-                Students
-              </span>{" "}
-              Into Their Best Futures
+                Minds
+              </span>
+              , Building Futures
             </motion.h1>
 
             {/* Subheadline */}
@@ -182,9 +182,9 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-8 leading-relaxed"
             >
-              A students support consultancy helping learners across Botswana and
-              southern Africa with career guidance, counselling, academic-writing
-              coaching, internship guidance, and educational technology.
+              A full-service educational consultancy helping students and institutions
+              across Botswana and southern Africa — academic support, quality assurance,
+              educational technology, career guidance, and counselling.
             </motion.p>
 
             {/* CTA buttons */}
@@ -205,7 +205,7 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
               <button
-                onClick={() => router.push("/services/career-guidance")}
+                onClick={() => router.push("/services/academic-support")}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
                            font-semibold text-sm text-white transition-all duration-250
                            hover:bg-white/10 w-full sm:w-auto"

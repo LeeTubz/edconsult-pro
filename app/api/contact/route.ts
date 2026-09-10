@@ -63,13 +63,13 @@ export async function POST(request: NextRequest) {
 
         await resend.emails.send({
           from: "Olive Shoots <noreply@oliveshoots.com>",
-          to: [process.env.CONTACT_EMAIL || "info@oliveshoots.com"],
+          to: [process.env.CONTACT_EMAIL || "knowledgelab.bw@gmail.com"],
           subject: `New Consultation Request from ${fullName}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <div style="background: linear-gradient(135deg, #1c2417, #5A6B4F); padding: 32px; border-radius: 12px 12px 0 0;">
                 <h1 style="color: white; margin: 0; font-size: 24px;">New Consultation Request</h1>
-                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">Olive Shoots — Students Support Consultancy</p>
+                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">Olive Shoots — Educational Consultancy</p>
               </div>
               <div style="background: #F5F4F0; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #dde4d0;">
                 <table style="width: 100%; border-collapse: collapse;">
@@ -131,9 +131,9 @@ export async function POST(request: NextRequest) {
                   In the meantime, feel free to explore our <a href="#" style="color: #5A6B4F;">blog</a> for student support insights.
                 </p>
                 <p style="color: #94a3b8; font-size: 14px; margin-top: 32px;">
-                  Olive Shoots | Plot 1234, Luthuli Road, Gaborone, Botswana<br>
-                  <a href="tel:+26771234567" style="color: #94a3b8;">+267 71 234 567</a> |
-                  <a href="mailto:info@oliveshoots.com" style="color: #94a3b8;">info@oliveshoots.com</a>
+                  Olive Shoots | Gaborone, Botswana<br>
+                  <a href="tel:+26774332739" style="color: #94a3b8;">+267 74332739</a> |
+                  <a href="mailto:knowledgelab.bw@gmail.com" style="color: #94a3b8;">knowledgelab.bw@gmail.com</a>
                 </p>
               </div>
             </div>

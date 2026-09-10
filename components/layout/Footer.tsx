@@ -12,33 +12,29 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
-import { LogoMark } from "@/components/ui/Logo";
+import Image from "next/image";
 
 const quickLinks = [
-  { label: "About Us",       href: "/about/our-story"     },
-  { label: "Our Services",   href: "/services/career-guidance" },
-  { label: "Our Process",    href: "/services/career-guidance" },
-  { label: "Who We Serve",   href: "/clients"             },
-  { label: "Why Choose Us",  href: "/about/why-choose-us" },
-  { label: "Our Team",       href: "/about/our-team"      },
-  { label: "Blog & Insights",href: "/blog"                },
-  { label: "Contact Us",     href: "/contact"             },
+  { label: "About Us",       href: "/about"   },
+  { label: "Our Services",   href: "/services/academic-support" },
+  { label: "Who We Serve",   href: "/clients" },
+  { label: "Blog & Insights",href: "/blog"    },
+  { label: "Contact Us",     href: "/contact" },
 ];
 
 const services = [
-  { label: "Career Guidance",        href: "/services/career-guidance"       },
-  { label: "Student Counselling",    href: "/services/student-counselling"   },
-  { label: "Coaching",               href: "/services/coaching"              },
-  { label: "Navigating Internship",  href: "/services/navigating-internship" },
-  { label: "Educational Technology", href: "/services/educational-technology"},
+  { label: "Academic Support",       href: "/services/academic-support"     },
+  { label: "Quality Assurance",      href: "/services/quality-assurance"    },
+  { label: "Educational Technology", href: "/services/educational-technology" },
+  { label: "Institutional Audits",   href: "/services/institutional-audits" },
+  { label: "Career Guidance",        href: "/services/career-guidance"      },
+  { label: "Counselling & Mentorship", href: "/services/student-counselling" },
 ];
 
 const socials = [
   { label: "in", href: "#", ariaLabel: "LinkedIn", color: "#0a66c2" },
-  { label: "𝕏", href: "#", ariaLabel: "Twitter / X", color: "#1da1f2" },
   { label: "f", href: "#", ariaLabel: "Facebook", color: "#1877f2" },
   { label: "ig", href: "#", ariaLabel: "Instagram", color: "#e1306c" },
-  { label: "▶", href: "#", ariaLabel: "YouTube", color: "#ff0000" },
 ];
 
 export default function Footer() {
@@ -116,42 +112,39 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-5">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
-                >
-                  <LogoMark className="w-6 h-6" />
+                <div className="relative w-12 h-12 shrink-0">
+                  <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" />
                 </div>
                 <div>
                   <div className="text-white font-bold text-lg leading-tight">
                     Olive<span className="text-[#A8C4A2]">Shoots</span>
                   </div>
                   <div className="text-xs text-white/40 font-medium tracking-wider uppercase">
-                    Students Support Consultancy
+                    Educational Consultancy
                   </div>
                 </div>
               </div>
 
               <p className="text-sm text-white/55 leading-relaxed mb-6">
-                Guiding students through career clarity, counselling, coaching, and
-                the pathways beyond the classroom. Your trusted partner for growth.
+                Academic support, institutional consulting, and student guidance —
+                best fit for purpose, not one size fits all.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <a href="mailto:info@oliveshoots.com"
+                <a href="mailto:knowledgelab.bw@gmail.com"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
                   <Mail className="w-4 h-4 text-[#8FAE7A] shrink-0" />
-                  info@oliveshoots.com
+                  knowledgelab.bw@gmail.com
                 </a>
-                <a href="tel:+26771234567"
+                <a href="tel:+26774332739"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
                   <Phone className="w-4 h-4 text-[#8FAE7A] shrink-0" />
-                  +267 71 234 567
+                  +267 74332739 (Call/WhatsApp)
                 </a>
                 <div className="flex items-start gap-2 text-sm text-white/55">
                   <MapPin className="w-4 h-4 text-[#8FAE7A] shrink-0 mt-0.5" />
-                  Plot 1234, Luthuli Road<br />Gaborone, Botswana
+                  Gaborone, Botswana
                 </div>
               </div>
 

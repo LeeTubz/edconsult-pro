@@ -21,24 +21,24 @@ import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 const contactInfo = [
   {
     icon: MapPin,
-    label: "Office Address",
-    value: "Plot 1234, Luthuli Road\nGaborone, Botswana",
+    label: "Location",
+    value: "Gaborone, Botswana",
     color: "#5A6B4F",
     action: "https://maps.google.com",
   },
   {
     icon: Phone,
-    label: "Phone Number",
-    value: "+267 71 234 567",
+    label: "Call / WhatsApp",
+    value: "+267 74332739",
     color: "#8FAE7A",
-    action: "tel:+26771234567",
+    action: "tel:+26774332739",
   },
   {
     icon: Mail,
     label: "Email Address",
-    value: "info@oliveshoots.com",
+    value: "knowledgelab.bw@gmail.com",
     color: "#6B8FA3",
-    action: "mailto:info@oliveshoots.com",
+    action: "mailto:knowledgelab.bw@gmail.com",
   },
   {
     icon: Clock,
@@ -51,7 +51,6 @@ const contactInfo = [
 
 const socials = [
   { text: "in", label: "LinkedIn", href: "#", color: "#0a66c2" },
-  { text: "𝕏", label: "Twitter / X", href: "#", color: "#1da1f2" },
   { text: "f", label: "Facebook", href: "#", color: "#1877f2" },
   { text: "ig", label: "Instagram", href: "#", color: "#e1306c" },
 ];
@@ -196,7 +195,7 @@ export default function ContactSection() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/26771234567"
+              href="https://wa.me/26774332739"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-5 rounded-2xl transition-all hover:shadow-lg hover:-translate-y-1 group"
@@ -258,7 +257,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Olive Shoots Office — Gaborone, Botswana"
+                title="Olive Shoots — Gaborone, Botswana"
               />
             </div>
           </motion.div>
@@ -365,11 +364,12 @@ export default function ContactSection() {
                       style={{ color: "var(--foreground)" }}
                     >
                       <option value="">Select a service</option>
-                      <option>Career Guidance</option>
-                      <option>Student Counselling</option>
-                      <option>Coaching</option>
-                      <option>Navigating Internship</option>
+                      <option>Academic Support</option>
+                      <option>Quality Assurance</option>
                       <option>Educational Technology</option>
+                      <option>Institutional Audits</option>
+                      <option>Career Guidance</option>
+                      <option>Counselling & Mentorship</option>
                       <option>Other</option>
                     </select>
                     {errors.service && (

@@ -27,7 +27,7 @@ export const blogPosts = [
     title: "Mastering Academic Writing: A Framework for Dissertation Success",
     excerpt:
       "Strong academic writing is a skill, not a talent you're born with. Discover the frameworks, techniques, and best practices that help students write with confidence at college and university level.",
-    category: "Coaching",
+    category: "Academic Support",
     date: "April 28, 2025",
     readTime: "10 min read",
     categoryColor: "#8FAE7A",
@@ -39,7 +39,7 @@ export const blogPosts = [
     title: "Student Wellbeing: Supporting Every Learner's Balance in Botswana",
     excerpt:
       "Academic success rarely happens in isolation from everything else in a student's life. Explore evidence-based strategies for supporting students' social and academic wellbeing in the Botswana context.",
-    category: "Student Counselling",
+    category: "Counselling & Mentorship",
     date: "April 20, 2025",
     readTime: "7 min read",
     categoryColor: "#6B8FA3",
@@ -51,7 +51,7 @@ export const blogPosts = [
     title: "Your First Internship: How African Students Can Stand Out",
     excerpt:
       "Your first internship is your chance to be more than a CV line. Learn how to prepare, make a strong impression, and navigate the transition from classroom to workplace with confidence.",
-    category: "Navigating Internship",
+    category: "Counselling & Mentorship",
     date: "April 12, 2025",
     readTime: "9 min read",
     categoryColor: "#6F8C5B",

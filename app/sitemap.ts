@@ -4,19 +4,18 @@ import { blogPosts } from "@/lib/blog-data";
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
 
 const serviceSlugs = [
+  "academic-support",
+  "quality-assurance",
+  "educational-technology",
+  "institutional-audits",
   "career-guidance",
   "student-counselling",
-  "coaching",
-  "navigating-internship",
-  "educational-technology",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
-    { path: "about/our-story", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "about/our-team", priority: 0.7, changeFrequency: "monthly" as const },
-    { path: "about/why-choose-us", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "clients", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "blog", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "contact", priority: 0.9, changeFrequency: "monthly" as const },

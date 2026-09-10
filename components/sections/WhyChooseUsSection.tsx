@@ -17,7 +17,7 @@ const reasons = [
     icon: Users,
     title: "Expert Consultants",
     description:
-      "Our team comprises credentialed professionals with experience across career guidance, counselling, academic coaching, and educational technology.",
+      "Our team comprises credentialed professionals with experience across academic support, institutional consulting, career guidance, and student counselling.",
     color: "#5A6B4F",
     stat: "25+",
     statLabel: "Expert Consultants",

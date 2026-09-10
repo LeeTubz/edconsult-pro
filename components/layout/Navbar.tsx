@@ -9,28 +9,21 @@ import {
   Phone, Mail, Sun, Moon,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { LogoMark } from "@/components/ui/Logo";
+import Image from "next/image";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  {
-    label: "About",
-    href: "/about/our-story",
-    children: [
-      { label: "Our Story",      href: "/about/our-story"     },
-      { label: "Our Team",       href: "/about/our-team"      },
-      { label: "Why Choose Us",  href: "/about/why-choose-us" },
-    ],
-  },
+  { label: "Home",  href: "/" },
+  { label: "About", href: "/about" },
   {
     label: "Services",
-    href: "/services/career-guidance",
+    href: "/services/academic-support",
     children: [
-      { label: "Career Guidance",       href: "/services/career-guidance"       },
-      { label: "Student Counselling",   href: "/services/student-counselling"   },
-      { label: "Coaching",              href: "/services/coaching"              },
-      { label: "Navigating Internship", href: "/services/navigating-internship" },
-      { label: "Educational Technology",href: "/services/educational-technology"},
+      { label: "Academic Support",       href: "/services/academic-support"     },
+      { label: "Quality Assurance",      href: "/services/quality-assurance"    },
+      { label: "Educational Technology", href: "/services/educational-technology" },
+      { label: "Institutional Audits",   href: "/services/institutional-audits" },
+      { label: "Career Guidance",        href: "/services/career-guidance"      },
+      { label: "Counselling & Mentorship", href: "/services/student-counselling" },
     ],
   },
   { label: "Clients", href: "/clients"  },
@@ -97,15 +90,15 @@ export default function Navbar() {
         aria-hidden={dark}
       >
         <div className="flex items-center gap-5">
-          <a href="mailto:info@oliveshoots.com"
+          <a href="mailto:knowledgelab.bw@gmail.com"
             className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
             <Mail className="w-3 h-3" />
-            info@oliveshoots.com
+            knowledgelab.bw@gmail.com
           </a>
-          <a href="tel:+26771234567"
+          <a href="tel:+26774332739"
             className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
             <Phone className="w-3 h-3" />
-            +267 71 234 567
+            +267 74332739
           </a>
         </div>
         <span className="font-medium tracking-wide">
@@ -127,19 +120,15 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md
-                         group-hover:scale-105 transition-transform duration-300"
-              style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)" }}
-            >
-              <LogoMark className="w-5 h-5" />
+            <div className="relative w-11 h-11 shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" priority />
             </div>
             <div>
               <div className="text-white font-bold text-base leading-tight tracking-tight">
                 Olive<span className="text-[#A8C4A2]">Shoots</span>
               </div>
               <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
-                Students Support Consultancy
+                Educational Consultancy
               </div>
             </div>
           </Link>
@@ -315,13 +304,13 @@ export default function Navbar() {
                   Book Free Consultation
                 </button>
                 <div className="flex flex-col gap-2 mt-3 px-1">
-                  <a href="mailto:info@oliveshoots.com"
+                  <a href="mailto:knowledgelab.bw@gmail.com"
                     className="text-xs text-white/45 flex items-center gap-2">
-                    <Mail className="w-3 h-3" /> info@oliveshoots.com
+                    <Mail className="w-3 h-3" /> knowledgelab.bw@gmail.com
                   </a>
-                  <a href="tel:+26771234567"
+                  <a href="tel:+26774332739"
                     className="text-xs text-white/45 flex items-center gap-2">
-                    <Phone className="w-3 h-3" /> +267 71 234 567
+                    <Phone className="w-3 h-3" /> +267 74332739
                   </a>
                 </div>
               </motion.div>
