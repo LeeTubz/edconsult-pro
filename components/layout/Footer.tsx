@@ -71,24 +71,24 @@ export default function Footer() {
                 educational trends delivered to your inbox.
               </p>
             </div>
-            <form onSubmit={handleNewsletter} className="flex gap-3 w-full md:w-auto">
+            <form onSubmit={handleNewsletter} className="flex gap-3 w-full sm:w-auto">
               {newsletterState === "success" ? (
                 <div className="flex items-center gap-2 text-green-400">
                   <CheckCircle2 className="w-5 h-5" />
                   <span className="font-medium">You're subscribed!</span>
                 </div>
               ) : (
-                <div className="flex gap-3 w-full md:w-auto">
+                <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-[#8FAE7A] flex-1 md:w-64"
+                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-[#8FAE7A] w-full sm:flex-1 md:w-64"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 rounded-full text-white font-semibold text-sm flex items-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
+                    className="px-6 py-3 rounded-full text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap w-full sm:w-auto"
                     style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
                   >
                     Subscribe <ArrowRight className="w-4 h-4" />
