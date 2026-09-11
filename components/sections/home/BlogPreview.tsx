@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { Clock, ArrowRight, Tag } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
 import { BrandMotif } from "@/components/ui/BrandMotif";
@@ -11,7 +11,7 @@ import { BrandMotif } from "@/components/ui/BrandMotif";
 const posts = blogPosts.slice(0, 3);
 
 export default function BlogPreview() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <section

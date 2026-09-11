@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const navItems = [
   { label: "Home",  href: "/" },
@@ -211,18 +212,19 @@ export default function Navbar() {
             )}
 
             {/* CTA (desktop) */}
-            <button
+            <MagneticButton
               onClick={() => navigate("/contact")}
+              strength={0.25}
               className="hidden md:flex items-center gap-1.5 px-5 py-2 rounded-full
-                         text-sm font-semibold text-white transition-all duration-250
-                         hover:shadow-lg hover:-translate-y-0.5"
+                         text-sm font-semibold text-white transition-shadow duration-250
+                         hover:shadow-lg"
               style={{
                 background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)",
                 boxShadow:  "0 3px 12px rgba(90,107,79,0.35)",
               }}
             >
               Book Consultation
-            </button>
+            </MagneticButton>
 
             {/* Hamburger (mobile) */}
             <button

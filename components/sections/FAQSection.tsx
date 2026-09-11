@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { Plus, Minus } from "lucide-react";
 
 const faqs = [
@@ -52,7 +52,7 @@ const faqs = [
 export default function FAQSection() {
   const router = useRouter();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 

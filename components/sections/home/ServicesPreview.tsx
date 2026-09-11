@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { BookOpen, ShieldCheck, Cpu, ClipboardCheck, Compass, HeartHandshake, ArrowRight } from "lucide-react";
+import { TiltCard } from "@/components/ui/TiltCard";
 
 const services = [
   {
@@ -51,7 +52,7 @@ const services = [
 ];
 
 export default function ServicesPreview() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <section
@@ -96,27 +97,30 @@ export default function ServicesPreview() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.07, duration: 0.55 }}
+                className="h-full"
               >
-                <Link
-                  href={s.href}
-                  className="group relative block p-6 pt-7 rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 h-full"
-                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                >
-                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }} />
-                  <div
-                    className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    style={{ boxShadow: `0 16px 40px -12px ${s.color}45` }}
-                  />
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
-                    style={{ background: `${s.color}15` }}>
-                    <Icon className="w-6 h-6" style={{ color: s.color }} />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 font-display" style={{ color: "var(--foreground)" }}>{s.title}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>{s.description}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all duration-200" style={{ color: s.color }}>
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </Link>
+                <TiltCard max={6} className="h-full" style={{ transformStyle: "preserve-3d" }}>
+                  <Link
+                    href={s.href}
+                    className="group relative block p-6 pt-7 rounded-2xl border overflow-hidden transition-shadow duration-300 hover:shadow-xl h-full"
+                    style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+                  >
+                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }} />
+                    <div
+                      className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ boxShadow: `0 16px 40px -12px ${s.color}45` }}
+                    />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+                      style={{ background: `${s.color}15` }}>
+                      <Icon className="w-6 h-6" style={{ color: s.color }} />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 font-display" style={{ color: "var(--foreground)" }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>{s.description}</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all duration-200" style={{ color: s.color }}>
+                      Learn more <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                </TiltCard>
               </motion.div>
             );
           })}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { ArrowRight, CheckCircle, MapPin, GraduationCap, Lightbulb } from "lucide-react";
 import { BrandMotif } from "@/components/ui/BrandMotif";
 
@@ -29,7 +29,7 @@ const pillars = [
 ];
 
 export default function AboutPreview() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.08 });
 
   return (
     <section
@@ -55,8 +55,8 @@ export default function AboutPreview() {
           >
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1473649085228-583485e6e4d7?w=900&h=680&q=80&auto=format&fit=crop"
-                alt="Students in a Botswana classroom engaged in learning"
+                src="https://images.unsplash.com/photo-1758270704763-22072a90d3b6?w=900&h=680&q=80&auto=format&fit=crop"
+                alt="A diverse group of students studying and talking together"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

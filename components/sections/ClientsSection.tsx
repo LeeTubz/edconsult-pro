@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   User,
   School,
@@ -99,7 +99,7 @@ const clientSegments = [
 
 export default function ClientsSection() {
   const [activeTab, setActiveTab] = useState("individuals");
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.1 });
 
   const activeSegment = clientSegments.find((s) => s.id === activeTab)!;
 

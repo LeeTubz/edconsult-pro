@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   Users,
   Target,
@@ -71,7 +71,7 @@ const reasons = [
 
 
 export default function WhyChooseUsSection() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <section

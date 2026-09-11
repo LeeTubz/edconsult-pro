@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { ArrowRight, Phone } from "lucide-react";
 import { BrandMotif } from "@/components/ui/BrandMotif";
 
 export default function HomeCTA() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <section

@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { Clock, ArrowRight, Tag } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
 
 const posts = blogPosts;
 
 export default function BlogSection() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
     <section

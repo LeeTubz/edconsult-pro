@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 import { BrandMotif } from "@/components/ui/BrandMotif";
 
@@ -18,7 +18,7 @@ const testimonials = [
     rating: 5,
     initials: "LM",
     color: "#5A6B4F",
-    photo: "https://images.unsplash.com/photo-1527201987695-67c06571957e?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
+    photo: "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const testimonials = [
     rating: 5,
     initials: "ND",
     color: "#8FAE7A",
-    photo: "https://images.unsplash.com/photo-1593351799227-75df2026356b?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
+    photo: "https://images.unsplash.com/photo-1602177282000-235ad226ca4a?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const testimonials = [
     rating: 5,
     initials: "KM",
     color: "#6F8C5B",
-    photo: "https://images.unsplash.com/photo-1636144896336-b056be4a8dfe?w=120&h=120&q=80&auto=format&fit=crop&crop=face",
+    photo: "https://images.unsplash.com/photo-1653669486816-660abac02954?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     id: 6,
@@ -78,14 +78,14 @@ const testimonials = [
     rating: 5,
     initials: "MK",
     color: "#5A6B4F",
-    photo: "https://images.unsplash.com/photo-1744973149087-179e3ed54eae?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
+    photo: "https://images.unsplash.com/photo-1644042282339-767092de616b?w=120&h=120&q=80&auto=format&fit=crop&crop=faces",
   },
 ];
 
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.1 });
 
   const next = useCallback(() => {
     setDirection(1);

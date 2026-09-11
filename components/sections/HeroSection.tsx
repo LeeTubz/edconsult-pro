@@ -7,6 +7,8 @@ import {
   ArrowRight, ChevronDown, Star,
 } from "lucide-react";
 import { BrandMotif } from "@/components/ui/BrandMotif";
+import { Marquee } from "@/components/ui/Marquee";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const floatingCards = [
   { icon: BookOpen,    label: "Academic Support", color: "#8FAE7A", side: "left",  top: "calc(50% - 120px)" },
@@ -163,16 +165,16 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.38 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-3"
             >
-              <button
+              <MagneticButton
                 onClick={() => router.push("/contact")}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
-                           text-white font-semibold text-sm transition-all duration-250
-                           hover:-translate-y-0.5 w-full sm:w-auto"
+                           text-white font-semibold text-sm transition-shadow duration-250
+                           hover:shadow-lg w-full sm:w-auto"
                 style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 6px 22px rgba(90,107,79,0.4)" }}
               >
                 Book Free Consultation
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
-              </button>
+              </MagneticButton>
               <button
                 onClick={() => router.push("/services/academic-support")}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
@@ -202,6 +204,24 @@ export default function HeroSection() {
             </motion.div>
           </motion.button>
         </div>
+      </div>
+
+      {/* ── Scrolling service ticker ── */}
+      <div
+        className="relative py-4 border-t"
+        style={{ zIndex: 9, borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
+      >
+        <Marquee
+          items={[
+            "Career Guidance",
+            "Student Counselling",
+            "Academic Writing Coaching",
+            "Internship Guidance",
+            "Educational Technology",
+            "Quality Assurance",
+          ]}
+          className="text-white/35"
+        />
       </div>
 
       {/* ── Wave divider into next section ── */}

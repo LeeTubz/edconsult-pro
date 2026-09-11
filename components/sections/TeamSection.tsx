@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   BookOpen,
   ShieldCheck,
@@ -23,6 +24,7 @@ const consultants = [
     specialties: ["Tuition", "Academic Writing", "Editing & Proofreading", "Research Consultation"],
     color: "#8FAE7A",
     gradient: "from-[#8FAE7A] to-[#5a6b4f]",
+    photo: "https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     icon: ShieldCheck,
@@ -33,6 +35,7 @@ const consultants = [
     specialties: ["Benchmarking", "Policy Review", "Audits & Observations", "External Moderation"],
     color: "#5A6B4F",
     gradient: "from-[#5A6B4F] to-[#3a4534]",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     icon: Cpu,
@@ -43,6 +46,7 @@ const consultants = [
     specialties: ["Staff Webinars", "AI in Education", "Online Classes", "Content Creation"],
     color: "#A8C4A2",
     gradient: "from-[#A8C4A2] to-[#8FAE7A]",
+    photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     icon: ClipboardCheck,
@@ -53,6 +57,7 @@ const consultants = [
     specialties: ["Audit Scoping", "Compliance Review", "Reporting", "5-Year Review Cycle"],
     color: "#4A6B7A",
     gradient: "from-[#4A6B7A] to-[#2f434c]",
+    photo: "https://images.unsplash.com/photo-1627161683077-e34782c24d81?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     icon: Compass,
@@ -63,6 +68,7 @@ const consultants = [
     specialties: ["Subject Choice Advice", "Alternative Pathways", "University Admissions", "Skills & Trade"],
     color: "#6B8FA3",
     gradient: "from-[#6B8FA3] to-[#3d5763]",
+    photo: "https://images.unsplash.com/photo-1573497491207-618cc224f243?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
     icon: HeartHandshake,
@@ -73,12 +79,13 @@ const consultants = [
     specialties: ["Academic Life", "Work Life", "Social Life", "Spiritual Life"],
     color: "#6F8C5B",
     gradient: "from-[#6F8C5B] to-[#4a5842]",
+    photo: "https://images.unsplash.com/photo-1757744705465-ea08b0ddc38a?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
 ];
 
 export default function TeamSection() {
   const router = useRouter();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
 
   const scrollToConsultation = () => router.push("/contact");
 
@@ -153,9 +160,15 @@ export default function TeamSection() {
                   style={{ background: `linear-gradient(90deg,${c.color},transparent)` }} />
 
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: `${c.color}15` }}>
-                    <Icon className="w-6 h-6" style={{ color: c.color }} />
+                  <div className="relative w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2"
+                      style={{ borderColor: `${c.color}40` }}>
+                      <Image src={c.photo} alt={c.title} fill className="object-cover" sizes="56px" />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center border-2"
+                      style={{ background: c.color, borderColor: "var(--card-bg)" }}>
+                      <Icon className="w-3 h-3 text-white" />
+                    </div>
                   </div>
 
                   <div className="text-[11px] font-bold uppercase tracking-wider mb-1.5" style={{ color: c.color }}>

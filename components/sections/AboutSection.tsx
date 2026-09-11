@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   Target,
   Compass,
@@ -67,7 +67,7 @@ const staggerChildren = {
 
 export default function AboutSection() {
   const router = useRouter();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <section id="about" className="section-padding relative overflow-hidden" style={{ background: "var(--background)" }}>
@@ -286,8 +286,8 @@ export default function AboutSection() {
               style={{ height: "220px" }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1632215861513-130b66fe97f4?w=800&h=400&q=80&auto=format&fit=crop"
-                alt="African teacher guiding students in a Nigerian classroom, representing our commitment to African education"
+                src="https://images.unsplash.com/photo-1758270705518-b61b40527e76?w=800&h=400&q=80&auto=format&fit=crop"
+                alt="A diverse group of students collaborating together around a laptop"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

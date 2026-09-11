@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useSafeInView } from "@/hooks/useSafeInView";
 
 interface AnimatedCounterProps {
   end: number;
@@ -19,7 +19,7 @@ export default function AnimatedCounter({
   decimals = 0,
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.3 });
   const hasStarted = useRef(false);
 
   useEffect(() => {
