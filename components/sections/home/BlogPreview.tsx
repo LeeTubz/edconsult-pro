@@ -27,7 +27,7 @@ export default function BlogPreview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12"
@@ -57,7 +57,7 @@ export default function BlogPreview() {
           {posts.map((post, i) => (
             <motion.article
               key={i}
-              initial={{ opacity: 0, y: 24 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1, duration: 0.6 }}
             >

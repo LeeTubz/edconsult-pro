@@ -83,8 +83,8 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={false}
+          animate="visible"
           variants={staggerChildren}
           className="text-center mb-10"
         >
@@ -120,7 +120,7 @@ export default function AboutSection() {
 
         {/* About Us copy */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="max-w-3xl mx-auto text-center mb-16 space-y-4"
@@ -146,8 +146,8 @@ export default function AboutSection() {
 
         {/* Stats Row */}
         <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={false}
+          animate="visible"
           variants={staggerChildren}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
         >
@@ -184,7 +184,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-start mb-16">
           {/* Left: Mission & Approach */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-8"
@@ -236,7 +236,7 @@ export default function AboutSection() {
 
           {/* Right: Why Choose Us checklist */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
@@ -252,7 +252,7 @@ export default function AboutSection() {
               {whyChooseUs.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={false}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.15 + i * 0.06, duration: 0.45 }}
                   className="flex items-start gap-3"
@@ -264,7 +264,7 @@ export default function AboutSection() {
             </div>
 
             <motion.button
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 1 }}
               onClick={() => router.push("/contact")}
@@ -279,7 +279,7 @@ export default function AboutSection() {
 
             {/* Feature image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.25, duration: 0.45 }}
               className="mt-8 relative rounded-2xl overflow-hidden"
@@ -306,8 +306,8 @@ export default function AboutSection() {
 
         {/* Core Values */}
         <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={false}
+          animate="visible"
           variants={staggerChildren}
         >
           <motion.h3

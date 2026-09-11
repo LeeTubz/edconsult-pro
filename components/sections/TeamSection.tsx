@@ -108,7 +108,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-20"
@@ -145,7 +145,7 @@ export default function TeamSection() {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 28 }}
+                initial={false}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.07, duration: 0.55 }}
                 className="group relative overflow-hidden rounded-2xl border p-6 cursor-pointer
@@ -203,7 +203,7 @@ export default function TeamSection() {
 
         {/* CTA Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.45 }}
           className="rounded-2xl p-8 text-center"

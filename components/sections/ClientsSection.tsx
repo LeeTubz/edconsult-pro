@@ -113,7 +113,7 @@ export default function ClientsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
@@ -146,7 +146,7 @@ export default function ClientsSection() {
 
         {/* Tab Switcher */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-14"

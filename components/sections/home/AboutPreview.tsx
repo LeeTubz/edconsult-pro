@@ -48,7 +48,7 @@ export default function AboutPreview() {
 
           {/* Left: image with floating badge */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.75 }}
             className="relative order-2 lg:order-1"
@@ -67,7 +67,7 @@ export default function AboutPreview() {
 
             {/* Floating credential badge */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.45 }}
               className="absolute -bottom-6 -right-4 lg:-right-8 p-4 rounded-2xl shadow-xl flex items-center gap-3"
@@ -87,7 +87,7 @@ export default function AboutPreview() {
           {/* Right: content */}
           <div className="order-1 lg:order-2">
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={false}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.75 }}
             >
@@ -116,7 +116,7 @@ export default function AboutPreview() {
                   return (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, x: 20 }}
+                      initial={false}
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.2 + i * 0.12, duration: 0.55 }}
                       className="flex items-start gap-4"
@@ -135,7 +135,7 @@ export default function AboutPreview() {
               </div>
 
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.2 }}
               >

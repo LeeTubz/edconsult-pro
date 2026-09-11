@@ -66,7 +66,7 @@ export default function ServicesPreview() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
@@ -94,7 +94,7 @@ export default function ServicesPreview() {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 24 }}
+                initial={false}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.07, duration: 0.55 }}
                 className="h-full"
@@ -128,7 +128,7 @@ export default function ServicesPreview() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.15 }}
           className="text-center"

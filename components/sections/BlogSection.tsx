@@ -22,7 +22,7 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14"
@@ -55,7 +55,7 @@ export default function BlogSection() {
 
         {/* Featured Post */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.15, duration: 0.7 }}
         >
@@ -126,7 +126,7 @@ export default function BlogSection() {
           {posts.slice(1).map((post, i) => (
             <motion.article
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.08, duration: 0.6 }}
             >
@@ -200,7 +200,7 @@ export default function BlogSection() {
 
         {/* View All CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
           className="text-center mt-14"

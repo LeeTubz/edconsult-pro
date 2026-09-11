@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
@@ -164,7 +164,7 @@ export default function TestimonialsSection() {
 
         {/* Main Testimonial Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.7 }}
           className="relative max-w-4xl mx-auto"
@@ -287,7 +287,7 @@ export default function TestimonialsSection() {
 
         {/* Mini Avatar Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.15, duration: 0.45 }}
           className="grid grid-cols-3 sm:grid-cols-6 gap-3 mt-8"

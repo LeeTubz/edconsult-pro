@@ -110,7 +110,7 @@ export default function WhyChooseUsSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
@@ -147,7 +147,7 @@ export default function WhyChooseUsSection() {
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={false}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.09, duration: 0.6 }}
                 className="group relative p-7 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
@@ -202,7 +202,7 @@ export default function WhyChooseUsSection() {
           ].map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={false}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.15 + i * 0.06 }}
               className="text-center p-5 rounded-2xl"

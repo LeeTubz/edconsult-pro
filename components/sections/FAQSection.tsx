@@ -66,7 +66,7 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
@@ -97,7 +97,7 @@ export default function FAQSection() {
 
         {/* Accordion */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
           className="space-y-3"
@@ -105,7 +105,7 @@ export default function FAQSection() {
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 15 }}
+              initial={false}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.05 * i, duration: 0.5 }}
               className="rounded-2xl border overflow-hidden transition-all duration-300"
@@ -166,7 +166,7 @@ export default function FAQSection() {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.15 }}
           className="text-center mt-12 p-8 rounded-2xl"

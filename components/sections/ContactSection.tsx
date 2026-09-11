@@ -115,7 +115,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
@@ -147,7 +147,7 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Left: Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.7 }}
             className="space-y-5"
@@ -264,7 +264,7 @@ export default function ContactSection() {
 
           {/* Right: Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
