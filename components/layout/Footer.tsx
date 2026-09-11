@@ -116,7 +116,7 @@ export default function Footer() {
                   <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" />
                 </div>
                 <div>
-                  <div className="text-white font-bold text-lg leading-tight">
+                  <div className="font-display text-white font-bold text-lg leading-tight">
                     Olive<span className="text-[#A8C4A2]">Shoots</span>
                   </div>
                   <div className="text-xs text-white/40 font-medium tracking-wider uppercase">
@@ -126,7 +126,7 @@ export default function Footer() {
               </div>
 
               <p className="text-sm text-white/55 leading-relaxed mb-6">
-                Academic support, institutional consulting, and student guidance —
+                Academic support, institutional consulting, and student guidance,
                 best fit for purpose, not one size fits all.
               </p>
 

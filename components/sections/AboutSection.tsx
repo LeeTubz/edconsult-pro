@@ -19,8 +19,8 @@ import {
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const whyChooseUs = [
-  "A full-service educational consultancy — for students, institutions, and the future",
-  "Best Fit For Purpose — we do not do a one-size-fits-all approach",
+  "A full-service educational consultancy, for students, institutions, and the future",
+  "Best Fit For Purpose: we do not do a one-size-fits-all approach",
   "From tuition and academic writing to institutional quality assurance and audits",
   "Career guidance, counselling, coaching, and mentorship for every student",
   "Modern educational technology training for staff and teachers",
@@ -38,7 +38,7 @@ const values = [
   {
     icon: Shield,
     title: "Integrity",
-    desc: "We operate with complete transparency and ethical standards in everything we do — for students and institutions alike.",
+    desc: "We operate with complete transparency and ethical standards in everything we do, for students and institutions alike.",
     color: "#5A6B4F",
   },
   {
@@ -127,8 +127,8 @@ export default function AboutSection() {
         >
           <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
             We are a full-service, purpose-driven educational consultancy offering
-            educational solutions at every level — for students, for institutions,
-            and for the future. We don&apos;t just consult on education — we help
+            educational solutions at every level, for students, for institutions,
+            and for the future. We don&apos;t just consult on education. We help
             build better learners and stronger institutions.
           </p>
           <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
@@ -229,7 +229,7 @@ export default function AboutSection() {
                 Our Approach
               </h3>
               <p style={{ color: "var(--muted)", lineHeight: "1.7" }}>
-                Best Fit For Purpose. We do not do a one size fits all — we do best fit.
+                Best Fit For Purpose. We do not do a one size fits all. We do best fit.
               </p>
             </div>
           </motion.div>
@@ -287,7 +287,7 @@ export default function AboutSection() {
             >
               <Image
                 src="https://images.unsplash.com/photo-1632215861513-130b66fe97f4?w=800&h=400&q=80&auto=format&fit=crop"
-                alt="African teacher guiding students in a Nigerian classroom — representing our commitment to African education"
+                alt="African teacher guiding students in a Nigerian classroom, representing our commitment to African education"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Phone } from "lucide-react";
+import { BrandMotif } from "@/components/ui/BrandMotif";
 
 export default function HomeCTA() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -18,6 +19,11 @@ export default function HomeCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(143,174,122,0.12) 0%, transparent 70%)", filter: "blur(60px)" }} />
 
+      <BrandMotif
+        className="absolute pointer-events-none hidden md:block"
+        style={{ top: "-15%", right: "-3%", width: 260, height: "auto", color: "#A8C4A2", opacity: 0.1, transform: "rotate(14deg)" }}
+      />
+
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -29,7 +35,7 @@ export default function HomeCTA() {
             <span className="text-sm font-semibold text-[#A8C4A2]">Ready to Get Started?</span>
           </div>
 
-          <h2 className="font-bold text-white mb-5" style={{ fontSize: "clamp(1.875rem, 3vw + 1rem, 3rem)" }}>
+          <h2 className="font-display font-bold text-white mb-5" style={{ fontSize: "clamp(1.875rem, 3vw + 1rem, 3rem)" }}>
             Grow Your{" "}
             <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Future Today

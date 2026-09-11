@@ -1,64 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Compass, ShieldCheck, Cpu, BookOpen,
   ArrowRight, ChevronDown, Star,
 } from "lucide-react";
+import { BrandMotif } from "@/components/ui/BrandMotif";
 
 const floatingCards = [
-  { icon: BookOpen,    label: "Academic Support",    color: "#8FAE7A", side: "left",  top: "calc(50% - 120px)" },
-  { icon: Compass,     label: "Career Guidance",      color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
-  { icon: ShieldCheck, label: "Quality Assurance",    color: "#5A6B4F", side: "left",  top: "calc(50% + 60px)"  },
-  { icon: Cpu,         label: "Ed Technology",        color: "#A8C4A2", side: "right", top: "calc(50% + 60px)"  },
+  { icon: BookOpen,    label: "Academic Support", color: "#8FAE7A", side: "left",  top: "calc(50% - 120px)" },
+  { icon: Compass,     label: "Career Guidance",  color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
+  { icon: ShieldCheck, label: "Quality Assurance",color: "#5A6B4F", side: "left",  top: "calc(50% + 70px)"  },
+  { icon: Cpu,         label: "Ed Technology",    color: "#A8C4A2", side: "right", top: "calc(50% + 70px)"  },
 ];
 
 export default function HeroSection() {
   const router = useRouter();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
-    resize();
-
-    const pts = Array.from({ length: 45 }, () => ({
-      x: Math.random() * canvas.width,  y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.3,  vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 1.5 + 0.4,     a: Math.random() * 0.3 + 0.07,
-      col: ["rgba(143,174,122,","rgba(107,143,163,"][Math.floor(Math.random() * 2)],
-    }));
-
-    let raf: number;
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      pts.forEach((p, i) => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `${p.col}${p.a})`; ctx.fill();
-        pts.slice(i + 1).forEach(q => {
-          const d = Math.hypot(p.x - q.x, p.y - q.y);
-          if (d < 100) {
-            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(143,174,122,${0.06*(1-d/100)})`; ctx.lineWidth=0.5; ctx.stroke();
-          }
-        });
-      });
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-    window.addEventListener("resize", resize);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
-  }, []);
 
   const scrollToNext = () => {
     window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
@@ -70,34 +28,45 @@ export default function HeroSection() {
       className="relative overflow-hidden"
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(160deg,#10150c 0%,#1c2417 60%,#141a10 100%)",
+        background: "radial-gradient(120% 90% at 15% 0%, #223019 0%, #141a10 45%, #10150c 100%)",
       }}
     >
-      {/* ── Background image + deep overlay ── */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1655720348590-c739c860beed?w=1920&h=1080&q=75&auto=format&fit=crop"
-          alt="African university students collaborating with laptops"
-          fill className="object-cover object-center" priority sizes="100vw"
-          onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
-        />
-        <div className="absolute inset-0"
-          style={{ background: "linear-gradient(160deg,rgba(16,21,12,0.94),rgba(28,36,23,0.90),rgba(20,26,16,0.94))" }} />
-      </div>
-
-      {/* ── Particle canvas ── */}
-      <canvas ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 1, opacity: 0.4 }} />
+      {/* ── Large decorative olive-branch motif ── */}
+      <BrandMotif
+        className="absolute pointer-events-none hidden md:block"
+        style={{
+          top: "-6%",
+          right: "-4%",
+          width: "42vw",
+          maxWidth: 560,
+          height: "auto",
+          color: "#8FAE7A",
+          opacity: 0.14,
+          transform: "rotate(8deg)",
+        }}
+      />
+      <BrandMotif
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "-10%",
+          left: "-8%",
+          width: "30vw",
+          maxWidth: 380,
+          height: "auto",
+          color: "#6B8FA3",
+          opacity: 0.1,
+          transform: "rotate(-18deg) scaleX(-1)",
+        }}
+      />
 
       {/* ── Ambient orbs ── */}
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(143,174,122,0.1),transparent 70%)", filter: "blur(48px)" }} />
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(90,107,79,0.08),transparent 70%)", filter: "blur(40px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(143,174,122,0.14),transparent 70%)", filter: "blur(48px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(107,143,163,0.12),transparent 70%)", filter: "blur(40px)" }} />
 
       {/* ── Subtle grid overlay ── */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(143,174,122,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(143,174,122,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
 
-      {/* ── Floating service badges — xl+ only, pinned to sides safely ── */}
+      {/* Floating service badges, xl+ only, pinned to sides safely */}
       {floatingCards.map((card, i) => {
         const Icon = card.icon;
         return (
@@ -128,7 +97,7 @@ export default function HeroSection() {
         );
       })}
 
-      {/* ── Main content — top padding clears fixed navbar ── */}
+      {/* Main content, top padding clears fixed navbar */}
       <div
         className="relative flex flex-col pt-20 sm:pt-24 lg:pt-[7.5rem] pb-8"
         style={{ zIndex: 10, minHeight: "100vh" }}
@@ -153,13 +122,13 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Headline — fluid size via clamp: 2.25rem (mobile) → 3.25rem (desktop) */}
+            {/* Headline: fluid size via clamp, 2.5rem (mobile) to 4rem (desktop) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-bold text-white tracking-tight leading-tight mb-5"
-              style={{ fontSize: "clamp(1.875rem, 3vw + 1rem, 3rem)" }}
+              className="font-display font-bold text-white tracking-tight leading-[1.08] mb-5"
+              style={{ fontSize: "clamp(2.25rem, 4vw + 1rem, 4rem)" }}
             >
               Guiding{" "}
               <span
@@ -183,7 +152,7 @@ export default function HeroSection() {
               className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-8 leading-relaxed"
             >
               A full-service educational consultancy helping students and institutions
-              across Botswana and southern Africa — academic support, quality assurance,
+              across Botswana and southern Africa with academic support, quality assurance,
               educational technology, career guidance, and counselling.
             </motion.p>
 
@@ -234,6 +203,17 @@ export default function HeroSection() {
           </motion.button>
         </div>
       </div>
+
+      {/* ── Wave divider into next section ── */}
+      <svg
+        className="absolute bottom-0 left-0 w-full pointer-events-none"
+        style={{ zIndex: 8, height: "60px" }}
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0,32 C240,60 480,0 720,18 C960,36 1200,58 1440,24 L1440,60 L0,60 Z" style={{ fill: "var(--background)" }} />
+      </svg>
     </section>
   );
 }

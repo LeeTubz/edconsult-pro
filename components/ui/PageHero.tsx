@@ -111,7 +111,7 @@ export default function PageHero({
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-3xl"
         >
-          <h1 className="font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw + 1rem, 3.5rem)" }}>
+          <h1 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw + 1rem, 3.5rem)" }}>
             {title}
           </h1>
           {subtitle && (

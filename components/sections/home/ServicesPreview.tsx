@@ -9,14 +9,14 @@ const services = [
   {
     icon: BookOpen,
     title: "Academic Support",
-    description: "Tuition (IGCSE & IB), academic writing consultation, editing and proofreading, and research consultation — academic support with purpose.",
+    description: "Tuition (IGCSE & IB), academic writing consultation, editing and proofreading, and research consultation: academic support with purpose.",
     color: "#8FAE7A",
     href: "/services/academic-support",
   },
   {
     icon: ShieldCheck,
     title: "Quality Assurance",
-    description: "Quality assurance and external moderation — benchmarking, policy review, audits, observations, and staff appraisal for institutions.",
+    description: "Quality assurance and external moderation: benchmarking, policy review, audits, observations, and staff appraisal for institutions.",
     color: "#5A6B4F",
     href: "/services/quality-assurance",
   },
@@ -30,21 +30,21 @@ const services = [
   {
     icon: ClipboardCheck,
     title: "Institutional Audits",
-    description: "Internal program and institutional audits — scope development, compliance review, staff engagement, and clear reporting.",
+    description: "Internal program and institutional audits: scope development, compliance review, staff engagement, and clear reporting.",
     color: "#4A6B7A",
     href: "/services/institutional-audits",
   },
   {
     icon: Compass,
     title: "Career Guidance",
-    description: "Subject-choice advice that pushes for the 'best fit' — plus academic pathway mapping, university admissions, and skills & trade guidance.",
+    description: "Subject-choice advice that pushes for the 'best fit', plus academic pathway mapping, university admissions, and skills & trade guidance.",
     color: "#6B8FA3",
     href: "/services/career-guidance",
   },
   {
     icon: HeartHandshake,
     title: "Counselling & Mentorship",
-    description: "Supporting academic, work, social, and spiritual life — because a thriving student is more than just their grades.",
+    description: "Supporting academic, work, social, and spiritual life, because a thriving student is more than just their grades.",
     color: "#6F8C5B",
     href: "/services/student-counselling",
   },
@@ -56,7 +56,7 @@ export default function ServicesPreview() {
   return (
     <section
       className="section-padding relative overflow-hidden"
-      style={{ background: "var(--background)" }}
+      style={{ background: "var(--section-alt)" }}
       ref={ref}
     >
       <div className="absolute inset-0 pointer-events-none"
@@ -81,7 +81,7 @@ export default function ServicesPreview() {
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            From tuition and academic writing to institutional quality assurance —
+            From tuition and academic writing to institutional quality assurance,
             we offer a full suite of services, best fit for purpose, not one size fits all.
           </p>
         </motion.div>
@@ -99,14 +99,19 @@ export default function ServicesPreview() {
               >
                 <Link
                   href={s.href}
-                  className="group block p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full"
+                  className="group relative block p-6 pt-7 rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 h-full"
                   style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 >
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }} />
+                  <div
+                    className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{ boxShadow: `0 16px 40px -12px ${s.color}45` }}
+                  />
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
                     style={{ background: `${s.color}15` }}>
                     <Icon className="w-6 h-6" style={{ color: s.color }} />
                   </div>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: "var(--foreground)" }}>{s.title}</h3>
+                  <h3 className="text-lg font-bold mb-2 font-display" style={{ color: "var(--foreground)" }}>{s.title}</h3>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>{s.description}</p>
                   <span className="inline-flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all duration-200" style={{ color: s.color }}>
                     Learn more <ArrowRight className="w-3.5 h-3.5" />

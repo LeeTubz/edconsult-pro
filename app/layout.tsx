@@ -24,7 +24,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Olive Shoots — Educational Consultancy in Botswana & Africa",
+    default: "Olive Shoots | Educational Consultancy in Botswana & Africa",
     template: "%s | Olive Shoots",
   },
   description:
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Olive Shoots",
-    title: "Olive Shoots — Educational Consultancy",
+    title: "Olive Shoots | Educational Consultancy",
     description:
       "Academic support, quality assurance, educational technology, career guidance, and student counselling. 500+ students guided, 200+ schools served, 98% success rate.",
     images: [
@@ -75,13 +75,13 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Olive Shoots — Educational Consultancy",
+        alt: "Olive Shoots | Educational Consultancy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olive Shoots — Educational Consultancy",
+    title: "Olive Shoots | Educational Consultancy",
     description:
       "Academic support, quality assurance, educational technology, career guidance, and student counselling. Book your free consultation today.",
     images: [`${siteUrl}/og-image.png`],

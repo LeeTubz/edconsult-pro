@@ -59,7 +59,7 @@ const consultants = [
     title: "Career Guidance Consultant",
     tagline: "Career Clarity & Pathways",
     description:
-      "Helping students choose the right subjects and map an academic pathway — from O-Level to post-university — with a focus on 'best fit', not university admission only.",
+      "Helping students choose the right subjects and map an academic pathway, from O-Level to post-university, with a focus on 'best fit', not university admission only.",
     specialties: ["Subject Choice Advice", "Alternative Pathways", "University Admissions", "Skills & Trade"],
     color: "#6B8FA3",
     gradient: "from-[#6B8FA3] to-[#3d5763]",
@@ -69,7 +69,7 @@ const consultants = [
     title: "Counselling & Mentorship Consultant",
     tagline: "Academic, Work, Social & Spiritual Life",
     description:
-      "Supporting students through academic life, work life and internships, social challenges, and — for those who want it — a balanced Christian student life.",
+      "Supporting students through academic life, work life and internships, social challenges, and, for those who want it, a balanced Christian student life.",
     specialties: ["Academic Life", "Work Life", "Social Life", "Spiritual Life"],
     color: "#6F8C5B",
     gradient: "from-[#6F8C5B] to-[#4a5842]",

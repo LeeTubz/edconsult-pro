@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <div style="background: linear-gradient(135deg, #1c2417, #5A6B4F); padding: 32px; border-radius: 12px 12px 0 0;">
                 <h1 style="color: white; margin: 0; font-size: 24px;">New Consultation Request</h1>
-                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">Olive Shoots — Educational Consultancy</p>
+                <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0;">Olive Shoots | Educational Consultancy</p>
               </div>
               <div style="background: #F5F4F0; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #dde4d0;">
                 <table style="width: 100%; border-collapse: collapse;">
@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
         await resend.emails.send({
           from: "Olive Shoots <noreply@oliveshoots.com>",
           to: [email],
-          subject: "We received your consultation request — Olive Shoots",
+          subject: "We received your consultation request | Olive Shoots",
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <div style="background: linear-gradient(135deg, #1c2417, #5A6B4F); padding: 40px; border-radius: 12px 12px 0 0; text-align: center;">

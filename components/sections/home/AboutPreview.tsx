@@ -5,24 +5,25 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, CheckCircle, MapPin, GraduationCap, Lightbulb } from "lucide-react";
+import { BrandMotif } from "@/components/ui/BrandMotif";
 
 const pillars = [
   {
     icon: MapPin,
     title: "Built for Botswana & Africa",
-    desc: "Our approach is grounded in local context — we understand the educational landscape here in a way no foreign consultancy can.",
+    desc: "Our approach is grounded in local context. We understand the educational landscape here in a way no foreign consultancy can.",
     color: "#5A6B4F",
   },
   {
     icon: GraduationCap,
     title: "Specialist Consultants, Not Generalists",
-    desc: "Every student works with a dedicated specialist — not a call centre. Our consultants bring focused experience in their specific area of support.",
+    desc: "Every student works with a dedicated specialist, not a call centre. Our consultants bring focused experience in their specific area of support.",
     color: "#6B8FA3",
   },
   {
     icon: Lightbulb,
     title: "Outcomes You Can Measure",
-    desc: "We set clear goals at the start of every engagement and report transparently on progress — because your results are our reputation.",
+    desc: "We set clear goals at the start of every engagement and report transparently on progress, because your results are our reputation.",
     color: "#8FAE7A",
   },
 ];
@@ -37,10 +38,15 @@ export default function AboutPreview() {
       style={{ background: "var(--background)" }}
       ref={ref}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <BrandMotif
+        className="absolute pointer-events-none hidden lg:block"
+        style={{ top: "-8%", left: "-6%", width: 280, height: "auto", color: "#8FAE7A", opacity: 0.08, transform: "rotate(-20deg)" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* Left — Image with floating badge */}
+          {/* Left: image with floating badge */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -78,7 +84,7 @@ export default function AboutPreview() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Content */}
+          {/* Right: content */}
           <div className="order-1 lg:order-2">
             <motion.div
               initial={{ opacity: 0, x: 30 }}

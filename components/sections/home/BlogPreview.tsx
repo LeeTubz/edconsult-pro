@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Clock, ArrowRight, Tag } from "lucide-react";
 import { blogPosts } from "@/lib/blog-data";
+import { BrandMotif } from "@/components/ui/BrandMotif";
 
 const posts = blogPosts.slice(0, 3);
 
@@ -15,10 +16,15 @@ export default function BlogPreview() {
   return (
     <section
       className="section-padding relative overflow-hidden"
-      style={{ background: "var(--background)" }}
+      style={{ background: "var(--section-alt)" }}
       ref={ref}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <BrandMotif
+        className="absolute pointer-events-none hidden lg:block"
+        style={{ top: "-10%", left: "-6%", width: 260, height: "auto", color: "#8FAE7A", opacity: 0.07, transform: "rotate(-12deg)" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -89,7 +95,7 @@ export default function BlogPreview() {
                     <span>·</span>
                     {post.date}
                   </div>
-                  <h3 className="text-base font-bold mb-2 leading-snug group-hover:text-[#5A6B4F] transition-colors line-clamp-2"
+                  <h3 className="font-display text-base font-bold mb-2 leading-snug group-hover:text-[#5A6B4F] transition-colors line-clamp-2"
                     style={{ color: "var(--foreground)" }}>
                     {post.title}
                   </h3>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { BrandMotif } from "@/components/ui/BrandMotif";
 
 const testimonials = [
   {
@@ -13,7 +14,7 @@ const testimonials = [
     role: "Parent",
     organization: "Gaborone, Botswana",
     content:
-      "Olive Shoots gave my son real clarity on his subject choices and mapped a pathway that actually fit him — not just 'go to university'. Their career guidance and admissions support helped him secure a place at the University of Cape Town. The personalised attention was unlike anything we had experienced before.",
+      "Olive Shoots gave my son real clarity on his subject choices and mapped a pathway that actually fit him, not just 'go to university'. Their career guidance and admissions support helped him secure a place at the University of Cape Town. The personalised attention was unlike anything we had experienced before.",
     rating: 5,
     initials: "LM",
     color: "#5A6B4F",
@@ -25,7 +26,7 @@ const testimonials = [
     role: "Principal",
     organization: "Francistown Senior Secondary School",
     content:
-      "The student counselling framework Olive Shoots helped us put in place completely changed how we support learners through the social and academic sides of student life. Their approach helped us improve our national examination pass rates by 28% in a single academic year — students who feel supported perform better.",
+      "The student counselling framework Olive Shoots helped us put in place completely changed how we support learners through the social and academic sides of student life. Their approach helped us improve our national examination pass rates by 28% in a single academic year. Students who feel supported perform better.",
     rating: 5,
     initials: "OS",
     color: "#6B8FA3",
@@ -37,7 +38,7 @@ const testimonials = [
     role: "University Student",
     organization: "University of Botswana, Gaborone",
     content:
-      "As a first-generation university student from Maun, I was completely overwhelmed by academic writing at university level. Olive Shoots' coaching gave me the structure and confidence to actually enjoy my assignments and research work. I am now excelling in Business Administration at UB — a version of myself I once thought was out of reach.",
+      "As a first-generation university student from Maun, I was completely overwhelmed by academic writing at university level. Olive Shoots' coaching gave me the structure and confidence to actually enjoy my assignments and research work. I am now excelling in Business Administration at UB, a version of myself I once thought was out of reach.",
     rating: 5,
     initials: "ND",
     color: "#8FAE7A",
@@ -61,7 +62,7 @@ const testimonials = [
     role: "Deputy Principal",
     organization: "Mochudi Community Junior Secondary",
     content:
-      "When our senior students needed better preparation before their first workplace placements, Olive Shoots' internship guidance was our anchor. Their systematic approach helped every one of our final-year students walk in ready — and several employers specifically asked for more of our graduates.",
+      "When our senior students needed better preparation before their first workplace placements, Olive Shoots' internship guidance was our anchor. Their systematic approach helped every one of our final-year students walk in ready, and several employers specifically asked for more of our graduates.",
     rating: 5,
     initials: "KM",
     color: "#6F8C5B",
@@ -73,7 +74,7 @@ const testimonials = [
     role: "Parents",
     organization: "Lobatse, Botswana",
     content:
-      "Our son was completely lost on which subjects to take and what came after school. Olive Shoots' career guidance consultant helped him find real clarity — not just 'get into university', but a path that actually fit him. He is thriving today and we are forever grateful.",
+      "Our son was completely lost on which subjects to take and what came after school. Olive Shoots' career guidance consultant helped him find real clarity, not just 'get into university', but a path that actually fit him. He is thriving today and we are forever grateful.",
     rating: 5,
     initials: "MK",
     color: "#5A6B4F",
@@ -123,8 +124,12 @@ export default function TestimonialsSection() {
           filter: "blur(80px)",
         }}
       />
+      <BrandMotif
+        className="absolute pointer-events-none hidden lg:block"
+        style={{ bottom: "-12%", right: "-5%", width: 300, height: "auto", color: "#6B8FA3", opacity: 0.07, transform: "rotate(16deg)" }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -177,8 +182,13 @@ export default function TestimonialsSection() {
             style={{
               background: "var(--card-bg)",
               borderColor: "var(--card-border)",
+              boxShadow: "0 24px 60px -20px rgba(43,51,39,0.18)",
             }}
           >
+            <div
+              className="absolute top-0 left-0 right-0 h-[3px] transition-colors duration-500"
+              style={{ background: `linear-gradient(90deg, ${t.color}, ${t.color}33)` }}
+            />
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}

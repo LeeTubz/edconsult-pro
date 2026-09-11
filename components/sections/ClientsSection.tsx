@@ -37,7 +37,7 @@ const clientSegments = [
       {
         icon: Compass,
         title: "Career Clarity & Reality Checks",
-        desc: "Subject-choice advice and pathway guidance that pushes for the 'best fit' — not university admission only.",
+        desc: "Subject-choice advice and pathway guidance that pushes for the 'best fit', not university admission only.",
       },
       {
         icon: GraduationCap,
@@ -139,7 +139,7 @@ export default function ClientsSection() {
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
             Whether you're a student or family seeking personal guidance, or a school
-            looking to build staff capacity and support your students — we have the
+            looking to build staff capacity and support your students, we have the
             right service for you.
           </p>
         </motion.div>

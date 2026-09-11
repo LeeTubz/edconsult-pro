@@ -35,7 +35,7 @@ const reasons = [
     icon: BarChart3,
     title: "Data-Driven Strategy",
     description:
-      "Our recommendations are grounded in rigorous research, benchmarking, and educational data analytics — ensuring every decision is evidence-based.",
+      "Our recommendations are grounded in rigorous research, benchmarking, and educational data analytics, so every decision is evidence-based.",
     color: "#8FAE7A",
     stat: "98%",
     statLabel: "Success Rate",
@@ -44,7 +44,7 @@ const reasons = [
     icon: Lightbulb,
     title: "Educational Innovation",
     description:
-      "We stay at the frontier of educational research, technology, and policy — bringing cutting-edge approaches to every engagement.",
+      "We stay at the frontier of educational research, technology, and policy, bringing cutting-edge approaches to every engagement.",
     color: "#6F8C5B",
     stat: "50+",
     statLabel: "Countries Reached",
@@ -62,7 +62,7 @@ const reasons = [
     icon: HeartHandshake,
     title: "Professional Support",
     description:
-      "We are committed partners throughout your entire journey — providing responsive, professional support long after the initial engagement.",
+      "We are committed partners throughout your entire journey, providing responsive, professional support long after the initial engagement.",
     color: "#A8C4A2",
     stat: "24/7",
     statLabel: "Support Available",
@@ -99,6 +99,14 @@ export default function WhyChooseUsSection() {
         }}
       />
 
+      {/* Wave dividers */}
+      <svg className="absolute top-0 left-0 w-full pointer-events-none" style={{ height: "56px" }} viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 L1440,0 L1440,22 C1200,52 960,32 720,16 C480,0 240,54 0,28 Z" style={{ fill: "var(--background)" }} />
+      </svg>
+      <svg className="absolute bottom-0 left-0 w-full pointer-events-none" style={{ height: "56px" }} viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,30 C240,56 480,2 720,18 C960,34 1200,54 1440,24 L1440,56 L0,56 Z" style={{ fill: "var(--background)" }} />
+      </svg>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -113,7 +121,7 @@ export default function WhyChooseUsSection() {
           >
             <span className="text-sm font-semibold text-[#A8C4A2]">The Olive Shoots Difference</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-3">
             Why Leading Clients{" "}
             <span
               style={{

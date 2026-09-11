@@ -124,7 +124,7 @@ export default function Navbar() {
               <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" priority />
             </div>
             <div>
-              <div className="text-white font-bold text-base leading-tight tracking-tight">
+              <div className="font-display text-white font-bold text-base leading-tight tracking-tight">
                 Olive<span className="text-[#A8C4A2]">Shoots</span>
               </div>
               <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
@@ -210,7 +210,7 @@ export default function Navbar() {
               </button>
             )}
 
-            {/* CTA — desktop */}
+            {/* CTA (desktop) */}
             <button
               onClick={() => navigate("/contact")}
               className="hidden md:flex items-center gap-1.5 px-5 py-2 rounded-full
@@ -224,7 +224,7 @@ export default function Navbar() {
               Book Consultation
             </button>
 
-            {/* Hamburger — mobile */}
+            {/* Hamburger (mobile) */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center

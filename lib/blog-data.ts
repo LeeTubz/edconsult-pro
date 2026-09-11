@@ -2,7 +2,7 @@ export const blogPosts = [
   {
     title: "Choosing the Right University: A Complete Guide for Southern African Students",
     excerpt:
-      "Navigating university selection — from UB and UNISA to international options — can be overwhelming. Our consultants break down the key factors to help you make the 'best fit' choice for your future.",
+      "Navigating university selection, from UB and UNISA to international options, can be overwhelming. Our consultants break down the key factors to help you make the 'best fit' choice for your future.",
     category: "Career Guidance",
     date: "May 15, 2025",
     readTime: "8 min read",

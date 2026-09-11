@@ -25,7 +25,7 @@ const processes = [
     icon: Map,
     title: "Personalised Plan",
     description:
-      "We build a tailored support plan — whether that's career guidance, counselling, coaching, or internship guidance — matched to your specific needs.",
+      "We build a tailored support plan, whether that's career guidance, counselling, coaching, or internship guidance, matched to your specific needs.",
     color: "#6B8FA3",
     features: ["Tailored plan", "Right-fit service", "Clear milestones", "Flexible scheduling"],
   },
@@ -34,7 +34,7 @@ const processes = [
     icon: Lightbulb,
     title: "One-on-One Support",
     description:
-      "You work directly with a dedicated consultant through regular sessions — not a call centre, and not a one-size-fits-all template.",
+      "You work directly with a dedicated consultant through regular sessions, not a call centre, and not a one-size-fits-all template.",
     color: "#8FAE7A",
     features: ["Dedicated consultant", "Regular sessions", "Confidential", "Personal attention"],
   },
@@ -52,7 +52,7 @@ const processes = [
     icon: BarChart2,
     title: "Ongoing Check-ins",
     description:
-      "We follow up regularly to track progress and adjust the plan as your needs evolve — support doesn't end after the first session.",
+      "We follow up regularly to track progress and adjust the plan as your needs evolve. Support doesn't end after the first session.",
     color: "#A8C4A2",
     features: ["Progress tracking", "Regular follow-up", "Plan adjustments", "Long-term support"],
   },

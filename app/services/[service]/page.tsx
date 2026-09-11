@@ -22,15 +22,15 @@ const serviceData = {
     ),
     titleText: "Academic Support",
     subtitle:
-      "Tuition, academic writing, editing and proofreading, and research consultation — tailored academic support with purpose, for every learner.",
+      "Tuition, academic writing, editing and proofreading, and research consultation: tailored academic support with purpose, for every learner.",
     accentColor: "#8FAE7A",
     icon: BookOpen,
-    metaTitle: "Academic Support Services — Tuition, Writing, Editing & Research",
+    metaTitle: "Academic Support Services: Tuition, Writing, Editing & Research",
     metaDesc:
       "Tuition for IGCSE and IB, academic writing consultation, editing and proofreading, and research consultation from Olive Shoots.",
     headline: "Academic Support With Purpose",
     intro:
-      "From the classroom to the research desk, our academic support services are built for real learners with real deadlines. Whether you need subject tuition, help structuring a dissertation, a second pair of eyes on your writing, or guidance through a research project, we tailor our support to fit — not a one-size-fits-all approach.",
+      "From the classroom to the research desk, our academic support services are built for real learners with real deadlines. Whether you need subject tuition, help structuring a dissertation, a second pair of eyes on your writing, or guidance through a research project, we tailor our support to fit, not a one-size-fits-all approach.",
     offerings: [
       { title: "Tuition", desc: "One-on-one and group tuition for IGCSE (O-Level, AS and A-Level) and all IB programmes (PYP, MYP, IB Diploma), across subjects." },
       { title: "Academic Writing Consultation", desc: "Support for assignments, research proposals, dissertations, journal articles, review papers, and conference papers." },
@@ -58,7 +58,7 @@ const serviceData = {
     ),
     titleText: "Quality Assurance & External Moderation",
     subtitle:
-      "Promoting quality standards throughout your institution — research, benchmarking, documentation review, audits, and external moderation.",
+      "Promoting quality standards throughout your institution through research, benchmarking, documentation review, audits, and external moderation.",
     accentColor: "#5A6B4F",
     icon: ShieldCheck,
     metaTitle: "Quality Assurance & External Moderation for Educational Institutions",
@@ -66,7 +66,7 @@ const serviceData = {
       "Quality assurance, benchmarking, policy review, audits, and external moderation services for educational institutions from Olive Shoots.",
     headline: "Promoting Quality Standards Throughout Your Institution",
     intro:
-      "Quality doesn't happen by accident — it's built through research, clear standard operating procedures, and honest review. We work alongside educational institutions to benchmark against best practice, review policies and procedures, and conduct the audits and appraisals that keep standards high.",
+      "Quality doesn't happen by accident. It's built through research, clear standard operating procedures, and honest review. We work alongside educational institutions to benchmark against best practice, review policies and procedures, and conduct the audits and appraisals that keep standards high.",
     offerings: [
       { title: "Best-Practice Research & Benchmarking", desc: "Research into best practices, benchmarked against other institutions, to strengthen the management of quality processes." },
       { title: "Institutional Document Review", desc: "Review of policies, procedures, website content, and other materials intended for stakeholder consumption." },
@@ -96,10 +96,10 @@ const serviceData = {
     ),
     titleText: "Educational Technology",
     subtitle:
-      "Staff and teacher capacity building via webinars — navigating online classes, AI in education, and content creation for e-learning.",
+      "Staff and teacher capacity building via webinars, covering online classes, AI in education, and content creation for e-learning.",
     accentColor: "#A8C4A2",
     icon: Cpu,
-    metaTitle: "Educational Technology Training — Webinars, Online Classes & AI",
+    metaTitle: "Educational Technology Training: Webinars, Online Classes & AI",
     metaDesc:
       "Staff and teacher capacity building via webinars, navigating online classes and e-learning, AI in education and administration, and content creation for e-learning.",
     headline: "Building Real Capacity for Digital Learning",
@@ -140,7 +140,7 @@ const serviceData = {
       "Audit scope development, compliance review, and audit reporting for educational institutions from Olive Shoots.",
     headline: "Audits That Lead to Real Improvement",
     intro:
-      "An audit should leave an institution stronger, not just scrutinised. We develop clear audit scopes, work transparently with staff throughout the process, and compile findings into practical recommendations with agreed timelines — reviewed on a five-year cycle.",
+      "An audit should leave an institution stronger, not just scrutinised. We develop clear audit scopes, work transparently with staff throughout the process, and compile findings into practical recommendations with agreed timelines, reviewed on a five-year cycle.",
     offerings: [
       { title: "Audit Scope Development", desc: "Developing audit scopes and generating audit working documents, communicated clearly to the relevant process owners." },
       { title: "Compliance Review", desc: "Reviewing compliance with regulatory requirements and institutional policies and procedures." },
@@ -170,21 +170,21 @@ const serviceData = {
     ),
     titleText: "Career Guidance",
     subtitle:
-      "Subject-choice advice and reality checks that push for the 'best fit' — not university admission only — plus academic pathway mapping, university admissions support, and skills & trade pathways.",
+      "Subject-choice advice and reality checks that push for the 'best fit', not university admission only, plus academic pathway mapping, university admissions support, and skills & trade pathways.",
     accentColor: "#6B8FA3",
     icon: Compass,
-    metaTitle: "Career Guidance — Subject Choice, Pathways, Admissions & Skills",
+    metaTitle: "Career Guidance: Subject Choice, Pathways, Admissions & Skills",
     metaDesc:
       "Career clarity and reality checks, academic pathway mapping, university admissions assistance, and skills & trade pathway guidance for students in Botswana and Africa.",
     headline: "Career Guidance With Impact",
     intro:
-      "From classroom to career, we help students choose subjects and directions with real clarity — pushing for the 'best fit', not university admission only. We work alongside school counsellors and advisors, not in competition with them, mapping academic and alternative pathways from O-Level all the way through to post-university, and beyond the purely academic.",
+      "From classroom to career, we help students choose subjects and directions with real clarity, pushing for the 'best fit' rather than university admission only. We work alongside school counsellors and advisors, not in competition with them, mapping academic and alternative pathways from O-Level all the way through to post-university, and beyond the purely academic.",
     offerings: [
-      { title: "Career Clarity & Reality Checks", desc: "Honest, practical advice on subject choice and career direction, pushing for the 'best fit' — not university admission only." },
-      { title: "Works Alongside School Counsellors", desc: "We don't compete with school counsellors and advisors — we work together with them for a common cause." },
-      { title: "Academic Pathway Mapping", desc: "Mapping an academic pathway — and 'alternative pathways' — from O-Level all the way through to post-university." },
+      { title: "Career Clarity & Reality Checks", desc: "Honest, practical advice on subject choice and career direction, pushing for the 'best fit' rather than university admission only." },
+      { title: "Works Alongside School Counsellors", desc: "We don't compete with school counsellors and advisors. We work together with them for a common cause." },
+      { title: "Academic Pathway Mapping", desc: "Mapping an academic pathway, and 'alternative pathways', from O-Level all the way through to post-university." },
       { title: "University Admissions Assistance", desc: "Assistance with university admissions and queries, including personal statement coaching and interview preparation." },
-      { title: "Skills & Trade (Non-Academic Pathway)", desc: "Guidance into skills and trade pathways for students who aren't academically inclined — there's a place for everyone in a knowledge- and practical-based economy." },
+      { title: "Skills & Trade (Non-Academic Pathway)", desc: "Guidance into skills and trade pathways for students who aren't academically inclined. There's a place for everyone in a knowledge- and practical-based economy." },
     ],
     stats: [
       { value: "500+", label: "Students guided" },
@@ -207,20 +207,20 @@ const serviceData = {
     ),
     titleText: "Student Counselling, Coaching & Mentorship",
     subtitle:
-      "Supporting the academic, work, social, and spiritual sides of student life — because a thriving student is more than just their grades.",
+      "Supporting the academic, work, social, and spiritual sides of student life, because a thriving student is more than just their grades.",
     accentColor: "#6F8C5B",
     icon: HeartHandshake,
-    metaTitle: "Student Counselling, Coaching & Mentorship — Academic, Work, Social & Spiritual Life",
+    metaTitle: "Student Counselling, Coaching & Mentorship: Academic, Work, Social & Spiritual Life",
     metaDesc:
       "Student counselling, coaching, and mentorship covering academic life, work life and internships, social life, and spiritual life for a balanced student.",
     headline: "Support for the Whole Student",
     intro:
-      "Academic success rarely happens in isolation from everything else going on in a student's life. Our counselling, coaching, and mentorship services support students across four areas that matter — studying for academic success, navigating internships and early work life, handling social challenges and striking a balance, and, for students who want it, the disciplines of a balanced Christian student life.",
+      "Academic success rarely happens in isolation from everything else going on in a student's life. Our counselling, coaching, and mentorship services support students across four areas that matter: studying for academic success, navigating internships and early work life, handling social challenges and striking a balance, and, for students who want it, the disciplines of a balanced Christian student life.",
     offerings: [
-      { title: "Academic Life — Studying for Success", desc: "Practical coaching and mentorship to help students study effectively and achieve academic success." },
-      { title: "Work Life — Navigating Internship", desc: "Guidance for students transitioning into and navigating internships and early work experience." },
-      { title: "Social Life — Navigating Challenges & Balance", desc: "Support for navigating social challenges and striking a healthy balance in student life." },
-      { title: "Spiritual Life — Disciplines of a Balanced Christian Student", desc: "Mentorship in the spiritual disciplines that support a balanced Christian student life, for students who want this dimension of support." },
+      { title: "Academic Life: Studying for Success", desc: "Practical coaching and mentorship to help students study effectively and achieve academic success." },
+      { title: "Work Life: Navigating Internship", desc: "Guidance for students transitioning into and navigating internships and early work experience." },
+      { title: "Social Life: Navigating Challenges & Balance", desc: "Support for navigating social challenges and striking a healthy balance in student life." },
+      { title: "Spiritual Life: Disciplines of a Balanced Christian Student", desc: "Mentorship in the spiritual disciplines that support a balanced Christian student life, for students who want this dimension of support." },
     ],
     stats: [
       { value: "300+", label: "Students supported" },

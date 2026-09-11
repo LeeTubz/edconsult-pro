@@ -4,7 +4,7 @@ import BlogSection from "@/components/sections/BlogSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: "Blog — Student Support Insights & Articles",
+  title: "Blog | Student Support Insights & Articles",
   description:
     "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Olive Shoots team.",
 };
@@ -22,7 +22,7 @@ export default function BlogPage() {
             </span>
           </>
         }
-        subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa — from the Olive Shoots team."
+        subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa, from the Olive Shoots team."
         breadcrumbs={[{ label: "Blog" }]}
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
         secondaryCta={{ label: "Our Services", href: "/services/academic-support" }}

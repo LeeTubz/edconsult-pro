@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Article Not Found" };
   return {
-    title: `${post.title} — Olive Shoots`,
+    title: `${post.title} | Olive Shoots`,
     description: post.excerpt,
   };
 }
@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               Why This Matters
             </h2>
             <p className="leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
-              The landscape for students in Botswana and across Africa is changing rapidly. New opportunities — from alternative academic pathways to EdTech innovations — are opening up for students who know how to navigate them. Our consultants work on the frontlines of these changes every day, and we're committed to sharing what we learn.
+              The landscape for students in Botswana and across Africa is changing rapidly. New opportunities, from alternative academic pathways to EdTech innovations, are opening up for students who know how to navigate them. Our consultants work on the frontlines of these changes every day, and we're committed to sharing what we learn.
             </p>
 
             <h2 className="text-2xl font-bold mb-4 mt-10" style={{ color: "var(--foreground)" }}>

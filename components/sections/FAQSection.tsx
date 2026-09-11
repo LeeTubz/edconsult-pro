@@ -30,12 +30,12 @@ const faqs = [
   {
     question: "Do you compete with school counsellors and advisors?",
     answer:
-      "No — we work alongside them, not in place of them. Our career guidance pushes for the 'best fit' for each student rather than university admission only, and we're glad to coordinate directly with a student's existing school counsellors and advisors toward the same goal.",
+      "No, we work alongside them, not in place of them. Our career guidance pushes for the 'best fit' for each student rather than university admission only, and we're glad to coordinate directly with a student's existing school counsellors and advisors toward the same goal.",
   },
   {
     question: "What makes Olive Shoots different from other consultancies?",
     answer:
-      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution — 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 200+ schools).",
+      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution, following 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 200+ schools).",
   },
   {
     question: "Do you work with individual students, or with schools and institutions too?",
@@ -45,7 +45,7 @@ const faqs = [
   {
     question: "How do I get started with Olive Shoots?",
     answer:
-      "Getting started is easy. Simply complete the consultation booking form on our website, and one of our team will contact you within 24 hours to schedule your free discovery call. You can also reach us directly via phone, email, or WhatsApp. There's no obligation — our goal is simply to understand your needs and see how we can help.",
+      "Getting started is easy. Simply complete the consultation booking form on our website, and one of our team will contact you within 24 hours to schedule your free discovery call. You can also reach us directly via phone, email, or WhatsApp. There's no obligation. Our goal is simply to understand your needs and see how we can help.",
   },
 ];
 

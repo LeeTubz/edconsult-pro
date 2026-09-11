@@ -140,7 +140,7 @@ export default function ContactSection() {
             </span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            We're here to help. Reach out through any channel — we typically respond within 24 hours.
+            We're here to help. Reach out through any channel, we typically respond within 24 hours.
           </p>
         </motion.div>
 
@@ -215,7 +215,7 @@ export default function ContactSection() {
                   Chat on WhatsApp
                 </div>
                 <div className="text-sm" style={{ color: "var(--muted)" }}>
-                  Get instant answers — usually responds in minutes
+                  Get instant answers, usually responds in minutes
                 </div>
               </div>
             </a>
@@ -257,7 +257,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Olive Shoots — Gaborone, Botswana"
+                title="Olive Shoots | Gaborone, Botswana"
               />
             </div>
           </motion.div>
