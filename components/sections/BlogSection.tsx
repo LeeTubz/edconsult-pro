@@ -202,7 +202,7 @@ export default function BlogSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.2 }}
           className="text-center mt-14"
         >
           <Link

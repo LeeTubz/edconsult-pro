@@ -130,7 +130,7 @@ export default function ServicesPreview() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.45 }}
+          transition={{ delay: 0.15 }}
           className="text-center"
         >
           <Link

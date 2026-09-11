@@ -197,7 +197,7 @@ export default function WhatWeDoSection() {
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.55, duration: 0.6 }}
+                transition={{ delay: 0.15, duration: 0.45 }}
                 className="group relative p-6 rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-w-sm w-full"
                 style={{
                   background: "var(--card-bg)",

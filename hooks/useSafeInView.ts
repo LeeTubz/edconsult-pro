@@ -28,7 +28,7 @@ export function useSafeInView(options: SafeInViewOptions = {}) {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!firedRef.current) setForced(true);
-    }, 1200);
+    }, 400);
     return () => clearTimeout(timer);
   }, []);
 

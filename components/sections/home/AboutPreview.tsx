@@ -69,7 +69,7 @@ export default function AboutPreview() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0.15, duration: 0.45 }}
               className="absolute -bottom-6 -right-4 lg:-right-8 p-4 rounded-2xl shadow-xl flex items-center gap-3"
               style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)", backdropFilter: "blur(12px)" }}
             >
@@ -137,7 +137,7 @@ export default function AboutPreview() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.2 }}
               >
                 <Link
                   href="/about"

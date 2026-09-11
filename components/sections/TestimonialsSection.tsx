@@ -289,7 +289,7 @@ export default function TestimonialsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.5, duration: 0.6 }}
+          transition={{ delay: 0.15, duration: 0.45 }}
           className="grid grid-cols-3 sm:grid-cols-6 gap-3 mt-8"
         >
           {testimonials.map((item, i) => (

@@ -238,7 +238,7 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
             <h3 className="text-2xl font-bold mb-2" style={{ color: "var(--foreground)" }}>
               Why Clients Trust Us
@@ -254,7 +254,7 @@ export default function AboutSection() {
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
+                  transition={{ delay: 0.15 + i * 0.06, duration: 0.45 }}
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-[#8FAE7A]" />
@@ -281,7 +281,7 @@ export default function AboutSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.9, duration: 0.6 }}
+              transition={{ delay: 0.25, duration: 0.45 }}
               className="mt-8 relative rounded-2xl overflow-hidden"
               style={{ height: "220px" }}
             >

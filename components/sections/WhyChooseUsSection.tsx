@@ -204,7 +204,7 @@ export default function WhyChooseUsSection() {
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.5 + i * 0.1 }}
+              transition={{ delay: 0.15 + i * 0.06 }}
               className="text-center p-5 rounded-2xl"
               style={{
                 background: "rgba(255, 255, 255, 0.04)",

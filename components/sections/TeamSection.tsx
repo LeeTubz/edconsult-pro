@@ -205,7 +205,7 @@ export default function TeamSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          transition={{ delay: 0.2, duration: 0.45 }}
           className="rounded-2xl p-8 text-center"
           style={{
             background: "linear-gradient(135deg, #1c2417 0%, #2b3327 100%)",
