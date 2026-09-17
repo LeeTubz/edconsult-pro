@@ -18,11 +18,20 @@ import {
 
 const founder = {
   icon: Sparkles,
-  title: "Founder & Visionary",
-  tagline: "18+ Years: Industry & Education",
+  title: "Precious Chanaiwa",
+  tagline: "Founder & Visionary",
   description:
-    "With 18 years of experience, 10 in industry and 8 as an educator, our Founder and Visionary brings a rare blend of academic depth and real-world insight to Platinum Accolades. A Master's-qualified higher education specialist and an IB Examiner in Film Studies, she has lectured across multiple universities, guided curriculum design and quality assurance for institutions, and consulted for BQA. Her vision drives our commitment to matching every student, tutor, and institution with their true best fit.",
-  specialties: ["Curriculum Design", "IB Examiner", "Quality Assurance", "Published Author"],
+    "With 18 years of experience, 10 in industry and 8 as an educator, Precious brings a rare blend of academic depth and real-world insight to Platinum Accolades Educational Consultancy. Beyond the classroom and boardroom, she also serves as an ordained Pastor of Harvest House International Church.",
+  highlights: [
+    "Education Consultant & Private Tutor (IB & IGCSE): Film & Media Studies, English Language & Literature, History, ICT",
+    "Examiner for the International Baccalaureate (IB)",
+    "BQA Team of Experts for Program Evaluation",
+    "Author & Publisher of two academic writing guides",
+    "Former Lecturer: Limkokwing University of Creative Technology, MANCOSA & London College of International Business Studies",
+    "Former Teacher: English Language & Literature, History",
+    "Former Advertising & Media Executive across Africa: Imago Young & Rubicam, Dicomm Advertising, TBWA Medcom",
+  ],
+  specialties: ["IB Examiner", "BQA Evaluator", "Published Author", "Education Consultant"],
   color: "#EFB31E",
   photo: "/founder-avatar.jpg",
   books: [
@@ -102,6 +111,7 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
 }) {
   const Icon = c.icon;
   const books = "books" in c ? c.books : undefined;
+  const highlights = "highlights" in c ? c.highlights : undefined;
   return (
     <motion.div
       initial={false}
@@ -133,12 +143,23 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
         <div className="text-[11px] font-bold uppercase tracking-wider mb-1.5" style={{ color: c.color }}>
           {c.tagline}
         </div>
-        <h3 className="text-base font-bold mb-2.5 leading-snug" style={{ color: "var(--foreground)" }}>
+        <h3 className={`font-bold mb-2.5 leading-snug ${highlights ? "text-xl" : "text-base"}`} style={{ color: "var(--foreground)" }}>
           {c.title}
         </h3>
         <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>
           {c.description}
         </p>
+
+        {highlights && (
+          <ul className="space-y-1.5 mb-4">
+            {highlights.map((h, j) => (
+              <li key={j} className="text-sm leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
+                <span className="mt-2 w-1 h-1 rounded-full shrink-0" style={{ background: c.color }} />
+                {h}
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className="flex flex-wrap gap-1.5 mb-4">
           {c.specialties.map((s, j) => (
