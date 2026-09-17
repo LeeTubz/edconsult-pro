@@ -4,9 +4,9 @@ interface BrandMotifProps {
 }
 
 /**
- * Large decorative olive-sprig silhouette used as a soft background accent.
- * Purely ornamental, not the real logo, just an echo of its branch/leaf shape
- * so brand-heavy sections don't rely on stock photography alone.
+ * Large decorative silhouette used as a soft background accent, echoing the
+ * Platinum Accolades mark (star, mortarboard, reaching figure, open book)
+ * as a single-color watermark. Purely ornamental, not the real logo.
  */
 export function BrandMotif({ className = "", style }: BrandMotifProps) {
   return (
@@ -18,14 +18,33 @@ export function BrandMotif({ className = "", style }: BrandMotifProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d="M200 500V180" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
-      <ellipse cx="200" cy="120" rx="42" ry="78" transform="rotate(-14 200 120)" fill="currentColor" opacity="0.9" />
-      <ellipse cx="120" cy="160" rx="36" ry="68" transform="rotate(-48 120 160)" fill="currentColor" opacity="0.75" />
-      <ellipse cx="280" cy="160" rx="36" ry="68" transform="rotate(48 280 160)" fill="currentColor" opacity="0.75" />
-      <ellipse cx="70" cy="240" rx="30" ry="58" transform="rotate(-68 70 240)" fill="currentColor" opacity="0.6" />
-      <ellipse cx="330" cy="240" rx="30" ry="58" transform="rotate(68 330 240)" fill="currentColor" opacity="0.6" />
-      <ellipse cx="150" cy="90" rx="26" ry="50" transform="rotate(-30 150 90)" fill="currentColor" opacity="0.55" />
-      <ellipse cx="250" cy="90" rx="26" ry="50" transform="rotate(30 250 90)" fill="currentColor" opacity="0.55" />
+      {/* Star */}
+      <path
+        d="M200,40 L212.34,77.99 L252.31,77.99 L219.97,101.49 L232.33,139.5 L200,116 L167.67,139.5 L180.03,101.49 L147.69,77.99 L187.66,78.01 Z"
+        fill="currentColor"
+        opacity="0.85"
+      />
+      {/* Mortarboard */}
+      <path d="M135,178 L200,160 L265,178 L200,196 Z" fill="currentColor" opacity="0.75" />
+      <rect x="177" y="188" width="46" height="16" rx="2" fill="currentColor" opacity="0.6" />
+      {/* Sphere */}
+      <circle cx="200" cy="232" r="19" fill="currentColor" opacity="0.7" />
+      {/* Reaching wings */}
+      <ellipse cx="128" cy="278" rx="44" ry="92" transform="rotate(-35 128 278)" fill="currentColor" opacity="0.6" />
+      <ellipse cx="272" cy="278" rx="44" ry="92" transform="rotate(35 272 278)" fill="currentColor" opacity="0.6" />
+      {/* Stem */}
+      <path d="M200 252V392" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+      {/* Open book */}
+      <path
+        d="M200,480 C130,478 60,455 25,405 C75,420 140,430 200,428 Z"
+        fill="currentColor"
+        opacity="0.85"
+      />
+      <path
+        d="M200,480 C270,478 340,455 375,405 C325,420 260,430 200,428 Z"
+        fill="currentColor"
+        opacity="0.85"
+      />
     </svg>
   );
 }
