@@ -23,7 +23,7 @@ const whyChooseUs = [
   "Best Fit For Purpose: we do not do a one-size-fits-all approach",
   "From tuition and academic writing to institutional quality assurance and audits",
   "Career guidance, counselling, coaching, and mentorship for every student",
-  "Modern educational technology training for staff and teachers",
+  "Modern educational technology capacity building for staff and teachers",
   "Driven by integrity, innovation, and impact",
 ];
 
@@ -134,7 +134,7 @@ export default function AboutSection() {
           <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
             We bridge the gap between students, educators, and institutions by
             delivering tailored academic support, institutional consulting, and
-            modern educational technology training. From tuition, writing, and
+            modern educational technology capacity building. From tuition, writing, and
             proofreading to quality assurance, audits, and staff development, we
             ensure every learner and institution thrives. We also walk with
             students beyond the classroom through career guidance, counselling,

@@ -14,7 +14,7 @@ export const blogPosts = [
   {
     title: "Top Educational Technology Trends Transforming African Classrooms in 2025",
     excerpt:
-      "From webinar-based staff training to ODL and e-learning, discover the EdTech trends redefining how students learn and institutions teach across Botswana and Africa.",
+      "From webinar-based staff capacity building to ODL and e-learning, discover the EdTech trends redefining how students learn and institutions teach across Botswana and Africa.",
     category: "Educational Technology",
     date: "May 8, 2025",
     readTime: "6 min read",

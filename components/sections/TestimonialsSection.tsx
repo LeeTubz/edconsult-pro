@@ -50,7 +50,7 @@ const testimonials = [
     role: "Chief Executive Officer",
     organization: "BotswanaLearn EdTech",
     content:
-      "Platinum Accolades' educational technology training transformed how we deliver professional development to our 3,000+ employees across southern Africa. Their webinar-based staff capacity building and ODL/e-learning consultancy delivered measurable results within the first quarter.",
+      "Platinum Accolades' educational technology capacity building transformed how we deliver professional development to our 3,000+ employees across southern Africa. Their webinar-based staff capacity building and ODL/e-learning consultancy delivered measurable results within the first quarter.",
     rating: 5,
     initials: "TS",
     color: "#B1B3B8",

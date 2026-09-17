@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useSafeInView } from "@/hooks/useSafeInView";
-import { BookOpen, ShieldCheck, Cpu, ClipboardCheck, Compass, ArrowRight, GraduationCap, Building2 } from "lucide-react";
+import { BookOpen, ShieldCheck, Users, ClipboardCheck, Compass, ArrowRight, GraduationCap, Building2 } from "lucide-react";
 import { TiltCard } from "@/components/ui/TiltCard";
 
 const forStudents = [
@@ -32,9 +32,9 @@ const forInstitutions = [
     href: "/services/quality-assurance",
   },
   {
-    icon: Cpu,
-    title: "Educational Technology",
-    description: "Staff and teacher capacity building and mentorship via webinars, navigating online classes, AI in education, and e-learning content creation.",
+    icon: Users,
+    title: "Teacher and Staff Capacity Building and Mentorship",
+    description: "Educational technology, plus mentorship in pedagogy, curriculum planning and assessment, and classroom lesson modelling and observation.",
     color: "#B1B3B8",
     href: "/services/educational-technology",
   },

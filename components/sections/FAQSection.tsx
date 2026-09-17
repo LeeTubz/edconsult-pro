@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "What services do you offer?",
     answer:
-      "We offer five core services: academic support (tuition with global tutor matching, academic writing, editing & proofreading, and research consultation), career guidance, counselling & mentorship (subject choice, pathway mapping, university admissions, and academic, work, social, and spiritual life support), quality assurance & external moderation, educational technology (staff training and mentorship, webinars, and ODL/e-learning consultancy), and institutional audits and visits.",
+      "We offer five core services: academic support (tuition with global tutor matching, academic writing, editing & proofreading, and research consultation), career guidance, counselling & mentorship (subject choice, pathway mapping, university admissions, and academic, work, social, and spiritual life support), quality assurance & external moderation, educational technology (staff capacity building and mentorship, webinars, and ODL/e-learning consultancy), and institutional audits and visits.",
   },
   {
     question: "How does the consultation process work?",
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "How much do your services cost?",
     answer:
-      "Our fees vary based on the scope of the service and the length of engagement. We offer flexible pricing including per-session tuition or coaching, package rates for admissions or research support, and training-day rates for institutional webinars and audits. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal before any commitment.",
+      "Our fees vary based on the scope of the service and the length of engagement. We offer flexible pricing including per-session tuition or coaching, package rates for admissions or research support, and workshop-day rates for institutional webinars and audits. Your initial consultation is always free, and we'll provide a clear, transparent fee proposal before any commitment.",
   },
   {
     question: "How long does support typically take?",
@@ -40,7 +40,7 @@ const faqs = [
   {
     question: "Do you work with individual students, or with schools and institutions too?",
     answer:
-      "Both. Students and families can book tuition, academic writing support, career guidance, or counselling and mentorship directly. Schools and institutions can also book quality assurance and external moderation, internal audits, and educational technology training for their staff.",
+      "Both. Students and families can book tuition, academic writing support, career guidance, or counselling and mentorship directly. Schools and institutions can also book quality assurance and external moderation, internal audits, and educational technology capacity building for their staff.",
   },
   {
     question: "How do I get started with Platinum Accolades?",

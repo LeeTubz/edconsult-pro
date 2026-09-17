@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Platinum Accolades",
   },
   description:
-    "Platinum Accolades is a full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology training, career guidance, and student counselling, coaching and mentorship. Serving students and institutions across Botswana and southern Africa.",
+    "Platinum Accolades is a full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology capacity building, career guidance, and student counselling, coaching and mentorship. Serving students and institutions across Botswana and southern Africa.",
   keywords: [
     "educational consultancy Botswana",
     "IGCSE tuition Botswana",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "quality assurance educational institutions",
     "external moderation Botswana",
     "institutional audits education",
-    "educational technology training Africa",
+    "educational technology capacity building Africa",
     "career guidance Botswana",
     "student counselling Botswana",
     "university admissions Botswana",
@@ -111,7 +111,7 @@ const structuredData = {
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description:
-    "Full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology training, career guidance, and student counselling, coaching and mentorship.",
+    "Full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology capacity building, career guidance, and student counselling, coaching and mentorship.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Gaborone",

@@ -5,7 +5,7 @@ import PageHero from "@/components/ui/PageHero";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 import {
-  Compass, BookOpen, ShieldCheck, ClipboardCheck, Cpu,
+  Compass, BookOpen, ShieldCheck, ClipboardCheck,
   CheckCircle, ArrowRight, Users, Star,
 } from "lucide-react";
 
@@ -81,38 +81,37 @@ const serviceData = {
       { value: "18+", label: "Years combined experience" },
       { value: "5-year", label: "Audit review cycle" },
     ],
-    clients: ["Schools and colleges", "Higher education institutions", "Training centres", "Institutions preparing for external review"],
+    clients: ["Schools and colleges", "Higher education institutions", "Skills centres", "Institutions preparing for external review"],
     color: "#4A6B8A",
   },
   "educational-technology": {
-    badge: "Educational Technology",
+    badge: "Teacher and Staff Capacity Building and Mentorship",
     title: (
       <>
-        Educational{" "}
+        Teacher & Staff{" "}
         <span style={{ background: "linear-gradient(135deg,#B1B3B8,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-          Technology
+          Capacity Building & Mentorship
         </span>
       </>
     ),
-    titleText: "Educational Technology",
+    titleText: "Teacher and Staff Capacity Building and Mentorship",
     subtitle:
-      "Staff and teacher capacity building and mentorship via webinars, covering online classes, AI in education, and content creation for e-learning.",
+      "Educational technology, plus hands-on mentorship in pedagogy, curriculum planning, assessment, and classroom practice.",
     accentColor: "#B1B3B8",
-    icon: Cpu,
-    metaTitle: "Educational Technology Training: Webinars, Online Classes & AI",
+    icon: Users,
+    metaTitle: "Teacher and Staff Capacity Building and Mentorship: EdTech, Pedagogy & Classroom Support",
     metaDesc:
-      "Staff and teacher capacity building and mentorship via webinars, navigating online classes and e-learning, AI in education and administration, and content creation for e-learning.",
-    headline: "Building Real Capacity for Digital Learning",
+      "Educational technology guidance, mentorship in pedagogy, curriculum planning and assessment, and classroom lesson modelling and observation for teachers and staff.",
+    headline: "Real Capacity Building for Teachers and Staff",
     intro:
-      "Technology only helps learning when the people using it are genuinely equipped for it. We build staff and teacher capacity and mentorship through practical webinars covering online classes, e-learning, AI in education and administration, and creating effective video and audio content.",
+      "Growing teachers and staff takes more than a one-off workshop. We combine practical educational technology guidance with hands-on mentorship, in the classroom and alongside your staff, so capacity actually sticks.",
     offerings: [
-      { title: "Staff & Teacher Capacity Building", desc: "Training, capacity building, and ongoing mentorship for staff and teachers, delivered via accessible webinars." },
-      { title: "Navigating Online Classes & E-Learning", desc: "Practical guidance for running effective online classes and e-learning programmes." },
-      { title: "Navigating AI in Education & Administration", desc: "Guidance on using AI thoughtfully and effectively in both teaching and institutional administration." },
-      { title: "Content Creation for E-Learning", desc: "Support for creating video and audio lessons for e-learning, from planning through production." },
+      { title: "Educational Technology", desc: "Navigating online classes and e-learning, AI in education and administration, and content creation for e-learning, from planning through production." },
+      { title: "Pedagogy, Curriculum & Assessment Mentorship", desc: "Supporting and mentoring teachers in pedagogy, curriculum planning, and assessment." },
+      { title: "Classroom Modelling & Observation", desc: "Modelling lessons in classrooms, observing teachers, and giving feedback for professional growth." },
     ],
     stats: [
-      { value: "40+", label: "Institutions trained" },
+      { value: "40+", label: "Institutions supported" },
       { value: "10K+", label: "Students impacted" },
       { value: "3x", label: "Avg. engagement increase" },
       { value: "8+", label: "Platforms supported" },

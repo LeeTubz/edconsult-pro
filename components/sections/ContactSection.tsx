@@ -368,7 +368,7 @@ export default function ContactSection() {
                       <option>Academic Writing & Research</option>
                       <option>Career Guidance, Counselling & Mentorship</option>
                       <option>Quality Assurance & External Moderation</option>
-                      <option>Educational Technology</option>
+                      <option>Teacher and Staff Capacity Building and Mentorship</option>
                       <option>Institutional Audits and Visits</option>
                       <option>Other</option>
                     </select>

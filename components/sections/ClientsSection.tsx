@@ -60,7 +60,7 @@ const clientSegments = [
     id: "schools",
     icon: School,
     label: "Schools & Institutions",
-    tagline: "Quality assurance, audits, and technology training for institutions",
+    tagline: "Quality assurance, audits, and technology capacity building for institutions",
     color: "#EFB31E",
     services: [
       {
@@ -75,8 +75,8 @@ const clientSegments = [
       },
       {
         icon: Users,
-        title: "Staff & Teacher Capacity Building",
-        desc: "Practical training and mentorship that builds real, lasting confidence with classroom and administrative technology.",
+        title: "Staff & Teacher Capacity Building and Mentorship",
+        desc: "Mentorship in pedagogy, curriculum planning and assessment, plus classroom lesson modelling, observation, and feedback for professional growth.",
       },
       {
         icon: Cpu,

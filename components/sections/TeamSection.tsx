@@ -7,7 +7,7 @@ import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   BookOpen,
   ShieldCheck,
-  Cpu,
+  Users,
   ClipboardCheck,
   Compass,
   Globe2,
@@ -72,12 +72,12 @@ const consultants = [
     photo: "https://images.unsplash.com/photo-1757744705465-ea08b0ddc38a?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },
   {
-    icon: Cpu,
-    title: "Educational Technology Consultant",
-    tagline: "Staff Capacity Building & Mentorship",
+    icon: Users,
+    title: "Teacher and Staff Capacity Building and Mentorship Consultant",
+    tagline: "EdTech, Pedagogy & Classroom Mentorship",
     description:
-      "Training and mentoring staff and educators via webinars, and consulting on navigating online classes, AI in education, and e-learning content creation.",
-    specialties: ["Staff Webinars", "AI in Education", "Online Classes", "Content Creation"],
+      "Guiding educational technology, mentoring teachers in pedagogy, curriculum planning and assessment, and modelling lessons in classrooms with feedback for professional growth.",
+    specialties: ["Educational Technology", "Pedagogy & Curriculum", "Assessment", "Classroom Modelling"],
     color: "#B1B3B8",
     photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=160&h=160&q=80&auto=format&fit=crop&crop=faces",
   },

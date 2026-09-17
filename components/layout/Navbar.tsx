@@ -22,7 +22,7 @@ const navItems = [
       { label: "Academic Support",                          href: "/services/academic-support",     group: "For Students" },
       { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance",       group: "For Students" },
       { label: "Quality Assurance",                          href: "/services/quality-assurance",     group: "For Institutions" },
-      { label: "Educational Technology",                     href: "/services/educational-technology", group: "For Institutions" },
+      { label: "Teacher and Staff Capacity Building and Mentorship", href: "/services/educational-technology", group: "For Institutions" },
       { label: "Institutional Audits and Visits",            href: "/services/institutional-audits",  group: "For Institutions" },
     ],
   },

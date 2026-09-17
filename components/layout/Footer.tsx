@@ -26,7 +26,7 @@ const services = [
   { label: "Academic Support",                          href: "/services/academic-support"     },
   { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance"      },
   { label: "Quality Assurance",                          href: "/services/quality-assurance"    },
-  { label: "Educational Technology",                     href: "/services/educational-technology" },
+  { label: "Teacher and Staff Capacity Building and Mentorship", href: "/services/educational-technology" },
   { label: "Institutional Audits and Visits",            href: "/services/institutional-audits" },
 ];
 
