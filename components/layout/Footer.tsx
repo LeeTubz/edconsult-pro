@@ -23,12 +23,11 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Academic Support",       href: "/services/academic-support"     },
-  { label: "Quality Assurance",      href: "/services/quality-assurance"    },
-  { label: "Educational Technology", href: "/services/educational-technology" },
-  { label: "Institutional Audits",   href: "/services/institutional-audits" },
-  { label: "Career Guidance",        href: "/services/career-guidance"      },
-  { label: "Counselling & Mentorship", href: "/services/student-counselling" },
+  { label: "Academic Support",                          href: "/services/academic-support"     },
+  { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance"      },
+  { label: "Quality Assurance",                          href: "/services/quality-assurance"    },
+  { label: "Educational Technology",                     href: "/services/educational-technology" },
+  { label: "Institutional Audits and Visits",            href: "/services/institutional-audits" },
 ];
 
 const socials = [
@@ -54,11 +53,11 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: "#10150c" }}>
+    <footer style={{ background: "#0A1628" }}>
       {/* Newsletter Banner */}
       <div
         className="py-10"
-        style={{ background: "linear-gradient(135deg, #1c2417 0%, #2f4326 50%, #1c2417 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0F2545 0%, #1c4372 50%, #0F2545 100%)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -84,12 +83,12 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-[#8FAE7A] w-full sm:flex-1 md:w-64"
+                    className="px-5 py-3 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/15 focus:outline-none focus:border-[#14325E] w-full sm:flex-1 md:w-64"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 rounded-full text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap w-full sm:w-auto"
-                    style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
+                    className="px-6 py-3 rounded-full font-semibold text-sm flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap w-full sm:w-auto"
+                    style={{ background: "linear-gradient(135deg, #EFB31E 0%, #C98F1B 100%)", color: "#0A1628" }}
                   >
                     Subscribe <ArrowRight className="w-4 h-4" />
                   </button>
@@ -113,11 +112,11 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-5">
                 <div className="relative w-12 h-12 shrink-0">
-                  <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" />
+                  <Image src="/logo-mark.png" alt="Platinum Accolades" fill className="object-contain" />
                 </div>
                 <div>
                   <div className="font-display text-white font-bold text-lg leading-tight">
-                    Olive<span className="text-[#A8C4A2]">Shoots</span>
+                    Platinum<span className="text-[#EFB31E]"> Accolades</span>
                   </div>
                   <div className="text-xs text-white/40 font-medium tracking-wider uppercase">
                     Educational Consultancy
@@ -134,16 +133,21 @@ export default function Footer() {
               <div className="space-y-3">
                 <a href="mailto:knowledgelab.bw@gmail.com"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
-                  <Mail className="w-4 h-4 text-[#8FAE7A] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#EFB31E] shrink-0" />
                   knowledgelab.bw@gmail.com
+                </a>
+                <a href="tel:+26776150511"
+                  className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
+                  <Phone className="w-4 h-4 text-[#EFB31E] shrink-0" />
+                  +267 76150511 (Call/WhatsApp)
                 </a>
                 <a href="tel:+26774332739"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
-                  <Phone className="w-4 h-4 text-[#8FAE7A] shrink-0" />
+                  <Phone className="w-4 h-4 text-[#EFB31E] shrink-0" />
                   +267 74332739 (Call/WhatsApp)
                 </a>
                 <div className="flex items-start gap-2 text-sm text-white/55">
-                  <MapPin className="w-4 h-4 text-[#8FAE7A] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#EFB31E] shrink-0 mt-0.5" />
                   Gaborone, Botswana
                 </div>
               </div>
@@ -176,7 +180,7 @@ export default function Footer() {
                       onClick={() => router.push(link.href)}
                       className="text-sm text-white/55 hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-1 group"
                     >
-                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#8FAE7A]">›</span>
+                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#EFB31E]">›</span>
                       {link.label}
                     </button>
                   </li>
@@ -196,7 +200,7 @@ export default function Footer() {
                       onClick={() => router.push(s.href)}
                       className="text-sm text-white/55 hover:text-white transition-colors hover:translate-x-1 inline-flex items-center gap-1 group"
                     >
-                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#8FAE7A]">›</span>
+                      <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-[#EFB31E]">›</span>
                       {s.label}
                     </button>
                   </li>
@@ -211,7 +215,7 @@ export default function Footer() {
               </h4>
               <div className="space-y-3">
                 {[
-                  "15+ Years of Experience",
+                  "18+ Years of Experience",
                   "500+ Students Guided",
                   "98% Client Satisfaction",
                   "Internationally Recognized",
@@ -228,8 +232,8 @@ export default function Footer() {
               {/* CTA */}
               <button
                 onClick={() => router.push("/contact")}
-                className="mt-6 w-full py-3 rounded-xl text-white text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: "linear-gradient(135deg, #8FAE7A, #5A6B4F)" }}
+                className="mt-6 w-full py-3 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-0.5"
+                style={{ background: "linear-gradient(135deg, #EFB31E, #C98F1B)", color: "#0A1628" }}
               >
                 Book Free Consultation
               </button>
@@ -243,7 +247,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/35">
             <p>
-              © {new Date().getFullYear()} Olive Shoots. All rights reserved.
+              © {new Date().getFullYear()} Platinum Accolades. All rights reserved.
             </p>
             <div className="flex gap-6">
               <button className="hover:text-white/70 transition-colors">Privacy Policy</button>

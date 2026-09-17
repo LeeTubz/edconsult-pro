@@ -5,7 +5,7 @@ import ContactSection from "@/components/sections/ContactSection";
 export const metadata: Metadata = {
   title: "Contact Us | Book a Free Consultation",
   description:
-    "Get in touch with Olive Shoots. Book a free consultation and start growing toward your future today.",
+    "Get in touch with Platinum Accolades. Book a free consultation and start growing toward your future today.",
 };
 
 export default function ContactPage() {
@@ -16,16 +16,16 @@ export default function ContactPage() {
         title={
           <>
             Book a{" "}
-            <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#B1B3B8,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Free Consultation
             </span>
           </>
         }
         subtitle="Ready to take the next step? Reach out today. Your first consultation is completely free, with no obligation."
         breadcrumbs={[{ label: "Contact" }]}
-        primaryCta={{ label: "Call Us Now", href: "tel:+26774332739" }}
+        primaryCta={{ label: "Call Us Now", href: "tel:+26776150511" }}
         secondaryCta={{ label: "Email Us", href: "mailto:knowledgelab.bw@gmail.com" }}
-        accentColor="#5A6B4F"
+        accentColor="#EFB31E"
       />
       <ContactSection />
     </main>

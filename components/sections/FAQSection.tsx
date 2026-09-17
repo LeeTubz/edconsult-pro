@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "What services do you offer?",
     answer:
-      "We offer six core services: academic support (tuition, academic writing, editing & proofreading, and research consultation), quality assurance & external moderation, educational technology (staff training, webinars, and ODL/e-learning consultancy), internal program & institutional audits, career guidance (subject choice, pathway mapping, and university admissions), and student counselling, coaching & mentorship (academic, work, social, and spiritual life).",
+      "We offer five core services: academic support (tuition with global tutor matching, academic writing, editing & proofreading, and research consultation), career guidance, counselling & mentorship (subject choice, pathway mapping, university admissions, and academic, work, social, and spiritual life support), quality assurance & external moderation, educational technology (staff training and mentorship, webinars, and ODL/e-learning consultancy), and institutional audits and visits.",
   },
   {
     question: "How does the consultation process work?",
@@ -33,7 +33,7 @@ const faqs = [
       "No, we work alongside them, not in place of them. Our career guidance pushes for the 'best fit' for each student rather than university admission only, and we're glad to coordinate directly with a student's existing school counsellors and advisors toward the same goal.",
   },
   {
-    question: "What makes Olive Shoots different from other consultancies?",
+    question: "What makes Platinum Accolades different from other consultancies?",
     answer:
       "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution, following 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 200+ schools).",
   },
@@ -43,7 +43,7 @@ const faqs = [
       "Both. Students and families can book tuition, academic writing support, career guidance, or counselling and mentorship directly. Schools and institutions can also book quality assurance and external moderation, internal audits, and educational technology training for their staff.",
   },
   {
-    question: "How do I get started with Olive Shoots?",
+    question: "How do I get started with Platinum Accolades?",
     answer:
       "Getting started is easy. Simply complete the consultation booking form on our website, and one of our team will contact you within 24 hours to schedule your free discovery call. You can also reach us directly via phone, email, or WhatsApp. There's no obligation. Our goal is simply to understand your needs and see how we can help.",
   },
@@ -73,15 +73,15 @@ export default function FAQSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
+            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">FAQ</span>
+            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">FAQ</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Frequently Asked{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
+                background: "linear-gradient(135deg, #14325E 0%, #0F2F57 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -91,7 +91,7 @@ export default function FAQSection() {
             </span>
           </h2>
           <p className="text-lg" style={{ color: "var(--muted)" }}>
-            Everything you need to know about working with Olive Shoots.
+            Everything you need to know about working with Platinum Accolades.
           </p>
         </motion.div>
 
@@ -111,8 +111,8 @@ export default function FAQSection() {
               className="rounded-2xl border overflow-hidden transition-all duration-300"
               style={{
                 background: openIndex === i ? "var(--card-bg)" : "var(--card-bg)",
-                borderColor: openIndex === i ? "rgba(90, 107, 79, 0.3)" : "var(--card-border)",
-                boxShadow: openIndex === i ? "0 4px 20px rgba(90, 107, 79, 0.08)" : "none",
+                borderColor: openIndex === i ? "rgba(15, 47, 87, 0.3)" : "var(--card-border)",
+                boxShadow: openIndex === i ? "0 4px 20px rgba(15, 47, 87, 0.08)" : "none",
               }}
             >
               <button
@@ -130,7 +130,7 @@ export default function FAQSection() {
                   className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
                   style={{
                     background: openIndex === i
-                      ? "linear-gradient(135deg, #8FAE7A, #5A6B4F)"
+                      ? "linear-gradient(135deg, #14325E, #0F2F57)"
                       : "var(--muted-bg)",
                   }}
                 >
@@ -171,8 +171,8 @@ export default function FAQSection() {
           transition={{ delay: 0.15 }}
           className="text-center mt-12 p-8 rounded-2xl"
           style={{
-            background: "rgba(90, 107, 79, 0.06)",
-            border: "1px solid rgba(90, 107, 79, 0.15)",
+            background: "rgba(15, 47, 87, 0.06)",
+            border: "1px solid rgba(15, 47, 87, 0.15)",
           }}
         >
           <p className="text-base mb-4" style={{ color: "var(--foreground)" }}>
@@ -181,7 +181,7 @@ export default function FAQSection() {
           <button
             onClick={() => router.push("/contact")}
             className="px-8 py-3 rounded-full text-white font-semibold text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
-            style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
+            style={{ background: "linear-gradient(135deg, #14325E 0%, #0F2F57 100%)" }}
           >
             Get in Touch
           </button>

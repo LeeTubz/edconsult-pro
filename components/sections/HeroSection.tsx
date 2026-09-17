@@ -11,10 +11,10 @@ import { Marquee } from "@/components/ui/Marquee";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const floatingCards = [
-  { icon: BookOpen,    label: "Academic Support", color: "#8FAE7A", side: "left",  top: "calc(50% - 120px)" },
-  { icon: Compass,     label: "Career Guidance",  color: "#6B8FA3", side: "right", top: "calc(50% - 120px)" },
-  { icon: ShieldCheck, label: "Quality Assurance",color: "#5A6B4F", side: "left",  top: "calc(50% + 70px)"  },
-  { icon: Cpu,         label: "Ed Technology",    color: "#A8C4A2", side: "right", top: "calc(50% + 70px)"  },
+  { icon: BookOpen,    label: "Academic Support", color: "#B1B3B8", side: "left",  top: "calc(50% - 120px)" },
+  { icon: Compass,     label: "Career Guidance",  color: "#EFB31E", side: "right", top: "calc(50% - 120px)" },
+  { icon: ShieldCheck, label: "Quality Assurance",color: "#4A6B8A", side: "left",  top: "calc(50% + 70px)"  },
+  { icon: Cpu,         label: "Ed Technology",    color: "#B1B3B8", side: "right", top: "calc(50% + 70px)"  },
 ];
 
 export default function HeroSection() {
@@ -30,7 +30,7 @@ export default function HeroSection() {
       className="relative overflow-hidden"
       style={{
         minHeight: "100vh",
-        background: "radial-gradient(120% 90% at 15% 0%, #223019 0%, #141a10 45%, #10150c 100%)",
+        background: "radial-gradient(120% 90% at 15% 0%, #1A3A66 0%, #0D2038 45%, #0A1628 100%)",
       }}
     >
       {/* ── Large decorative olive-branch motif ── */}
@@ -42,7 +42,7 @@ export default function HeroSection() {
           width: "42vw",
           maxWidth: 560,
           height: "auto",
-          color: "#8FAE7A",
+          color: "#B1B3B8",
           opacity: 0.14,
           transform: "rotate(8deg)",
         }}
@@ -55,18 +55,18 @@ export default function HeroSection() {
           width: "30vw",
           maxWidth: 380,
           height: "auto",
-          color: "#6B8FA3",
+          color: "#EFB31E",
           opacity: 0.1,
           transform: "rotate(-18deg) scaleX(-1)",
         }}
       />
 
       {/* ── Ambient orbs ── */}
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(143,174,122,0.14),transparent 70%)", filter: "blur(48px)" }} />
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(107,143,163,0.12),transparent 70%)", filter: "blur(40px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(20, 50, 94,0.14),transparent 70%)", filter: "blur(48px)" }} />
+      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(239, 179, 30,0.12),transparent 70%)", filter: "blur(40px)" }} />
 
       {/* ── Subtle grid overlay ── */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(143,174,122,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(143,174,122,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(20, 50, 94,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(20, 50, 94,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
 
       {/* Floating service badges, xl+ only, pinned to sides safely */}
       {floatingCards.map((card, i) => {
@@ -114,12 +114,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
-              style={{ background: "rgba(143,174,122,0.14)", border: "1px solid rgba(143,174,122,0.3)" }}
+              style={{ background: "rgba(20, 50, 94,0.14)", border: "1px solid rgba(20, 50, 94,0.3)" }}
             >
               {[0,1,2,3,4].map(i => (
                 <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
               ))}
-              <span className="text-xs font-semibold text-[#A8C4A2] ml-1">
+              <span className="text-xs font-semibold text-[#B1B3B8] ml-1">
                 Trusted by 500+ Students &amp; 200+ Institutions
               </span>
             </motion.div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
               Guiding{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg,#A8C4A2 0%,#8FAE7A 40%,#6B8FA3 100%)",
+                  background: "linear-gradient(135deg,#B1B3B8 0%,#EFB31E 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -155,7 +155,7 @@ export default function HeroSection() {
             >
               A full-service educational consultancy helping students and institutions
               across Botswana and southern Africa with academic support, quality assurance,
-              educational technology, career guidance, and counselling.
+              educational technology, career guidance, counselling and industry mentorship.
             </motion.p>
 
             {/* CTA buttons */}
@@ -168,9 +168,9 @@ export default function HeroSection() {
               <MagneticButton
                 onClick={() => router.push("/contact")}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
-                           text-white font-semibold text-sm transition-shadow duration-250
+                           font-semibold text-sm transition-shadow duration-250
                            hover:shadow-lg w-full sm:w-auto"
-                style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 6px 22px rgba(90,107,79,0.4)" }}
+                style={{ background: "linear-gradient(135deg,#EFB31E,#C98F1B)", boxShadow: "0 6px 22px rgba(239,179,30,0.4)", color: "#0A1628" }}
               >
                 Book Free Consultation
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -213,12 +213,13 @@ export default function HeroSection() {
       >
         <Marquee
           items={[
+            "Tuition & Tutor Matching",
             "Career Guidance",
-            "Student Counselling",
-            "Academic Writing Coaching",
-            "Internship Guidance",
+            "Counselling & Mentorship",
+            "Academic Writing & Research",
             "Educational Technology",
             "Quality Assurance",
+            "Institutional Audits & Visits",
           ]}
           className="text-white/35"
         />

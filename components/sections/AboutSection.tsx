@@ -28,10 +28,10 @@ const whyChooseUs = [
 ];
 
 const trustStats = [
-  { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#5A6B4F" },
-  { value: 200, suffix: "+", label: "Schools Served", icon: BookOpen, color: "#6B8FA3" },
-  { value: 15, suffix: "+", label: "Years of Excellence", icon: Award, color: "#8FAE7A" },
-  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe, color: "#6F8C5B" },
+  { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#0F2F57" },
+  { value: 200, suffix: "+", label: "Schools Served", icon: BookOpen, color: "#EFB31E" },
+  { value: 18, suffix: "+", label: "Years of Excellence", icon: Award, color: "#14325E" },
+  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe, color: "#4A6B8A" },
 ];
 
 const values = [
@@ -39,19 +39,19 @@ const values = [
     icon: Shield,
     title: "Integrity",
     desc: "We operate with complete transparency and ethical standards in everything we do, for students and institutions alike.",
-    color: "#5A6B4F",
+    color: "#0F2F57",
   },
   {
     icon: Sparkles,
     title: "Innovation",
     desc: "We stay at the frontier of educational practice and technology, bringing fresh, modern approaches to every engagement.",
-    color: "#6B8FA3",
+    color: "#EFB31E",
   },
   {
     icon: TrendingUp,
     title: "Impact",
     desc: "We pursue the highest standards in learning and institutional growth, continuously improving how we guide, strengthen, and build.",
-    color: "#8FAE7A",
+    color: "#14325E",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function AboutSection() {
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(90, 107, 79, 0.04) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(15, 47, 87, 0.04) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -89,8 +89,8 @@ export default function AboutSection() {
           className="text-center mb-10"
         >
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}>
-            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">About Us</span>
+            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}>
+            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">About Us</span>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
@@ -100,7 +100,7 @@ export default function AboutSection() {
             Guiding Minds, Strengthening{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
+                background: "linear-gradient(135deg, #14325E 0%, #0F2F57 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -199,9 +199,9 @@ export default function AboutSection() {
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "rgba(90, 107, 79, 0.1)" }}
+                style={{ background: "rgba(15, 47, 87, 0.1)" }}
               >
-                <Target className="w-6 h-6 text-[#5A6B4F]" />
+                <Target className="w-6 h-6 text-[#0F2F57]" />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                 Our Mission
@@ -221,9 +221,9 @@ export default function AboutSection() {
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "rgba(107, 143, 163, 0.1)" }}
+                style={{ background: "rgba(239, 179, 30, 0.1)" }}
               >
-                <Compass className="w-6 h-6 text-[#6B8FA3]" />
+                <Compass className="w-6 h-6 text-[#EFB31E]" />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: "var(--foreground)" }}>
                 Our Approach
@@ -257,7 +257,7 @@ export default function AboutSection() {
                   transition={{ delay: 0.15 + i * 0.06, duration: 0.45 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-[#8FAE7A]" />
+                  <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0 text-[#14325E]" />
                   <span style={{ color: "var(--foreground)" }}>{item}</span>
                 </motion.div>
               ))}
@@ -270,8 +270,8 @@ export default function AboutSection() {
               onClick={() => router.push("/contact")}
               className="mt-10 px-8 py-4 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)",
-                boxShadow: "0 4px 20px rgba(90, 107, 79, 0.3)",
+                background: "linear-gradient(135deg, #14325E 0%, #0F2F57 100%)",
+                boxShadow: "0 4px 20px rgba(15, 47, 87, 0.3)",
               }}
             >
               Start Your Journey
@@ -294,7 +294,7 @@ export default function AboutSection() {
               />
               <div
                 className="absolute inset-0 flex items-end p-5"
-                style={{ background: "linear-gradient(to top, rgba(16,21,12,0.8) 0%, transparent 50%)" }}
+                style={{ background: "linear-gradient(to top, rgba(10, 22, 40,0.8) 0%, transparent 50%)" }}
               >
                 <p className="text-white text-sm font-medium">
                   Growing African students and institutions from Botswana to the world

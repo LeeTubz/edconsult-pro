@@ -21,7 +21,7 @@ export default function BlogPreview() {
     >
       <BrandMotif
         className="absolute pointer-events-none hidden lg:block"
-        style={{ top: "-10%", left: "-6%", width: 260, height: "auto", color: "#8FAE7A", opacity: 0.07, transform: "rotate(-12deg)" }}
+        style={{ top: "-10%", left: "-6%", width: 260, height: "auto", color: "#14325E", opacity: 0.07, transform: "rotate(-12deg)" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -34,19 +34,19 @@ export default function BlogPreview() {
         >
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-              style={{ background: "rgba(90,107,79,0.08)", border: "1px solid rgba(90,107,79,0.2)" }}>
-              <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Insights & Articles</span>
+              style={{ background: "rgba(15, 47, 87,0.08)", border: "1px solid rgba(15, 47, 87,0.2)" }}>
+              <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">Insights & Articles</span>
             </div>
             <h2 className="section-title" style={{ color: "var(--foreground)" }}>
               Latest{" "}
-              <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              <span style={{ background: "linear-gradient(135deg,#14325E,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Insights
               </span>
             </h2>
           </div>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-sm font-semibold text-[#5A6B4F] hover:text-[#4a5842] transition-colors shrink-0"
+            className="flex items-center gap-2 text-sm font-semibold text-[#0F2F57] hover:text-[#4a5842] transition-colors shrink-0"
           >
             View All Articles <ArrowRight className="w-4 h-4" />
           </Link>
@@ -95,7 +95,7 @@ export default function BlogPreview() {
                     <span>·</span>
                     {post.date}
                   </div>
-                  <h3 className="font-display text-base font-bold mb-2 leading-snug group-hover:text-[#5A6B4F] transition-colors line-clamp-2"
+                  <h3 className="font-display text-base font-bold mb-2 leading-snug group-hover:text-[#0F2F57] transition-colors line-clamp-2"
                     style={{ color: "var(--foreground)" }}>
                     {post.title}
                   </h3>

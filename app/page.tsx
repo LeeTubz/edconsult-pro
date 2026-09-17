@@ -8,7 +8,7 @@ import BlogPreview from "@/components/sections/home/BlogPreview";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
 export const metadata: Metadata = {
-  title: "Olive Shoots | Educational Consultancy in Botswana & Africa",
+  title: "Platinum Accolades | Educational Consultancy in Botswana & Africa",
   description:
     "Guiding students through career clarity, counselling, academic-writing coaching, internship guidance, and educational technology.",
 };

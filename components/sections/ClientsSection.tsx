@@ -22,12 +22,12 @@ const clientSegments = [
     icon: User,
     label: "Students & Families",
     tagline: "Personalised guidance and academic support for students at every level",
-    color: "#5A6B4F",
+    color: "#0F2F57",
     services: [
       {
         icon: BookOpen,
         title: "Tuition (IGCSE & IB)",
-        desc: "One-on-one and group tuition for O-Level, AS & A-Level, and all IB programmes.",
+        desc: "One-on-one and group tuition for O-Level, AS & A-Level, and all IB programmes. We match students and tutors from across the globe, recommending the right tutor fit for your purpose.",
       },
       {
         icon: BookOpen,
@@ -61,7 +61,7 @@ const clientSegments = [
     icon: School,
     label: "Schools & Institutions",
     tagline: "Quality assurance, audits, and technology training for institutions",
-    color: "#6B8FA3",
+    color: "#EFB31E",
     services: [
       {
         icon: ShieldCheck,
@@ -70,13 +70,13 @@ const clientSegments = [
       },
       {
         icon: ClipboardCheck,
-        title: "Internal Program & Institutional Audits",
-        desc: "Audit scope development, compliance review, and clear reporting on a five-year review cycle.",
+        title: "Internal Program & Institutional Audits and Visits",
+        desc: "Audit scope development, on-site institutional visits, compliance review, and clear reporting on a five-year review cycle.",
       },
       {
         icon: Users,
         title: "Staff & Teacher Capacity Building",
-        desc: "Practical training that builds real, lasting confidence with classroom and administrative technology.",
+        desc: "Practical training and mentorship that builds real, lasting confidence with classroom and administrative technology.",
       },
       {
         icon: Cpu,
@@ -120,15 +120,15 @@ export default function ClientsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
+            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Who We Serve</span>
+            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">Who We Serve</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Solutions for Every{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
+                background: "linear-gradient(135deg, #14325E 0%, #EFB31E 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

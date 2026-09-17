@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-data";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.com";
 
 const serviceSlugs = [
   "academic-support",
@@ -9,7 +9,6 @@ const serviceSlugs = [
   "educational-technology",
   "institutional-audits",
   "career-guidance",
-  "student-counselling",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

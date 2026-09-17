@@ -1,36 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors - Olive */
-  --color-olive-50: #f4f6f2;
-  --color-olive-100: #e6ebe0;
-  --color-olive-200: #cdd8c2;
-  --color-olive-300: #aec29c;
-  --color-olive-400: #8fae7a;
-  --color-olive-500: #7a9a68;
-  --color-olive-600: #5a6b4f;
-  --color-olive-700: #4a5842;
-  --color-olive-800: #3a4534;
-  --color-olive-900: #2b3327;
-  --color-olive-950: #1c2417;
+  /* Brand Colors - Navy */
+  --color-navy-50: #eef2f7;
+  --color-navy-100: #d7e0ec;
+  --color-navy-200: #b0c1d9;
+  --color-navy-300: #7f9cbe;
+  --color-navy-400: #3f6295;
+  --color-navy-500: #1c4372;
+  --color-navy-600: #14325e;
+  --color-navy-700: #0f2f57;
+  --color-navy-800: #0d2545;
+  --color-navy-900: #0a1c35;
+  --color-navy-950: #071120;
 
-  /* Brand Colors - Dusty Teal */
-  --color-teal-50: #eef3f4;
-  --color-teal-100: #d9e4e8;
-  --color-teal-200: #b8cdd4;
-  --color-teal-300: #96b3bd;
-  --color-teal-400: #6b8fa3;
-  --color-teal-500: #587a8d;
-  --color-teal-600: #4a6b7a;
-  --color-teal-700: #3d5763;
-  --color-teal-800: #2f434c;
-  --color-teal-900: #222f36;
+  /* Brand Colors - Gold */
+  --color-gold-50: #fdf6e7;
+  --color-gold-100: #fae8bd;
+  --color-gold-200: #f6d68a;
+  --color-gold-300: #f2c357;
+  --color-gold-400: #efb31e;
+  --color-gold-500: #d99a18;
+  --color-gold-600: #c98f1b;
+  --color-gold-700: #a3721a;
+  --color-gold-800: #7d581a;
+  --color-gold-900: #5c4116;
 
-  /* Brand Colors - Cream */
-  --color-cream-50: #fdfcfa;
-  --color-cream-100: #f5f4f0;
-  --color-cream-200: #ece9e0;
-  --color-cream-300: #ded9cb;
+  /* Brand Colors - Platinum Silver */
+  --color-silver-50: #f7f7f8;
+  --color-silver-100: #eaebed;
+  --color-silver-200: #d3d5d9;
+  --color-silver-300: #b1b3b8;
+  --color-silver-400: #a9acb5;
+  --color-silver-500: #8a8d93;
+  --color-silver-600: #6f7278;
+
+  /* Brand Colors - Off-White */
+  --color-cream-50: #fdfcfb;
+  --color-cream-100: #f8f4f0;
+  --color-cream-200: #ece7e0;
+  --color-cream-300: #ded7cb;
 
   /* Custom Fonts */
   --font-display: var(--font-playfair), Georgia, serif;
@@ -65,29 +74,29 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --background:        #f5f4f0;
-  --foreground:         #2b3327;
+  --background:        #f8f4f0;
+  --foreground:         #101820;
   --card-bg:           #ffffff;
-  --card-border:       #dde4d0;
-  --card-shadow:       0 1px 3px rgba(43,51,39,0.06), 0 4px 16px rgba(43,51,39,0.05);
-  --card-shadow-hover: 0 8px 24px rgba(43,51,39,0.10), 0 2px 6px rgba(43,51,39,0.06);
-  --muted:             #5f6b58;
-  --muted-bg:          #eef1ea;
-  --hero-bg:           #1c2417;
-  --section-alt:       #eef2e8;
+  --card-border:       #dfe3ea;
+  --card-shadow:       0 1px 3px rgba(16,24,32,0.06), 0 4px 16px rgba(16,24,32,0.05);
+  --card-shadow-hover: 0 8px 24px rgba(16,24,32,0.10), 0 2px 6px rgba(16,24,32,0.06);
+  --muted:             #4c5b6e;
+  --muted-bg:          #eceff3;
+  --hero-bg:           #0d2545;
+  --section-alt:       #eef1f5;
 }
 
 .dark {
-  --background:        #141a10;
-  --foreground:        #eef1ea;
-  --card-bg:           #1c2417;
+  --background:        #0a1628;
+  --foreground:         #eceff3;
+  --card-bg:           #0f2545;
   --card-border:       rgba(255,255,255,0.09);
   --card-shadow:       0 2px 8px rgba(0,0,0,0.4);
   --card-shadow-hover: 0 8px 28px rgba(0,0,0,0.5);
-  --muted:             #a8b39e;
-  --muted-bg:          #182013;
-  --hero-bg:           #10150c;
-  --section-alt:       #182013;
+  --muted:             #a3aebc;
+  --muted-bg:          #0d2038;
+  --hero-bg:           #071120;
+  --section-alt:       #0d2038;
 }
 
 /* ─── Reset ─────────────────────────────────────────────────────────────── */
@@ -113,18 +122,18 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8fae7a, #5a6b4f);
+  background: linear-gradient(to bottom, #efb31e, #14325e);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #a8c4a2, #8fae7a);
+  background: linear-gradient(to bottom, #f2c357, #1c4372);
 }
 
-::selection { background: rgba(90,107,79,0.15); color: #5a6b4f; }
+::selection { background: rgba(20,50,94,0.15); color: #14325e; }
 
 /* ─── Typography utilities ──────────────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #8fae7a 0%, #5a6b4f 60%, #6b8fa3 100%);
+  background: linear-gradient(135deg, #14325e 0%, #0f2f57 60%, #efb31e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,7 +190,7 @@ html:not(.dark) .rounded-3xl.border:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #8fae7a 0%, #5a6b4f 100%);
+  background: linear-gradient(135deg, #14325e 0%, #0f2f57 100%);
   color: white;
   padding: 12px 28px;
   border-radius: 50px;
@@ -192,7 +201,7 @@ html:not(.dark) .rounded-3xl.border:hover {
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(90,107,79,0.4);
+  box-shadow: 0 6px 20px rgba(20,50,94,0.4);
   transform: translateY(-2px);
 }
 
@@ -200,20 +209,20 @@ html:not(.dark) .rounded-3xl.border:hover {
 html:not(.dark) input,
 html:not(.dark) textarea,
 html:not(.dark) select {
-  background-color: #fdfcfa;
-  border-color: #dde4d0;
-  color: #2b3327;
+  background-color: #fdfcfb;
+  border-color: #dfe3ea;
+  color: #101820;
 }
 html:not(.dark) input:focus,
 html:not(.dark) textarea:focus,
 html:not(.dark) select:focus {
   background-color: #ffffff;
-  border-color: #8fae7a;
+  border-color: #14325e;
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(90,107,79,0.12);
+  box-shadow: 0 0 0 3px rgba(20,50,94,0.12);
 }
 
 /* ─── Float animation ───────────────────────────────────────────────────── */
@@ -223,18 +232,18 @@ input:focus, textarea:focus, select:focus {
 
 /* ─── Dot / grid patterns ───────────────────────────────────────────────── */
 .dot-pattern {
-  background-image: radial-gradient(circle, rgba(90,107,79,0.07) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(20,50,94,0.07) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(90,107,79,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(90,107,79,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(20,50,94,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,50,94,0.04) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 /* ─── Accessible focus ring ─────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid #5a6b4f;
+  outline: 2px solid #14325e;
   outline-offset: 3px;
 }

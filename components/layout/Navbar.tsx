@@ -19,12 +19,11 @@ const navItems = [
     label: "Services",
     href: "/services/academic-support",
     children: [
-      { label: "Academic Support",       href: "/services/academic-support"     },
-      { label: "Quality Assurance",      href: "/services/quality-assurance"    },
-      { label: "Educational Technology", href: "/services/educational-technology" },
-      { label: "Institutional Audits",   href: "/services/institutional-audits" },
-      { label: "Career Guidance",        href: "/services/career-guidance"      },
-      { label: "Counselling & Mentorship", href: "/services/student-counselling" },
+      { label: "Academic Support",                          href: "/services/academic-support",     group: "For Students" },
+      { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance",       group: "For Students" },
+      { label: "Quality Assurance",                          href: "/services/quality-assurance",     group: "For Institutions" },
+      { label: "Educational Technology",                     href: "/services/educational-technology", group: "For Institutions" },
+      { label: "Institutional Audits and Visits",            href: "/services/institutional-audits",  group: "For Institutions" },
     ],
   },
   { label: "Clients", href: "/clients"  },
@@ -81,7 +80,7 @@ export default function Navbar() {
       <div
         className="hidden lg:flex items-center justify-between px-6 xl:px-10 text-xs text-white/70 overflow-hidden transition-all duration-300"
         style={{
-          background:    "#10150c",
+          background:    "#0A1628",
           maxHeight:     dark ? "0px" : "34px",
           paddingTop:    dark ? "0" : "6px",
           paddingBottom: dark ? "0" : "6px",
@@ -92,15 +91,16 @@ export default function Navbar() {
       >
         <div className="flex items-center gap-5">
           <a href="mailto:knowledgelab.bw@gmail.com"
-            className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
+            className="flex items-center gap-1.5 hover:text-[#B1B3B8] transition-colors">
             <Mail className="w-3 h-3" />
             knowledgelab.bw@gmail.com
           </a>
-          <a href="tel:+26774332739"
-            className="flex items-center gap-1.5 hover:text-[#A8C4A2] transition-colors">
+          <span className="flex items-center gap-1.5">
             <Phone className="w-3 h-3" />
-            +267 74332739
-          </a>
+            <a href="tel:+26776150511" className="hover:text-[#B1B3B8] transition-colors">+267 76150511</a>
+            <span className="text-white/30">/</span>
+            <a href="tel:+26774332739" className="hover:text-[#B1B3B8] transition-colors">+267 74332739</a>
+          </span>
         </div>
         <span className="font-medium tracking-wide">
           Guiding Students, Growing Futures
@@ -111,7 +111,7 @@ export default function Navbar() {
       <nav
         className={`transition-all duration-300 ${dark ? "py-2" : "py-3"}`}
         style={{
-          background:     dark ? "rgba(16,21,12,0.97)" : "transparent",
+          background:     dark ? "rgba(10, 22, 40,0.97)" : "transparent",
           backdropFilter: dark ? "blur(18px)" : "none",
           boxShadow:      dark ? "0 1px 24px rgba(0,0,0,0.3)" : "none",
           borderBottom:   dark ? "1px solid rgba(255,255,255,0.07)" : "none",
@@ -122,11 +122,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
             <div className="relative w-11 h-11 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <Image src="/logo-mark.png" alt="Olive Shoots" fill className="object-contain" priority />
+              <Image src="/logo-mark.png" alt="Platinum Accolades" fill className="object-contain" priority />
             </div>
             <div>
               <div className="font-display text-white font-bold text-base leading-tight tracking-tight">
-                Olive<span className="text-[#A8C4A2]">Shoots</span>
+                Platinum<span className="text-[#EFB31E]"> Accolades</span>
               </div>
               <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
                 Educational Consultancy
@@ -166,26 +166,36 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0,  scale: 1    }}
                       exit={{    opacity: 0, y: 8,  scale: 0.97 }}
                       transition={{ duration: 0.18 }}
-                      className="absolute top-full left-0 mt-1.5 w-52 rounded-xl overflow-hidden shadow-2xl"
+                      className="absolute top-full left-0 mt-1.5 w-72 rounded-xl overflow-hidden shadow-2xl py-1.5"
                       style={{
-                        background:     "rgba(16,21,12,0.98)",
+                        background:     "rgba(10, 22, 40,0.98)",
                         border:         "1px solid rgba(255,255,255,0.09)",
                         backdropFilter: "blur(20px)",
                       }}
                     >
-                      {item.children.map((child) => (
-                        <button
-                          key={child.label}
-                          onClick={() => navigate(child.href)}
-                          className="w-full text-left px-4 py-2.5 text-sm text-white/65
-                                     hover:text-white hover:bg-white/[0.06]
-                                     transition-all duration-150 flex items-center gap-2.5 group"
-                        >
-                          <span className="w-1 h-1 rounded-full bg-[#8FAE7A]
-                                           group-hover:bg-[#A8C4A2] transition-colors flex-shrink-0" />
-                          {child.label}
-                        </button>
-                      ))}
+                      {item.children.map((child, idx) => {
+                        const prevGroup = idx > 0 ? item.children[idx - 1].group : null;
+                        const showGroupLabel = child.group !== prevGroup;
+                        return (
+                          <div key={child.label}>
+                            {showGroupLabel && (
+                              <div className={`px-4 pb-1 text-[10px] font-bold uppercase tracking-wider text-[#EFB31E] ${idx > 0 ? "pt-3" : "pt-1"}`}>
+                                {child.group}
+                              </div>
+                            )}
+                            <button
+                              onClick={() => navigate(child.href)}
+                              className="w-full text-left px-4 py-2.5 text-sm text-white/65
+                                         hover:text-white hover:bg-white/[0.06]
+                                         transition-all duration-150 flex items-center gap-2.5 group"
+                            >
+                              <span className="w-1 h-1 rounded-full bg-[#EFB31E]
+                                               group-hover:bg-[#B1B3B8] transition-colors flex-shrink-0" />
+                              {child.label}
+                            </button>
+                          </div>
+                        );
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -216,11 +226,12 @@ export default function Navbar() {
               onClick={() => navigate("/contact")}
               strength={0.25}
               className="hidden md:flex items-center gap-1.5 px-5 py-2 rounded-full
-                         text-sm font-semibold text-white transition-shadow duration-250
+                         text-sm font-semibold transition-shadow duration-250
                          hover:shadow-lg"
               style={{
-                background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)",
-                boxShadow:  "0 3px 12px rgba(90,107,79,0.35)",
+                background: "linear-gradient(135deg,#EFB31E,#C98F1B)",
+                boxShadow:  "0 3px 12px rgba(239,179,30,0.35)",
+                color: "#0A1628",
               }}
             >
               Book Consultation
@@ -300,8 +311,8 @@ export default function Navbar() {
               >
                 <button
                   onClick={() => navigate("/contact")}
-                  className="w-full py-3 rounded-xl text-white font-semibold text-sm"
-                  style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)" }}
+                  className="w-full py-3 rounded-xl font-semibold text-sm"
+                  style={{ background: "linear-gradient(135deg,#EFB31E,#C98F1B)", color: "#0A1628" }}
                 >
                   Book Free Consultation
                 </button>
@@ -309,6 +320,10 @@ export default function Navbar() {
                   <a href="mailto:knowledgelab.bw@gmail.com"
                     className="text-xs text-white/45 flex items-center gap-2">
                     <Mail className="w-3 h-3" /> knowledgelab.bw@gmail.com
+                  </a>
+                  <a href="tel:+26776150511"
+                    className="text-xs text-white/45 flex items-center gap-2">
+                    <Phone className="w-3 h-3" /> +267 76150511
                   </a>
                   <a href="tel:+26774332739"
                     className="text-xs text-white/45 flex items-center gap-2">

@@ -23,28 +23,28 @@ const contactInfo = [
     icon: MapPin,
     label: "Location",
     value: "Gaborone, Botswana",
-    color: "#5A6B4F",
+    color: "#0F2F57",
     action: "https://maps.google.com",
   },
   {
     icon: Phone,
     label: "Call / WhatsApp",
-    value: "+267 74332739",
-    color: "#8FAE7A",
-    action: "tel:+26774332739",
+    value: "+267 76150511\n+267 74332739 (both on WhatsApp)",
+    color: "#14325E",
+    action: "tel:+26776150511",
   },
   {
     icon: Mail,
     label: "Email Address",
     value: "knowledgelab.bw@gmail.com",
-    color: "#6B8FA3",
+    color: "#EFB31E",
     action: "mailto:knowledgelab.bw@gmail.com",
   },
   {
     icon: Clock,
     label: "Office Hours",
     value: "Mon–Fri: 9AM – 6PM CAT\nSat: 10AM – 2PM CAT",
-    color: "#6F8C5B",
+    color: "#4A6B8A",
     action: null,
   },
 ];
@@ -94,7 +94,7 @@ export default function ContactSection() {
     `w-full px-4 py-3.5 rounded-xl text-sm border outline-none transition-all duration-200 ${
       err
         ? "border-red-400 bg-red-50/30"
-        : "border-[var(--card-border)] bg-[var(--muted-bg)] focus:border-[#8FAE7A]"
+        : "border-[var(--card-border)] bg-[var(--muted-bg)] focus:border-[#14325E]"
     }`;
 
   return (
@@ -107,7 +107,7 @@ export default function ContactSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(90, 107, 79, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(90, 107, 79, 0.03) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(15, 47, 87, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 47, 87, 0.03) 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
@@ -122,15 +122,15 @@ export default function ContactSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
+            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Contact Us</span>
+            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">Contact Us</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Let's Start a{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
+                background: "linear-gradient(135deg, #14325E 0%, #EFB31E 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -177,7 +177,7 @@ export default function ContactSection() {
                         href={info.action}
                         target={info.action.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="text-sm font-medium whitespace-pre-line hover:text-[#5A6B4F] transition-colors"
+                        className="text-sm font-medium whitespace-pre-line hover:text-[#0F2F57] transition-colors"
                         style={{ color: "var(--foreground)" }}
                       >
                         {info.value}
@@ -195,7 +195,7 @@ export default function ContactSection() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/26774332739"
+              href="https://wa.me/26776150511"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-5 rounded-2xl transition-all hover:shadow-lg hover:-translate-y-1 group"
@@ -215,7 +215,7 @@ export default function ContactSection() {
                   Chat on WhatsApp
                 </div>
                 <div className="text-sm" style={{ color: "var(--muted)" }}>
-                  Get instant answers, usually responds in minutes
+                  Both numbers are on WhatsApp, usually responds in minutes
                 </div>
               </div>
             </a>
@@ -257,7 +257,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Olive Shoots | Gaborone, Botswana"
+                title="Platinum Accolades | Gaborone, Botswana"
               />
             </div>
           </motion.div>
@@ -364,12 +364,12 @@ export default function ContactSection() {
                       style={{ color: "var(--foreground)" }}
                     >
                       <option value="">Select a service</option>
-                      <option>Academic Support</option>
-                      <option>Quality Assurance</option>
+                      <option>Academic Support (Tuition & Tutor Matching)</option>
+                      <option>Academic Writing & Research</option>
+                      <option>Career Guidance, Counselling & Mentorship</option>
+                      <option>Quality Assurance & External Moderation</option>
                       <option>Educational Technology</option>
-                      <option>Institutional Audits</option>
-                      <option>Career Guidance</option>
-                      <option>Counselling & Mentorship</option>
+                      <option>Institutional Audits and Visits</option>
                       <option>Other</option>
                     </select>
                     {errors.service && (
@@ -411,7 +411,7 @@ export default function ContactSection() {
                     type="submit"
                     disabled={submitState === "loading"}
                     className="w-full py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-2 transition-all hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-60"
-                    style={{ background: "linear-gradient(135deg, #8FAE7A 0%, #5A6B4F 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #14325E 0%, #0F2F57 100%)" }}
                   >
                     {submitState === "loading" ? (
                       <><Loader2 className="w-5 h-5 animate-spin" /> Sending...</>

@@ -19,16 +19,16 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://oliveshoots.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Olive Shoots | Educational Consultancy in Botswana & Africa",
-    template: "%s | Olive Shoots",
+    default: "Platinum Accolades | Educational Consultancy in Botswana & Africa",
+    template: "%s | Platinum Accolades",
   },
   description:
-    "Olive Shoots is a full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology training, career guidance, and student counselling, coaching and mentorship. Serving students and institutions across Botswana and southern Africa.",
+    "Platinum Accolades is a full-service educational consultancy offering academic support (tuition, writing, editing, research), quality assurance and institutional audits, educational technology training, career guidance, and student counselling, coaching and mentorship. Serving students and institutions across Botswana and southern Africa.",
   keywords: [
     "educational consultancy Botswana",
     "IGCSE tuition Botswana",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     "subject choice advice Botswana",
     "ODL and e-learning Botswana",
   ],
-  authors: [{ name: "Olive Shoots" }],
-  creator: "Olive Shoots",
-  publisher: "Olive Shoots",
+  authors: [{ name: "Platinum Accolades" }],
+  creator: "Platinum Accolades",
+  publisher: "Platinum Accolades",
   robots: {
     index: true,
     follow: true,
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Olive Shoots",
-    title: "Olive Shoots | Educational Consultancy",
+    siteName: "Platinum Accolades",
+    title: "Platinum Accolades | Educational Consultancy",
     description:
       "Academic support, quality assurance, educational technology, career guidance, and student counselling. 500+ students guided, 200+ schools served, 98% success rate.",
     images: [
@@ -75,17 +75,17 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Olive Shoots | Educational Consultancy",
+        alt: "Platinum Accolades | Educational Consultancy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olive Shoots | Educational Consultancy",
+    title: "Platinum Accolades | Educational Consultancy",
     description:
       "Academic support, quality assurance, educational technology, career guidance, and student counselling. Book your free consultation today.",
     images: [`${siteUrl}/og-image.png`],
-    creator: "@oliveshoots",
+    creator: "@platinumaccolades",
   },
   alternates: {
     canonical: siteUrl,
@@ -98,8 +98,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f4f0" },
-    { media: "(prefers-color-scheme: dark)", color: "#141a10" },
+    { media: "(prefers-color-scheme: light)", color: "#F8F4F0" },
+    { media: "(prefers-color-scheme: dark)", color: "#0D2038" },
   ],
 };
 
@@ -107,7 +107,7 @@ export const viewport: Viewport = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "Olive Shoots",
+  name: "Platinum Accolades",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description:
@@ -120,16 +120,16 @@ const structuredData = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+267-74-332-739",
+    telephone: "+267-76-150-511",
     contactType: "customer service",
     email: "knowledgelab.bw@gmail.com",
     areaServed: ["BW", "ZA", "ZW", "NA", "ZM", "MW"],
     availableLanguage: ["English", "Setswana"],
   },
   sameAs: [
-    "https://www.linkedin.com/company/oliveshoots",
-    "https://www.facebook.com/oliveshoots",
-    "https://www.instagram.com/oliveshoots",
+    "https://www.linkedin.com/company/platinumaccolades",
+    "https://www.facebook.com/platinumaccolades",
+    "https://www.instagram.com/platinumaccolades",
   ],
   foundingDate: "2009",
   numberOfEmployees: "25",

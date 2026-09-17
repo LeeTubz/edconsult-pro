@@ -26,12 +26,12 @@ export default function PageHero({
   breadcrumbs,
   primaryCta,
   secondaryCta,
-  accentColor = "#5A6B4F",
+  accentColor = "#EFB31E",
 }: PageHeroProps) {
   return (
     <section
       className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
-      style={{ background: "linear-gradient(135deg, #10150c 0%, #1c2417 50%, #141a10 100%)" }}
+      style={{ background: "linear-gradient(135deg, #0A1628 0%, #0F2545 50%, #0D2038 100%)" }}
     >
       {/* Ambient glow */}
       <div
@@ -44,7 +44,7 @@ export default function PageHero({
       <div
         className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(107,143,163,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(239, 179, 30,0.06) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
@@ -53,7 +53,7 @@ export default function PageHero({
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
-          backgroundImage: `linear-gradient(rgba(143,174,122,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(143,174,122,0.05) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(20, 50, 94,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 50, 94,0.05) 1px, transparent 1px)`,
           backgroundSize: "56px 56px",
         }}
       />
@@ -132,8 +132,8 @@ export default function PageHero({
             {primaryCta && (
               <Link
                 href={primaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: `linear-gradient(135deg, ${accentColor}, #5A6B4F)`, boxShadow: `0 4px 20px ${accentColor}40` }}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                style={{ background: "linear-gradient(135deg, #EFB31E, #C98F1B)", boxShadow: "0 4px 20px rgba(239,179,30,0.4)", color: "#0A1628" }}
               >
                 {primaryCta.label}
               </Link>

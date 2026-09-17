@@ -6,20 +6,20 @@ import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FAQSection from "@/components/sections/FAQSection";
 
 export const metadata: Metadata = {
-  title: "About Us | Olive Shoots",
+  title: "About Us | Platinum Accolades",
   description:
-    "Olive Shoots is a full-service, purpose-driven educational consultancy. Learn about our mission, approach, expertise, and why clients across Botswana and southern Africa trust us.",
+    "Platinum Accolades is a full-service, purpose-driven educational consultancy. Learn about our mission, approach, expertise, and why clients across Botswana and southern Africa trust us.",
 };
 
 export default function AboutPage() {
   return (
     <main>
       <PageHero
-        badge="About Olive Shoots"
+        badge="About Platinum Accolades"
         title={
           <>
             Guiding Minds, Strengthening{" "}
-            <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#B1B3B8,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Institutions
             </span>
           </>

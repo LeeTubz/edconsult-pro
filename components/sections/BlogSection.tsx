@@ -30,15 +30,15 @@ export default function BlogSection() {
           <div>
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-              style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
+              style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
             >
-              <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">Insights & Articles</span>
+              <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">Insights & Articles</span>
             </div>
             <h2 className="section-title" style={{ color: "var(--foreground)" }}>
               Student Support{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
+                  background: "linear-gradient(135deg, #14325E 0%, #EFB31E 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -97,7 +97,7 @@ export default function BlogSection() {
                 </span>
               </div>
               <h3
-                className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-[#5A6B4F] transition-colors leading-tight"
+                className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-[#0F2F57] transition-colors leading-tight"
                 style={{ color: "var(--foreground)" }}
               >
                 {posts[0].title}
@@ -174,7 +174,7 @@ export default function BlogSection() {
                 </div>
 
                 <h3
-                  className="text-base font-bold mb-2 leading-snug group-hover:text-[#5A6B4F] transition-colors line-clamp-2"
+                  className="text-base font-bold mb-2 leading-snug group-hover:text-[#0F2F57] transition-colors line-clamp-2"
                   style={{ color: "var(--foreground)" }}
                 >
                   {post.title}
@@ -207,7 +207,7 @@ export default function BlogSection() {
         >
           <Link
             href="/blog"
-            className="inline-block px-8 py-4 rounded-full font-semibold text-base border-2 border-[#5A6B4F] text-[#5A6B4F] hover:bg-[#5A6B4F] hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="inline-block px-8 py-4 rounded-full font-semibold text-base border-2 border-[#0F2F57] text-[#0F2F57] hover:bg-[#0F2F57] hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             View All Articles
           </Link>

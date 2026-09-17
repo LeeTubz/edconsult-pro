@@ -17,7 +17,7 @@ const processes = [
     title: "Discovery Call",
     description:
       "We start with a free discovery call to understand your goals, challenges, and what the right kind of support looks like for you.",
-    color: "#5A6B4F",
+    color: "#0F2F57",
     features: ["Free consultation", "Goal setting", "Needs assessment", "No obligation"],
   },
   {
@@ -26,7 +26,7 @@ const processes = [
     title: "Personalised Plan",
     description:
       "We build a tailored support plan, whether that's career guidance, counselling, coaching, or internship guidance, matched to your specific needs.",
-    color: "#6B8FA3",
+    color: "#EFB31E",
     features: ["Tailored plan", "Right-fit service", "Clear milestones", "Flexible scheduling"],
   },
   {
@@ -35,7 +35,7 @@ const processes = [
     title: "One-on-One Support",
     description:
       "You work directly with a dedicated consultant through regular sessions, not a call centre, and not a one-size-fits-all template.",
-    color: "#8FAE7A",
+    color: "#14325E",
     features: ["Dedicated consultant", "Regular sessions", "Confidential", "Personal attention"],
   },
   {
@@ -44,7 +44,7 @@ const processes = [
     title: "Practical Tools & Resources",
     description:
       "We equip you with practical techniques, coaching tools, and resources you can keep using long after our sessions end.",
-    color: "#6F8C5B",
+    color: "#4A6B8A",
     features: ["Practical techniques", "Take-home resources", "Real-world skills", "Ongoing access"],
   },
   {
@@ -53,7 +53,7 @@ const processes = [
     title: "Ongoing Check-ins",
     description:
       "We follow up regularly to track progress and adjust the plan as your needs evolve. Support doesn't end after the first session.",
-    color: "#A8C4A2",
+    color: "#B1B3B8",
     features: ["Progress tracking", "Regular follow-up", "Plan adjustments", "Long-term support"],
   },
 ];
@@ -72,7 +72,7 @@ export default function WhatWeDoSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(90, 107, 79, 0.04) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(15, 47, 87, 0.04) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
       />
@@ -87,15 +87,15 @@ export default function WhatWeDoSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(90, 107, 79, 0.08)", border: "1px solid rgba(90, 107, 79, 0.2)" }}
+            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
           >
-            <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">How We Work</span>
+            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">How We Work</span>
           </div>
           <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
             Our{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #8FAE7A 0%, #6B8FA3 100%)",
+                background: "linear-gradient(135deg, #14325E 0%, #EFB31E 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

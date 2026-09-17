@@ -6,7 +6,7 @@ import HomeCTA from "@/components/sections/home/HomeCTA";
 export const metadata: Metadata = {
   title: "Blog | Student Support Insights & Articles",
   description:
-    "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Olive Shoots team.",
+    "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Platinum Accolades team.",
 };
 
 export default function BlogPage() {
@@ -17,16 +17,16 @@ export default function BlogPage() {
         title={
           <>
             Student Support{" "}
-            <span style={{ background: "linear-gradient(135deg,#A8C4A2,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#B1B3B8,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Insights
             </span>
           </>
         }
-        subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa, from the Olive Shoots team."
+        subtitle="Expert perspectives on career guidance, counselling, coaching, and the future of learning in Botswana and across Africa, from the Platinum Accolades team."
         breadcrumbs={[{ label: "Blog" }]}
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
         secondaryCta={{ label: "Our Services", href: "/services/academic-support" }}
-        accentColor="#5A6B4F"
+        accentColor="#EFB31E"
       />
       <BlogSection />
       <HomeCTA />

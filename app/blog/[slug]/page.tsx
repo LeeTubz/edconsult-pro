@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Article Not Found" };
   return {
-    title: `${post.title} | Olive Shoots`,
+    title: `${post.title} | Platinum Accolades`,
     description: post.excerpt,
   };
 }
@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </p>
 
             <p className="leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
-              At Olive Shoots, we believe that informed decisions lead to better outcomes for students. This article draws on our 15+ years of experience working with students and schools across Botswana and southern Africa to give you practical, actionable guidance you can apply today.
+              At Platinum Accolades, we believe that informed decisions lead to better outcomes for students. This article draws on our 18+ years of experience working with students and schools across Botswana and southern Africa to give you practical, actionable guidance you can apply today.
             </p>
 
             <h2 className="text-2xl font-bold mb-4 mt-10" style={{ color: "var(--foreground)" }}>
@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </ul>
 
             <h2 className="text-2xl font-bold mb-4 mt-10" style={{ color: "var(--foreground)" }}>
-              How Olive Shoots Can Help
+              How Platinum Accolades Can Help
             </h2>
             <p className="leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
               Whether you're a student, parent, or school leader, our team of specialist consultants is ready to provide the guidance you need to reach your goals. We take the time to understand your unique situation and craft support that is genuinely tailored to you.
@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <div className="flex items-center gap-2 mb-2 text-xs" style={{ color: "var(--muted)" }}>
                   <ArrowLeft className="w-3.5 h-3.5" /> Previous Article
                 </div>
-                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[#5A6B4F] transition-colors" style={{ color: "var(--foreground)" }}>
+                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[#0F2F57] transition-colors" style={{ color: "var(--foreground)" }}>
                   {prevPost.title}
                 </p>
               </Link>
@@ -171,7 +171,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <div className="flex items-center justify-end gap-2 mb-2 text-xs" style={{ color: "var(--muted)" }}>
                   Next Article <ArrowRight className="w-3.5 h-3.5" />
                 </div>
-                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[#5A6B4F] transition-colors" style={{ color: "var(--foreground)" }}>
+                <p className="text-sm font-semibold line-clamp-2 group-hover:text-[#0F2F57] transition-colors" style={{ color: "var(--foreground)" }}>
                   {nextPost.title}
                 </p>
               </Link>
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   >
                     {related.category}
                   </span>
-                  <h3 className="text-sm font-bold mt-1 line-clamp-2 group-hover:text-[#5A6B4F] transition-colors" style={{ color: "var(--foreground)" }}>
+                  <h3 className="text-sm font-bold mt-1 line-clamp-2 group-hover:text-[#0F2F57] transition-colors" style={{ color: "var(--foreground)" }}>
                     {related.title}
                   </h3>
                 </div>

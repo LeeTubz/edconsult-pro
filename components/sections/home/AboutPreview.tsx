@@ -12,19 +12,19 @@ const pillars = [
     icon: MapPin,
     title: "Built for Botswana & Africa",
     desc: "Our approach is grounded in local context. We understand the educational landscape here in a way no foreign consultancy can.",
-    color: "#5A6B4F",
+    color: "#0F2F57",
   },
   {
     icon: GraduationCap,
     title: "Specialist Consultants, Not Generalists",
     desc: "Every student works with a dedicated specialist, not a call centre. Our consultants bring focused experience in their specific area of support.",
-    color: "#6B8FA3",
+    color: "#EFB31E",
   },
   {
     icon: Lightbulb,
     title: "Outcomes You Can Measure",
     desc: "We set clear goals at the start of every engagement and report transparently on progress, because your results are our reputation.",
-    color: "#8FAE7A",
+    color: "#14325E",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function AboutPreview() {
     >
       <BrandMotif
         className="absolute pointer-events-none hidden lg:block"
-        style={{ top: "-8%", left: "-6%", width: 280, height: "auto", color: "#8FAE7A", opacity: 0.08, transform: "rotate(-20deg)" }}
+        style={{ top: "-8%", left: "-6%", width: 280, height: "auto", color: "#14325E", opacity: 0.08, transform: "rotate(-20deg)" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -62,7 +62,7 @@ export default function AboutPreview() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* gradient overlay */}
-              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(16,21,12,0.25),transparent 60%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(10, 22, 40,0.25),transparent 60%)" }} />
             </div>
 
             {/* Floating credential badge */}
@@ -74,12 +74,12 @@ export default function AboutPreview() {
               style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)", backdropFilter: "blur(12px)" }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: "rgba(90,107,79,0.12)" }}>
-                <CheckCircle className="w-5 h-5 text-[#5A6B4F]" />
+                style={{ background: "rgba(15, 47, 87,0.12)" }}>
+                <CheckCircle className="w-5 h-5 text-[#0F2F57]" />
               </div>
               <div>
                 <div className="text-sm font-bold" style={{ color: "var(--foreground)" }}>Trusted Since 2009</div>
-                <div className="text-xs" style={{ color: "var(--muted)" }}>15+ years of excellence</div>
+                <div className="text-xs" style={{ color: "var(--muted)" }}>18+ years of excellence</div>
               </div>
             </motion.div>
           </motion.div>
@@ -92,19 +92,19 @@ export default function AboutPreview() {
               transition={{ duration: 0.75 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-                style={{ background: "rgba(90,107,79,0.08)", border: "1px solid rgba(90,107,79,0.2)" }}>
-                <span className="text-sm font-semibold text-[#5A6B4F] dark:text-[#A8C4A2]">About Olive Shoots</span>
+                style={{ background: "rgba(15, 47, 87,0.08)", border: "1px solid rgba(15, 47, 87,0.2)" }}>
+                <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">About Platinum Accolades</span>
               </div>
 
               <h2 className="section-title mb-5" style={{ color: "var(--foreground)" }}>
                 Botswana&apos;s Most Trusted{" "}
-                <span style={{ background: "linear-gradient(135deg,#8FAE7A,#6B8FA3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(135deg,#14325E,#EFB31E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Educational Partner
                 </span>
               </h2>
 
               <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
-                For over 15 years, Olive Shoots has worked alongside students, schools, and
+                For over 18 years, Platinum Accolades has worked alongside students, schools, and
                 institutions to achieve outcomes that matter. We bring deep local
                 knowledge, genuine care, and a focus on 'best fit' to every engagement.
               </p>
@@ -142,7 +142,7 @@ export default function AboutPreview() {
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg,#8FAE7A,#5A6B4F)", boxShadow: "0 4px 20px rgba(90,107,79,0.3)" }}
+                  style={{ background: "linear-gradient(135deg,#14325E,#0F2F57)", boxShadow: "0 4px 20px rgba(15, 47, 87,0.3)" }}
                 >
                   Our Full Story <ArrowRight className="w-4 h-4" />
                 </Link>

@@ -18,7 +18,7 @@ const reasons = [
     title: "Expert Consultants",
     description:
       "Our team comprises credentialed professionals with experience across academic support, institutional consulting, career guidance, and student counselling.",
-    color: "#5A6B4F",
+    color: "#8a9bb5",
     stat: "25+",
     statLabel: "Expert Consultants",
   },
@@ -27,7 +27,7 @@ const reasons = [
     title: "Personalized Guidance",
     description:
       "Every engagement begins with deep listening. We tailor every strategy, recommendation, and solution to your specific context, goals, and challenges.",
-    color: "#6B8FA3",
+    color: "#EFB31E",
     stat: "100%",
     statLabel: "Customized Solutions",
   },
@@ -36,7 +36,7 @@ const reasons = [
     title: "Data-Driven Strategy",
     description:
       "Our recommendations are grounded in rigorous research, benchmarking, and educational data analytics, so every decision is evidence-based.",
-    color: "#8FAE7A",
+    color: "#f2c357",
     stat: "98%",
     statLabel: "Success Rate",
   },
@@ -45,7 +45,7 @@ const reasons = [
     title: "Educational Innovation",
     description:
       "We stay at the frontier of educational research, technology, and policy, bringing cutting-edge approaches to every engagement.",
-    color: "#6F8C5B",
+    color: "#4A6B8A",
     stat: "50+",
     statLabel: "Countries Reached",
   },
@@ -54,7 +54,7 @@ const reasons = [
     title: "Proven Results",
     description:
       "With a track record of 500+ students guided and transformative school partnerships, our outcomes speak for themselves.",
-    color: "#4A6B7A",
+    color: "#C98F1B",
     stat: "500+",
     statLabel: "Students Guided",
   },
@@ -63,7 +63,7 @@ const reasons = [
     title: "Professional Support",
     description:
       "We are committed partners throughout your entire journey, providing responsive, professional support long after the initial engagement.",
-    color: "#A8C4A2",
+    color: "#B1B3B8",
     stat: "24/7",
     statLabel: "Support Available",
   },
@@ -82,19 +82,19 @@ export default function WhyChooseUsSection() {
       {/* Dark background section */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(135deg, #10150c 0%, #1c2417 50%, #10150c 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0A1628 0%, #0F2545 50%, #0A1628 100%)" }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(143, 174, 122, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 174, 122, 0.04) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(20, 50, 94, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 50, 94, 0.04) 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
       <div
         className="absolute top-0 right-0 w-150 h-150 pointer-events-none rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(143, 174, 122, 0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(20, 50, 94, 0.08) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -117,15 +117,15 @@ export default function WhyChooseUsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(107, 143, 163, 0.1)", border: "1px solid rgba(107, 143, 163, 0.25)" }}
+            style={{ background: "rgba(239, 179, 30, 0.1)", border: "1px solid rgba(239, 179, 30, 0.25)" }}
           >
-            <span className="text-sm font-semibold text-[#A8C4A2]">The Olive Shoots Difference</span>
+            <span className="text-sm font-semibold text-[#B1B3B8]">The Platinum Accolades Difference</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-3">
             Why Leading Clients{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #A8C4A2 0%, #6B8FA3 100%)",
+                background: "linear-gradient(135deg, #B1B3B8 0%, #EFB31E 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -198,7 +198,7 @@ export default function WhyChooseUsSection() {
             { value: 500, suffix: "+", label: "Students Guided" },
             { value: 200, suffix: "+", label: "Schools Served" },
             { value: 98,  suffix: "%", label: "Satisfaction Rate" },
-            { value: 15,  suffix: "+", label: "Years of Excellence" },
+            { value: 18,  suffix: "+", label: "Years of Excellence" },
           ].map((s, i) => (
             <motion.div
               key={i}
