@@ -35,8 +35,8 @@ const founder = {
   color: "#EFB31E",
   photo: "/founder-avatar.jpg",
   books: [
-    { label: "Demystifying Assignment Writing", href: "https://www.amazon.com/Demystifying-Assignment-Writing-practical-assignment-ebook/dp/B08X7J3PQ7?ref_=litb_stb_nodl&nodl_android=1" },
-    { label: "Dissertation Writing for Beginners", href: "https://www.amazon.com/DISSERTATION-WRITING-BEGINNERS-comprehensive-dissertation-ebook/dp/B08XK5F2RW?ref_=litb_stb_nodl&nodl_android=1" },
+    { label: "Demystifying Assignment Writing", href: "https://www.amazon.com/Demystifying-Assignment-Writing-practical-assignment-ebook/dp/B08X7J3PQ7?ref_=litb_stb_nodl&nodl_android=1", cover: undefined as string | undefined },
+    { label: "Dissertation Writing for Beginners", href: "https://www.amazon.com/DISSERTATION-WRITING-BEGINNERS-comprehensive-dissertation-ebook/dp/B08XK5F2RW?ref_=litb_stb_nodl&nodl_android=1", cover: undefined as string | undefined },
   ],
 };
 
@@ -112,12 +112,14 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
   const Icon = c.icon;
   const books = "books" in c ? c.books : undefined;
   const highlights = "highlights" in c ? c.highlights : undefined;
+  const isFounder = !!books;
+
   return (
     <motion.div
       initial={false}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: i * 0.07, duration: 0.55 }}
-      className="group relative overflow-hidden rounded-2xl border p-6 cursor-pointer
+      className="group relative overflow-hidden rounded-2xl border p-6 sm:p-8 cursor-pointer
                   transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
       style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
     >
@@ -128,70 +130,94 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
       <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl"
         style={{ background: `linear-gradient(90deg,${c.color},transparent)` }} />
 
-      <div className="relative">
-        <div className="relative w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110">
-          <div className="relative w-14 h-14 rounded-full overflow-hidden border-2"
-            style={{ borderColor: `${c.color}40` }}>
-            <Image src={c.photo} alt={c.title} fill className="object-cover" sizes="56px" />
+      <div className={`relative ${isFounder ? "flex flex-col sm:flex-row gap-6 sm:gap-8" : ""}`}>
+        {isFounder ? (
+          <div className="relative w-28 h-28 sm:w-40 sm:h-40 shrink-0 mx-auto sm:mx-0 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2"
+              style={{ borderColor: `${c.color}40` }}>
+              <Image src={c.photo} alt={c.title} fill className="object-cover" sizes="160px" />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-9 h-9 rounded-full flex items-center justify-center border-2"
+              style={{ background: c.color, borderColor: "var(--card-bg)" }}>
+              <Icon className="w-4 h-4 text-white" />
+            </div>
           </div>
-          <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center border-2"
-            style={{ background: c.color, borderColor: "var(--card-bg)" }}>
-            <Icon className="w-3 h-3 text-white" />
-          </div>
-        </div>
-
-        <div className="text-[11px] font-bold uppercase tracking-wider mb-1.5" style={{ color: c.color }}>
-          {c.tagline}
-        </div>
-        <h3 className={`font-bold mb-2.5 leading-snug ${highlights ? "text-xl" : "text-base"}`} style={{ color: "var(--foreground)" }}>
-          {c.title}
-        </h3>
-        <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>
-          {c.description}
-        </p>
-
-        {highlights && (
-          <ul className="space-y-1.5 mb-4">
-            {highlights.map((h, j) => (
-              <li key={j} className="text-sm leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
-                <span className="mt-2 w-1 h-1 rounded-full shrink-0" style={{ background: c.color }} />
-                {h}
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {c.specialties.map((s, j) => (
-            <span key={j} className="text-[11px] px-2 py-0.5 rounded-full font-medium"
-              style={{ background: `${c.color}10`, color: c.color, border: `1px solid ${c.color}22` }}>
-              {s}
-            </span>
-          ))}
-        </div>
-
-        {books && (
-          <div className="flex flex-col gap-1.5 mb-4">
-            {books.map((b, j) => (
-              <a
-                key={j}
-                href={b.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-medium underline underline-offset-2 hover:no-underline"
-                style={{ color: c.color }}
-              >
-                📖 {b.label} (Amazon)
-              </a>
-            ))}
+        ) : (
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+            style={{ background: `${c.color}15` }}>
+            <Icon className="w-7 h-7" style={{ color: c.color }} />
           </div>
         )}
 
-        <button onClick={scrollToConsultation}
-          className="flex items-center gap-1.5 text-xs font-semibold transition-all duration-200 hover:gap-2.5"
-          style={{ color: c.color }}>
-          Learn More <ArrowRight className="w-3.5 h-3.5" />
-        </button>
+        <div className={isFounder ? "flex-1 min-w-0" : ""}>
+          <div className="text-[11px] font-bold uppercase tracking-wider mb-1.5" style={{ color: c.color }}>
+            {c.tagline}
+          </div>
+          <h3 className={`font-bold mb-2.5 leading-snug ${isFounder ? "text-2xl sm:text-3xl" : "text-base"}`} style={{ color: "var(--foreground)" }}>
+            {c.title}
+          </h3>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--muted)" }}>
+            {c.description}
+          </p>
+
+          {highlights && (
+            <ul className="space-y-1.5 mb-4">
+              {highlights.map((h, j) => (
+                <li key={j} className="text-sm leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
+                  <span className="mt-2 w-1 h-1 rounded-full shrink-0" style={{ background: c.color }} />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {c.specialties.map((s, j) => (
+              <span key={j} className="text-[11px] px-2 py-0.5 rounded-full font-medium"
+                style={{ background: `${c.color}10`, color: c.color, border: `1px solid ${c.color}22` }}>
+                {s}
+              </span>
+            ))}
+          </div>
+
+          {books && (
+            <div className="flex flex-wrap gap-4 mb-4">
+              {books.map((b, j) => (
+                <a
+                  key={j}
+                  href={b.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/book flex items-center gap-3 p-2.5 rounded-xl border transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                  style={{ borderColor: "var(--card-border)", background: "var(--background)" }}
+                >
+                  <div className="relative w-11 h-16 rounded-md overflow-hidden shrink-0 flex items-center justify-center"
+                    style={{ background: `${c.color}15`, border: `1px solid ${c.color}30` }}>
+                    {b.cover ? (
+                      <Image src={b.cover} alt={b.label} fill className="object-cover" sizes="44px" />
+                    ) : (
+                      <BookOpen className="w-5 h-5" style={{ color: c.color }} />
+                    )}
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold leading-snug max-w-[140px]" style={{ color: "var(--foreground)" }}>
+                      {b.label}
+                    </div>
+                    <div className="text-[10px] uppercase tracking-wide mt-0.5 font-medium" style={{ color: c.color }}>
+                      View on Amazon →
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+
+          <button onClick={scrollToConsultation}
+            className="flex items-center gap-1.5 text-xs font-semibold transition-all duration-200 hover:gap-2.5"
+            style={{ color: c.color }}>
+            Learn More <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
     </motion.div>
   );
@@ -253,7 +279,7 @@ export default function TeamSection() {
         </motion.div>
 
         {/* Founder & Visionary, featured */}
-        <div className="mb-8 max-w-2xl mx-auto">
+        <div className="mb-8">
           <TeamCard c={founder} i={0} inView={inView} scrollToConsultation={scrollToConsultation} />
         </div>
 
