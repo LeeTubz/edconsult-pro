@@ -23,11 +23,11 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Academic Support",                          href: "/services/academic-support"     },
-  { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance"      },
-  { label: "Quality Assurance",                          href: "/services/quality-assurance"    },
-  { label: "Teacher and Staff Capacity Building and Mentorship", href: "/services/educational-technology" },
-  { label: "Institutional Audits and Visits",            href: "/services/institutional-audits" },
+  { label: "Academic Support",          href: "/services/academic-support"     },
+  { label: "Career Guidance & Mentorship", href: "/services/career-guidance"   },
+  { label: "Quality Assurance",         href: "/services/quality-assurance"    },
+  { label: "Staff Capacity Building",   href: "/services/educational-technology" },
+  { label: "Institutional Audits",      href: "/services/institutional-audits" },
 ];
 
 const socials = [

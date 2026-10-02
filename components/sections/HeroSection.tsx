@@ -120,7 +120,7 @@ export default function HeroSection() {
                 <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
               ))}
               <span className="text-xs font-semibold text-[#B1B3B8] ml-1">
-                Trusted by 500+ Students &amp; 200+ Institutions
+                Trusted by 500+ Students &amp; 20+ Institutions
               </span>
             </motion.div>
 

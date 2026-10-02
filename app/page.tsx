@@ -3,7 +3,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutPreview from "@/components/sections/home/AboutPreview";
 import ServicesPreview from "@/components/sections/home/ServicesPreview";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import BlogPreview from "@/components/sections/home/BlogPreview";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
@@ -20,7 +19,6 @@ export default function HomePage() {
       <AboutPreview />
       <ServicesPreview />
       <WhyChooseUsSection />
-      <TestimonialsSection />
       <BlogPreview />
       <HomeCTA />
     </main>

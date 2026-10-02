@@ -29,9 +29,9 @@ const whyChooseUs = [
 
 const trustStats = [
   { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#0F2F57" },
-  { value: 200, suffix: "+", label: "Schools Served", icon: BookOpen, color: "#EFB31E" },
+  { value: 20, suffix: "+", label: "Institutions Served", icon: BookOpen, color: "#EFB31E" },
   { value: 18, suffix: "+", label: "Years of Excellence", icon: Award, color: "#14325E" },
-  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe, color: "#4A6B8A" },
+  { value: 16, suffix: "+", label: "Countries Reached", icon: Globe, color: "#4A6B8A" },
 ];
 
 const values = [

@@ -112,7 +112,7 @@ export default function WhatWeDoSection() {
 
         {/* Process Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {processes.slice(0, 4).map((p, i) => {
+          {processes.slice(0, 3).map((p, i) => {
             const Icon = p.icon;
             return (
               <motion.div
@@ -188,17 +188,17 @@ export default function WhatWeDoSection() {
           })}
         </div>
 
-        {/* 5th item centered */}
-        <div className="flex justify-center">
-          {processes.slice(4).map((p, i) => {
+        {/* Final two steps, centered as a pair */}
+        <div className="flex flex-col lg:flex-row justify-center gap-8">
+          {processes.slice(3).map((p, i) => {
             const Icon = p.icon;
             return (
               <motion.div
                 key={i}
                 initial={false}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.15, duration: 0.45 }}
-                className="group relative p-6 rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 max-w-sm w-full"
+                transition={{ delay: 0.3 + i * 0.09, duration: 0.45 }}
+                className="group relative p-6 rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 w-full max-w-md lg:max-w-none lg:w-[calc(33.333%-1.33rem)]"
                 style={{
                   background: "var(--card-bg)",
                   borderColor: "var(--card-border)",

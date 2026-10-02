@@ -19,7 +19,7 @@ const reasons = [
     description:
       "Our team comprises credentialed professionals with experience across academic support, institutional consulting, career guidance, and student counselling.",
     color: "#8a9bb5",
-    stat: "25+",
+    stat: "10+",
     statLabel: "Expert Consultants",
   },
   {
@@ -46,7 +46,7 @@ const reasons = [
     description:
       "We stay at the frontier of educational research, technology, and policy, bringing cutting-edge approaches to every engagement.",
     color: "#4A6B8A",
-    stat: "50+",
+    stat: "16+",
     statLabel: "Countries Reached",
   },
   {
@@ -196,7 +196,7 @@ export default function WhyChooseUsSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-4">
           {[
             { value: 500, suffix: "+", label: "Students Guided" },
-            { value: 200, suffix: "+", label: "Schools Served" },
+            { value: 20,  suffix: "+", label: "Institutions Served" },
             { value: 98,  suffix: "%", label: "Satisfaction Rate" },
             { value: 18,  suffix: "+", label: "Years of Excellence" },
           ].map((s, i) => (

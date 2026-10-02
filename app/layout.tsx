@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: "Platinum Accolades",
     title: "Platinum Accolades | Educational Consultancy",
     description:
-      "Academic support, quality assurance, educational technology, career guidance, and student counselling. 500+ students guided, 200+ schools served, 98% success rate.",
+      "Academic support, quality assurance, educational technology, career guidance, and student counselling. 500+ students guided, 20+ institutions served, 98% success rate.",
     images: [
       {
         url: `${siteUrl}/og-image.png`,

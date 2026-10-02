@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ClientsSection from "@/components/sections/ClientsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 
 export const metadata: Metadata = {
@@ -30,7 +29,6 @@ export default function ClientsPage() {
         accentColor="#EFB31E"
       />
       <ClientsSection />
-      <TestimonialsSection />
       <HomeCTA />
     </main>
   );

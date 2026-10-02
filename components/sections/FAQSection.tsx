@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "What makes Platinum Accolades different from other consultancies?",
     answer:
-      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution, following 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 200+ schools).",
+      "We differentiate ourselves through three key pillars: expertise (our team brings focused experience across academic support, institutional consulting, career guidance, and counselling), personalisation (every plan is built around the individual student or institution, following 'Best Fit For Purpose', never one-size-fits-all), and results (we have a documented 98% success rate and a track record of positive outcomes across 500+ students and 20+ institutions).",
   },
   {
     question: "Do you work with individual students, or with schools and institutions too?",
