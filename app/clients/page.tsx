@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ClientsSection from "@/components/sections/ClientsSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Clients | Who We Serve",
+export const metadata: Metadata = pageMetadata({
+  title: "Our Clients | Who We Serve in Botswana",
   description:
-    "Platinum Accolades serves students, families, and schools across Botswana and Africa. Discover how we tailor our support to every client type.",
-};
+    "Platinum Accolades serves individual students and families, and schools and institutions, across Botswana and southern Africa. Discover how we tailor our support to every client type.",
+  path: "/clients",
+});
 
 export default function ClientsPage() {
   return (

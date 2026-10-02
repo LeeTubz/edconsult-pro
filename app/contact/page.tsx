@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ContactSection from "@/components/sections/ContactSection";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Book a Free Consultation",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us | Free Consultation in Gaborone, Botswana",
   description:
-    "Get in touch with Platinum Accolades. Book a free consultation and start growing toward your future today.",
-};
+    "Get in touch with Platinum Accolades in Gaborone, Botswana by phone, WhatsApp, or email. Book a free consultation for academic support, career guidance, or institutional consulting.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

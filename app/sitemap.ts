@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-data";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.co.bw";
 
 const serviceSlugs = [
   "academic-support",

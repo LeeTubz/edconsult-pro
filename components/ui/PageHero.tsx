@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export interface BreadcrumbItem {
   label: string;
@@ -28,6 +30,21 @@ export default function PageHero({
   secondaryCta,
   accentColor = "#EFB31E",
 }: PageHeroProps) {
+  const pathname = usePathname();
+
+  const crumbTrail = (breadcrumbs ?? []).reduce<{ label: string; path?: string }[]>(
+    (acc, crumb, i) => {
+      const isLast = i === breadcrumbs!.length - 1;
+      if (crumb.href) {
+        acc.push({ label: crumb.label, path: crumb.href });
+      } else if (isLast) {
+        acc.push({ label: crumb.label, path: pathname });
+      }
+      return acc;
+    },
+    []
+  );
+
   return (
     <section
       className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
@@ -60,6 +77,12 @@ export default function PageHero({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(crumbTrail)) }}
+          />
+        )}
         {breadcrumbs && breadcrumbs.length > 0 && (
           <motion.nav
             initial={{ opacity: 0, y: -8 }}

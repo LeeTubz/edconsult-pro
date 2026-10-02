@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://platinumaccolades.co.bw";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -125,19 +125,6 @@ const structuredData = {
     email: "knowledgelab.bw@gmail.com",
     areaServed: ["BW", "ZA", "ZW", "NA", "ZM", "MW"],
     availableLanguage: ["English", "Setswana"],
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/platinumaccolades",
-    "https://www.facebook.com/platinumaccolades",
-    "https://www.instagram.com/platinumaccolades",
-  ],
-  foundingDate: "2009",
-  numberOfEmployees: "25",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "500",
-    bestRating: "5",
   },
 };
 

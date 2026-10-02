@@ -5,12 +5,14 @@ import ServicesPreview from "@/components/sections/home/ServicesPreview";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import BlogPreview from "@/components/sections/home/BlogPreview";
 import HomeCTA from "@/components/sections/home/HomeCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Platinum Accolades | Educational Consultancy in Botswana & Africa",
   description:
-    "Guiding students through career clarity, counselling, academic-writing coaching, internship guidance, and educational technology.",
-};
+    "Platinum Accolades is an educational consultancy in Gaborone, Botswana offering academic support, career guidance, counselling and mentorship, quality assurance, institutional audits, and educational technology capacity building for students and institutions across Botswana and southern Africa.",
+  path: "",
+});
 
 export default function HomePage() {
   return (

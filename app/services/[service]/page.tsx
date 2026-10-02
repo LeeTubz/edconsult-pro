@@ -4,6 +4,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
+import { pageMetadata } from "@/lib/seo";
 import {
   Compass, BookOpen, ShieldCheck, ClipboardCheck,
   CheckCircle, ArrowRight, Users, Star,
@@ -211,10 +212,11 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const { service } = await params;
   const data = serviceData[service as ServiceSlug];
   if (!data) return { title: "Service Not Found" };
-  return {
+  return pageMetadata({
     title: data.metaTitle,
     description: data.metaDesc,
-  };
+    path: `/services/${service}`,
+  });
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
@@ -231,12 +233,9 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         badge={data.badge}
         title={data.title}
         subtitle={data.subtitle}
-        breadcrumbs={[
-          { label: "Services", href: "/services/career-guidance" },
-          { label: data.badge },
-        ]}
+        breadcrumbs={[{ label: data.badge }]}
         primaryCta={{ label: "Book Free Consultation", href: "/contact" }}
-        secondaryCta={{ label: "All Services", href: "/services/career-guidance" }}
+        secondaryCta={{ label: "All Services", href: "/#services" }}
         accentColor={data.accentColor}
       />
 
@@ -362,7 +361,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           </div>
           <div className="text-center">
             <Link
-              href="/services/career-guidance"
+              href="/#services"
               className="inline-flex items-center gap-2 text-sm font-semibold"
               style={{ color: "var(--foreground)" }}
             >

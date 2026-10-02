@@ -88,6 +88,7 @@ export default function ServicesPreview() {
 
   return (
     <section
+      id="services"
       className="section-padding relative overflow-hidden"
       style={{ background: "var(--section-alt)" }}
       ref={ref}

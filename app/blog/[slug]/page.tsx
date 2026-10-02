@@ -5,6 +5,7 @@ import Image from "next/image";
 import { blogPosts } from "@/lib/blog-data";
 import PageHero from "@/components/ui/PageHero";
 import HomeCTA from "@/components/sections/home/HomeCTA";
+import { pageMetadata } from "@/lib/seo";
 import { Clock, Tag, ArrowRight, ArrowLeft } from "lucide-react";
 
 export function generateStaticParams() {
@@ -15,10 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Article Not Found" };
-  return {
-    title: `${post.title} | Platinum Accolades`,
+  return pageMetadata({
+    title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${slug}`,
+    image: post.imageUrl,
+  });
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {

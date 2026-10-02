@@ -4,12 +4,14 @@ import AboutSection from "@/components/sections/AboutSection";
 import TeamSection from "@/components/sections/TeamSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FAQSection from "@/components/sections/FAQSection";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Platinum Accolades",
+export const metadata: Metadata = pageMetadata({
+  title: "About Us | Educational Consultancy in Botswana",
   description:
-    "Platinum Accolades is a full-service, purpose-driven educational consultancy. Learn about our mission, approach, expertise, and why clients across Botswana and southern Africa trust us.",
-};
+    "Meet Platinum Accolades: a Gaborone-based educational consultancy team offering academic support, career guidance, and institutional consulting across Botswana and southern Africa. Learn our mission, approach, and expertise.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import BlogSection from "@/components/sections/BlogSection";
 import HomeCTA from "@/components/sections/home/HomeCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog | Student Support Insights & Articles",
   description:
-    "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Platinum Accolades team.",
-};
+    "Expert insights on career guidance, student counselling, academic writing coaching, internships, and educational technology from the Platinum Accolades team in Botswana.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (
