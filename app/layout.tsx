@@ -91,6 +91,9 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   category: "education",
+  verification: {
+    google: "O0ZNpLMy3WtX3aQwKkdmWHndX0ZNbFomrbHuznSnY6w",
+  },
 };
 
 export const viewport: Viewport = {
