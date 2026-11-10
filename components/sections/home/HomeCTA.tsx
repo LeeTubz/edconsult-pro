@@ -43,7 +43,7 @@ export default function HomeCTA() {
           </h2>
 
           <p className="text-lg text-white/65 max-w-2xl mx-auto mb-10">
-            Join 500+ students, schools, and organisations who have grown with
+            Join 50+ students, schools, and organisations who have grown with
             Platinum Accolades. Your first consultation is free.
           </p>
 
@@ -56,10 +56,10 @@ export default function HomeCTA() {
               Book Free Consultation <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+26776150511"
+              href="tel:+26777662151"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white/80 font-semibold border border-white/20 hover:border-white/40 hover:text-white transition-all duration-300 hover:-translate-y-1"
             >
-              <Phone className="w-4 h-4" /> +267 76150511
+              <Phone className="w-4 h-4" /> +267 77 662 151
             </a>
           </div>
         </motion.div>

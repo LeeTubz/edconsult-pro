@@ -25,8 +25,8 @@ export default function ContactPage() {
         }
         subtitle="Ready to take the next step? Reach out today. Your first consultation is completely free, with no obligation."
         breadcrumbs={[{ label: "Contact" }]}
-        primaryCta={{ label: "Call Us Now", href: "tel:+26776150511" }}
-        secondaryCta={{ label: "Email Us", href: "mailto:knowledgelab.bw@gmail.com" }}
+        primaryCta={{ label: "Call Us Now", href: "tel:+26777662151" }}
+        secondaryCta={{ label: "Email Us", href: "mailto:platinumaccolades@gmail.com" }}
         accentColor="#EFB31E"
       />
       <ContactSection />

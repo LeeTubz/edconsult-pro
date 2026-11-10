@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
 
         await resend.emails.send({
           from: "Platinum Accolades <noreply@platinumaccolades.com>",
-          to: [process.env.CONTACT_EMAIL || "knowledgelab.bw@gmail.com"],
+          to: [process.env.CONTACT_EMAIL || "platinumaccolades@gmail.com"],
           subject: `New Consultation Request from ${fullName}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -132,9 +132,8 @@ export async function POST(request: NextRequest) {
                 </p>
                 <p style="color: #94a3b8; font-size: 14px; margin-top: 32px;">
                   Platinum Accolades | Gaborone, Botswana<br>
-                  <a href="tel:+26776150511" style="color: #94a3b8;">+267 76150511</a> /
-                  <a href="tel:+26774332739" style="color: #94a3b8;">+267 74332739</a> |
-                  <a href="mailto:knowledgelab.bw@gmail.com" style="color: #94a3b8;">knowledgelab.bw@gmail.com</a>
+                  <a href="tel:+26777662151" style="color: #94a3b8;">+267 77 662 151</a> |
+                  <a href="mailto:platinumaccolades@gmail.com" style="color: #94a3b8;">platinumaccolades@gmail.com</a>
                 </p>
               </div>
             </div>

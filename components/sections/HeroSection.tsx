@@ -120,7 +120,7 @@ export default function HeroSection() {
                 <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
               ))}
               <span className="text-xs font-semibold text-[#B1B3B8] ml-1">
-                Trusted by 500+ Students &amp; 20+ Institutions
+                Trusted by 50+ Students &amp; 5+ Institutions
               </span>
             </motion.div>
 
@@ -135,7 +135,7 @@ export default function HeroSection() {
               Guiding{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg,#B1B3B8 0%,#EFB31E 100%)",
+                  background: "linear-gradient(135deg,#7F9CBE 0%,#EFB31E 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -143,7 +143,17 @@ export default function HeroSection() {
               >
                 Minds
               </span>
-              , Building Futures
+              , Building{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg,#EFB31E 0%,#7F9CBE 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Futures
+              </span>
             </motion.h1>
 
             {/* Subheadline */}

@@ -29,16 +29,16 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Call / WhatsApp",
-    value: "+267 76150511\n+267 74332739 (both on WhatsApp)",
+    value: "+267 77 662 151",
     color: "#14325E",
-    action: "tel:+26776150511",
+    action: "tel:+26777662151",
   },
   {
     icon: Mail,
     label: "Email Address",
-    value: "knowledgelab.bw@gmail.com",
+    value: "platinumaccolades@gmail.com",
     color: "#EFB31E",
-    action: "mailto:knowledgelab.bw@gmail.com",
+    action: "mailto:platinumaccolades@gmail.com",
   },
   {
     icon: Clock,
@@ -195,7 +195,7 @@ export default function ContactSection() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/26776150511"
+              href="https://wa.me/26777662151"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-5 rounded-2xl transition-all hover:shadow-lg hover:-translate-y-1 group"
@@ -215,7 +215,7 @@ export default function ContactSection() {
                   Chat on WhatsApp
                 </div>
                 <div className="text-sm" style={{ color: "var(--muted)" }}>
-                  Both numbers are on WhatsApp, usually responds in minutes
+                  We're on WhatsApp, usually responds in minutes
                 </div>
               </div>
             </a>

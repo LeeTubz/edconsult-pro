@@ -131,20 +131,15 @@ export default function Footer() {
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <a href="mailto:knowledgelab.bw@gmail.com"
+                <a href="mailto:platinumaccolades@gmail.com"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
                   <Mail className="w-4 h-4 text-[#EFB31E] shrink-0" />
-                  knowledgelab.bw@gmail.com
+                  platinumaccolades@gmail.com
                 </a>
-                <a href="tel:+26776150511"
+                <a href="tel:+26777662151"
                   className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
                   <Phone className="w-4 h-4 text-[#EFB31E] shrink-0" />
-                  +267 76150511 (Call/WhatsApp)
-                </a>
-                <a href="tel:+26774332739"
-                  className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors">
-                  <Phone className="w-4 h-4 text-[#EFB31E] shrink-0" />
-                  +267 74332739 (Call/WhatsApp)
+                  +267 77 662 151 (Call/WhatsApp)
                 </a>
                 <div className="flex items-start gap-2 text-sm text-white/55">
                   <MapPin className="w-4 h-4 text-[#EFB31E] shrink-0 mt-0.5" />
@@ -216,7 +211,7 @@ export default function Footer() {
               <div className="space-y-3">
                 {[
                   "18+ Years of Experience",
-                  "500+ Students Guided",
+                  "50+ Students Guided",
                   "98% Client Satisfaction",
                   "Internationally Recognized",
                   "Certified Consultants",

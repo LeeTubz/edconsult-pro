@@ -90,16 +90,14 @@ export default function Navbar() {
         aria-hidden={dark}
       >
         <div className="flex items-center gap-5">
-          <a href="mailto:knowledgelab.bw@gmail.com"
+          <a href="mailto:platinumaccolades@gmail.com"
             className="flex items-center gap-1.5 hover:text-[#B1B3B8] transition-colors">
             <Mail className="w-3 h-3" />
-            knowledgelab.bw@gmail.com
+            platinumaccolades@gmail.com
           </a>
           <span className="flex items-center gap-1.5">
             <Phone className="w-3 h-3" />
-            <a href="tel:+26776150511" className="hover:text-[#B1B3B8] transition-colors">+267 76150511</a>
-            <span className="text-white/30">/</span>
-            <a href="tel:+26774332739" className="hover:text-[#B1B3B8] transition-colors">+267 74332739</a>
+            <a href="tel:+26777662151" className="hover:text-[#B1B3B8] transition-colors">+267 77 662 151</a>
           </span>
         </div>
         <span className="font-medium tracking-wide">
@@ -317,17 +315,13 @@ export default function Navbar() {
                   Book Free Consultation
                 </button>
                 <div className="flex flex-col gap-2 mt-3 px-1">
-                  <a href="mailto:knowledgelab.bw@gmail.com"
+                  <a href="mailto:platinumaccolades@gmail.com"
                     className="text-xs text-white/45 flex items-center gap-2">
-                    <Mail className="w-3 h-3" /> knowledgelab.bw@gmail.com
+                    <Mail className="w-3 h-3" /> platinumaccolades@gmail.com
                   </a>
-                  <a href="tel:+26776150511"
+                  <a href="tel:+26777662151"
                     className="text-xs text-white/45 flex items-center gap-2">
-                    <Phone className="w-3 h-3" /> +267 76150511
-                  </a>
-                  <a href="tel:+26774332739"
-                    className="text-xs text-white/45 flex items-center gap-2">
-                    <Phone className="w-3 h-3" /> +267 74332739
+                    <Phone className="w-3 h-3" /> +267 77 662 151
                   </a>
                 </div>
               </motion.div>

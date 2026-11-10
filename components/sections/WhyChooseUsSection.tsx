@@ -46,16 +46,16 @@ const reasons = [
     description:
       "We stay at the frontier of educational research, technology, and policy, bringing cutting-edge approaches to every engagement.",
     color: "#4A6B8A",
-    stat: "16+",
-    statLabel: "Countries Reached",
+    stat: "3+",
+    statLabel: "African Countries",
   },
   {
     icon: TrendingUp,
     title: "Proven Results",
     description:
-      "With a track record of 500+ students guided and transformative school partnerships, our outcomes speak for themselves.",
+      "With a track record of 50+ students guided and transformative school partnerships, our outcomes speak for themselves.",
     color: "#C98F1B",
-    stat: "500+",
+    stat: "50+",
     statLabel: "Students Guided",
   },
   {
@@ -195,8 +195,8 @@ export default function WhyChooseUsSection() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-4">
           {[
-            { value: 500, suffix: "+", label: "Students Guided" },
-            { value: 20,  suffix: "+", label: "Institutions Served" },
+            { value: 50,  suffix: "+", label: "Students Guided" },
+            { value: 5,   suffix: "+", label: "Institutions Served" },
             { value: 98,  suffix: "%", label: "Satisfaction Rate" },
             { value: 18,  suffix: "+", label: "Years of Excellence" },
           ].map((s, i) => (

@@ -38,6 +38,15 @@ export default function AboutPreview() {
       style={{ background: "var(--background)" }}
       ref={ref}
     >
+      {/* Colour wash echoing the hero, so the handoff doesn't feel flat */}
+      <div
+        className="absolute top-0 left-0 w-[520px] h-[420px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(15, 47, 87, 0.09) 0%, transparent 70%)", filter: "blur(70px)" }}
+      />
+      <div
+        className="absolute bottom-0 right-0 w-[420px] h-[360px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(239, 179, 30, 0.08) 0%, transparent 70%)", filter: "blur(70px)" }}
+      />
       <BrandMotif
         className="absolute pointer-events-none hidden lg:block"
         style={{ top: "-8%", left: "-6%", width: 280, height: "auto", color: "#14325E", opacity: 0.08, transform: "rotate(-20deg)" }}

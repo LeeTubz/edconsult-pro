@@ -39,7 +39,7 @@ const serviceData = {
       { title: "Research Consultation", desc: "One-on-one or group research consultation, from proposal development through methodology and write-up." },
     ],
     stats: [
-      { value: "500+", label: "Students guided" },
+      { value: "50+", label: "Students guided" },
       { value: "98%", label: "Would recommend us" },
       { value: "18+", label: "Years combined experience" },
       { value: "100%", label: "Confidential support" },
@@ -77,7 +77,7 @@ const serviceData = {
       { title: "External Moderation & Staff Appraisals", desc: "External moderation exercises where required, and external staff/teacher appraisal exercises that gather feedback from learners." },
     ],
     stats: [
-      { value: "30+", label: "Institutions supported" },
+      { value: "5+", label: "Institutions supported" },
       { value: "100%", label: "Confidential process" },
       { value: "18+", label: "Years combined experience" },
       { value: "5-year", label: "Audit review cycle" },
@@ -112,7 +112,7 @@ const serviceData = {
       { title: "Classroom Modelling & Observation", desc: "Modelling lessons in classrooms, observing teachers, and giving feedback for professional growth." },
     ],
     stats: [
-      { value: "40+", label: "Institutions supported" },
+      { value: "5+", label: "Institutions supported" },
       { value: "10K+", label: "Students impacted" },
       { value: "3x", label: "Avg. engagement increase" },
       { value: "8+", label: "Platforms supported" },
@@ -191,7 +191,7 @@ const serviceData = {
       { title: "Spiritual Life: Disciplines of a Balanced Christian Student", desc: "Mentorship in the spiritual disciplines that support a balanced Christian student life, for students who want this dimension of support." },
     ],
     stats: [
-      { value: "500+", label: "Students guided" },
+      { value: "50+", label: "Students guided" },
       { value: "98%", label: "Would recommend us" },
       { value: "100%", label: "Confidential support" },
       { value: "18+", label: "Years combined experience" },

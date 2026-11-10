@@ -28,10 +28,10 @@ const whyChooseUs = [
 ];
 
 const trustStats = [
-  { value: 500, suffix: "+", label: "Students Guided", icon: Users, color: "#0F2F57" },
-  { value: 20, suffix: "+", label: "Institutions Served", icon: BookOpen, color: "#EFB31E" },
+  { value: 50, suffix: "+", label: "Students Guided", icon: Users, color: "#0F2F57" },
+  { value: 5, suffix: "+", label: "Institutions Served", icon: BookOpen, color: "#EFB31E" },
   { value: 18, suffix: "+", label: "Years of Excellence", icon: Award, color: "#14325E" },
-  { value: 16, suffix: "+", label: "Countries Reached", icon: Globe, color: "#4A6B8A" },
+  { value: 3, suffix: "+", label: "African Countries", icon: Globe, color: "#4A6B8A" },
 ];
 
 const values = [

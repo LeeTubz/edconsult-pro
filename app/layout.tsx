@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: "Platinum Accolades",
     title: "Platinum Accolades | Educational Consultancy",
     description:
-      "Academic support, quality assurance, educational technology, career guidance, and student counselling. 500+ students guided, 20+ institutions served, 98% success rate.",
+      "Academic support, quality assurance, educational technology, career guidance, and student counselling. 50+ students guided, 5+ institutions served, 98% success rate.",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -123,9 +123,9 @@ const structuredData = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+267-76-150-511",
+    telephone: "+267-77-662-151",
     contactType: "customer service",
-    email: "knowledgelab.bw@gmail.com",
+    email: "platinumaccolades@gmail.com",
     areaServed: ["BW", "ZA", "ZW", "NA", "ZM", "MW"],
     availableLanguage: ["English", "Setswana"],
   },

@@ -10,7 +10,7 @@ const forStudents = [
   {
     icon: BookOpen,
     title: "Academic Support",
-    description: "Tuition (IGCSE & IB) with global tutor matching, academic writing consultation, editing and proofreading, and research consultation.",
+    description: "Connecting students and families with vetted tutors, mentors, and academic writing specialists for IGCSE & IB, plus editing, proofreading, and research consultation.",
     color: "#1c4372",
     href: "/services/academic-support",
   },
@@ -95,6 +95,14 @@ export default function ServicesPreview() {
     >
       <div className="absolute inset-0 pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle, rgba(15, 47, 87,0.04) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+      <div
+        className="absolute top-0 right-0 w-[480px] h-[400px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(239, 179, 30, 0.1) 0%, transparent 70%)", filter: "blur(70px)" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[420px] h-[360px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(15, 47, 87, 0.1) 0%, transparent 70%)", filter: "blur(70px)" }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

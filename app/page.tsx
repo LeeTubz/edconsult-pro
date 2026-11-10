@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutPreview from "@/components/sections/home/AboutPreview";
 import ServicesPreview from "@/components/sections/home/ServicesPreview";
+import ProfessionalNetworkSection from "@/components/sections/home/ProfessionalNetworkSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
+import ResultsSection from "@/components/sections/ResultsSection";
 import BlogPreview from "@/components/sections/home/BlogPreview";
 import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
@@ -20,7 +22,9 @@ export default function HomePage() {
       <HeroSection />
       <AboutPreview />
       <ServicesPreview />
+      <ProfessionalNetworkSection />
       <WhyChooseUsSection />
+      <ResultsSection />
       <BlogPreview />
       <HomeCTA />
     </main>
