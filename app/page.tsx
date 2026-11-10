@@ -6,7 +6,6 @@ import ProfessionalNetworkSection from "@/components/sections/home/ProfessionalN
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import ResultsSection from "@/components/sections/ResultsSection";
 import BlogPreview from "@/components/sections/home/BlogPreview";
-import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -26,7 +25,7 @@ export default function HomePage() {
       <WhyChooseUsSection />
       <ResultsSection />
       <BlogPreview />
-      <HomeCTA />
+
     </main>
   );
 }

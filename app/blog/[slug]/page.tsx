@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/lib/blog-data";
 import PageHero from "@/components/ui/PageHero";
-import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 import { Clock, Tag, ArrowRight, ArrowLeft } from "lucide-react";
 
@@ -69,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Featured Image */}
           <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden mb-10">
-            <Image
+            <Image quality={90}
               src={post.imageUrl}
               alt={post.imageAlt}
               fill
@@ -196,7 +195,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
               >
                 <div className="relative h-40 overflow-hidden">
-                  <Image
+                  <Image quality={90}
                     src={related.imageUrl}
                     alt={related.imageAlt}
                     fill
@@ -221,8 +220,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </section>
-
-      <HomeCTA />
     </main>
   );
 }

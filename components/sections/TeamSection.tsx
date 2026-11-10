@@ -33,7 +33,7 @@ const founder = {
   ],
   specialties: ["IB Examiner", "BQA Evaluator", "Published Author", "Education Consultant"],
   color: "#EFB31E",
-  photo: "/founder-avatar.jpg",
+  photo: "/images/precious-chanaiwa-enhanced.png",
   books: [
     { label: "Demystifying Assignment Writing", href: "https://www.amazon.com/Demystifying-Assignment-Writing-practical-assignment-ebook/dp/B08X7J3PQ7?ref_=litb_stb_nodl&nodl_android=1", cover: undefined as string | undefined },
     { label: "Dissertation Writing for Beginners", href: "https://www.amazon.com/DISSERTATION-WRITING-BEGINNERS-comprehensive-dissertation-ebook/dp/B08XK5F2RW?ref_=litb_stb_nodl&nodl_android=1", cover: undefined as string | undefined },
@@ -135,7 +135,7 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
           <div className="relative w-28 h-28 sm:w-40 sm:h-40 shrink-0 mx-auto sm:mx-0 transition-transform duration-300 group-hover:scale-105">
             <div className="relative w-full h-full rounded-2xl overflow-hidden border-2"
               style={{ borderColor: `${c.color}40` }}>
-              <Image src={c.photo} alt={c.title} fill className="object-cover" sizes="160px" />
+              <Image quality={90} src={c.photo} alt={c.title} fill className="object-cover" sizes="160px" />
             </div>
             <div className="absolute -bottom-2 -right-2 w-9 h-9 rounded-full flex items-center justify-center border-2"
               style={{ background: c.color, borderColor: "var(--card-bg)" }}>
@@ -194,7 +194,7 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
                   <div className="relative w-11 h-16 rounded-md overflow-hidden shrink-0 flex items-center justify-center"
                     style={{ background: `${c.color}15`, border: `1px solid ${c.color}30` }}>
                     {b.cover ? (
-                      <Image src={b.cover} alt={b.label} fill className="object-cover" sizes="44px" />
+                      <Image quality={90} src={b.cover} alt={b.label} fill className="object-cover" sizes="44px" />
                     ) : (
                       <BookOpen className="w-5 h-5" style={{ color: c.color }} />
                     )}
@@ -220,6 +220,34 @@ function TeamCard({ c, i, inView, scrollToConsultation }: {
         </div>
       </div>
     </motion.div>
+  );
+}
+
+function FounderProfile({ onContact }: { onContact: () => void }) {
+  return (
+    <article className="founder-profile">
+      <div className="founder-introduction">
+        <div className="founder-biography">
+          <p className="eyebrow">Meet our founder &amp; visionary</p>
+          <h3>Precious<br />Chanaiwa<span>.</span></h3>
+          <p className="founder-summary">{founder.description}</p>
+          <div className="founder-specialties">{founder.specialties.map(s => <span key={s}>{s}</span>)}</div>
+          <button onClick={onContact} className="action-gold">Connect with Precious <ArrowRight size={17} /></button>
+        </div>
+        <div className="founder-portrait">
+          <Image quality={90} src={founder.photo} alt="Precious Chanaiwa, Founder and Visionary of Platinum Accolades" fill sizes="(max-width: 700px) 100vw, 45vw" className="object-cover" />
+          <span className="founder-photo-label">A personal commitment to your potential.</span>
+        </div>
+      </div>
+      <div className="founder-credentials">
+        <div className="founder-credentials-heading"><p className="eyebrow">Experience with purpose</p><h4>Academic depth.<br />Real-world perspective.</h4></div>
+        <ul>{founder.highlights.map(h => <li key={h}><span aria-hidden="true">✦</span>{h}</li>)}</ul>
+      </div>
+      <div className="founder-publications">
+        <div><BookOpen size={22} /><span>Books by Precious</span></div>
+        {founder.books.map(book => <a key={book.label} href={book.href} target="_blank" rel="noopener noreferrer">{book.label}<ArrowRight size={16} /><span className="sr-only"> (opens on Amazon in a new tab)</span></a>)}
+      </div>
+    </article>
   );
 }
 
@@ -280,7 +308,7 @@ export default function TeamSection() {
 
         {/* Founder & Visionary, featured */}
         <div className="mb-8">
-          <TeamCard c={founder} i={0} inView={inView} scrollToConsultation={scrollToConsultation} />
+          <FounderProfile onContact={scrollToConsultation} />
         </div>
 
         {/* 6 consultants in a unified grid */}

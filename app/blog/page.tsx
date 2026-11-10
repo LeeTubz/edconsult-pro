@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import BlogSection from "@/components/sections/BlogSection";
-import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -31,7 +30,7 @@ export default function BlogPage() {
         accentColor="#EFB31E"
       />
       <BlogSection />
-      <HomeCTA />
+
     </main>
   );
 }

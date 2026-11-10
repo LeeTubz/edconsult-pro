@@ -17,7 +17,7 @@ export default function HeroSection() {
           <div className="hero-location"><span className="location-dot" /> Based in Botswana. Growing futures across Africa.</div>
         </div>
         <div className="hero-visual">
-          <div className="hero-photo"><Image src="/images/students.jpg" alt="Two students smiling and studying together outdoors" fill sizes="(max-width: 800px) 100vw, 52vw" preload className="object-cover" /></div>
+          <div className="hero-photo"><Image quality={90} src="/images/students.jpg" alt="Two students smiling and studying together outdoors" fill sizes="(max-width: 800px) 100vw, 52vw" preload className="object-cover" /></div>
           <span className="photo-note">A little guidance. A world of possibility.</span>
           <div className="hero-photo-card"><BookOpen size={23} /><div><strong>Support for every chapter</strong><span>From classroom confidence to career clarity</span></div></div>
           <div className="hero-spark" aria-hidden="true">✳</div>

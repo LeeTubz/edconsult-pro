@@ -1,6 +1,7 @@
 {
   "source": "Pexels",
-  "usage": "Illustrative stock photography; does not depict Platinum Accolades clients or staff",
+  "usage": "Illustrative stock photography. These photographs do not depict Platinum Accolades staff, clients or testimonial authors.",
+  "resolution": "Downloaded at up to 2400 pixels wide; responsive images served with quality 90.",
   "photos": [
     {
       "file": "students.jpg",
@@ -13,6 +14,86 @@
     {
       "file": "mentoring.jpg",
       "url": "https://www.pexels.com/photo/3184433/"
+    },
+    {
+      "file": "tuition-support.jpg",
+      "url": "https://www.pexels.com/photo/5212345/"
+    },
+    {
+      "file": "career-coaching.jpg",
+      "url": "https://www.pexels.com/photo/3184465/"
+    },
+    {
+      "file": "quality-review.jpg",
+      "url": "https://www.pexels.com/photo/3184360/"
+    },
+    {
+      "file": "teacher-workshop.jpg",
+      "url": "https://www.pexels.com/photo/1595391/"
+    },
+    {
+      "file": "institutional-review.jpg",
+      "url": "https://www.pexels.com/photo/3184639/"
+    },
+    {
+      "file": "about-partnership.jpg",
+      "url": "https://www.pexels.com/photo/3184325/"
+    },
+    {
+      "file": "student-community.jpg",
+      "url": "https://www.pexels.com/photo/6147276/"
+    },
+    {
+      "file": "insights-reading.jpg",
+      "url": "https://www.pexels.com/photo/5905700/"
+    },
+    {
+      "file": "contact-advisor.jpg",
+      "url": "https://www.pexels.com/photo/3184306/"
+    },
+    {
+      "file": "academic-learning.jpg",
+      "url": "https://www.pexels.com/photo/5212335/"
+    },
+    {
+      "file": "career-conversation.jpg",
+      "url": "https://www.pexels.com/photo/7176026/"
+    },
+    {
+      "file": "quality-assurance.jpg",
+      "url": "https://www.pexels.com/photo/3184424/"
+    },
+    {
+      "file": "institutional-audit.jpg",
+      "url": "https://www.pexels.com/photo/3184339/"
+    },
+    {
+      "file": "university-choice.jpg",
+      "url": "https://www.pexels.com/photo/3059745/"
+    },
+    {
+      "file": "education-technology.jpg",
+      "url": "https://www.pexels.com/photo/4145153/"
+    },
+    {
+      "file": "academic-writing.jpg",
+      "url": "https://www.pexels.com/photo/5905488/"
+    },
+    {
+      "file": "student-wellbeing.jpg",
+      "url": "https://www.pexels.com/photo/7688336/"
+    },
+    {
+      "file": "first-internship.jpg",
+      "url": "https://www.pexels.com/photo/3184317/"
+    },
+    {
+      "file": "education-pathways.jpg",
+      "url": "https://www.pexels.com/photo/267885/"
+    },
+    {
+      "file": "counselling-support.jpg",
+      "url": "https://www.pexels.com/photo/4101143/"
     }
   ]
 }

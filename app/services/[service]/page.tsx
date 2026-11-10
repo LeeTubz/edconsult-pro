@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
-import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 import {
   Compass, BookOpen, ShieldCheck, ClipboardCheck,
@@ -370,8 +369,6 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           </div>
         </div>
       </section>
-
-      <HomeCTA />
     </main>
   );
 }

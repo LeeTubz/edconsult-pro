@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ClientsSection from "@/components/sections/ClientsSection";
 import ResultsSection from "@/components/sections/ResultsSection";
-import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -33,7 +32,7 @@ export default function ClientsPage() {
       />
       <ClientsSection />
       <ResultsSection />
-      <HomeCTA />
+
     </main>
   );
 }

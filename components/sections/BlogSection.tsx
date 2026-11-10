@@ -67,7 +67,7 @@ export default function BlogSection() {
           <div className="flex flex-col md:flex-row">
             {/* Image */}
             <div className="relative md:w-80 lg:w-96 h-56 md:h-auto shrink-0 overflow-hidden">
-              <Image
+              <Image quality={90}
                 src={posts[0].imageUrl}
                 alt={posts[0].imageAlt}
                 fill
@@ -137,7 +137,7 @@ export default function BlogSection() {
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
-                <Image
+                <Image quality={90}
                   src={post.imageUrl}
                   alt={post.imageAlt}
                   fill

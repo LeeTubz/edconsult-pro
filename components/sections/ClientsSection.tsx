@@ -6,7 +6,6 @@ import { useSafeInView } from "@/hooks/useSafeInView";
 import {
   User,
   School,
-  CheckCircle,
   GraduationCap,
   Compass,
   BookOpen,
@@ -163,7 +162,7 @@ export default function ClientsSection() {
                   background: isActive
                     ? `linear-gradient(135deg, ${seg.color}, ${seg.color}dd)`
                     : "var(--card-bg)",
-                  color: isActive ? "white" : "var(--muted)",
+                  color: isActive ? (seg.id === "schools" ? "#14365b" : "white") : "var(--muted)",
                   border: isActive ? "none" : "1px solid var(--card-border)",
                   boxShadow: isActive ? `0 8px 24px ${seg.color}40` : "none",
                   transform: isActive ? "translateY(-2px)" : "none",
@@ -220,27 +219,12 @@ export default function ClientsSection() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: i * 0.07, duration: 0.4 }}
-                    className="group p-6 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                    style={{
-                      background: "var(--card-bg)",
-                      borderColor: "var(--card-border)",
-                    }}
+                    className="client-service-card"
+                    data-tone={i % 3}
                   >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                      style={{ background: `${activeSegment.color}15` }}
-                    >
-                      <Icon className="w-5 h-5" style={{ color: activeSegment.color }} />
-                    </div>
-                    <div className="flex items-start gap-2 mb-2">
-                      <CheckCircle className="w-4 h-4 mt-0.5 shrink-0" style={{ color: activeSegment.color }} />
-                      <h4 className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
-                        {svc.title}
-                      </h4>
-                    </div>
-                    <p className="text-sm leading-relaxed ml-6" style={{ color: "var(--muted)" }}>
-                      {svc.desc}
-                    </p>
+                    <div className="client-card-top"><span className="client-card-icon"><Icon size={26} strokeWidth={1.5} /></span><span className="client-card-number">0{i + 1}</span></div>
+                    <h4>{svc.title}</h4>
+                    <p>{svc.desc}</p>
                   </motion.div>
                 );
               })}

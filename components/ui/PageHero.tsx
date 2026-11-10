@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { breadcrumbSchema } from "@/lib/seo";
+import { pageHeroPhotos } from "@/lib/site-photos";
 export interface BreadcrumbItem { label: string; href?: string; }
 interface PageHeroProps {
   badge?: string; title: React.ReactNode; subtitle?: string;
@@ -14,9 +15,7 @@ interface PageHeroProps {
 }
 export default function PageHero({ badge, title, subtitle, breadcrumbs, primaryCta, secondaryCta }: PageHeroProps) {
   const pathname = usePathname();
-  const studentPage = /academic|career|counselling|clients|blog/.test(pathname);
-  const photo = pathname === "/about" ? "/images/collaboration.jpg" : studentPage ? "/images/students.jpg" : "/images/mentoring.jpg";
-  const alt = pathname === "/about" ? "People working together around a table" : studentPage ? "Students learning together" : "Professionals sharing ideas during a working session";
+  const photo = pageHeroPhotos[pathname] ?? pageHeroPhotos["/blog"];
   const trail = (breadcrumbs ?? []).map((crumb, i) => ({ label: crumb.label, path: crumb.href || (i === breadcrumbs!.length - 1 ? pathname : undefined) }));
   return (
     <section className="inner-hero">
@@ -29,7 +28,7 @@ export default function PageHero({ badge, title, subtitle, breadcrumbs, primaryC
           {subtitle && <p className="inner-hero-description">{subtitle}</p>}
           <div className="editorial-actions">{primaryCta && <Link className="action-gold" href={primaryCta.href}>{primaryCta.label}<ArrowUpRight size={17} /></Link>}{secondaryCta && <Link className="action-text" href={secondaryCta.href}>{secondaryCta.label}<ArrowUpRight size={16} /></Link>}</div>
         </div>
-        <div className="inner-hero-photo"><Image src={photo} alt={alt} fill sizes="(max-width: 800px) 100vw, 43vw" preload className="object-cover" /><span className="image-label">People. Purpose. Possibility.</span></div>
+        <div className="inner-hero-photo"><Image quality={90} src={photo.src} alt={photo.alt} style={{ objectPosition: photo.position }} fill sizes="(max-width: 700px) 100vw, 45vw" preload className="object-cover" /><span className="image-label">People. Purpose. Possibility.</span></div>
       </div>
     </section>
   );

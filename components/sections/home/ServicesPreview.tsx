@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useSafeInView } from "@/hooks/useSafeInView";
 import { BookOpen, ShieldCheck, Users, ClipboardCheck, Compass, ArrowRight, GraduationCap, Building2 } from "lucide-react";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { serviceCardPhotos } from "@/lib/site-photos";
 
 const forStudents = [
   {
@@ -50,6 +51,7 @@ const forInstitutions = [
 
 function ServiceCard({ s, i, inView }: { s: (typeof forStudents)[number]; i: number; inView: boolean }) {
   const Icon = s.icon;
+  const photo = serviceCardPhotos[s.href];
   return (
     <motion.div
       key={s.title}
@@ -65,7 +67,7 @@ function ServiceCard({ s, i, inView }: { s: (typeof forStudents)[number]; i: num
           style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
         >
           <div className="service-photo">
-            <Image src={s.href.includes("academic") || s.href.includes("career") ? "/images/students.jpg" : s.href.includes("technology") ? "/images/mentoring.jpg" : "/images/collaboration.jpg"} alt={s.href.includes("academic") || s.href.includes("career") ? "Students studying together outdoors" : "Professionals collaborating and sharing ideas"} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
+            <Image quality={90} src={photo.src} alt={photo.alt} style={{ objectPosition: photo.position }} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw" className="object-cover" />
           </div>
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }} />
           <div

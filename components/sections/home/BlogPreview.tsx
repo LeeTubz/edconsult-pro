@@ -68,7 +68,7 @@ export default function BlogPreview() {
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <Image
+                  <Image quality={90}
                     src={post.imageUrl}
                     alt={post.imageAlt}
                     fill
