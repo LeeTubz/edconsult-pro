@@ -1,334 +1,46 @@
 "use client";
-
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Menu, X, ChevronDown,
-  Phone, Mail, Sun, Moon,
-} from "lucide-react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "Home",  href: "/" },
-  { label: "About", href: "/about" },
-  {
-    label: "Services",
-    href: "/services/academic-support",
-    children: [
-      { label: "Academic Support",                          href: "/services/academic-support",     group: "For Students" },
-      { label: "Career Guidance, Counselling & Mentorship",  href: "/services/career-guidance",       group: "For Students" },
-      { label: "Quality Assurance",                          href: "/services/quality-assurance",     group: "For Institutions" },
-      { label: "Teacher and Staff Capacity Building and Mentorship", href: "/services/educational-technology", group: "For Institutions" },
-      { label: "Institutional Audits and Visits",            href: "/services/institutional-audits",  group: "For Institutions" },
-    ],
-  },
-  { label: "Clients", href: "/clients"  },
-  { label: "Blog",    href: "/blog"     },
-  { label: "Contact", href: "/contact"  },
+const services = [
+  ["Academic Support", "academic-support"],
+  ["Career Guidance, Counselling & Mentorship", "career-guidance"],
+  ["Quality Assurance", "quality-assurance"],
+  ["Teacher & Staff Development", "educational-technology"],
+  ["Institutional Audits & Visits", "institutional-audits"],
 ];
+const links = [["Home", "/"], ["About us", "/about"], ["Our clients", "/clients"], ["Insights", "/blog"], ["Contact", "/contact"]];
 
 export default function Navbar() {
-  const [scrolled, setScrolled]             = useState(false);
-  const [mobileOpen, setMobileOpen]         = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const { setTheme, resolvedTheme }         = useTheme();
-  const [mounted, setMounted]               = useState(false);
-  const router   = useRouter();
   const pathname = usePathname();
-  const isHome   = pathname === "/";
-
-  useEffect(() => { setMounted(true); }, []);
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 40);
+  const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  useEffect(() => { setOpen(false); setServicesOpen(false); }, [pathname]);
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") { setOpen(false); setServicesOpen(false); } };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
   }, []);
-
-  useEffect(() => {
-    if (!isHome) { setScrolled(true); return; }
-    setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHome, handleScroll]);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-    setActiveDropdown(null);
-  }, [pathname]);
-
-  const navigate = (href: string) => {
-    setMobileOpen(false);
-    setActiveDropdown(null);
-    router.push(href);
-  };
-
-  // Dark style when scrolled OR on any inner page
-  const dark = scrolled || !isHome;
-
   return (
-    <motion.header
-      className="fixed top-0 left-0 right-0 z-50 flex flex-col"
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-    >
-      {/* ── Top info strip (desktop, hides on scroll / inner pages) ── */}
-      <div
-        className="hidden lg:flex items-center justify-between px-6 xl:px-10 text-xs text-white/70 overflow-hidden transition-all duration-300"
-        style={{
-          background:    "#0A1628",
-          maxHeight:     dark ? "0px" : "34px",
-          paddingTop:    dark ? "0" : "6px",
-          paddingBottom: dark ? "0" : "6px",
-          opacity:       dark ? 0 : 1,
-          borderBottom:  dark ? "none" : "1px solid rgba(255,255,255,0.06)",
-        }}
-        aria-hidden={dark}
-      >
-        <div className="flex items-center gap-5">
-          <a href="mailto:platinumaccolades@gmail.com"
-            className="flex items-center gap-1.5 hover:text-[#B1B3B8] transition-colors">
-            <Mail className="w-3 h-3" />
-            platinumaccolades@gmail.com
-          </a>
-          <span className="flex items-center gap-1.5">
-            <Phone className="w-3 h-3" />
-            <a href="tel:+26777662151" className="hover:text-[#B1B3B8] transition-colors">+267 77 662 151</a>
-          </span>
-        </div>
-        <span className="font-medium tracking-wide">
-          Guiding Students, Growing Futures
-        </span>
-      </div>
-
-      {/* ── Main nav bar ── */}
-      <nav
-        className={`transition-all duration-300 ${dark ? "py-2" : "py-3"}`}
-        style={{
-          background:     dark ? "rgba(10, 22, 40,0.97)" : "transparent",
-          backdropFilter: dark ? "blur(18px)" : "none",
-          boxShadow:      dark ? "0 1px 24px rgba(0,0,0,0.3)" : "none",
-          borderBottom:   dark ? "1px solid rgba(255,255,255,0.07)" : "none",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
-
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div className="relative w-11 h-11 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <Image src="/logo-mark.png" alt="Platinum Accolades" fill className="object-contain" priority />
-            </div>
-            <div>
-              <div className="font-display text-white font-bold text-base leading-tight tracking-tight">
-                Platinum<span className="text-[#EFB31E]"> Accolades</span>
-              </div>
-              <div className="text-[10px] text-white/40 font-medium tracking-widest uppercase">
-                Educational Consultancy
-              </div>
-            </div>
-          </Link>
-
-          {/* Desktop nav links */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navItems.map((item) => (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  onClick={() => navigate(item.href)}
-                  className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium
-                             text-white/75 hover:text-white rounded-lg
-                             transition-colors duration-200 hover:bg-white/[0.07] whitespace-nowrap"
-                >
-                  {item.label}
-                  {item.children && (
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200
-                        ${activeDropdown === item.label ? "rotate-180" : ""}`}
-                    />
-                  )}
-                </button>
-
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {item.children && activeDropdown === item.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.97 }}
-                      animate={{ opacity: 1, y: 0,  scale: 1    }}
-                      exit={{    opacity: 0, y: 8,  scale: 0.97 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute top-full left-0 mt-1.5 w-72 rounded-xl overflow-hidden shadow-2xl py-1.5"
-                      style={{
-                        background:     "rgba(10, 22, 40,0.98)",
-                        border:         "1px solid rgba(255,255,255,0.09)",
-                        backdropFilter: "blur(20px)",
-                      }}
-                    >
-                      {item.children.map((child, idx) => {
-                        const prevGroup = idx > 0 ? item.children[idx - 1].group : null;
-                        const showGroupLabel = child.group !== prevGroup;
-                        return (
-                          <div key={child.label}>
-                            {showGroupLabel && (
-                              <div className={`px-4 pb-1 text-[10px] font-bold uppercase tracking-wider text-[#EFB31E] ${idx > 0 ? "pt-3" : "pt-1"}`}>
-                                {child.group}
-                              </div>
-                            )}
-                            <button
-                              onClick={() => navigate(child.href)}
-                              className="w-full text-left px-4 py-2.5 text-sm text-white/65
-                                         hover:text-white hover:bg-white/[0.06]
-                                         transition-all duration-150 flex items-center gap-2.5 group"
-                            >
-                              <span className="w-1 h-1 rounded-full bg-[#EFB31E]
-                                               group-hover:bg-[#B1B3B8] transition-colors flex-shrink-0" />
-                              {child.label}
-                            </button>
-                          </div>
-                        );
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+    <header className="site-header">
+      <div className="header-strip"><span>Guiding minds. Building futures.</span><a href="tel:+26777662151">Let&apos;s talk: +267 77 662 151 <ArrowUpRight size={13} /></a></div>
+      <nav className="editorial-shell main-navigation" aria-label="Main navigation">
+        <Link href="/" className="brand-lockup"><Image src="/logo-mark.png" alt="" width={52} height={52} priority /><span><strong>Platinum Accolades</strong><small>Educational Consultancy</small></span></Link>
+        <div className="desktop-navigation">
+          {links.slice(0, 2).map(([label, href]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>{label}</Link>)}
+          <div className="services-navigation" onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setServicesOpen(false); }}>
+            <button aria-expanded={servicesOpen} aria-controls="desktop-services" onClick={() => setServicesOpen(!servicesOpen)}>Services <ChevronDown size={14} /></button>
+            {servicesOpen && <div id="desktop-services" className="services-dropdown">{services.map(([label, slug]) => <Link key={slug} href={`/services/${slug}`} onClick={() => setServicesOpen(false)}>{label}<ArrowUpRight size={14} /></Link>)}</div>}
           </div>
-
-          {/* Right actions */}
-          <div className="flex items-center gap-2">
-            {/* Theme toggle */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className="w-8 h-8 rounded-lg flex items-center justify-center
-                           text-white/60 hover:text-white hover:bg-white/[0.07]
-                           transition-all duration-200"
-                aria-label="Toggle colour theme"
-              >
-                {resolvedTheme === "dark"
-                  ? <Sun  className="w-4 h-4" />
-                  : <Moon className="w-4 h-4" />
-                }
-              </button>
-            )}
-
-            {/* CTA (desktop) */}
-            <MagneticButton
-              onClick={() => navigate("/contact")}
-              strength={0.25}
-              className="hidden md:flex items-center gap-1.5 px-5 py-2 rounded-full
-                         text-sm font-semibold transition-shadow duration-250
-                         hover:shadow-lg"
-              style={{
-                background: "linear-gradient(135deg,#EFB31E,#C98F1B)",
-                boxShadow:  "0 3px 12px rgba(239,179,30,0.35)",
-                color: "#0A1628",
-              }}
-            >
-              Book Consultation
-            </MagneticButton>
-
-            {/* Hamburger (mobile) */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center
-                         text-white hover:bg-white/[0.07] transition-colors"
-              aria-label="Toggle navigation menu"
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen
-                ? <X    className="w-5 h-5" />
-                : <Menu className="w-5 h-5" />
-              }
-            </button>
-          </div>
+          {links.slice(2).map(([label, href]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>{label}</Link>)}
         </div>
+        <Link href="/contact" className="nav-consultation">Book a consultation <ArrowUpRight size={16} /></Link>
+        <button className="mobile-menu-button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </nav>
-
-      {/* ── Mobile drawer ── */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{    opacity: 0, height: 0 }}
-            transition={{ duration: 0.28, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden"
-            style={{
-              background:   "rgba(15,20,11,0.99)",
-              borderBottom: "1px solid rgba(255,255,255,0.07)",
-            }}
-          >
-            <div className="px-4 py-5 space-y-0.5">
-              {navItems.map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 }}
-                >
-                  <button
-                    onClick={() => navigate(item.href)}
-                    className="w-full text-left px-4 py-2.5 rounded-xl text-white/80
-                               hover:text-white hover:bg-white/[0.06] font-medium
-                               transition-all duration-200 text-sm"
-                  >
-                    {item.label}
-                  </button>
-                  {item.children && (
-                    <div className="ml-4 mt-0.5 mb-1 space-y-0.5">
-                      {item.children.map((child) => (
-                        <button
-                          key={child.label}
-                          onClick={() => navigate(child.href)}
-                          className="w-full text-left px-4 py-2 rounded-lg text-sm
-                                     text-white/55 hover:text-white/90 hover:bg-white/[0.05]
-                                     transition-all duration-150"
-                        >
-                          {child.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-
-              {/* Mobile CTA */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.28 }}
-                className="pt-3 border-t border-white/[0.07]"
-              >
-                <button
-                  onClick={() => navigate("/contact")}
-                  className="w-full py-3 rounded-xl font-semibold text-sm"
-                  style={{ background: "linear-gradient(135deg,#EFB31E,#C98F1B)", color: "#0A1628" }}
-                >
-                  Book Free Consultation
-                </button>
-                <div className="flex flex-col gap-2 mt-3 px-1">
-                  <a href="mailto:platinumaccolades@gmail.com"
-                    className="text-xs text-white/45 flex items-center gap-2">
-                    <Mail className="w-3 h-3" /> platinumaccolades@gmail.com
-                  </a>
-                  <a href="tel:+26777662151"
-                    className="text-xs text-white/45 flex items-center gap-2">
-                    <Phone className="w-3 h-3" /> +267 77 662 151
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+      {open && <nav id="mobile-navigation" className="mobile-navigation" aria-label="Mobile navigation">{links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}<span>Our services</span>{services.map(([label, slug]) => <Link key={slug} href={`/services/${slug}`} onClick={() => setOpen(false)}>{label}</Link>)}</nav>}
+    </header>
   );
 }

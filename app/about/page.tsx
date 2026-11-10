@@ -4,6 +4,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import TeamSection from "@/components/sections/TeamSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FAQSection from "@/components/sections/FAQSection";
+import HomeCTA from "@/components/sections/home/HomeCTA";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -35,6 +36,7 @@ export default function AboutPage() {
       <TeamSection />
       <WhyChooseUsSection />
       <FAQSection />
+      <HomeCTA />
     </main>
   );
 }

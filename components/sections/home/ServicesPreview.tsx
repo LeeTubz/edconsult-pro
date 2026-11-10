@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSafeInView } from "@/hooks/useSafeInView";
 import { BookOpen, ShieldCheck, Users, ClipboardCheck, Compass, ArrowRight, GraduationCap, Building2 } from "lucide-react";
@@ -63,6 +64,9 @@ function ServiceCard({ s, i, inView }: { s: (typeof forStudents)[number]; i: num
           className="group relative block p-6 pt-7 rounded-2xl border overflow-hidden transition-shadow duration-300 hover:shadow-xl h-full"
           style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
         >
+          <div className="service-photo">
+            <Image src={s.href.includes("academic") || s.href.includes("career") ? "/images/students.jpg" : s.href.includes("technology") ? "/images/mentoring.jpg" : "/images/collaboration.jpg"} alt={s.href.includes("academic") || s.href.includes("career") ? "Students studying together outdoors" : "Professionals collaborating and sharing ideas"} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
+          </div>
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}55)` }} />
           <div
             className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"

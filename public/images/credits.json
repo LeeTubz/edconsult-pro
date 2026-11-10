@@ -1,0 +1,18 @@
+{
+  "source": "Pexels",
+  "usage": "Illustrative stock photography; does not depict Platinum Accolades clients or staff",
+  "photos": [
+    {
+      "file": "students.jpg",
+      "url": "https://www.pexels.com/photo/6147369/"
+    },
+    {
+      "file": "collaboration.jpg",
+      "url": "https://www.pexels.com/photo/3184291/"
+    },
+    {
+      "file": "mentoring.jpg",
+      "url": "https://www.pexels.com/photo/3184433/"
+    }
+  ]
+}

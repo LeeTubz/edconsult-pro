@@ -1,250 +1,32 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import {
-  Compass, ShieldCheck, Cpu, BookOpen,
-  ArrowRight, ChevronDown, Star,
-} from "lucide-react";
-import { BrandMotif } from "@/components/ui/BrandMotif";
-import { Marquee } from "@/components/ui/Marquee";
-import { MagneticButton } from "@/components/ui/MagneticButton";
-
-const floatingCards = [
-  { icon: BookOpen,    label: "Academic Support", color: "#B1B3B8", side: "left",  top: "calc(50% - 120px)" },
-  { icon: Compass,     label: "Career Guidance",  color: "#EFB31E", side: "right", top: "calc(50% - 120px)" },
-  { icon: ShieldCheck, label: "Quality Assurance",color: "#4A6B8A", side: "left",  top: "calc(50% + 70px)"  },
-  { icon: Cpu,         label: "Ed Technology",    color: "#B1B3B8", side: "right", top: "calc(50% + 70px)"  },
-];
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, BookOpen, Compass } from "lucide-react";
 
 export default function HeroSection() {
-  const router = useRouter();
-
-  const scrollToNext = () => {
-    window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-  };
-
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden"
-      style={{
-        minHeight: "100vh",
-        background: "radial-gradient(120% 90% at 15% 0%, #1A3A66 0%, #0D2038 45%, #0A1628 100%)",
-      }}
-    >
-      {/* ── Large decorative olive-branch motif ── */}
-      <BrandMotif
-        className="absolute pointer-events-none hidden md:block"
-        style={{
-          top: "-6%",
-          right: "-4%",
-          width: "42vw",
-          maxWidth: 560,
-          height: "auto",
-          color: "#B1B3B8",
-          opacity: 0.14,
-          transform: "rotate(8deg)",
-        }}
-      />
-      <BrandMotif
-        className="absolute pointer-events-none"
-        style={{
-          bottom: "-10%",
-          left: "-8%",
-          width: "30vw",
-          maxWidth: 380,
-          height: "auto",
-          color: "#EFB31E",
-          opacity: 0.1,
-          transform: "rotate(-18deg) scaleX(-1)",
-        }}
-      />
-
-      {/* ── Ambient orbs ── */}
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, top: "-10%", left: "-5%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle,rgba(20, 50, 94,0.14),transparent 70%)", filter: "blur(48px)" }} />
-      <div className="absolute pointer-events-none" style={{ zIndex: 1, bottom: "-5%", right: "-3%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(239, 179, 30,0.12),transparent 70%)", filter: "blur(40px)" }} />
-
-      {/* ── Subtle grid overlay ── */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, backgroundImage: "linear-gradient(rgba(20, 50, 94,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(20, 50, 94,0.025) 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-
-      {/* Floating service badges, xl+ only, pinned to sides safely */}
-      {floatingCards.map((card, i) => {
-        const Icon = card.icon;
-        return (
-          <motion.div
-            key={i}
-            className="hidden xl:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl absolute pointer-events-none"
-            initial={{ opacity: 0, x: card.side === "left" ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{
-              opacity: { duration: 0.6, delay: 1 + i * 0.15 },
-              x:       { duration: 0.6, delay: 1 + i * 0.15 },
-            }}
-            style={{
-              [card.side]: "2%",
-              top: card.top,
-              zIndex: 5,
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.12)",
-              backdropFilter: "blur(14px)",
-            }}
-          >
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-              style={{ background: `${card.color}28` }}>
-              <Icon className="w-4 h-4" style={{ color: card.color }} />
-            </div>
-            <span className="text-xs font-semibold text-white/80 whitespace-nowrap">{card.label}</span>
-          </motion.div>
-        );
-      })}
-
-      {/* Main content, top padding clears fixed navbar */}
-      <div
-        className="relative flex flex-col pt-20 sm:pt-24 lg:pt-[7.5rem] pb-8"
-        style={{ zIndex: 10, minHeight: "100vh" }}
-      >
-        {/* Central content block */}
-        <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-6">
-          <div className="max-w-3xl mx-auto text-center w-full">
-
-            {/* Trust badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
-              style={{ background: "rgba(20, 50, 94,0.14)", border: "1px solid rgba(20, 50, 94,0.3)" }}
-            >
-              {[0,1,2,3,4].map(i => (
-                <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-              ))}
-              <span className="text-xs font-semibold text-[#B1B3B8] ml-1">
-                Trusted by 50+ Students &amp; 5+ Institutions
-              </span>
-            </motion.div>
-
-            {/* Headline: fluid size via clamp, 2.5rem (mobile) to 4rem (desktop) */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-bold text-white tracking-tight leading-[1.08] mb-5"
-              style={{ fontSize: "clamp(2.25rem, 4vw + 1rem, 4rem)" }}
-            >
-              Guiding{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg,#7F9CBE 0%,#EFB31E 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Minds
-              </span>
-              , Building{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg,#EFB31E 0%,#7F9CBE 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Futures
-              </span>
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-8 leading-relaxed"
-            >
-              A full-service educational consultancy helping students and institutions
-              across Botswana and southern Africa with academic support, quality assurance,
-              educational technology, career guidance, counselling and industry mentorship.
-            </motion.p>
-
-            {/* CTA buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.38 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3"
-            >
-              <MagneticButton
-                onClick={() => router.push("/contact")}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
-                           font-semibold text-sm transition-shadow duration-250
-                           hover:shadow-lg w-full sm:w-auto"
-                style={{ background: "linear-gradient(135deg,#EFB31E,#C98F1B)", boxShadow: "0 6px 22px rgba(239,179,30,0.4)", color: "#0A1628" }}
-              >
-                Book Free Consultation
-                <ArrowRight className="w-4 h-4 flex-shrink-0" />
-              </MagneticButton>
-              <button
-                onClick={() => router.push("/services/academic-support")}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full
-                           font-semibold text-sm text-white transition-all duration-250
-                           hover:bg-white/10 w-full sm:w-auto"
-                style={{ background: "rgba(255,255,255,0.06)", border: "1.5px solid rgba(255,255,255,0.2)" }}
-              >
-                Explore Services
-              </button>
-            </motion.div>
+    <section id="home" className="home-hero">
+      <div className="editorial-shell hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Your next chapter starts here</p>
+          <h1>Great potential.<br />The right guidance.<br /><em>A brighter future.</em></h1>
+          <p className="hero-description">Education is a journey. You don&apos;t have to navigate it alone. We help students flourish and institutions grow, with support that fits you.</p>
+          <div className="editorial-actions">
+            <Link href="/contact" className="action-gold">Let&apos;s find your way <ArrowUpRight size={18} /></Link>
+            <Link href="#services" className="action-text">Explore our services <ArrowRight size={17} /></Link>
           </div>
+          <div className="hero-location"><span className="location-dot" /> Based in Botswana. Growing futures across Africa.</div>
         </div>
-
-        {/* Scroll cue */}
-        <div className="shrink-0 pb-10 flex justify-center">
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="flex flex-col items-center gap-1.5 text-white/30 hover:text-white/55 transition-colors cursor-pointer"
-            onClick={scrollToNext}
-            aria-label="Scroll down"
-          >
-            <span className="text-[10px] font-semibold tracking-[0.18em] uppercase">Scroll</span>
-            <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.4, repeat: Infinity }}>
-              <ChevronDown className="w-4 h-4" />
-            </motion.div>
-          </motion.button>
+        <div className="hero-visual">
+          <div className="hero-photo"><Image src="/images/students.jpg" alt="Two students smiling and studying together outdoors" fill sizes="(max-width: 800px) 100vw, 52vw" preload className="object-cover" /></div>
+          <span className="photo-note">A little guidance. A world of possibility.</span>
+          <div className="hero-photo-card"><BookOpen size={23} /><div><strong>Support for every chapter</strong><span>From classroom confidence to career clarity</span></div></div>
+          <div className="hero-spark" aria-hidden="true">✳</div>
         </div>
       </div>
-
-      {/* ── Scrolling service ticker ── */}
-      <div
-        className="relative py-4 border-t"
-        style={{ zIndex: 9, borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
-      >
-        <Marquee
-          items={[
-            "Tuition & Tutor Matching",
-            "Career Guidance",
-            "Counselling & Mentorship",
-            "Academic Writing & Research",
-            "Educational Technology",
-            "Quality Assurance",
-            "Institutional Audits & Visits",
-          ]}
-          className="text-white/35"
-        />
+      <div className="hero-pathways editorial-shell">
+        <Link href="/services/academic-support"><BookOpen /><div><strong>For students & families</strong><span>Learn with confidence. Plan with purpose.</span></div><ArrowUpRight /></Link>
+        <Link href="/services/quality-assurance"><Compass /><div><strong>For schools & institutions</strong><span>Stronger people. Better learning.</span></div><ArrowUpRight /></Link>
       </div>
-
-      {/* ── Wave divider into next section ── */}
-      <svg
-        className="absolute bottom-0 left-0 w-full pointer-events-none"
-        style={{ zIndex: 8, height: "60px" }}
-        viewBox="0 0 1440 60"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-      >
-        <path d="M0,32 C240,60 480,0 720,18 C960,36 1200,58 1440,24 L1440,60 L0,60 Z" style={{ fill: "var(--background)" }} />
-      </svg>
     </section>
   );
 }

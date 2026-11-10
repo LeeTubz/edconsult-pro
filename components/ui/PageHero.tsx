@@ -1,176 +1,35 @@
 "use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { breadcrumbSchema } from "@/lib/seo";
-
-export interface BreadcrumbItem {
-  label: string;
-  href?: string;
-}
-
+export interface BreadcrumbItem { label: string; href?: string; }
 interface PageHeroProps {
-  badge?: string;
-  title: React.ReactNode;
-  subtitle?: string;
+  badge?: string; title: React.ReactNode; subtitle?: string;
   breadcrumbs?: BreadcrumbItem[];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   accentColor?: string;
 }
-
-export default function PageHero({
-  badge,
-  title,
-  subtitle,
-  breadcrumbs,
-  primaryCta,
-  secondaryCta,
-  accentColor = "#EFB31E",
-}: PageHeroProps) {
+export default function PageHero({ badge, title, subtitle, breadcrumbs, primaryCta, secondaryCta }: PageHeroProps) {
   const pathname = usePathname();
-
-  const crumbTrail = (breadcrumbs ?? []).reduce<{ label: string; path?: string }[]>(
-    (acc, crumb, i) => {
-      const isLast = i === breadcrumbs!.length - 1;
-      if (crumb.href) {
-        acc.push({ label: crumb.label, path: crumb.href });
-      } else if (isLast) {
-        acc.push({ label: crumb.label, path: pathname });
-      }
-      return acc;
-    },
-    []
-  );
-
+  const studentPage = /academic|career|counselling|clients|blog/.test(pathname);
+  const photo = pathname === "/about" ? "/images/collaboration.jpg" : studentPage ? "/images/students.jpg" : "/images/mentoring.jpg";
+  const alt = pathname === "/about" ? "People working together around a table" : studentPage ? "Students learning together" : "Professionals sharing ideas during a working session";
+  const trail = (breadcrumbs ?? []).map((crumb, i) => ({ label: crumb.label, path: crumb.href || (i === breadcrumbs!.length - 1 ? pathname : undefined) }));
   return (
-    <section
-      className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28"
-      style={{ background: "linear-gradient(135deg, #0A1628 0%, #0F2545 50%, #0D2038 100%)" }}
-    >
-      {/* Ambient glow */}
-      <div
-        className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full pointer-events-none"
-        style={{
-          background: `radial-gradient(circle, ${accentColor}18 0%, transparent 70%)`,
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(239, 179, 30,0.06) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-30"
-        style={{
-          backgroundImage: `linear-gradient(rgba(20, 50, 94,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(20, 50, 94,0.05) 1px, transparent 1px)`,
-          backgroundSize: "56px 56px",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumbs */}
-        {breadcrumbs && breadcrumbs.length > 0 && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(crumbTrail)) }}
-          />
-        )}
-        {breadcrumbs && breadcrumbs.length > 0 && (
-          <motion.nav
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center gap-1.5 text-sm mb-8 flex-wrap"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="text-white/40 hover:text-white/70 transition-colors">
-              Home
-            </Link>
-            {breadcrumbs.map((crumb, i) => (
-              <span key={i} className="flex items-center gap-1.5">
-                <ChevronRight className="w-3.5 h-3.5 text-white/25" />
-                {crumb.href && i < breadcrumbs.length - 1 ? (
-                  <Link href={crumb.href} className="text-white/40 hover:text-white/70 transition-colors">
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span className="text-white/70 font-medium">{crumb.label}</span>
-                )}
-              </span>
-            ))}
-          </motion.nav>
-        )}
-
-        {/* Badge */}
-        {badge && (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-            style={{
-              background: `${accentColor}18`,
-              border: `1px solid ${accentColor}35`,
-            }}
-          >
-            <span className="text-sm font-semibold" style={{ color: accentColor }}>
-              {badge}
-            </span>
-          </motion.div>
-        )}
-
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-3xl"
-        >
-          <h1 className="font-display font-bold text-white mb-5 leading-tight" style={{ fontSize: "clamp(2rem, 4vw + 1rem, 3.5rem)" }}>
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="text-lg leading-relaxed text-white/65 max-w-2xl">
-              {subtitle}
-            </p>
-          )}
-        </motion.div>
-
-        {/* CTAs */}
-        {(primaryCta || secondaryCta) && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="flex flex-wrap gap-4 mt-8"
-          >
-            {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: "linear-gradient(135deg, #EFB31E, #C98F1B)", boxShadow: "0 4px 20px rgba(239,179,30,0.4)", color: "#0A1628" }}
-              >
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-semibold text-sm border border-white/20 hover:border-white/40 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
-          </motion.div>
-        )}
+    <section className="inner-hero">
+      {breadcrumbs?.length ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(trail)) }} /> : null}
+      <div className="editorial-shell inner-hero-grid">
+        <div className="inner-hero-copy">
+          <nav aria-label="Breadcrumb" className="editorial-breadcrumb"><Link href="/">Home</Link>{breadcrumbs?.map((crumb, i) => <span key={i}><ChevronRight size={13} />{crumb.href && i < breadcrumbs.length - 1 ? <Link href={crumb.href}>{crumb.label}</Link> : crumb.label}</span>)}</nav>
+          {badge && <p className="eyebrow">{badge}</p>}
+          <h1>{title}</h1>
+          {subtitle && <p className="inner-hero-description">{subtitle}</p>}
+          <div className="editorial-actions">{primaryCta && <Link className="action-gold" href={primaryCta.href}>{primaryCta.label}<ArrowUpRight size={17} /></Link>}{secondaryCta && <Link className="action-text" href={secondaryCta.href}>{secondaryCta.label}<ArrowUpRight size={16} /></Link>}</div>
+        </div>
+        <div className="inner-hero-photo"><Image src={photo} alt={alt} fill sizes="(max-width: 800px) 100vw, 43vw" preload className="object-cover" /><span className="image-label">People. Purpose. Possibility.</span></div>
       </div>
     </section>
   );
