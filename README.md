@@ -39,10 +39,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 The homepage application button opens `/join-network`. The form sends a multipart request to `POST /api/network-application`. Application details and document attachments are emailed using the existing Resend integration.
 
+Network applications and their attachments are sent to `platinumaccolades@gmail.com`. Recipient environment overrides do not change this address.
+
 Configure these server-side environment variables in the deployment:
 
 - `RESEND_API_KEY`: an email-sending API key.
-- `APPLICATION_EMAIL`: destination inbox; falls back to `CONTACT_EMAIL`, then the site's existing Gmail inbox.
 - `APPLICATION_FROM_EMAIL`: sender on a domain verified in Resend. Falls back to `CONTACT_FROM_EMAIL`, then the sender already used by the contact endpoint.
 - `NEXT_PUBLIC_SITE_URL`: the deployed website URL.
 

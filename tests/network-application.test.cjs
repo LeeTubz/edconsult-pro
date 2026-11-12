@@ -38,7 +38,7 @@ function request(body, headers = {}) {
   const { NextRequest } = require("next/server");
   return new NextRequest("https://platinumaccolades.co.bw/api/network-application", { method: "POST", body, headers: { "x-forwarded-for": "test-ip-" + (++ip), ...headers } });
 }
-test("sends all details and exact attachment bytes to the configured inbox", async () => {
+test("sends all details and exact attachment bytes to the Platinum Accolades inbox", async () => {
   const api = setup(); const data = form();
   data.append("documents", new File(["%PDF-1.4\nCertificate"], "qualification.pdf"));
   data.append("documents", new File([new Uint8Array([137,80,78,71,13,10,26,10,0])], "certificate.png"));
@@ -47,7 +47,7 @@ test("sends all details and exact attachment bytes to the configured inbox", asy
   assert.equal(response.status, 200);
   assert.equal(api.sent.length, 1);
   const { payload, options } = api.sent[0];
-  assert.deepEqual(payload.to, ["applications@example.com"]);
+  assert.deepEqual(payload.to, ["platinumaccolades@gmail.com"]);
   assert.equal(payload.replyTo, "applicant@example.com");
   assert.equal(payload.from, "Team <apply@example.com>");
   assert.equal(payload.attachments.length, 3);
