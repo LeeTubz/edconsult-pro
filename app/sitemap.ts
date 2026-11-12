@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "clients", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "blog", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "join-network", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "contact", priority: 0.9, changeFrequency: "monthly" as const },
     ...serviceSlugs.map((slug) => ({
       path: `services/${slug}`,

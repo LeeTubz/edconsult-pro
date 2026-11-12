@@ -300,10 +300,7 @@ export default function TeamSection() {
               Services
             </span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            Our team brings focused expertise across every dimension of student
-            support, ready to guide you toward growth.
-          </p>
+
         </motion.div>
 
         {/* Founder & Visionary, featured */}

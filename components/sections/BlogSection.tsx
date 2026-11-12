@@ -48,9 +48,7 @@ export default function BlogSection() {
               </span>
             </h2>
           </div>
-          <p className="max-w-xs text-base" style={{ color: "var(--muted)" }}>
-            Expert perspectives on education, strategy, and the future of learning in Botswana and Africa.
-          </p>
+
         </motion.div>
 
         {/* Featured Post */}

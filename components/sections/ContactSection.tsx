@@ -50,9 +50,8 @@ const contactInfo = [
 ];
 
 const socials = [
-  { text: "in", label: "LinkedIn", href: "#", color: "#0a66c2" },
-  { text: "f", label: "Facebook", href: "#", color: "#1877f2" },
-  { text: "ig", label: "Instagram", href: "#", color: "#e1306c" },
+  { text: "f", label: "Facebook", href: "https://www.facebook.com/share/19pGjuyCBZ/", color: "#1877f2" },
+  { text: "LINE", label: "LINE", href: "https://line.me/ti/p/EzFQTZtdyP", color: "#06c755" },
 ];
 
 export default function ContactSection() {

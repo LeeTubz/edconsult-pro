@@ -13,7 +13,7 @@ interface PageHeroProps {
   secondaryCta?: { label: string; href: string };
   accentColor?: string;
 }
-export default function PageHero({ badge, title, subtitle, breadcrumbs, primaryCta, secondaryCta }: PageHeroProps) {
+export default function PageHero({ badge, title, breadcrumbs, primaryCta, secondaryCta }: PageHeroProps) {
   const pathname = usePathname();
   const photo = pageHeroPhotos[pathname] ?? pageHeroPhotos["/blog"];
   const trail = (breadcrumbs ?? []).map((crumb, i) => ({ label: crumb.label, path: crumb.href || (i === breadcrumbs!.length - 1 ? pathname : undefined) }));
@@ -25,7 +25,6 @@ export default function PageHero({ badge, title, subtitle, breadcrumbs, primaryC
           <nav aria-label="Breadcrumb" className="editorial-breadcrumb"><Link href="/">Home</Link>{breadcrumbs?.map((crumb, i) => <span key={i}><ChevronRight size={13} />{crumb.href && i < breadcrumbs.length - 1 ? <Link href={crumb.href}>{crumb.label}</Link> : crumb.label}</span>)}</nav>
           {badge && <p className="eyebrow">{badge}</p>}
           <h1>{title}</h1>
-          {subtitle && <p className="inner-hero-description">{subtitle}</p>}
           <div className="editorial-actions">{primaryCta && <Link className="action-gold" href={primaryCta.href}>{primaryCta.label}<ArrowUpRight size={17} /></Link>}{secondaryCta && <Link className="action-text" href={secondaryCta.href}>{secondaryCta.label}<ArrowUpRight size={16} /></Link>}</div>
         </div>
         <div className="inner-hero-photo"><Image quality={90} src={photo.src} alt={photo.alt} style={{ objectPosition: photo.position }} fill sizes="(max-width: 700px) 100vw, 45vw" preload className="object-cover" /><span className="image-label">People. Purpose. Possibility.</span></div>

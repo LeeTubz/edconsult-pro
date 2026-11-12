@@ -24,8 +24,8 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="hero-pathways editorial-shell">
-        <Link href="/services/academic-support"><BookOpen /><div><strong>For students & families</strong><span>Learn with confidence. Plan with purpose.</span></div><ArrowUpRight /></Link>
-        <Link href="/services/quality-assurance"><Compass /><div><strong>For schools & institutions</strong><span>Stronger people. Better learning.</span></div><ArrowUpRight /></Link>
+        <Link href="/services/academic-support"><BookOpen /><div><strong>For students & families</strong></div><ArrowUpRight /></Link>
+        <Link href="/services/quality-assurance"><Compass /><div><strong>For schools & institutions</strong></div><ArrowUpRight /></Link>
       </div>
     </section>
   );

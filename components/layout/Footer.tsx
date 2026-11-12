@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 
 const quickLinks = [
+  { label: "Join Our Network", href: "/join-network" },
   { label: "About Us",       href: "/about"   },
   { label: "Our Services",   href: "/services/academic-support" },
   { label: "Who We Serve",   href: "/clients" },
@@ -31,9 +32,8 @@ const services = [
 ];
 
 const socials = [
-  { label: "in", href: "#", ariaLabel: "LinkedIn", color: "#0a66c2" },
-  { label: "f", href: "#", ariaLabel: "Facebook", color: "#1877f2" },
-  { label: "ig", href: "#", ariaLabel: "Instagram", color: "#e1306c" },
+  { label: "f", href: "https://www.facebook.com/share/19pGjuyCBZ/", ariaLabel: "Platinum Accolades on Facebook" },
+  { label: "LINE", href: "https://line.me/ti/p/EzFQTZtdyP", ariaLabel: "Connect with Platinum Accolades on LINE" },
 ];
 
 export default function Footer() {
@@ -53,7 +53,7 @@ export default function Footer() {
   };
 
   return (
-    <footer style={{ background: "#0A1628" }}>
+    <footer id="site-footer" style={{ background: "#0A1628" }}>
       {/* Newsletter Banner */}
       <div
         className="py-10"
@@ -154,6 +154,8 @@ export default function Footer() {
                     key={i}
                     href={s.href}
                     aria-label={s.ariaLabel}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-9 h-9 rounded-xl flex items-center justify-center text-white/50 hover:text-white transition-all hover:scale-110 text-xs font-bold"
                     style={{ background: "rgba(255, 255, 255, 0.06)" }}
                   >
@@ -161,6 +163,7 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
+              <details className="footer-line-qr"><summary>Scan to connect on LINE</summary><a href="https://line.me/ti/p/EzFQTZtdyP" target="_blank" rel="noopener noreferrer"><Image unoptimized src="/images/line-qr.png" alt="Scan this QR code to connect with Platinum Accolades on LINE" width={160} height={160} /></a></details>
             </div>
 
             {/* Quick Links */}

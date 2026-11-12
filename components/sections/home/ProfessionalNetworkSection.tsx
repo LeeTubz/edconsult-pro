@@ -64,11 +64,7 @@ export default function ProfessionalNetworkSection() {
             </span>
           </h2>
 
-          <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: "var(--muted)" }}>
-            At Platinum Accolades we support a growing range of virtual education
-            professionals. If you work in education and want to be considered for
-            opportunities with us, we'd love to hear from you.
-          </p>
+
 
           <div className="flex flex-wrap justify-center gap-2.5 mb-10 max-w-3xl mx-auto">
             {roles.map((role, i) => (
@@ -84,7 +80,7 @@ export default function ProfessionalNetworkSection() {
           </div>
 
           <button
-            onClick={() => router.push("/contact")}
+            onClick={() => router.push("/join-network")}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             style={{ background: "linear-gradient(135deg,#EFB31E,#C98F1B)", boxShadow: "0 6px 22px rgba(239,179,30,0.4)", color: "#0A1628" }}
           >

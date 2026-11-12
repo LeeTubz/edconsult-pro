@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSafeInView } from "@/hooks/useSafeInView";
 import {
+  ArrowUpRight,
   User,
   School,
   GraduationCap,
@@ -101,6 +103,7 @@ export default function ClientsSection() {
   const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.1 });
 
   const activeSegment = clientSegments.find((s) => s.id === activeTab)!;
+  const serviceLinks = activeTab === "individuals" ? ["academic-support", "academic-support", "career-guidance", "career-guidance", "career-guidance", "career-guidance"] : ["quality-assurance", "institutional-audits", "educational-technology", "educational-technology", "educational-technology", "career-guidance"];
 
   return (
     <section
@@ -136,11 +139,7 @@ export default function ClientsSection() {
               Client
             </span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            Whether you're a student or family seeking personal guidance, or a school
-            looking to build staff capacity and support your students, we have the
-            right service for you.
-          </p>
+
         </motion.div>
 
         {/* Tab Switcher */}
@@ -156,6 +155,7 @@ export default function ClientsSection() {
             return (
               <button
                 key={seg.id}
+                aria-pressed={isActive}
                 onClick={() => setActiveTab(seg.id)}
                 className="flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold transition-all duration-300"
                 style={{
@@ -184,33 +184,8 @@ export default function ClientsSection() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
-            {/* Segment header */}
-            <div
-              className="p-8 rounded-2xl mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-5"
-              style={{
-                background: `linear-gradient(135deg, ${activeSegment.color}12 0%, ${activeSegment.color}06 100%)`,
-                border: `1px solid ${activeSegment.color}20`,
-              }}
-            >
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
-                style={{ background: `${activeSegment.color}20` }}
-              >
-                {(() => {
-                  const Icon = activeSegment.icon;
-                  return <Icon className="w-7 h-7" style={{ color: activeSegment.color }} />;
-                })()}
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-1" style={{ color: "var(--foreground)" }}>
-                  {activeSegment.label}
-                </h3>
-                <p style={{ color: "var(--muted)" }}>{activeSegment.tagline}</p>
-              </div>
-            </div>
-
             {/* Services Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="client-services-grid">
               {activeSegment.services.map((svc, i) => {
                 const Icon = svc.icon;
                 return (
@@ -219,12 +194,11 @@ export default function ClientsSection() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: i * 0.07, duration: 0.4 }}
-                    className="client-service-card"
+                    className="client-service-card client-card-refined"
                     data-tone={i % 3}
                   >
-                    <div className="client-card-top"><span className="client-card-icon"><Icon size={26} strokeWidth={1.5} /></span><span className="client-card-number">0{i + 1}</span></div>
-                    <h4>{svc.title}</h4>
-                    <p>{svc.desc}</p>
+                    <div className="client-service-header"><span className="client-card-icon"><Icon size={25} strokeWidth={1.5} /></span><span className="client-card-number">0{i + 1}</span><h4>{svc.title}</h4></div>
+                    <div className="client-service-body"><p>{svc.desc}</p><Link href={"/services/" + serviceLinks[i]}>Explore this support <ArrowUpRight size={16} /></Link></div>
                   </motion.div>
                 );
               })}

@@ -1,14 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useSafeInView } from "@/hooks/useSafeInView";
-import {
-  ClipboardList,
-  Map,
-  Lightbulb,
-  Cog,
-  BarChart2,
-} from "lucide-react";
+import { ClipboardList, Map, Lightbulb, Cog, BarChart2 } from "lucide-react";
 
 const processes = [
   {
@@ -25,7 +15,7 @@ const processes = [
     icon: Map,
     title: "Personalised Plan",
     description:
-      "We build a tailored support plan, whether that's career guidance, counselling, coaching, or internship guidance, matched to your specific needs.",
+      "We build a practical plan around your learning goals or institutional priorities, with clear milestones and the right specialist support.",
     color: "#EFB31E",
     features: ["Tailored plan", "Right-fit service", "Clear milestones", "Flexible scheduling"],
   },
@@ -59,188 +49,8 @@ const processes = [
 ];
 
 export default function WhatWeDoSection() {
-  const { ref, inView } = useSafeInView({ triggerOnce: true, threshold: 0.05 });
-
-  return (
-    <section
-      id="services"
-      className="section-padding relative overflow-hidden"
-      style={{ background: "var(--background)" }}
-      ref={ref}
-    >
-      {/* Background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(15, 47, 87, 0.04) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <motion.div
-          initial={false}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-20"
-        >
-          <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(15, 47, 87, 0.08)", border: "1px solid rgba(15, 47, 87, 0.2)" }}
-          >
-            <span className="text-sm font-semibold text-[#0F2F57] dark:text-[#B1B3B8]">How We Work</span>
-          </div>
-          <h2 className="section-title mb-4" style={{ color: "var(--foreground)" }}>
-            Our{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #14325E 0%, #EFB31E 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Support Process
-            </span>
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            A simple, structured approach that delivers real support at every
-            stage of your journey.
-          </p>
-        </motion.div>
-
-        {/* Process Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {processes.slice(0, 3).map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={false}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: i * 0.09, duration: 0.6 }}
-                className="group relative p-6 rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                style={{
-                  background: "var(--card-bg)",
-                  borderColor: "var(--card-border)",
-                }}
-              >
-                {/* Background gradient on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
-                  style={{
-                    background: `linear-gradient(135deg, ${p.color}08, transparent 60%)`,
-                  }}
-                />
-
-                {/* Step number */}
-                <div
-                  className="absolute top-5 right-5 text-5xl font-black opacity-5 group-hover:opacity-10 transition-opacity select-none"
-                  style={{ color: p.color }}
-                >
-                  {p.step}
-                </div>
-
-                <div className="relative">
-                  {/* Icon */}
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300"
-                    style={{ background: `${p.color}15` }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: p.color }} />
-                  </div>
-
-                  {/* Step badge */}
-                  <div
-                    className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded mb-3"
-                    style={{ background: `${p.color}15`, color: p.color }}
-                  >
-                    STEP {p.step}
-                  </div>
-
-                  <h3 className="text-lg font-bold mb-3" style={{ color: "var(--foreground)" }}>
-                    {p.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-                    {p.description}
-                  </p>
-
-                  {/* Feature pills */}
-                  <div className="flex flex-wrap gap-2">
-                    {p.features.map((f, j) => (
-                      <span
-                        key={j}
-                        className="text-xs px-2.5 py-1 rounded-full"
-                        style={{
-                          background: `${p.color}10`,
-                          color: p.color,
-                          border: `1px solid ${p.color}20`,
-                        }}
-                      >
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Final two steps, centered as a pair */}
-        <div className="flex flex-col lg:flex-row justify-center gap-8">
-          {processes.slice(3).map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={false}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.3 + i * 0.09, duration: 0.45 }}
-                className="group relative p-6 rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 w-full max-w-md lg:max-w-none lg:w-[calc(33.333%-1.33rem)]"
-                style={{
-                  background: "var(--card-bg)",
-                  borderColor: "var(--card-border)",
-                }}
-              >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
-                  style={{ background: `${p.color}08` }}
-                />
-                <div
-                  className="absolute top-5 right-5 text-5xl font-black opacity-5 select-none"
-                  style={{ color: p.color }}
-                >
-                  {p.step}
-                </div>
-                <div className="relative">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
-                    style={{ background: `${p.color}15` }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: p.color }} />
-                  </div>
-                  <div className="inline-flex items-center text-xs font-bold px-2 py-0.5 rounded mb-3"
-                    style={{ background: `${p.color}15`, color: p.color }}>
-                    STEP {p.step}
-                  </div>
-                  <h3 className="text-lg font-bold mb-3" style={{ color: "var(--foreground)" }}>{p.title}</h3>
-                  <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>{p.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {p.features.map((f, j) => (
-                      <span key={j} className="text-xs px-2.5 py-1 rounded-full"
-                        style={{ background: `${p.color}10`, color: p.color, border: `1px solid ${p.color}20` }}>
-                        {f}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="support-process" className="section-padding support-process-section"><div className="editorial-shell">
+    <div className="editorial-section-heading"><p className="eyebrow">How we work</p><h2 className="editorial-title">Our support process.</h2></div>
+    <div className="support-process-grid">{processes.map(({ step, icon: Icon, title, description, features }) => <article key={step} className="support-process-card"><div className="support-process-top"><Icon size={27} strokeWidth={1.5} /><span>STEP {step}</span></div><h3>{title}</h3><p>{description}</p><ul>{features.map(feature => <li key={feature}>{feature}</li>)}</ul></article>)}</div>
+  </div></section>;
 }

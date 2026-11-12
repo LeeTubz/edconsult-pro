@@ -222,153 +222,21 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   const { service } = await params;
   const data = serviceData[service as ServiceSlug];
   if (!data) notFound();
-
   const Icon = data.icon;
-  const otherServices = slugs.filter((s) => s !== service).slice(0, 3);
-
-  return (
-    <main>
-      <PageHero
-        badge={data.badge}
-        title={data.title}
-        subtitle={data.subtitle}
-        breadcrumbs={[{ label: data.badge }]}
-        primaryCta={{ label: "Book Free Consultation", href: "/contact" }}
-        secondaryCta={{ label: "All Services", href: "/#services" }}
-        accentColor={data.accentColor}
-      />
-
-      {/* Intro + Stats */}
-      <section className="section-padding" style={{ background: "var(--background)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            {/* Left: headline + intro */}
-            <div>
-              <div
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-                style={{ background: `${data.color}12`, border: `1px solid ${data.color}30` }}
-              >
-                <Icon className="w-4 h-4" style={{ color: data.color }} />
-                <span className="text-sm font-semibold" style={{ color: data.color }}>{data.badge}</span>
-              </div>
-              <h2 className="font-bold mb-5" style={{ fontSize: "clamp(1.5rem,2vw+1rem,2.25rem)", color: "var(--foreground)", lineHeight: 1.2 }}>
-                {data.headline}
-              </h2>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
-                {data.intro}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                style={{ background: `linear-gradient(135deg,${data.color},${data.color}cc)`, boxShadow: `0 4px 20px ${data.color}40` }}
-              >
-                Book a Free Consultation <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            {/* Right: stats */}
-            <div className="grid grid-cols-2 gap-4">
-              {data.stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-2xl border text-center"
-                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                >
-                  <div className="text-3xl font-black mb-1" style={{ color: data.color }}>{stat.value}</div>
-                  <div className="text-sm font-medium" style={{ color: "var(--muted)" }}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Offerings grid */}
-          <div className="mb-16">
-            <h3 className="text-xl font-bold mb-8" style={{ color: "var(--foreground)" }}>What's Included</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.offerings.map((item, i) => (
-                <div
-                  key={i}
-                  className="p-5 rounded-xl border transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                >
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 mt-0.5 shrink-0" style={{ color: data.color }} />
-                    <div>
-                      <h4 className="font-semibold mb-1.5 text-sm" style={{ color: "var(--foreground)" }}>{item.title}</h4>
-                      <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{item.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Who it's for */}
-          <div
-            className="rounded-2xl p-8 lg:p-10"
-            style={{ background: `${data.color}08`, border: `1px solid ${data.color}20` }}
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <Users className="w-5 h-5" style={{ color: data.color }} />
-              <h3 className="text-lg font-bold" style={{ color: "var(--foreground)" }}>Who This Service Is For</h3>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {data.clients.map((client, i) => (
-                <div key={i} className="flex items-center gap-2.5">
-                  <Star className="w-3.5 h-3.5 shrink-0" style={{ color: data.color }} />
-                  <span className="text-sm font-medium" style={{ color: "var(--foreground)" }}>{client}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Process */}
-      <WhatWeDoSection />
-
-      {/* Other services */}
-      <section className="section-padding" style={{ background: "var(--section-alt)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold mb-3" style={{ color: "var(--foreground)" }}>Explore Other Services</h2>
-            <p className="text-base" style={{ color: "var(--muted)" }}>We offer a full range of educational consulting services tailored to your needs.</p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6 mb-8">
-            {otherServices.map((slug) => {
-              const s = serviceData[slug];
-              const SIcon = s.icon;
-              return (
-                <Link
-                  key={slug}
-                  href={`/services/${slug}`}
-                  className="group flex items-start gap-4 p-5 rounded-xl border transition-all duration-300 hover:shadow-md hover:-translate-y-1"
-                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
-                >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform"
-                    style={{ background: `${s.color}15` }}>
-                    <SIcon className="w-5 h-5" style={{ color: s.color }} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1" style={{ color: "var(--foreground)" }}>{s.badge}</h4>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold" style={{ color: s.color }}>
-                      Learn more <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/#services"
-              className="inline-flex items-center gap-2 text-sm font-semibold"
-              style={{ color: "var(--foreground)" }}
-            >
-              View all 5 services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  const otherServices = slugs.filter(s => s !== service).slice(0, 3);
+  return <main className="service-detail-page">
+    <PageHero badge={data.badge} title={data.title} breadcrumbs={[{ label: data.badge }]} primaryCta={{ label: "Book Free Consultation", href: "/contact" }} secondaryCta={{ label: "All Services", href: "/#services" }} />
+    <section className="section-padding editorial-shell">
+      <div className="service-introduction">
+        <div><p className="eyebrow"><Icon size={18} />Our expertise</p><h2 className="editorial-title">{data.headline}</h2><p className="service-intro-copy">{data.intro}</p><Link href="/contact" className="action-gold">Talk to a consultant <ArrowRight size={17} /></Link></div>
+        <div className="service-facts"><p className="eyebrow">At a glance</p><div>{data.stats.map(stat => <article key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></article>)}</div></div>
+      </div>
+      <div className="service-offerings"><div className="editorial-section-heading"><p className="eyebrow">Tailored to your needs</p><h2 className="editorial-title">What&apos;s included.</h2></div><div className="service-offerings-grid">
+        {data.offerings.map((item, i) => <article key={item.title} className="service-offering-card" data-featured={i === 0}><div className="service-offering-top"><span><Icon size={24} strokeWidth={1.5} /></span><small>0{i + 1}</small></div><h3>{item.title}</h3><p>{item.desc}</p><span className="service-offering-rule" aria-hidden="true" /></article>)}
+      </div></div>
+      <div className="service-audience"><div><p className="eyebrow">The right fit</p><h2>Who this service<br />is for.</h2></div><ul>{data.clients.map(client => <li key={client}><CheckCircle size={19} />{client}</li>)}</ul></div>
+    </section>
+    <WhatWeDoSection />
+    <section className="section-padding editorial-shell"><div className="editorial-section-heading"><p className="eyebrow">Keep exploring</p><h2 className="editorial-title">More ways we can help.</h2></div><div className="related-services-grid">{otherServices.map(slug => { const related = serviceData[slug]; const RelatedIcon = related.icon; return <Link key={slug} href={"/services/" + slug} className="related-service-card"><RelatedIcon size={30} strokeWidth={1.4} /><h3>{related.titleText}</h3><span>Explore service <ArrowRight size={17} /></span></Link>; })}</div></section>
+  </main>;
 }

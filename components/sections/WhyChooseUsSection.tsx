@@ -134,10 +134,7 @@ export default function WhyChooseUsSection() {
               Choose Us
             </span>
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            When it comes to your education and future, you deserve more than average.
-            Here's what sets us apart.
-          </p>
+
         </motion.div>
 
         {/* Reasons Grid */}

@@ -128,10 +128,7 @@ export default function ServicesPreview() {
               & Institutions
             </span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
-            From tuition and academic writing to institutional quality assurance,
-            we offer a full suite of services, best fit for purpose, not one size fits all.
-          </p>
+
         </motion.div>
 
         {/* For Students */}
