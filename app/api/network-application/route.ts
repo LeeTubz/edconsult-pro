@@ -100,8 +100,8 @@ export async function POST(request: NextRequest) {
     ];
     const resend = new Resend(key);
     const { data, error } = await resend.emails.send({
-      from: process.env.APPLICATION_FROM_EMAIL || process.env.CONTACT_FROM_EMAIL || "Platinum Accolades <noreply@platinumaccolades.com>",
-      to: ["platinumaccolades@gmail.com"],
+      from: "Platinum Accolades <noreply@platinumaccolades.co.bw>",
+      to: [process.env.CONTACT_TO_EMAIL || "platinumaccolades@gmail.com"],
       replyTo: fields.email,
       subject: "Professional Network Application — " + fields.fullName,
       text: "PLATINUM ACCOLADES — PROFESSIONAL NETWORK APPLICATION\n\n" + labels.map(([label, value]) => label + ": " + value).join("\n\n") + "\n\nDocuments are attached to this email.",

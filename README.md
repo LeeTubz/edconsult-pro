@@ -35,22 +35,24 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Professional network applications
+## Email delivery (contact form and network applications)
 
-The homepage application button opens `/join-network`. The form sends a multipart request to `POST /api/network-application`. Application details and document attachments are emailed using the existing Resend integration.
+Both the contact form (`POST /api/contact`) and the professional network application form (`POST /api/network-application`, opened from `/join-network`) send through the same Resend account.
 
-Network applications and their attachments are sent to `platinumaccolades@gmail.com`. Recipient environment overrides do not change this address.
+- **From:** `noreply@platinumaccolades.co.bw` on both routes, fixed in code since that domain is the one verified in Resend. It isn't configurable via environment variable.
+- **To:** `process.env.CONTACT_TO_EMAIL`, falling back to `platinumaccolades@gmail.com` if unset. Set `CONTACT_TO_EMAIL` in the deployment to control the destination inbox for both forms at once.
+- **Reply-To:** the email address the visitor or applicant entered in the form, so replying from the inbox goes straight back to them.
 
 Configure these server-side environment variables in the deployment:
 
 - `RESEND_API_KEY`: an email-sending API key.
-- `APPLICATION_FROM_EMAIL`: sender on a domain verified in Resend. Falls back to `CONTACT_FROM_EMAIL`, then the sender already used by the contact endpoint.
+- `CONTACT_TO_EMAIL`: destination inbox for both the contact form and network applications.
 - `NEXT_PUBLIC_SITE_URL`: the deployed website URL.
 
-A sending-only API key cannot list or verify sender domains. Set the sender to an address on the verified domain in your Resend account.
+A sending-only API key cannot list or verify sender domains; `noreply@platinumaccolades.co.bw` must already be verified in the Resend account for either form to deliver.
 
-A CV is required. Up to two supporting documents are optional. Accepted files are PDF, DOCX, JPG and PNG, with a 2 MB limit per file and a 3 MB combined limit. The server checks file signatures, required fields, consent, origin and total request size. Documents are processed in memory and passed to the email provider; this application does not write them to disk.
+Neither route reports success unless Resend actually confirms delivery. If `RESEND_API_KEY` is missing/unconfigured, or Resend returns an error or no message ID, the route returns an error response instead of a fake success — the contact form previously always reported success even when the email silently failed to send; it no longer does.
 
-Confirmation is returned only when Resend supplies a message ID. Provider errors and missing configuration return an error so the applicant can retry without losing their form entries. A stable request ID is passed to Resend for retry deduplication. The route also has a basic per-instance limit of five attempts per IP per ten minutes.
+For the network application specifically: a CV is required, with up to two optional supporting documents. Accepted files are PDF, DOCX, JPG and PNG, with a 2 MB limit per file and a 3 MB combined limit. The server checks file signatures (not just the extension), required fields, consent, origin and total request size. Documents are processed in memory and passed to the email provider; this route does not write them to disk. A stable request ID is passed to Resend for retry deduplication, and the route has a basic per-instance limit of five attempts per IP per ten minutes.
 
-Run `npm run test:application` for request-validation, upload and delivery tests. These tests mock Resend and send no real email. The sending inbox should be checked separately with an authorised live submission after deployment.
+Run `npm run test:application` for request-validation, upload and delivery tests on the network application route. These tests mock Resend and send no real email. Both inboxes should be checked separately with an authorised live submission after deployment.

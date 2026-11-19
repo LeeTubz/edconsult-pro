@@ -13,8 +13,7 @@ const shared = compile("lib/network-application.ts");
 function setup(mode = "success") {
   const sent = [];
   process.env.RESEND_API_KEY = "re_test_never_sent";
-  process.env.APPLICATION_EMAIL = "applications@example.com";
-  process.env.APPLICATION_FROM_EMAIL = "Team <apply@example.com>";
+  process.env.CONTACT_TO_EMAIL = "applications@example.com";
   process.env.NEXT_PUBLIC_SITE_URL = "https://platinumaccolades.co.bw";
   class Resend {
     emails = { send: async (payload, options) => {
@@ -47,9 +46,9 @@ test("sends all details and exact attachment bytes to the Platinum Accolades inb
   assert.equal(response.status, 200);
   assert.equal(api.sent.length, 1);
   const { payload, options } = api.sent[0];
-  assert.deepEqual(payload.to, ["platinumaccolades@gmail.com"]);
+  assert.deepEqual(payload.to, ["applications@example.com"]);
   assert.equal(payload.replyTo, "applicant@example.com");
-  assert.equal(payload.from, "Team <apply@example.com>");
+  assert.equal(payload.from, "Platinum Accolades <noreply@platinumaccolades.co.bw>");
   assert.equal(payload.attachments.length, 3);
   assert.equal(payload.attachments[0].content.toString(), "%PDF-1.4\nTest CV");
   assert.equal(payload.attachments[1].filename, "Supporting-1-qualification.pdf");

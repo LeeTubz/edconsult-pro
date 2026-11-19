@@ -55,15 +55,27 @@ export async function POST(request: NextRequest) {
 
     // Send email via Resend (configure RESEND_API_KEY in .env.local)
     const resendApiKey = process.env.RESEND_API_KEY;
+    const sendingUnavailable = !resendApiKey || resendApiKey.includes("your_api_key");
 
-    if (resendApiKey) {
-      try {
-        const { Resend } = await import("resend");
-        const resend = new Resend(resendApiKey);
+    if (sendingUnavailable) {
+      console.error("Contact form: RESEND_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "We couldn't send your message right now. Please email us directly at platinumaccolades@gmail.com or call +267 77 662 151." },
+        { status: 503 }
+      );
+    }
 
-        await resend.emails.send({
-          from: "Platinum Accolades <noreply@platinumaccolades.com>",
-          to: [process.env.CONTACT_EMAIL || "platinumaccolades@gmail.com"],
+    const FROM_ADDRESS = "Platinum Accolades <noreply@platinumaccolades.co.bw>";
+    const toEmail = process.env.CONTACT_TO_EMAIL || "platinumaccolades@gmail.com";
+
+    try {
+      const { Resend } = await import("resend");
+      const resend = new Resend(resendApiKey);
+
+      const { data, error } = await resend.emails.send({
+          from: FROM_ADDRESS,
+          to: [toEmail],
+          replyTo: email,
           subject: `New Consultation Request from ${fullName}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -102,12 +114,21 @@ export async function POST(request: NextRequest) {
               </div>
             </div>
           `,
-          replyTo: email,
         });
 
-        // Send confirmation to the client
+      if (error || !data?.id) {
+        console.error("Contact form: email delivery failed", error?.name || "no_provider_receipt");
+        return NextResponse.json(
+          { error: "We couldn't send your message right now. Please email us directly at platinumaccolades@gmail.com or call +267 77 662 151." },
+          { status: 502 }
+        );
+      }
+
+      // Send confirmation to the client (best-effort; a failure here doesn't change
+      // the outcome for the visitor, since their enquiry has already been delivered)
+      try {
         await resend.emails.send({
-          from: "Platinum Accolades <noreply@platinumaccolades.com>",
+          from: FROM_ADDRESS,
           to: [email],
           subject: "We received your consultation request | Platinum Accolades",
           html: `
@@ -139,16 +160,21 @@ export async function POST(request: NextRequest) {
             </div>
           `,
         });
-      } catch (emailError) {
-        // Log email failure but don't fail the request
-        console.error("Email sending failed:", emailError);
+      } catch (confirmationError) {
+        console.error("Contact form: confirmation email failed", confirmationError instanceof Error ? confirmationError.name : "unknown_error");
       }
-    }
 
-    return NextResponse.json(
-      { success: true, message: "Your message has been received. We'll be in touch soon!" },
-      { status: 200 }
-    );
+      return NextResponse.json(
+        { success: true, message: "Your message has been received. We'll be in touch soon!" },
+        { status: 200 }
+      );
+    } catch (emailError) {
+      console.error("Contact form: email sending failed", emailError instanceof Error ? emailError.name : "unknown_error");
+      return NextResponse.json(
+        { error: "We couldn't send your message right now. Please email us directly at platinumaccolades@gmail.com or call +267 77 662 151." },
+        { status: 502 }
+      );
+    }
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
